@@ -7,9 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07F738FE1D1AB4C800F83AE8 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F738FA1D1AB4C800F83AE8 /* Action.swift */; };
+		07F738FF1D1AB4C800F83AE8 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F738FA1D1AB4C800F83AE8 /* Action.swift */; };
+		07F739001D1AB4C800F83AE8 /* Seconds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F738FB1D1AB4C800F83AE8 /* Seconds.swift */; };
+		07F739011D1AB4C800F83AE8 /* Seconds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F738FB1D1AB4C800F83AE8 /* Seconds.swift */; };
+		07F739041D1AB4C800F83AE8 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F738FD1D1AB4C800F83AE8 /* Timeline.swift */; };
+		07F739051D1AB4C800F83AE8 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F738FD1D1AB4C800F83AE8 /* Timeline.swift */; };
+		4CDD7BB1493FFCC588FE8E74 /* ArithmeticTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5DCC098392100ECC36114D7 /* ArithmeticTools.framework */; };
 		5394053C63C1BC3EC26C9E30 /* Timeline.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E56B3E6B36991781F5BE132E /* Timeline.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		581414A189A131EC6CB6E7FC /* Timeline.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 58D632B9454ED0DEF3968D80 /* Timeline.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		59353C706578CAA37CF10214 /* ArithmeticTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 622FBF870B78DF5ABD85BACD /* ArithmeticTools.framework */; };
+		6766D7242446EDD9F887D642 /* DictionaryTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BEB43C733D9565FF2DC2E4E /* DictionaryTools.framework */; };
+		7568E255DEC95D1A693266E2 /* ArrayTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D289E64E7B479D8CEAA9BEDF /* ArrayTools.framework */; };
 		7E697FFB67A8CA0108A650CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38EA6D0B56F5E38C592E339D /* Foundation.framework */; };
+		8635D8023FD4565C1E483F34 /* DictionaryTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A050C632E1221F2A36491428 /* DictionaryTools.framework */; };
+		C0B020848DE582698034B584 /* ArrayTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BCAE46D4F979FD0B4090399 /* ArrayTools.framework */; };
 		D171022B32A91C5EEDFC38C9 /* Timeline.h in Headers */ = {isa = PBXBuildFile; fileRef = BA4AD68D0FB5C5FD2A9FA6ED /* Timeline.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D24FE8F637BE95FDC50421E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38EA6D0B56F5E38C592E339D /* Foundation.framework */; };
 		E843F5515BCA5C6999A01D21 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE2DCDE916A157D4548E230 /* Cocoa.framework */; };
@@ -58,15 +70,24 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		07F738FA1D1AB4C800F83AE8 /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Action.swift; path = Timeline/Action.swift; sourceTree = "<group>"; };
+		07F738FB1D1AB4C800F83AE8 /* Seconds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Seconds.swift; path = Timeline/Seconds.swift; sourceTree = "<group>"; };
+		07F738FD1D1AB4C800F83AE8 /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Timeline/Timeline.swift; sourceTree = "<group>"; };
 		2A9280607A024DC801DF42E1 /* Timeline.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Timeline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BEB43C733D9565FF2DC2E4E /* DictionaryTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DictionaryTools.framework; path = Carthage/Build/Mac/DictionaryTools.framework; sourceTree = "<group>"; };
 		3675DA15B3B3792DDF613132 /* TimelineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimelineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		38EA6D0B56F5E38C592E339D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		4735E26869726502F89506FC /* Timeline.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Timeline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56930B4347FDC8471FF87BA7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = TimelineTests/Info.plist; sourceTree = "<group>"; };
 		58D632B9454ED0DEF3968D80 /* Timeline.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; path = Timeline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		622FBF870B78DF5ABD85BACD /* ArithmeticTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ArithmeticTools.framework; path = Carthage/Build/iOS/ArithmeticTools.framework; sourceTree = "<group>"; };
 		63EA99BBD7D15C3F63874AD5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = Timeline/Info.plist; sourceTree = "<group>"; };
 		8EF4EDB20FD2A919E1969C8A /* TimelineMacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimelineMacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BCAE46D4F979FD0B4090399 /* ArrayTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ArrayTools.framework; path = Carthage/Build/iOS/ArrayTools.framework; sourceTree = "<group>"; };
+		A050C632E1221F2A36491428 /* DictionaryTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DictionaryTools.framework; path = Carthage/Build/iOS/DictionaryTools.framework; sourceTree = "<group>"; };
+		B5DCC098392100ECC36114D7 /* ArithmeticTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ArithmeticTools.framework; path = Carthage/Build/Mac/ArithmeticTools.framework; sourceTree = "<group>"; };
 		BA4AD68D0FB5C5FD2A9FA6ED /* Timeline.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Timeline.h; path = Timeline/Timeline.h; sourceTree = "<group>"; };
+		D289E64E7B479D8CEAA9BEDF /* ArrayTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ArrayTools.framework; path = Carthage/Build/Mac/ArrayTools.framework; sourceTree = "<group>"; };
 		E56B3E6B36991781F5BE132E /* Timeline.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; path = Timeline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDE2DCDE916A157D4548E230 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
@@ -77,6 +98,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E697FFB67A8CA0108A650CB /* Foundation.framework in Frameworks */,
+				59353C706578CAA37CF10214 /* ArithmeticTools.framework in Frameworks */,
+				C0B020848DE582698034B584 /* ArrayTools.framework in Frameworks */,
+				8635D8023FD4565C1E483F34 /* DictionaryTools.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +117,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E843F5515BCA5C6999A01D21 /* Cocoa.framework in Frameworks */,
+				4CDD7BB1493FFCC588FE8E74 /* ArithmeticTools.framework in Frameworks */,
+				7568E255DEC95D1A693266E2 /* ArrayTools.framework in Frameworks */,
+				6766D7242446EDD9F887D642 /* DictionaryTools.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +137,9 @@
 		0BF6F038AF440276489097F1 /* Timeline */ = {
 			isa = PBXGroup;
 			children = (
+				07F738FA1D1AB4C800F83AE8 /* Action.swift */,
+				07F738FB1D1AB4C800F83AE8 /* Seconds.swift */,
+				07F738FD1D1AB4C800F83AE8 /* Timeline.swift */,
 				B3EF3CD3DD68C6E9E54C7872 /* Supporting Files */,
 			);
 			name = Timeline;
@@ -155,6 +185,9 @@
 			isa = PBXGroup;
 			children = (
 				38EA6D0B56F5E38C592E339D /* Foundation.framework */,
+				622FBF870B78DF5ABD85BACD /* ArithmeticTools.framework */,
+				9BCAE46D4F979FD0B4090399 /* ArrayTools.framework */,
+				A050C632E1221F2A36491428 /* DictionaryTools.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -163,6 +196,9 @@
 			isa = PBXGroup;
 			children = (
 				FDE2DCDE916A157D4548E230 /* Cocoa.framework */,
+				B5DCC098392100ECC36114D7 /* ArithmeticTools.framework */,
+				D289E64E7B479D8CEAA9BEDF /* ArrayTools.framework */,
+				2BEB43C733D9565FF2DC2E4E /* DictionaryTools.framework */,
 			);
 			name = "OS X";
 			sourceTree = "<group>";
@@ -233,6 +269,7 @@
 				81104746972437C172793470 /* Sources */,
 				CC7DB75BF9CA8A1BFAC4C12F /* Frameworks */,
 				5980498FCF4D7E44F0CA0C60 /* Headers */,
+				9CC312DB86CD59BC2A36D7AF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -268,6 +305,7 @@
 				12CC7479DFE9A481B2BF6D39 /* Sources */,
 				14F3EAAC58C0FD506AC01AE1 /* Frameworks */,
 				D621D2F3BA3592E731A14F59 /* Headers */,
+				DBD3A193E64ECBEF630C496B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -284,7 +322,7 @@
 		4A99D6D2F8DB297EFC459775 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 			};
 			buildConfigurationList = B9159D5F45EAF69BA89F3659 /* Build configuration list for PBXProject "Timeline" */;
@@ -307,11 +345,49 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9CC312DB86CD59BC2A36D7AF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/ArithmeticTools.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/ArrayTools.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/DictionaryTools.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		DBD3A193E64ECBEF630C496B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/ArithmeticTools.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ArrayTools.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/DictionaryTools.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		12CC7479DFE9A481B2BF6D39 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07F739041D1AB4C800F83AE8 /* Timeline.swift in Sources */,
+				07F738FE1D1AB4C800F83AE8 /* Action.swift in Sources */,
+				07F739001D1AB4C800F83AE8 /* Seconds.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +395,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07F739051D1AB4C800F83AE8 /* Timeline.swift in Sources */,
+				07F738FF1D1AB4C800F83AE8 /* Action.swift in Sources */,
+				07F739011D1AB4C800F83AE8 /* Seconds.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +462,7 @@
 		060032DB7D44A112AC82B8B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -392,6 +472,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/Mac";
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = Timeline/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -402,6 +483,7 @@
 				PRODUCT_NAME = Timeline;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -478,6 +560,7 @@
 		9133A7797431A918E6B1BEC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -486,6 +569,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
 				INFOPLIST_FILE = Timeline/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -495,6 +579,7 @@
 				PRODUCT_NAME = Timeline;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -504,6 +589,7 @@
 		914D91981871B9DFD6D61F67 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -514,6 +600,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/Mac";
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = Timeline/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -532,6 +619,7 @@
 		9A4A78CF909359F794486A0A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -540,6 +628,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
 				INFOPLIST_FILE = Timeline/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
