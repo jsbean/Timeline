@@ -36,9 +36,7 @@ public final class Timeline {
     }
     
     public func start() {
-        for el in registry {
-            print(el)
-        }
+        for el in registry { print(el) }
         startTime = CACurrentMediaTime()
         displayLink.frameInterval = 1
         displayLink.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
@@ -54,9 +52,11 @@ public final class Timeline {
     }
     
     @objc private func advance() {
-        let framesElapsed = UInt(round((CACurrentMediaTime() - startTime) * Double(frameSize)))
+        let secondsElapsed = CACurrentMediaTime() - startTime
+        let framesElapsed = UInt(round(secondsElapsed * Double(frameSize)))
+        print("seconds elapsed: \(secondsElapsed); frames elapsed: \(framesElapsed)")
         if let actions = registry[framesElapsed] {
-            print("framesElapsed: \(framesElapsed); actions: \(actions)")
+            print("actions: \(actions); at: \(framesElapsed)")
             actions.forEach { $0() }
         }
     }
