@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		07F738FE1D1AB4C800F83AE8 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F738FA1D1AB4C800F83AE8 /* Action.swift */; };
-		07F738FF1D1AB4C800F83AE8 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F738FA1D1AB4C800F83AE8 /* Action.swift */; };
-		07F739001D1AB4C800F83AE8 /* Seconds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F738FB1D1AB4C800F83AE8 /* Seconds.swift */; };
-		07F739011D1AB4C800F83AE8 /* Seconds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F738FB1D1AB4C800F83AE8 /* Seconds.swift */; };
 		07F739041D1AB4C800F83AE8 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F738FD1D1AB4C800F83AE8 /* Timeline.swift */; };
 		07F739051D1AB4C800F83AE8 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F738FD1D1AB4C800F83AE8 /* Timeline.swift */; };
 		4CDD7BB1493FFCC588FE8E74 /* ArithmeticTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5DCC098392100ECC36114D7 /* ArithmeticTools.framework */; };
@@ -70,8 +66,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		07F738FA1D1AB4C800F83AE8 /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Action.swift; path = Timeline/Action.swift; sourceTree = "<group>"; };
-		07F738FB1D1AB4C800F83AE8 /* Seconds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Seconds.swift; path = Timeline/Seconds.swift; sourceTree = "<group>"; };
 		07F738FD1D1AB4C800F83AE8 /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Timeline/Timeline.swift; sourceTree = "<group>"; };
 		2A9280607A024DC801DF42E1 /* Timeline.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Timeline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BEB43C733D9565FF2DC2E4E /* DictionaryTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DictionaryTools.framework; path = Carthage/Build/Mac/DictionaryTools.framework; sourceTree = "<group>"; };
@@ -137,8 +131,6 @@
 		0BF6F038AF440276489097F1 /* Timeline */ = {
 			isa = PBXGroup;
 			children = (
-				07F738FA1D1AB4C800F83AE8 /* Action.swift */,
-				07F738FB1D1AB4C800F83AE8 /* Seconds.swift */,
 				07F738FD1D1AB4C800F83AE8 /* Timeline.swift */,
 				B3EF3CD3DD68C6E9E54C7872 /* Supporting Files */,
 			);
@@ -386,8 +378,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				07F739041D1AB4C800F83AE8 /* Timeline.swift in Sources */,
-				07F738FE1D1AB4C800F83AE8 /* Action.swift in Sources */,
-				07F739001D1AB4C800F83AE8 /* Seconds.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,8 +386,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				07F739051D1AB4C800F83AE8 /* Timeline.swift in Sources */,
-				07F738FF1D1AB4C800F83AE8 /* Action.swift in Sources */,
-				07F739011D1AB4C800F83AE8 /* Seconds.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

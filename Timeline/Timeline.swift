@@ -9,6 +9,11 @@
 import QuartzCore
 import DictionaryTools
 
+// TODO: inject Duration framework
+public typealias Seconds = Double
+
+public typealias Action = () -> ()
+
 public final class Timeline {
     
     private var registry: [UInt: [Action]] = [:]
