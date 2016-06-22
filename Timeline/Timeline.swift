@@ -56,6 +56,7 @@ public final class Timeline {
     @objc private func advance() {
         let framesElapsed = UInt(round((CACurrentMediaTime() - startTime) * Double(frameSize)))
         if let actions = registry[framesElapsed] {
+            print("framesElapsed: \(framesElapsed); actions: \(actions)")
             actions.forEach { $0() }
         }
     }
