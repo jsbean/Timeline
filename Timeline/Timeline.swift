@@ -6,6 +6,7 @@
 //
 //
 
+import Foundation
 import QuartzCore
 import DictionaryTools
 
@@ -20,9 +21,11 @@ public final class Timeline {
     private var frameSize: UInt = 60
     private var startTime: Seconds = 0
     
-    private lazy var displayLink: CADisplayLink = {
-        CADisplayLink(target: self, selector: #selector(advance))
-    }()
+//    private lazy var displayLink: CADisplayLink = {
+//        CADisplayLink(target: self, selector: #selector(advance))
+//    }()
+    
+    private var timer: NSTimer!
     
     public init() { }
     
@@ -33,23 +36,32 @@ public final class Timeline {
     
     public func clear() {
         registry = [:]
-        displayLink.duration
     }
     
     public func start() {
         for el in registry { print(el) }
         startTime = CACurrentMediaTime()
-        displayLink.frameInterval = 1
-        displayLink.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSRunLoopCommonModes)
+        timer = NSTimer.scheduledTimerWithTimeInterval(
+            1/60,
+            target: self,
+            selector: #selector(advance),
+            userInfo: nil,
+            repeats: true
+        )
+
+//        displayLink.frameInterval = 1
+//        displayLink.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSRunLoopCommonModes)
     }
     
     public func pause() {
-        displayLink.paused = true
+        //displayLink.paused = true
+        
         startTime = CACurrentMediaTime()
     }
     
     public func stop() {
-        displayLink.invalidate()
+        timer.invalidate()
+        //displayLink.invalidate()
     }
     
     @objc private func advance() {
