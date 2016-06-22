@@ -36,6 +36,9 @@ public final class Timeline {
     }
     
     public func start() {
+        for el in registry {
+            print(el)
+        }
         startTime = CACurrentMediaTime()
         displayLink.frameInterval = 1
         displayLink.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
