@@ -26,9 +26,7 @@ public final class Timeline {
     
     // Start time
     private var startTime: Seconds = 0
-    
-    // How often the timer should advance
-    private let rate: Seconds
+
     
     // If the timer is currently running
     private var timerIsActive: Bool = false
@@ -37,6 +35,12 @@ public final class Timeline {
     private var secondsElapsed: Seconds {
         return CACurrentMediaTime() - startTime
     }
+    
+    
+    // How often the timer should advance
+    private let rate: Seconds
+    
+    private var interval: Seconds { return 1 / rate }
     
     // MARK: - Initializers
     
@@ -118,7 +122,7 @@ public final class Timeline {
     }
     
     private func frames(from seconds: Seconds) -> UInt {
-        return UInt(round(seconds * rate))
+        return UInt(round(seconds * interval))
     }
 }
 
