@@ -36,16 +36,16 @@ public final class Timeline {
         return CACurrentMediaTime() - startTime
     }
     
-    
-    // How often the timer should advance
+    // How often the timer should advance.
     private let rate: Seconds
     
+    // The inverted rate.
     private var interval: Seconds { return 1 / rate }
     
     // MARK: - Initializers
     
     /**
-     Create a Timeline with an update interval.
+     Create a Timeline with an update rate.
      */
     public init(rate: Seconds = 1/60) {
         self.rate = rate
