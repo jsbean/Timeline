@@ -145,6 +145,7 @@ public final class Timeline {
 
     @objc private func advance() {
         currentFrame = frames(from: secondsElapsed)
+        print("advance: \(secondsElapsed); currentFrame: \(currentFrame)")
         if let actions = registry[currentFrame] {
             actions.forEach { $0() }
         }
