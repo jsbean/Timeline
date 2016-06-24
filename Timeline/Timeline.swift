@@ -143,10 +143,7 @@ public final class Timeline {
     }
 
     @objc internal func advance() {
-        print("advance: currentFrame: \(currentFrame)")
-        if let actions = registry[currentFrame] {
-            actions.forEach { $0() }
-        }
+        if let actions = registry[currentFrame] { actions.forEach { $0() } }
         currentFrame += 1
     }
     
@@ -158,7 +155,6 @@ public final class Timeline {
         return Seconds(frames) / interval
     }
 }
-
 
 extension Timeline: GeneratorType {
     

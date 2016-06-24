@@ -32,7 +32,7 @@ class TimelineTests: XCTestCase {
     func testMetronomeInjection() {
         let timeline = Timeline()
         Seconds(0).stride(to: 10, by: 0.25).forEach {
-            timeline.add(at: $0) { print("something") }
+            timeline.add(at: $0) { () }
         }
         XCTAssert(timeline.registry.count == 40)
     }
