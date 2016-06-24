@@ -10,16 +10,15 @@ import Foundation
 import QuartzCore
 import DictionaryTools
 
-// TODO: inject Duration framework
 public typealias Seconds = Double
-
+public typealias Frames = UInt
 public typealias Action = () -> ()
 
 /// Description
 public final class Timeline {
     
     // Storage
-    public var registry: [UInt: [Action]] = [:]
+    public var registry: [Frames: [Action]] = [:]
     
     // Internal timer
     private var timer: NSTimer = NSTimer()
@@ -27,7 +26,6 @@ public final class Timeline {
     // Start time
     private var startTime: Seconds = 0
 
-    
     // If the timer is currently running
     private var timerIsActive: Bool = false
     
@@ -41,6 +39,25 @@ public final class Timeline {
     
     // The inverted rate.
     private var interval: Seconds { return 1 / rate }
+    
+    internal var currentFrame: Frames = 0
+
+    // Offset in seconds of timer.
+    public var currentOffset: Seconds {
+        return seconds(from: currentFrame)
+    }
+    
+    // Amount of time in seconds until the next event, if present. Otherwise, `nil`.
+    public var secondsUntilNext: Seconds? {
+        guard let nextFrames = next()?.0 else { return nil }
+        return seconds(from: nextFrames - currentFrame)
+    }
+    
+    // Offset in seconds of the next event, if present. Otherwise, `nil`.
+    public var offsetOfNext: Seconds? {
+        guard let next = next() else { return nil }
+        return seconds(from: next.0)
+    }
     
     // MARK: - Initializers
     
@@ -59,7 +76,8 @@ public final class Timeline {
      Add a given `action` at a given `timeStamp` in seconds.
      */
     public func add(at timeStamp: Seconds, action: Action) {
-        registry.safelyAppend(action, toArrayWithKey: frames(from: timeStamp))
+        let offset = timeStamp == 0 ? 0 : frames(from: timeStamp)
+        registry.safelyAppend(action, toArrayWithKey: offset)
     }
     
     /**
@@ -75,6 +93,7 @@ public final class Timeline {
      Start the timeline.
      */
     public func start() {
+        currentFrame = 0
         startTime = CACurrentMediaTime()
         timerIsActive = true
         timer = makeTimer()
@@ -86,6 +105,7 @@ public final class Timeline {
     public func stop() {
         timer.invalidate()
         timerIsActive = false
+        currentFrame = 0
     }
     
     /**
@@ -105,6 +125,14 @@ public final class Timeline {
         timer = makeTimer()
     }
     
+    /**
+     Jump to a given offset.
+     */
+    public func skip(to time: Seconds) {
+        pause()
+        currentFrame = frames(from: time)
+    }
+    
     private func makeTimer() -> NSTimer {
         return NSTimer.scheduledTimerWithTimeInterval(
             rate,
@@ -116,13 +144,30 @@ public final class Timeline {
     }
 
     @objc private func advance() {
-        if let actions = registry[frames(from: secondsElapsed)] {
+        currentFrame = frames(from: secondsElapsed)
+        if let actions = registry[currentFrame] {
             actions.forEach { $0() }
         }
     }
     
-    private func frames(from seconds: Seconds) -> UInt {
-        return UInt(round(seconds * interval))
+    private func frames(from seconds: Seconds) -> Frames {
+        return Frames(seconds * interval)
+    }
+    
+    private func seconds(from frames: Frames) -> Seconds {
+        return Seconds(frames) / interval
     }
 }
 
+
+extension Timeline: GeneratorType {
+    
+    // update to self.filter when sequenceType conformance occurs
+    public func next() -> (Frames, [Action])? {
+        return registry
+            .lazy
+            .filter { $0.0 > self.currentFrame }
+            .sort { $0.0 < $1.0 }
+            .first
+    }
+}
