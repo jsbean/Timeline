@@ -76,8 +76,7 @@ public final class Timeline {
      Add a given `action` at a given `timeStamp` in seconds.
      */
     public func add(at timeStamp: Seconds, action: Action) {
-        let offset = timeStamp == 0 ? 0 : frames(from: timeStamp)
-        registry.safelyAppend(action, toArrayWithKey: offset)
+        registry.safelyAppend(action, toArrayWithKey: frames(from: timeStamp))
     }
     
     /**
@@ -143,12 +142,12 @@ public final class Timeline {
         )
     }
 
-    @objc private func advance() {
-        currentFrame = frames(from: secondsElapsed)
-        print("advance: \(secondsElapsed); currentFrame: \(currentFrame)")
+    @objc internal func advance() {
+        print("advance: currentFrame: \(currentFrame)")
         if let actions = registry[currentFrame] {
             actions.forEach { $0() }
         }
+        currentFrame += 1
     }
     
     private func frames(from seconds: Seconds) -> Frames {

@@ -65,4 +65,17 @@ class TimelineTests: XCTestCase {
         XCTAssertEqual(timeline.next()!.0, 5 * 60)
         XCTAssertEqual(timeline.secondsUntilNext, 0.5)
     }
+    
+    func testAdvancePauseAdvance() {
+        let timeline = Timeline()
+        (0..<100).forEach { _ in timeline.advance() }
+        timeline.pause()
+        XCTAssertEqual(timeline.currentFrame, 100)
+        timeline.skip(to: 1)
+        XCTAssertEqual(timeline.currentFrame, 60)
+        timeline.resume()
+        XCTAssertEqual(timeline.currentFrame, 60)
+        (0..<100).forEach { _ in timeline.advance() }
+        XCTAssertEqual(timeline.currentFrame, 160)
+    }
 }
