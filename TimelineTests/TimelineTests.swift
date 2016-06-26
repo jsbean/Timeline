@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import DictionaryTools
 @testable import Timeline
 
 class TimelineTests: XCTestCase {

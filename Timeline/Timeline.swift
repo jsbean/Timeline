@@ -18,7 +18,8 @@ public typealias Action = () -> ()
 public final class Timeline {
     
     // Storage
-    public var registry: [Frames: [Action]] = [:]
+    public var registry = SortedOrderedDictionary<[Action], Frames>()
+    //public var registry: [Frames: [Action]] = [:]
     
     // Internal timer
     private var timer: NSTimer = NSTimer()
@@ -76,14 +77,14 @@ public final class Timeline {
      Add a given `action` at a given `timeStamp` in seconds.
      */
     public func add(at timeStamp: Seconds, action: Action) {
-        registry.safelyAppend(action, toArrayWithKey: frames(from: timeStamp))
+        registry.safelyAppend(action, toArrayWith: frames(from: timeStamp))
     }
     
     /**
      Clear all elements from the timeline.
      */
     public func clear() {
-        registry = [:]
+        registry = SortedOrderedDictionary()
     }
     
     // MARK: Operating the timeline.

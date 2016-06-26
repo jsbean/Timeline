@@ -20,11 +20,6 @@ class OrderedDictionaryTests: XCTestCase {
         XCTAssertEqual(dict.count, 0)
     }
     
-    func testSubscriptIntNil() {
-        let dict = emptyDict()
-        XCTAssertNil(dict[0])
-    }
-    
     func testSubscriptKeyNil() {
         let dict = emptyDict()
         XCTAssertNil(dict["zero"])
@@ -32,30 +27,30 @@ class OrderedDictionaryTests: XCTestCase {
     
     func testSubscriptIntValid() {
         var dict = emptyDict()
-        dict.insert("val", forKey: "key", atIndex: 0)
-        XCTAssertEqual(dict[0]!, "val")
+        dict.insert("val", key: "key", index: 0)
+        XCTAssertEqual(dict.value(at: 0), "val")
     }
     
     func testSubscriptKeyValid() {
         var dict = emptyDict()
-        dict.insert("val", forKey: "key", atIndex: 0)
+        dict.insert("val", key: "key", index: 0)
         XCTAssertEqual(dict["key"]!, "val")
     }
     
     func testInsert() {
         var dict = OrderedDictionary<String, String>()
-        dict.insert("val", forKey: "key", atIndex: 0)
-        dict.insert("insertedVal", forKey: "insertedKey", atIndex: 0)
-        XCTAssertEqual(dict[0]!, "insertedVal")
-        XCTAssertEqual(dict[1]!, "val")
+        dict.insert("val", key: "key", index: 0)
+        dict.insert("insertedVal", key: "insertedKey", index: 0)
+        XCTAssertEqual(dict.value(at: 0), "insertedVal")
+        XCTAssertEqual(dict.value(at: 1), "val")
     }
     
     func testAppend() {
         var dict = OrderedDictionary<String, String>()
-        dict.append("val", forKey: "key")
-        dict.append("anotherVal", forKey: "anotherKey")
-        XCTAssertEqual(dict[0]!, "val")
-        XCTAssertEqual(dict[1]!, "anotherVal")
+        dict.append("val", key: "key")
+        dict.append("anotherVal", key: "anotherKey")
+        XCTAssertEqual(dict.value(at: 0), "val")
+        XCTAssertEqual(dict.value(at: 1), "anotherVal")
     }
     
     func testAppendContentsOfEmptyDict() {
@@ -69,14 +64,14 @@ class OrderedDictionaryTests: XCTestCase {
     func testAppendContentsOfNonEmptyToEmptyDict() {
         var dict1 = emptyDict()
         var dict2 = emptyDict()
-        dict2.insert("val", forKey: "key", atIndex: 0)
+        dict2.insert("val", key: "key", index: 0)
         dict1.appendContents(of: dict2)
         XCTAssertEqual(dict1.count, 1)
     }
     
     func testAppendContentsOfEmptyToNonEmptyDict() {
         var dict1 = emptyDict()
-        dict1.insert("val", forKey: "key", atIndex: 0)
+        dict1.insert("val", key: "key", index: 0)
         let dict2 = emptyDict()
         dict1.appendContents(of: dict2)
         XCTAssertEqual(dict1.count, 1)

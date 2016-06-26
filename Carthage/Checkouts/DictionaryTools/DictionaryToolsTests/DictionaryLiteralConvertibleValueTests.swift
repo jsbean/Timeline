@@ -42,7 +42,7 @@ class DictionaryLiteralConvertibleValueTests: XCTestCase {
     func testDeepMerge() {
         let dict1 = ["k": ["kk": "v"]]
         let dict2 = ["l": ["ll": "v"]]
-        XCTAssertEqual(dict1.merge(with: dict2), ["k": ["kk": "v"], "l": ["ll": "v"]])
+        XCTAssert(dict1 + dict2 == ["k": ["kk": "v"], "l": ["ll": "v"]])
     }
     
     func testPlusOperator() {
@@ -51,16 +51,17 @@ class DictionaryLiteralConvertibleValueTests: XCTestCase {
         XCTAssertEqual(dict1 + dict2, ["k": ["kk": "v"], "l": ["ll": "v"]])
     }
     
+    
     func testEnsureArrayValue() {
         var dict = ["k": ["kk": [1,2,3,4]]]
         let keyPath = KeyPath("l.ll")
-        dict.ensureValueFor(keyPath)
+        dict.ensureValue(for: keyPath)
         XCTAssert(dict == ["k": ["kk": [1,2,3,4]], "l": ["ll": []]])
     }
     
     func testSafelyAppendToArrayWithKeyPath() {
         var dict = ["k": ["kk": [1,2,3,4]]]
-        dict.safelyAppend(5, toArrayWithKeyPath: KeyPath("k.kk"))
+        dict.safelyAppend(5, toArrayWith: KeyPath("k.kk"))
         XCTAssert(dict == ["k": ["kk": [1,2,3,4,5]]])
     }
 }

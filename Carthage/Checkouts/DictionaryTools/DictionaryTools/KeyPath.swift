@@ -8,7 +8,11 @@
 
 import Foundation
 
-/// Utility for retrieving values for arbitrarily deep, `String`-keyed `Dictionaries`
+/**
+ Utility for retrieving values for arbitrarily deep, `String`-keyed `Dictionaries`
+ 
+ - TODO: Make Generic, with typealias Key: Hashable
+ */
 public class KeyPath {
     
     // MARK: - Instance Variables
@@ -48,7 +52,7 @@ public class KeyPath {
      - returns: Initialized `KeyPath`
      */
     public init(_ string: String) {
-        self.keys = string.characters.split { $0 == "." }.map { String($0) }
+        self.keys = string.characters.split { $0 == "." }.map(String.init)
     }
     
     // MARK: - Subscript
