@@ -19,7 +19,6 @@ public final class Timeline {
     
     // Storage
     public var registry = SortedOrderedDictionary<[Action], Frames>()
-    //public var registry: [Frames: [Action]] = [:]
     
     // Internal timer
     private var timer: NSTimer = NSTimer()
