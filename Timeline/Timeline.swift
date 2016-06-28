@@ -32,7 +32,7 @@ public final class Timeline {
     private var startTime: Seconds = 0
 
     // If the timer is currently running
-    private var timerIsActive: Bool = false
+    public var isActive: Bool = false
     
     // The amount of time in seconds that has elapsed since starting or resuming from paused.
     private var secondsElapsed: Seconds {
@@ -132,7 +132,7 @@ public final class Timeline {
     public func start() {
         currentFrame = 0
         startTime = CACurrentMediaTime()
-        timerIsActive = true
+        isActive = true
         timer = makeTimer()
     }
     
@@ -141,7 +141,7 @@ public final class Timeline {
      */
     public func stop() {
         timer.invalidate()
-        timerIsActive = false
+        isActive = false
         currentFrame = 0
     }
     
@@ -150,7 +150,7 @@ public final class Timeline {
      */
     public func pause() {
         timer.invalidate()
-        timerIsActive = false
+        isActive = false
         startTime = CACurrentMediaTime()
     }
     
@@ -158,7 +158,7 @@ public final class Timeline {
      Resume the timeline.
      */
     public func resume() {
-        if timerIsActive { return }
+        if isActive { return }
         timer = makeTimer()
     }
     
