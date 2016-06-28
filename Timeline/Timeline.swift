@@ -85,10 +85,14 @@ public final class Timeline {
         add(action, at: timeStamp)
     }
     
-    // - TODO: offset
-    public func add(withInterval interval: Seconds, action function: Action) {
+    public func addLooping(
+        interval interval: Seconds,
+        offset: Seconds = 0,
+        action function: Action
+    )
+    {
         let action = LoopingAction(timeInterval: interval, function: function)
-        add(action, at: 0)
+        add(action, at: offset)
     }
     
     public func add(action: ActionType, at timeStamp: Seconds) {
@@ -161,7 +165,11 @@ public final class Timeline {
     @objc internal func advance() {
         if let actions = registry[currentFrame] {
             actions.forEach {
+                
+                // perform function
                 $0.function()
+                
+                // if looping action,
                 if let loopingAction = $0 as? LoopingAction {
                     add(loopingAction, at: secondsElapsed + loopingAction.timeInterval)
                 }
