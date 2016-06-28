@@ -14,11 +14,17 @@ public typealias Seconds = Double
 public typealias Frames = UInt
 public typealias Action = () -> ()
 
-/// Description
+/**
+ Timeline
+ 
+ - TODO: Conform to `SequenceType` & `CollectionType`, make `regsitry` private.
+*/
 public final class Timeline {
     
     // Storage
     public var registry = SortedOrderedDictionary<[Action], Frames>()
+    
+    public var loopingActions: [LoopingAction] = []
     
     // Internal timer
     private var timer: NSTimer = NSTimer()
@@ -40,6 +46,7 @@ public final class Timeline {
     // The inverted rate.
     private var interval: Seconds { return 1 / rate }
     
+    // make private -- internal only for testing
     internal var currentFrame: Frames = 0
 
     // Offset in seconds of timer.
@@ -77,6 +84,12 @@ public final class Timeline {
      */
     public func add(at timeStamp: Seconds, action: Action) {
         registry.safelyAppend(action, toArrayWith: frames(from: timeStamp))
+    }
+    
+    // generalize action
+    public func add(with interval: Seconds, loopingAction: Action) {
+        let loopingAction = LoopingAction(timeInterval: interval, action: loopingAction)
+        loopingActions.append(loopingAction)
     }
     
     /**
@@ -144,6 +157,18 @@ public final class Timeline {
 
     @objc internal func advance() {
         if let actions = registry[currentFrame] { actions.forEach { $0() } }
+        if next() == nil {
+            print("next is nil")
+            // check if there are looping actions that need to be executed
+            if !loopingActions.isEmpty {
+                print("there are looping actions")
+                for action in loopingActions {
+                    add(at: action.timeInterval + secondsElapsed) { action.action() }
+                }
+            } else {
+                stop()
+            }
+        }
         currentFrame += 1
     }
     
@@ -165,5 +190,12 @@ extension Timeline: GeneratorType {
             .filter { $0.0 > self.currentFrame }
             .sort { $0.0 < $1.0 }
             .first
+    }
+}
+
+extension Timeline: CustomStringConvertible {
+    
+    public var description: String {
+        return registry.map { "\($0)" }.joinWithSeparator("\n")
     }
 }
