@@ -10,6 +10,7 @@ import Foundation
 import QuartzCore
 import DictionaryTools
 
+public typealias Tempo = Double
 public typealias Seconds = Double
 public typealias Frames = UInt
 public typealias Action = () -> ()
@@ -85,6 +86,23 @@ public final class Timeline {
         add(action, at: timeStamp)
     }
     
+    /**
+     Add a looping action at a given `tempo`.
+     */
+    public func addLooping(
+        at tempo: Tempo,
+        offset: Seconds,
+        action function: Action
+    )
+    {
+        let timeInterval = tempo / 60
+        let action = LoopingAction(timeInterval: timeInterval, function: function)
+        add(action, at: offset)
+    }
+    
+    /**
+     Add a looping action with the given `interval` between firings.
+     */
     public func addLooping(
         interval interval: Seconds,
         offset: Seconds = 0,
