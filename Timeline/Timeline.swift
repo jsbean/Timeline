@@ -160,6 +160,7 @@ public final class Timeline {
     public func resume() {
         if isActive { return }
         timer = makeTimer()
+        isActive = true
     }
     
     /**
