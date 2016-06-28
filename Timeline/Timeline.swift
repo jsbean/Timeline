@@ -91,7 +91,7 @@ public final class Timeline {
      */
     public func addLooping(
         at tempo: Tempo,
-        offset: Seconds,
+        offset: Seconds = 0,
         action function: Action
     )
     {
