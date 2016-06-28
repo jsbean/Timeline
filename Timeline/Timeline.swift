@@ -22,9 +22,7 @@ public typealias Action = () -> ()
 public final class Timeline {
     
     // Storage
-    public var registry = SortedOrderedDictionary<[Action], Frames>()
-    
-    public var loopingActions: [LoopingAction] = []
+    public var registry = SortedOrderedDictionary<[ActionType], Frames>()
     
     // Internal timer
     private var timer: NSTimer = NSTimer()
@@ -82,14 +80,19 @@ public final class Timeline {
     /**
      Add a given `action` at a given `timeStamp` in seconds.
      */
-    public func add(at timeStamp: Seconds, action: Action) {
-        registry.safelyAppend(action, toArrayWith: frames(from: timeStamp))
+    public func add(at timeStamp: Seconds, action function: Action) {
+        let action = AtomicAction(timeStamp: timeStamp, function: function)
+        add(action, at: timeStamp)
     }
     
-    // generalize action
-    public func add(with interval: Seconds, loopingAction: Action) {
-        let loopingAction = LoopingAction(timeInterval: interval, action: loopingAction)
-        loopingActions.append(loopingAction)
+    // - TODO: offset
+    public func add(withInterval interval: Seconds, action function: Action) {
+        let action = LoopingAction(timeInterval: interval, function: function)
+        add(action, at: 0)
+    }
+    
+    public func add(action: ActionType, at timeStamp: Seconds) {
+        registry.safelyAppend(action, toArrayWith: frames(from: timeStamp))
     }
     
     /**
@@ -156,17 +159,12 @@ public final class Timeline {
     }
 
     @objc internal func advance() {
-        if let actions = registry[currentFrame] { actions.forEach { $0() } }
-        if next() == nil {
-            print("next is nil")
-            // check if there are looping actions that need to be executed
-            if !loopingActions.isEmpty {
-                print("there are looping actions")
-                for action in loopingActions {
-                    add(at: action.timeInterval + secondsElapsed) { action.action() }
+        if let actions = registry[currentFrame] {
+            actions.forEach {
+                $0.function()
+                if let loopingAction = $0 as? LoopingAction {
+                    add(loopingAction, at: secondsElapsed + loopingAction.timeInterval)
                 }
-            } else {
-                stop()
             }
         }
         currentFrame += 1
@@ -184,7 +182,7 @@ public final class Timeline {
 extension Timeline: GeneratorType {
     
     // update to self.filter when sequenceType conformance occurs
-    public func next() -> (Frames, [Action])? {
+    public func next() -> (Frames, [ActionType])? {
         return registry
             .lazy
             .filter { $0.0 > self.currentFrame }
