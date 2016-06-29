@@ -10,9 +10,16 @@ import Foundation
 import QuartzCore
 import DictionaryTools
 
+/// Time unit for beats-per-minute.
 public typealias Tempo = Double
+
+/// Time unit for seconds.
 public typealias Seconds = Double
+
+/// Time unit inverse to the `rate` of a `Timeline`.
 public typealias Frames = UInt
+
+/// Function to be performed by a `Timeline`.
 public typealias Action = () -> ()
 
 /**
@@ -57,20 +64,41 @@ public typealias Action = () -> ()
  ```
  
  - TODO: Conform to `SequenceType` & `CollectionType`.
+ - TODO: Encapsulate `registry` below abstraction barrier
 */
 public final class Timeline {
     
-    // Storage
+    /**
+     Storage of actions.
+     - TODO: Make private.
+    */
     public var registry = SortedOrderedDictionary<[ActionType], Frames>()
+    
+    /// - returns: `true` if the internal timer is running. Otherwise, `false`.
+    public var isActive: Bool = false
+    
+    /// Offset in `Seconds` of internal timer.
+    public var currentOffset: Seconds {
+        return seconds(from: currentFrame)
+    }
+    
+    /// Amount of time in `Seconds` until the next event, if present. Otherwise, `nil`.
+    public var secondsUntilNext: Seconds? {
+        guard let nextFrames = next()?.0 else { return nil }
+        return seconds(from: nextFrames - currentFrame)
+    }
+    
+    /// Offset in `Seconds` of the next event, if present. Otherwise, `nil`.
+    public var offsetOfNext: Seconds? {
+        guard let next = next() else { return nil }
+        return seconds(from: next.0)
+    }
     
     // Internal timer
     private var timer: NSTimer = NSTimer()
     
     // Start time
     private var startTime: Seconds = 0
-
-    // If the timer is currently running
-    public var isActive: Bool = false
     
     // The amount of time in seconds that has elapsed since starting or resuming from paused.
     private var secondsElapsed: Seconds {
@@ -85,23 +113,6 @@ public final class Timeline {
     
     // make private -- internal only for testing
     internal var currentFrame: Frames = 0
-
-    // Offset in seconds of timer.
-    public var currentOffset: Seconds {
-        return seconds(from: currentFrame)
-    }
-    
-    // Amount of time in seconds until the next event, if present. Otherwise, `nil`.
-    public var secondsUntilNext: Seconds? {
-        guard let nextFrames = next()?.0 else { return nil }
-        return seconds(from: nextFrames - currentFrame)
-    }
-    
-    // Offset in seconds of the next event, if present. Otherwise, `nil`.
-    public var offsetOfNext: Seconds? {
-        guard let next = next() else { return nil }
-        return seconds(from: next.0)
-    }
     
     // MARK: - Initializers
     
@@ -162,7 +173,7 @@ public final class Timeline {
         registry = SortedOrderedDictionary()
     }
     
-    // MARK: Operating the timeline.
+    // MARK: Operating the timeline
     
     /**
      Start the timeline.
