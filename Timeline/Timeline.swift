@@ -124,7 +124,7 @@ public final class Timeline {
     
     // MARK: - Instance Methods
     
-    // MARK: Modifying the actions in the timeline
+    // MARK: Modifying the timeline
     
     /**
      Add a given `action` at a given `timeStamp` in seconds.
