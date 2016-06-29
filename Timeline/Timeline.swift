@@ -10,6 +10,9 @@ import Foundation
 import QuartzCore
 import DictionaryTools
 
+/// Function to be performed by a `Timeline`.
+public typealias Action = () -> ()
+
 /// Time unit for beats-per-minute.
 public typealias Tempo = Double
 
@@ -19,8 +22,6 @@ public typealias Seconds = Double
 /// Time unit inverse to the `rate` of a `Timeline`.
 internal typealias Frames = UInt
 
-/// Function to be performed by a `Timeline`.
-public typealias Action = () -> ()
 
 /**
  Scheduler that performs functions at given times.
@@ -64,19 +65,11 @@ public typealias Action = () -> ()
  ```
  
  - TODO: Conform to `SequenceType` & `CollectionType`.
- - TODO: Encapsulate `registry` below abstraction barrier
 */
 public final class Timeline {
     
     // MARK: - Instance Properties
-    
-    /**
-     Storage of actions.
-    
-     - TODO: Make private.
-    */
-    internal var registry = SortedOrderedDictionary<[ActionType], Frames>()
-    
+
     /// - returns: `true` if the internal timer is running. Otherwise, `false`.
     public var isActive: Bool = false
     
@@ -96,6 +89,9 @@ public final class Timeline {
         guard let next = next() else { return nil }
         return seconds(from: next.0)
     }
+    
+    // Storage of actions.
+    internal var registry = SortedOrderedDictionary<[ActionType], Frames>()
     
     // Internal timer
     private var timer: NSTimer = NSTimer()
