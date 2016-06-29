@@ -16,9 +16,47 @@ public typealias Frames = UInt
 public typealias Action = () -> ()
 
 /**
- Timeline
+ Scheduler that performs functions at given times.
  
- - TODO: Conform to `SequenceType` & `CollectionType`, make `regsitry` private.
+ **Examples:**
+ 
+ Schedule singular, atomic events at a given time in `Seconds`:
+ 
+ ```
+ let timeline = Timeline()
+ timeline.add(at: 1) { print("one second") }
+ timeline.start()
+ 
+ // after one second:
+ // => one second
+ ```
+ 
+ Schedule a looping action with a time interval between firings:
+ 
+ ```
+ timeline.addLooping(interval: 1) { print("every second") }
+ 
+ // after one second:
+ // => every second
+ // after two seconds:
+ // => every second
+ ...
+ ```
+ 
+ Schedule a looping action at a tempo in beats-per-minute:
+ 
+ ```
+ timeline.addLooping(at: 60) { print("bpm: 60") }
+ ```
+ 
+ Schedule a looping action with an optional offset:
+ 
+ ```
+ timeline.addLooping(at: 60) { self.showMetronome() }
+ timeline.addLooping(at: 60, offset: 0.2) { self.hideMetronome() }
+ ```
+ 
+ - TODO: Conform to `SequenceType` & `CollectionType`.
 */
 public final class Timeline {
     
