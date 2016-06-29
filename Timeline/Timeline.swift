@@ -17,7 +17,7 @@ public typealias Tempo = Double
 public typealias Seconds = Double
 
 /// Time unit inverse to the `rate` of a `Timeline`.
-public typealias Frames = UInt
+internal typealias Frames = UInt
 
 /// Function to be performed by a `Timeline`.
 public typealias Action = () -> ()
@@ -75,7 +75,7 @@ public final class Timeline {
     
      - TODO: Make private.
     */
-    public var registry = SortedOrderedDictionary<[ActionType], Frames>()
+    internal var registry = SortedOrderedDictionary<[ActionType], Frames>()
     
     /// - returns: `true` if the internal timer is running. Otherwise, `false`.
     public var isActive: Bool = false
@@ -111,7 +111,7 @@ public final class Timeline {
     // The inverted rate.
     private var interval: Seconds { return 1 / rate }
     
-    // make private -- internal only for testing
+    // - make private -- internal only for testing
     internal var currentFrame: Frames = 0
     
     // How often the timer should advance.
@@ -223,6 +223,14 @@ public final class Timeline {
         currentFrame = frames(from: time)
     }
     
+    internal func next() -> (Frames, [ActionType])? {
+        return registry
+            .lazy
+            .filter { $0.0 > self.currentFrame }
+            .sort { $0.0 < $1.0 }
+            .first
+    }
+    
     private func makeTimer() -> NSTimer {
         return NSTimer.scheduledTimerWithTimeInterval(
             rate,
@@ -255,18 +263,6 @@ public final class Timeline {
     
     private func seconds(from frames: Frames) -> Seconds {
         return Seconds(frames) / interval
-    }
-}
-
-extension Timeline: GeneratorType {
-    
-    // update to self.filter when sequenceType conformance occurs
-    public func next() -> (Frames, [ActionType])? {
-        return registry
-            .lazy
-            .filter { $0.0 > self.currentFrame }
-            .sort { $0.0 < $1.0 }
-            .first
     }
 }
 
