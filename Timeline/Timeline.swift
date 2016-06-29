@@ -68,6 +68,8 @@ public typealias Action = () -> ()
 */
 public final class Timeline {
     
+    // MARK: - Instance Properties
+    
     /**
      Storage of actions.
      - TODO: Make private.
@@ -104,15 +106,15 @@ public final class Timeline {
     private var secondsElapsed: Seconds {
         return CACurrentMediaTime() - startTime
     }
-    
-    // How often the timer should advance.
-    private let rate: Seconds
-    
+
     // The inverted rate.
     private var interval: Seconds { return 1 / rate }
     
     // make private -- internal only for testing
     internal var currentFrame: Frames = 0
+    
+    // How often the timer should advance.
+    private let rate: Seconds
     
     // MARK: - Initializers
     
