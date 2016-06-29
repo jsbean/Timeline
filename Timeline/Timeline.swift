@@ -72,6 +72,7 @@ public final class Timeline {
     
     /**
      Storage of actions.
+    
      - TODO: Make private.
     */
     public var registry = SortedOrderedDictionary<[ActionType], Frames>()
