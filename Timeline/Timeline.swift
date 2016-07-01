@@ -199,7 +199,6 @@ public final class Timeline {
     public func pause() {
         timer.invalidate()
         isActive = false
-        startTime = CACurrentMediaTime()
     }
     
     /**
@@ -209,6 +208,7 @@ public final class Timeline {
         if isActive { return }
         timer = makeTimer()
         isActive = true
+        startTime = CACurrentMediaTime()
     }
     
     /**
