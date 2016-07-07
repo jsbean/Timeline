@@ -1,2 +1,2 @@
-github "dn-m/DictionaryTools"
-github "dn-m/ArithmeticTools"
+github "dn-m/DictionaryTools" "no-contains-swift-code"
+github "dn-m/ArithmeticTools" "no-contains-swift-code"
