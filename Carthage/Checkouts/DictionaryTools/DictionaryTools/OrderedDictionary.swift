@@ -18,7 +18,7 @@ public struct OrderedDictionary<K: Hashable, V> {
     /** 
      Keys of `OrderedDictionary`.
      */
-    public var keyStorage: [Key] = []
+    public var keyStorage: KeyStorage = []
     
     /**
      Values of `OrderedDictionary`.
@@ -62,6 +62,8 @@ public struct OrderedDictionary<K: Hashable, V> {
     
     /**
      - returns: Value at the given `index`, if present. Otherwise `nil`.
+     
+     - TODO: Find a way to push this up the `OrderedDictionaryType` protocol hierarchy.
      */
     public func value(at index: Int) -> Value? {
         if index >= keyStorage.count { return nil }

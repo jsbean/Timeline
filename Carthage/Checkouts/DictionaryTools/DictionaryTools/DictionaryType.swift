@@ -30,11 +30,6 @@ public protocol DictionaryType: CollectionType {
      */
     associatedtype Value
     
-    // MARK: - Instance Properties
-    
-    /// A collection containing just the keys of `self`.
-    var keys: LazyMapCollection<[Key : Value], Key> { get }
-    
     // MARK: - Initializers
     
     /**
@@ -228,7 +223,7 @@ extension DictionaryType where
     }
 }
 
-// MARK: - Evalluating the equality of `DictionaryType` values
+// MARK: - Evaluating the equality of `DictionaryType` values
 
 /**
  - returns: `true` if all values in `[H: T]` types are equivalent. Otherwise, `false`.
@@ -242,7 +237,7 @@ public func == <
     rhs: D
 ) -> Bool
 {
-    for key in lhs.keys {
+    for (key, _) in lhs {
         guard let rhsValue = rhs[key] else { return false }
         if lhs[key]! != rhsValue { return false }
     }
@@ -277,8 +272,8 @@ public func == <
     rhs: D
 ) -> Bool
 {
-    for key in lhs.keys {
-        guard let rhsArray = rhs[key], lhsArray = lhs[key] else { return false }
+    for (key, lhsArray) in lhs {
+        guard let rhsArray = rhs[key] else { return false }
         if lhsArray.count != rhsArray.count { return false }
         for i in 0 ..< lhsArray.count {
             if lhsArray[i] != rhsArray[i] { return false }
@@ -317,15 +312,15 @@ public func == <
     rhs: D
 ) -> Bool
 {
-    for key in lhs.keys {
-        guard let rhsDict = rhs[key], lhsDict = lhs[key] else { return false }
+    for (key, lhsDict) in lhs {
+        guard let rhsDict = rhs[key] else { return false }
         if lhsDict != rhsDict { return false }
     }
     return true
 }
 
 /**
- - returns: `true` if aby values in `[H: [HH: T]]` types are not equivalent. Otherwise, `false`.
+ - returns: `true` if any values in `[H: [HH: T]]` types are not equivalent. Otherwise, `false`.
  */
 public func != <
     D: DictionaryType where
@@ -354,8 +349,8 @@ public func == <
     lhs: D,
     rhs: D
 ) -> Bool {
-    for key in lhs.keys {
-        guard let rhsDict = rhs[key], lhsDict = lhs[key] else { return false }
+    for (key, lhsDict) in lhs {
+        guard let rhsDict = rhs[key] else { return false }
         if lhsDict != rhsDict { return false }
     }
     return true

@@ -10,6 +10,8 @@ import ArrayTools
 
 /**
  Ordered Dictionary that keeps its `keys` sorted.
+ 
+ - warning: The order of the generic types is `<Value, Key>`, due to a bug in Swift.
  */
 public struct SortedOrderedDictionary<V, K where K: Hashable, K: Comparable> {
     
@@ -50,11 +52,15 @@ public struct SortedOrderedDictionary<V, K where K: Hashable, K: Comparable> {
     
     /**
      - returns: Value at the given `index`, if present. Otherwise, `nil`.
+     
+     - TODO: Find a way to push this up the `OrderedDictionaryType` protocol hierarchy.
      */
     public func value(at index: Int) -> Value? {
         if index >= keyStorage.count { return nil }
         return values[keyStorage[index]]
     }
+    
+    // TODO: Remove
 }
 
 extension SortedOrderedDictionary: DictionaryType {
@@ -75,6 +81,7 @@ extension SortedOrderedDictionary: DictionaryType {
         get { return values[key] }
         
         set(newValue) {
+            
             if newValue == nil {
                 values.removeValueForKey(key)
                 keyStorage = SortedArray(keyStorage.filter { $0 != key })
