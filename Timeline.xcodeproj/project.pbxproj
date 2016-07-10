@@ -282,7 +282,6 @@
 				81104746972437C172793470 /* Sources */,
 				CC7DB75BF9CA8A1BFAC4C12F /* Frameworks */,
 				5980498FCF4D7E44F0CA0C60 /* Headers */,
-				9CC312DB86CD59BC2A36D7AF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -300,6 +299,7 @@
 				83084EEE15161FB760381C76 /* Sources */,
 				E5DF93615C31A98996EB2795 /* Frameworks */,
 				DD1A1A7AB977F27AD053054F /* CopyFiles */,
+				075EA8F01D327BD8007963C0 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -318,7 +318,6 @@
 				12CC7479DFE9A481B2BF6D39 /* Sources */,
 				14F3EAAC58C0FD506AC01AE1 /* Frameworks */,
 				D621D2F3BA3592E731A14F59 /* Headers */,
-				DBD3A193E64ECBEF630C496B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -359,23 +358,7 @@
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		07F63AA51D208B3700C7FB22 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/ArithmeticTools.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ArrayTools.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/DictionaryTools.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-		9CC312DB86CD59BC2A36D7AF /* ShellScript */ = {
+		075EA8F01D327BD8007963C0 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -391,7 +374,7 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
-		DBD3A193E64ECBEF630C496B /* ShellScript */ = {
+		07F63AA51D208B3700C7FB22 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
