@@ -29,6 +29,8 @@
 		078142C21C7CFC49004B68D3 /* OrderedDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078142C01C7CFC49004B68D3 /* OrderedDictionaryTests.swift */; };
 		078142C41C7CFF8D004B68D3 /* MergeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078142C31C7CFF8D004B68D3 /* MergeTests.swift */; };
 		078142C51C7CFF8D004B68D3 /* MergeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078142C31C7CFF8D004B68D3 /* MergeTests.swift */; };
+		07A110321D2147000024A2D7 /* SortedOrderedDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A110311D2147000024A2D7 /* SortedOrderedDictionaryTests.swift */; };
+		07A110331D2147000024A2D7 /* SortedOrderedDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A110311D2147000024A2D7 /* SortedOrderedDictionaryTests.swift */; };
 		07B93E691D20327500851FE0 /* DictionaryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B93E681D20327500851FE0 /* DictionaryType.swift */; };
 		07B93E6A1D20327500851FE0 /* DictionaryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B93E681D20327500851FE0 /* DictionaryType.swift */; };
 		07B93E6C1D2064B300851FE0 /* OrderedDictionaryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B93E6B1D2064B300851FE0 /* OrderedDictionaryType.swift */; };
@@ -93,6 +95,7 @@
 		078142BD1C7CF602004B68D3 /* OrderedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedDictionary.swift; sourceTree = "<group>"; };
 		078142C01C7CFC49004B68D3 /* OrderedDictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedDictionaryTests.swift; sourceTree = "<group>"; };
 		078142C31C7CFF8D004B68D3 /* MergeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MergeTests.swift; sourceTree = "<group>"; };
+		07A110311D2147000024A2D7 /* SortedOrderedDictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SortedOrderedDictionaryTests.swift; path = ../DictionaryTools/SortedOrderedDictionaryTests.swift; sourceTree = "<group>"; };
 		07B93E681D20327500851FE0 /* DictionaryType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryType.swift; sourceTree = "<group>"; };
 		07B93E6B1D2064B300851FE0 /* OrderedDictionaryType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedDictionaryType.swift; sourceTree = "<group>"; };
 		39B1429F79B897A54A4D9E53 /* ArrayTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ArrayTools.framework; path = Carthage/Build/Mac/ArrayTools.framework; sourceTree = "<group>"; };
@@ -160,10 +163,9 @@
 		078141FC1C7CD629004B68D3 /* DictionaryTools */ = {
 			isa = PBXGroup;
 			children = (
+				078142C61C7CFFBA004B68D3 /* Supporting Files */,
 				07B93E671D20326A00851FE0 /* Protocols */,
 				07B93E661D20325A00851FE0 /* Structures */,
-				078142371C7CD70D004B68D3 /* KeyPath.swift */,
-				078142C61C7CFFBA004B68D3 /* Supporting Files */,
 			);
 			path = DictionaryTools;
 			sourceTree = "<group>";
@@ -174,6 +176,7 @@
 				076FDE661C7D02A1006A47B4 /* ArrayTypeValueTests.swift */,
 				076FDE6C1C7D092C006A47B4 /* DictionaryLiteralConvertibleValueTests.swift */,
 				076FDE671C7D02A1006A47B4 /* KeyPathTests.swift */,
+				07A110311D2147000024A2D7 /* SortedOrderedDictionaryTests.swift */,
 				078142C01C7CFC49004B68D3 /* OrderedDictionaryTests.swift */,
 				078142C31C7CFF8D004B68D3 /* MergeTests.swift */,
 				078142C71C7CFFBF004B68D3 /* Supporting Files */,
@@ -200,6 +203,7 @@
 		07B93E661D20325A00851FE0 /* Structures */ = {
 			isa = PBXGroup;
 			children = (
+				078142371C7CD70D004B68D3 /* KeyPath.swift */,
 				078142BD1C7CF602004B68D3 /* OrderedDictionary.swift */,
 				07404DBE1D20242A00E5F8E3 /* SortedOrderedDictionary.swift */,
 			);
@@ -270,7 +274,6 @@
 				078141F61C7CD629004B68D3 /* Frameworks */,
 				078141F71C7CD629004B68D3 /* Headers */,
 				078141F81C7CD629004B68D3 /* Resources */,
-				82AB827C2382857ABBF1D34E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -289,6 +292,7 @@
 				078142011C7CD629004B68D3 /* Frameworks */,
 				078142021C7CD629004B68D3 /* Resources */,
 				078142311C7CD6AF004B68D3 /* CopyFiles */,
+				07A110341D21498B0024A2D7 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -308,7 +312,6 @@
 				078142151C7CD66F004B68D3 /* Frameworks */,
 				078142161C7CD66F004B68D3 /* Headers */,
 				078142171C7CD66F004B68D3 /* Resources */,
-				038E2D3AF606E524390BD776 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -327,6 +330,7 @@
 				0781421F1C7CD66F004B68D3 /* Frameworks */,
 				078142201C7CD66F004B68D3 /* Resources */,
 				078142331C7CD6B7004B68D3 /* CopyFiles */,
+				07B0A2C01D21A21100C13F77 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -414,13 +418,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		038E2D3AF606E524390BD776 /* ShellScript */ = {
+		07A110341D21498B0024A2D7 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/Mac/ArrayTools.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ArrayTools.framework",
 			);
 			outputPaths = (
 			);
@@ -428,13 +432,13 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
-		82AB827C2382857ABBF1D34E /* ShellScript */ = {
+		07B0A2C01D21A21100C13F77 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/ArrayTools.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/ArrayTools.framework",
 			);
 			outputPaths = (
 			);
@@ -463,6 +467,7 @@
 			files = (
 				076FDE6D1C7D092C006A47B4 /* DictionaryLiteralConvertibleValueTests.swift in Sources */,
 				076FDE681C7D02A1006A47B4 /* ArrayTypeValueTests.swift in Sources */,
+				07A110321D2147000024A2D7 /* SortedOrderedDictionaryTests.swift in Sources */,
 				078142C11C7CFC49004B68D3 /* OrderedDictionaryTests.swift in Sources */,
 				076FDE6A1C7D02A1006A47B4 /* KeyPathTests.swift in Sources */,
 				078142C41C7CFF8D004B68D3 /* MergeTests.swift in Sources */,
@@ -487,6 +492,7 @@
 			files = (
 				076FDE6E1C7D092C006A47B4 /* DictionaryLiteralConvertibleValueTests.swift in Sources */,
 				076FDE691C7D02A1006A47B4 /* ArrayTypeValueTests.swift in Sources */,
+				07A110331D2147000024A2D7 /* SortedOrderedDictionaryTests.swift in Sources */,
 				078142C21C7CFC49004B68D3 /* OrderedDictionaryTests.swift in Sources */,
 				076FDE6B1C7D02A1006A47B4 /* KeyPathTests.swift in Sources */,
 				078142C51C7CFF8D004B68D3 /* MergeTests.swift in Sources */,
@@ -608,6 +614,8 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
 				INFOPLIST_FILE = DictionaryTools/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -628,6 +636,8 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
 				INFOPLIST_FILE = DictionaryTools/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -644,6 +654,10 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = DictionaryToolsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bean.DictionaryToolsTests;
@@ -657,6 +671,10 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = DictionaryToolsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bean.DictionaryToolsTests;
@@ -674,6 +692,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/Mac";
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = DictionaryTools/Info.plist;
@@ -698,6 +717,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/Mac";
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = DictionaryTools/Info.plist;
@@ -718,6 +738,10 @@
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = DictionaryToolsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
@@ -735,6 +759,10 @@
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = DictionaryToolsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;

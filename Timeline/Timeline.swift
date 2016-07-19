@@ -10,61 +10,108 @@ import Foundation
 import QuartzCore
 import DictionaryTools
 
-public typealias Seconds = Double
-public typealias Frames = UInt
+/// Function to be performed by a `Timeline`.
 public typealias Action = () -> ()
 
+/// Time unit for beats-per-minute.
+public typealias Tempo = Double
+
+/// Time unit for seconds.
+public typealias Seconds = Double
+
+/// Time unit inverse to the `rate` of a `Timeline`.
+internal typealias Frames = UInt
+
+
 /**
- Timeline
+ Scheduler that performs functions at given times.
  
- - TODO: Conform to `SequenceType` & `CollectionType`, make `regsitry` private.
+ **Examples:**
+ 
+ Schedule singular, atomic events at a given time in `Seconds`:
+ 
+ ```
+ let timeline = Timeline()
+ timeline.add(at: 1) { print("one second") }
+ timeline.start()
+ 
+ // after one second:
+ // => one second
+ ```
+ 
+ Schedule a looping action with a time interval between firings:
+ 
+ ```
+ timeline.addLooping(interval: 1) { print("every second") }
+ 
+ // after one second:
+ // => every second
+ // after two seconds:
+ // => every second
+ ...
+ ```
+ 
+ Schedule a looping action at a tempo in beats-per-minute:
+ 
+ ```
+ timeline.addLooping(at: 60) { print("bpm: 60") }
+ ```
+ 
+ Schedule a looping action with an optional offset:
+ 
+ ```
+ timeline.addLooping(at: 60) { self.showMetronome() }
+ timeline.addLooping(at: 60, offset: 0.2) { self.hideMetronome() }
+ ```
+ 
+ - TODO: Conform to `SequenceType` & `CollectionType`.
 */
 public final class Timeline {
     
-    // Storage
-    public var registry = SortedOrderedDictionary<[Action], Frames>()
+    // MARK: - Instance Properties
+
+    /// - returns: `true` if the internal timer is running. Otherwise, `false`.
+    public var isActive: Bool = false
     
-    public var loopingActions: [LoopingAction] = []
+    /// Offset in `Seconds` of internal timer.
+    public var currentOffset: Seconds {
+        return seconds(from: currentFrame)
+    }
+    
+    /// Amount of time in `Seconds` until the next event, if present. Otherwise, `nil`.
+    public var secondsUntilNext: Seconds? {
+        guard let nextFrames = next()?.0 else { return nil }
+        return seconds(from: nextFrames - currentFrame)
+    }
+    
+    /// Offset in `Seconds` of the next event, if present. Otherwise, `nil`.
+    public var offsetOfNext: Seconds? {
+        guard let next = next() else { return nil }
+        return seconds(from: next.0)
+    }
+    
+    // Storage of actions.
+    internal var registry = SortedOrderedDictionary<[ActionType], Frames>()
     
     // Internal timer
     private var timer: NSTimer = NSTimer()
     
     // Start time
     private var startTime: Seconds = 0
-
-    // If the timer is currently running
-    private var timerIsActive: Bool = false
     
     // The amount of time in seconds that has elapsed since starting or resuming from paused.
     private var secondsElapsed: Seconds {
         return CACurrentMediaTime() - startTime
     }
-    
-    // How often the timer should advance.
-    private let rate: Seconds
-    
+
     // The inverted rate.
     private var interval: Seconds { return 1 / rate }
     
-    // make private -- internal only for testing
+    // - make private -- internal only for testing
     internal var currentFrame: Frames = 0
-
-    // Offset in seconds of timer.
-    public var currentOffset: Seconds {
-        return seconds(from: currentFrame)
-    }
     
-    // Amount of time in seconds until the next event, if present. Otherwise, `nil`.
-    public var secondsUntilNext: Seconds? {
-        guard let nextFrames = next()?.0 else { return nil }
-        return seconds(from: nextFrames - currentFrame)
-    }
-    
-    // Offset in seconds of the next event, if present. Otherwise, `nil`.
-    public var offsetOfNext: Seconds? {
-        guard let next = next() else { return nil }
-        return seconds(from: next.0)
-    }
+    // How often the timer should advance.
+    private let rate: Seconds
     
     // MARK: - Initializers
     
@@ -77,19 +124,45 @@ public final class Timeline {
     
     // MARK: - Instance Methods
     
-    // MARK: Modifying the actions in the timeline
+    // MARK: Modifying the timeline
     
     /**
      Add a given `action` at a given `timeStamp` in seconds.
      */
-    public func add(at timeStamp: Seconds, action: Action) {
-        registry.safelyAppend(action, toArrayWith: frames(from: timeStamp))
+    public func add(at timeStamp: Seconds, action function: Action) {
+        let action = AtomicAction(timeStamp: timeStamp, function: function)
+        add(action, at: timeStamp)
     }
     
-    // generalize action
-    public func add(with interval: Seconds, loopingAction: Action) {
-        let loopingAction = LoopingAction(timeInterval: interval, action: loopingAction)
-        loopingActions.append(loopingAction)
+    /**
+     Add a looping action at a given `tempo`.
+     */
+    public func addLooping(
+        at tempo: Tempo,
+        offset: Seconds = 0,
+        action function: Action
+    )
+    {
+        let timeInterval = tempo / 60
+        let action = LoopingAction(timeInterval: timeInterval, function: function)
+        add(action, at: offset)
+    }
+    
+    /**
+     Add a looping action with the given `interval` between firings.
+     */
+    public func addLooping(
+        interval interval: Seconds,
+        offset: Seconds = 0,
+        action function: Action
+    )
+    {
+        let action = LoopingAction(timeInterval: interval, function: function)
+        add(action, at: offset)
+    }
+    
+    public func add(action: ActionType, at timeStamp: Seconds) {
+        registry.safelyAppend(action, toArrayWith: frames(from: timeStamp))
     }
     
     /**
@@ -99,7 +172,7 @@ public final class Timeline {
         registry = SortedOrderedDictionary()
     }
     
-    // MARK: Operating the timeline.
+    // MARK: Operating the timeline
     
     /**
      Start the timeline.
@@ -107,7 +180,7 @@ public final class Timeline {
     public func start() {
         currentFrame = 0
         startTime = CACurrentMediaTime()
-        timerIsActive = true
+        isActive = true
         timer = makeTimer()
     }
     
@@ -116,7 +189,7 @@ public final class Timeline {
      */
     public func stop() {
         timer.invalidate()
-        timerIsActive = false
+        isActive = false
         currentFrame = 0
     }
     
@@ -125,16 +198,17 @@ public final class Timeline {
      */
     public func pause() {
         timer.invalidate()
-        timerIsActive = false
-        startTime = CACurrentMediaTime()
+        isActive = false
     }
     
     /**
      Resume the timeline.
      */
     public func resume() {
-        if timerIsActive { return }
+        if isActive { return }
         timer = makeTimer()
+        isActive = true
+        startTime = CACurrentMediaTime()
     }
     
     /**
@@ -143,6 +217,14 @@ public final class Timeline {
     public func skip(to time: Seconds) {
         pause()
         currentFrame = frames(from: time)
+    }
+    
+    internal func next() -> (Frames, [ActionType])? {
+        return registry
+            .lazy
+            .filter { $0.0 > self.currentFrame }
+            .sort { $0.0 < $1.0 }
+            .first
     }
     
     private func makeTimer() -> NSTimer {
@@ -156,17 +238,16 @@ public final class Timeline {
     }
 
     @objc internal func advance() {
-        if let actions = registry[currentFrame] { actions.forEach { $0() } }
-        if next() == nil {
-            print("next is nil")
-            // check if there are looping actions that need to be executed
-            if !loopingActions.isEmpty {
-                print("there are looping actions")
-                for action in loopingActions {
-                    add(at: action.timeInterval + secondsElapsed) { action.action() }
+        if let actions = registry[currentFrame] {
+            actions.forEach {
+                
+                // perform function
+                $0.function()
+                
+                // if looping action,
+                if let loopingAction = $0 as? LoopingAction {
+                    add(loopingAction, at: secondsElapsed + loopingAction.timeInterval)
                 }
-            } else {
-                stop()
             }
         }
         currentFrame += 1
@@ -178,18 +259,6 @@ public final class Timeline {
     
     private func seconds(from frames: Frames) -> Seconds {
         return Seconds(frames) / interval
-    }
-}
-
-extension Timeline: GeneratorType {
-    
-    // update to self.filter when sequenceType conformance occurs
-    public func next() -> (Frames, [Action])? {
-        return registry
-            .lazy
-            .filter { $0.0 > self.currentFrame }
-            .sort { $0.0 < $1.0 }
-            .first
     }
 }
 

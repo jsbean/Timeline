@@ -88,8 +88,5 @@ class TimelineTests: XCTestCase {
         timeline.add(at: 1) { () }
         timeline.add(at: 4) { () }
         print(timeline)
-//        for a in timeline.registry {
-//            print(a)
-//        }
     }
 }

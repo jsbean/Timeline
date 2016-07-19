@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		0733E9F51D1BE8F500FDDE97 /* TimelineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0733E9F41D1BE8F500FDDE97 /* TimelineTests.swift */; };
 		0733E9F61D1BE8F500FDDE97 /* TimelineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0733E9F41D1BE8F500FDDE97 /* TimelineTests.swift */; };
-		074B580C1D22846F00215565 /* LoopingAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074B580B1D22846F00215565 /* LoopingAction.swift */; };
-		074B580D1D22846F00215565 /* LoopingAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074B580B1D22846F00215565 /* LoopingAction.swift */; };
+		074B58121D2288AB00215565 /* ActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074B58111D2288AB00215565 /* ActionType.swift */; };
+		074B58131D2288AB00215565 /* ActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074B58111D2288AB00215565 /* ActionType.swift */; };
 		07F63AA41D208A9900C7FB22 /* DictionaryTools.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A050C632E1221F2A36491428 /* DictionaryTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		07F739041D1AB4C800F83AE8 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F738FD1D1AB4C800F83AE8 /* Timeline.swift */; };
 		07F739051D1AB4C800F83AE8 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F738FD1D1AB4C800F83AE8 /* Timeline.swift */; };
@@ -82,7 +82,7 @@
 
 /* Begin PBXFileReference section */
 		0733E9F41D1BE8F500FDDE97 /* TimelineTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimelineTests.swift; path = TimelineTests/TimelineTests.swift; sourceTree = "<group>"; };
-		074B580B1D22846F00215565 /* LoopingAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoopingAction.swift; path = Timeline/LoopingAction.swift; sourceTree = "<group>"; };
+		074B58111D2288AB00215565 /* ActionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionType.swift; path = Timeline/ActionType.swift; sourceTree = "<group>"; };
 		07F738FD1D1AB4C800F83AE8 /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Timeline/Timeline.swift; sourceTree = "<group>"; };
 		2A9280607A024DC801DF42E1 /* Timeline.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Timeline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BEB43C733D9565FF2DC2E4E /* DictionaryTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DictionaryTools.framework; path = Carthage/Build/Mac/DictionaryTools.framework; sourceTree = "<group>"; };
@@ -149,7 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				07F738FD1D1AB4C800F83AE8 /* Timeline.swift */,
-				074B580B1D22846F00215565 /* LoopingAction.swift */,
+				074B58111D2288AB00215565 /* ActionType.swift */,
 				B3EF3CD3DD68C6E9E54C7872 /* Supporting Files */,
 			);
 			name = Timeline;
@@ -282,7 +282,6 @@
 				81104746972437C172793470 /* Sources */,
 				CC7DB75BF9CA8A1BFAC4C12F /* Frameworks */,
 				5980498FCF4D7E44F0CA0C60 /* Headers */,
-				9CC312DB86CD59BC2A36D7AF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -300,6 +299,7 @@
 				83084EEE15161FB760381C76 /* Sources */,
 				E5DF93615C31A98996EB2795 /* Frameworks */,
 				DD1A1A7AB977F27AD053054F /* CopyFiles */,
+				075EA8F01D327BD8007963C0 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -318,7 +318,6 @@
 				12CC7479DFE9A481B2BF6D39 /* Sources */,
 				14F3EAAC58C0FD506AC01AE1 /* Frameworks */,
 				D621D2F3BA3592E731A14F59 /* Headers */,
-				DBD3A193E64ECBEF630C496B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -359,23 +358,7 @@
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		07F63AA51D208B3700C7FB22 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/ArithmeticTools.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ArrayTools.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/DictionaryTools.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-		9CC312DB86CD59BC2A36D7AF /* ShellScript */ = {
+		075EA8F01D327BD8007963C0 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -391,7 +374,7 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
-		DBD3A193E64ECBEF630C496B /* ShellScript */ = {
+		07F63AA51D208B3700C7FB22 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -414,8 +397,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				074B580C1D22846F00215565 /* LoopingAction.swift in Sources */,
 				07F739041D1AB4C800F83AE8 /* Timeline.swift in Sources */,
+				074B58121D2288AB00215565 /* ActionType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,8 +406,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				074B580D1D22846F00215565 /* LoopingAction.swift in Sources */,
 				07F739051D1AB4C800F83AE8 /* Timeline.swift in Sources */,
+				074B58131D2288AB00215565 /* ActionType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +451,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -486,6 +470,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -511,7 +496,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/Mac";
 				FRAMEWORK_VERSION = A;
@@ -608,7 +593,8 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
 				INFOPLIST_FILE = Timeline/Info.plist;
@@ -639,7 +625,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/Mac";
 				FRAMEWORK_VERSION = A;
@@ -667,7 +653,8 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
 				INFOPLIST_FILE = Timeline/Info.plist;
@@ -690,6 +677,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -709,6 +697,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

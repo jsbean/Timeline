@@ -21,51 +21,52 @@ public protocol OrderedDictionaryType: DictionaryType {
     /// Keys of the backing dictionary.
     var keyStorage: KeyStorage { get set }
     
-    /// A collection containing just the keys of `self`.
-    var keys: LazyMapCollection<[Key : Value], Key> { get }
-    
     /// Backing dictionary.
     var values: [Key: Value] { get set }
 }
 
 extension OrderedDictionaryType {
     
-    /// A collection containing just the keys of `self`.
-    public var keys: LazyMapCollection<[Key : Value], Key> {
-        return values.keys
-    }
-    
     /**
-     Create an `OrderedDictionaryGenerator`.
+     - returns:  An array containing the transformed elements of this sequence.
      */
-    public func generate() -> OrderedDictionaryGenerator<Key, Value> {
-        return OrderedDictionaryGenerator<Key, Value>(self)
+    public func map<T>(transform: (Generator.Element) throws -> T) rethrows -> [T] {
+        
+        let initialCapacity = underestimateCount()
+        var result = ContiguousArray<T>()
+        result.reserveCapacity(initialCapacity)
+        
+        var iterator = generate()
+        
+        // Add elements up to the initial capacity without checking for regrowth.
+        for _ in 0..<initialCapacity {
+            result.append(try transform(iterator.next()!))
+        }
+        
+        // Add remaining elements, if any.
+        while let element = iterator.next() {
+            result.append(try transform(element))
+        }
+        return Array(result)
     }
 }
 
-/**
- Generator of `OrderedDictionaryType` values.
- */
-public struct OrderedDictionaryGenerator<Key: Hashable, Value>: GeneratorType {
-    
-    // MARK: - `GeneratorType`
-    
-    private var generator: DictionaryGenerator<Key, Value>
+extension OrderedDictionaryType where
+    KeyStorage.Index == Int,
+    KeyStorage.Generator.Element == Key
+{
     
     /**
-     Create an `OrderedDictionaryGenerator` with an `OrderedDictionaryType` value.
+     Create an iterator for an `OrderedDictionaryType` value.
      */
-    public init<D: OrderedDictionaryType where D.Key == Key, D.Value == Value>(
-        _ orderedDictionary: D
-    )
-    {
-        self.generator = orderedDictionary.values.generate()
-    }
-    
-    /**
-     The next key value pair.
-     */
-    public mutating func next() -> (Key, Value)? {
-        return generator.next()
+    public func generate() -> AnyGenerator<(Key, Value)> {
+        var index = keyStorage.startIndex
+        return AnyGenerator<(Key, Value)> {
+            defer { index += 1 }
+            guard index < self.keyStorage.endIndex else { return nil }
+            let key = self.keyStorage[index]
+            guard let value = self.values[key] else { return nil }
+            return (key, value)
+        }
     }
 }

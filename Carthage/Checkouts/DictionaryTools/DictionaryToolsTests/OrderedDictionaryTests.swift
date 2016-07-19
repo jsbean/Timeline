@@ -76,4 +76,14 @@ class OrderedDictionaryTests: XCTestCase {
         dict1.appendContents(of: dict2)
         XCTAssertEqual(dict1.count, 1)
     }
+    
+    func testIterationSorted() {
+        var dict = OrderedDictionary<Int, String>()
+        dict[1] = "one"
+        dict[2] = "two"
+        dict[3] = "three"
+        dict[4] = "four"
+        dict[5] = "five"
+        XCTAssertEqual(dict.map { $0.0 }, [1,2,3,4,5])
+    }
 }
