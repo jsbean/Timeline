@@ -1,2 +1,2 @@
-github "dn-m/DictionaryTools" "no-nested-frameworks"
-github "dn-m/ArithmeticTools" "no-nested-frameworks"
+github "dn-m/DictionaryTools"
+github "dn-m/ArithmeticTools"
