@@ -1,5 +1,5 @@
 //
-//  SortedOrderedDictionary.swift
+//  SortedDictionary.swift
 //  DictionaryTools
 //
 //  Created by James Bean on 6/26/16.
@@ -13,7 +13,7 @@ import ArrayTools
  
  - warning: The order of the generic types is `<Value, Key>`, due to a bug in Swift.
  */
-public struct SortedOrderedDictionary<V, K where K: Hashable, K: Comparable> {
+public struct SortedDictionary<V, K> where K: Hashable, K: Comparable {
     
     // MARK: - Instance Properties
     
@@ -35,7 +35,7 @@ public struct SortedOrderedDictionary<V, K where K: Hashable, K: Comparable> {
     /**
      Insert the given `value` for the given `key`. Order will be maintained.
      */
-    public mutating func insert(value: Value, key: Key) {
+    public mutating func insert(_ value: Value, key: Key) {
         keyStorage.insert(key)
         values[key] = value
     }
@@ -44,10 +44,10 @@ public struct SortedOrderedDictionary<V, K where K: Hashable, K: Comparable> {
      Insert the contents of another `SortedOrderedDictionary` value.
      */
     public mutating func insertContents(
-        of sortedOrderedDictionary: SortedOrderedDictionary<Value, Key>
+        of sortedDictionary: SortedDictionary<Value, Key>
     )
     {
-        sortedOrderedDictionary.forEach { insert($0.1, key: $0.0) }
+        sortedDictionary.forEach { insert($0.1, key: $0.0) }
     }
     
     /**
@@ -63,7 +63,7 @@ public struct SortedOrderedDictionary<V, K where K: Hashable, K: Comparable> {
     // TODO: Remove
 }
 
-extension SortedOrderedDictionary: DictionaryType {
+extension SortedDictionary: DictionaryType {
     
     // MARK: - `DictionaryType`
 
@@ -83,7 +83,7 @@ extension SortedOrderedDictionary: DictionaryType {
         set(newValue) {
             
             if newValue == nil {
-                values.removeValueForKey(key)
+                values.removeValue(forKey: key)
                 keyStorage = SortedArray(keyStorage.filter { $0 != key })
                 return
             }
@@ -94,7 +94,7 @@ extension SortedOrderedDictionary: DictionaryType {
     }
 }
 
-extension SortedOrderedDictionary: OrderedDictionaryType {
+extension SortedDictionary: OrderedDictionaryType {
  
     // MARK: - `OrderedDictionaryType`
     
@@ -105,17 +105,17 @@ extension SortedOrderedDictionary: OrderedDictionaryType {
 /**
  - returns: `SortedOrderedDictionary` with values of two `SortedOrderedDictionary` values.
  */
-public func + <Value, Key where Key: Hashable, Key: Comparable> (
-    lhs: SortedOrderedDictionary<Value, Key>,
-    rhs: SortedOrderedDictionary<Value, Key>
-) -> SortedOrderedDictionary<Value, Key>
+public func + <Value, Key> (
+    lhs: SortedDictionary<Value, Key>,
+    rhs: SortedDictionary<Value, Key>
+) -> SortedDictionary<Value, Key> where Key: Hashable, Key: Comparable
 {
     var result = lhs
     rhs.forEach { result.insert($0.1, key: $0.0) }
     return result
 }
 
-extension SortedOrderedDictionary: CollectionType {
+extension SortedDictionary: Collection {
     
     // MARK: - `CollectionType`
     
@@ -123,6 +123,11 @@ extension SortedOrderedDictionary: CollectionType {
     public var startIndex: Index { return values.startIndex }
     public var endIndex: Index { return values.endIndex }
 
+    public func index(after i: Index) -> Index {
+        guard i != endIndex else { fatalError("Cannot increment endIndex") }
+        return values.index(after: i)
+    }
+    
     /**
      - returns: Value at the given `index`. Will crash if index out-of-range.
      */

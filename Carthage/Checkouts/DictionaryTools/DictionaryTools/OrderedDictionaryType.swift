@@ -14,7 +14,7 @@ public protocol OrderedDictionaryType: DictionaryType {
     // MARK: - Associated Types
     
     /// CollectionType storing the keys.
-    associatedtype KeyStorage: CollectionType
+    associatedtype KeyStorage: Collection
     
     // MARK: - Instance Properties
     
@@ -30,13 +30,13 @@ extension OrderedDictionaryType {
     /**
      - returns:  An array containing the transformed elements of this sequence.
      */
-    public func map<T>(transform: (Generator.Element) throws -> T) rethrows -> [T] {
+    public func map<T>(transform: (Iterator.Element) throws -> T) rethrows -> [T] {
         
-        let initialCapacity = underestimateCount()
+        let initialCapacity = underestimatedCount
         var result = ContiguousArray<T>()
         result.reserveCapacity(initialCapacity)
         
-        var iterator = generate()
+        var iterator = makeIterator()
         
         // Add elements up to the initial capacity without checking for regrowth.
         for _ in 0..<initialCapacity {
@@ -53,15 +53,15 @@ extension OrderedDictionaryType {
 
 extension OrderedDictionaryType where
     KeyStorage.Index == Int,
-    KeyStorage.Generator.Element == Key
+    KeyStorage.Iterator.Element == Key
 {
     
     /**
      Create an iterator for an `OrderedDictionaryType` value.
      */
-    public func generate() -> AnyGenerator<(Key, Value)> {
+    public func generate() -> AnyIterator<(Key, Value)> {
         var index = keyStorage.startIndex
-        return AnyGenerator<(Key, Value)> {
+        return AnyIterator<(Key, Value)> {
             defer { index += 1 }
             guard index < self.keyStorage.endIndex else { return nil }
             let key = self.keyStorage[index]

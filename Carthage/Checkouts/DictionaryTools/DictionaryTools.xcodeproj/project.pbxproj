@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		07404DBF1D20242A00E5F8E3 /* SortedOrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07404DBE1D20242A00E5F8E3 /* SortedOrderedDictionary.swift */; };
-		07404DC01D20242A00E5F8E3 /* SortedOrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07404DBE1D20242A00E5F8E3 /* SortedOrderedDictionary.swift */; };
+		07404DBF1D20242A00E5F8E3 /* SortedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07404DBE1D20242A00E5F8E3 /* SortedDictionary.swift */; };
+		07404DC01D20242A00E5F8E3 /* SortedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07404DBE1D20242A00E5F8E3 /* SortedDictionary.swift */; };
+		076A23F21D94613800604CAA /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076A23F11D94613800604CAA /* OrderedDictionary.swift */; };
+		076A23F31D94613800604CAA /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076A23F11D94613800604CAA /* OrderedDictionary.swift */; };
 		076FDE681C7D02A1006A47B4 /* ArrayTypeValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076FDE661C7D02A1006A47B4 /* ArrayTypeValueTests.swift */; };
 		076FDE691C7D02A1006A47B4 /* ArrayTypeValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076FDE661C7D02A1006A47B4 /* ArrayTypeValueTests.swift */; };
 		076FDE6A1C7D02A1006A47B4 /* KeyPathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076FDE671C7D02A1006A47B4 /* KeyPathTests.swift */; };
@@ -23,14 +25,12 @@
 		078142341C7CD6BB004B68D3 /* DictionaryTools.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 078142191C7CD66F004B68D3 /* DictionaryTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0781423D1C7CD70D004B68D3 /* KeyPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078142371C7CD70D004B68D3 /* KeyPath.swift */; };
 		0781423E1C7CD70D004B68D3 /* KeyPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078142371C7CD70D004B68D3 /* KeyPath.swift */; };
-		078142BE1C7CF602004B68D3 /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078142BD1C7CF602004B68D3 /* OrderedDictionary.swift */; };
-		078142BF1C7CF602004B68D3 /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078142BD1C7CF602004B68D3 /* OrderedDictionary.swift */; };
 		078142C11C7CFC49004B68D3 /* OrderedDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078142C01C7CFC49004B68D3 /* OrderedDictionaryTests.swift */; };
 		078142C21C7CFC49004B68D3 /* OrderedDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078142C01C7CFC49004B68D3 /* OrderedDictionaryTests.swift */; };
 		078142C41C7CFF8D004B68D3 /* MergeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078142C31C7CFF8D004B68D3 /* MergeTests.swift */; };
 		078142C51C7CFF8D004B68D3 /* MergeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078142C31C7CFF8D004B68D3 /* MergeTests.swift */; };
-		07A110321D2147000024A2D7 /* SortedOrderedDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A110311D2147000024A2D7 /* SortedOrderedDictionaryTests.swift */; };
-		07A110331D2147000024A2D7 /* SortedOrderedDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A110311D2147000024A2D7 /* SortedOrderedDictionaryTests.swift */; };
+		07A110321D2147000024A2D7 /* SortedDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A110311D2147000024A2D7 /* SortedDictionaryTests.swift */; };
+		07A110331D2147000024A2D7 /* SortedDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A110311D2147000024A2D7 /* SortedDictionaryTests.swift */; };
 		07B93E691D20327500851FE0 /* DictionaryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B93E681D20327500851FE0 /* DictionaryType.swift */; };
 		07B93E6A1D20327500851FE0 /* DictionaryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B93E681D20327500851FE0 /* DictionaryType.swift */; };
 		07B93E6C1D2064B300851FE0 /* OrderedDictionaryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B93E6B1D2064B300851FE0 /* OrderedDictionaryType.swift */; };
@@ -80,7 +80,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		07404DBE1D20242A00E5F8E3 /* SortedOrderedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortedOrderedDictionary.swift; sourceTree = "<group>"; };
+		07404DBE1D20242A00E5F8E3 /* SortedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortedDictionary.swift; sourceTree = "<group>"; };
+		076A23F11D94613800604CAA /* OrderedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedDictionary.swift; sourceTree = "<group>"; };
 		076FDE661C7D02A1006A47B4 /* ArrayTypeValueTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayTypeValueTests.swift; sourceTree = "<group>"; };
 		076FDE671C7D02A1006A47B4 /* KeyPathTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPathTests.swift; sourceTree = "<group>"; };
 		076FDE6C1C7D092C006A47B4 /* DictionaryLiteralConvertibleValueTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryLiteralConvertibleValueTests.swift; sourceTree = "<group>"; };
@@ -92,10 +93,9 @@
 		078142191C7CD66F004B68D3 /* DictionaryTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DictionaryTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		078142221C7CD66F004B68D3 /* DictionaryToolsMacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DictionaryToolsMacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		078142371C7CD70D004B68D3 /* KeyPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPath.swift; sourceTree = "<group>"; };
-		078142BD1C7CF602004B68D3 /* OrderedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedDictionary.swift; sourceTree = "<group>"; };
 		078142C01C7CFC49004B68D3 /* OrderedDictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedDictionaryTests.swift; sourceTree = "<group>"; };
 		078142C31C7CFF8D004B68D3 /* MergeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MergeTests.swift; sourceTree = "<group>"; };
-		07A110311D2147000024A2D7 /* SortedOrderedDictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SortedOrderedDictionaryTests.swift; path = ../DictionaryTools/SortedOrderedDictionaryTests.swift; sourceTree = "<group>"; };
+		07A110311D2147000024A2D7 /* SortedDictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SortedDictionaryTests.swift; path = ../DictionaryTools/SortedDictionaryTests.swift; sourceTree = "<group>"; };
 		07B93E681D20327500851FE0 /* DictionaryType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryType.swift; sourceTree = "<group>"; };
 		07B93E6B1D2064B300851FE0 /* OrderedDictionaryType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedDictionaryType.swift; sourceTree = "<group>"; };
 		39B1429F79B897A54A4D9E53 /* ArrayTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ArrayTools.framework; path = Carthage/Build/Mac/ArrayTools.framework; sourceTree = "<group>"; };
@@ -176,7 +176,7 @@
 				076FDE661C7D02A1006A47B4 /* ArrayTypeValueTests.swift */,
 				076FDE6C1C7D092C006A47B4 /* DictionaryLiteralConvertibleValueTests.swift */,
 				076FDE671C7D02A1006A47B4 /* KeyPathTests.swift */,
-				07A110311D2147000024A2D7 /* SortedOrderedDictionaryTests.swift */,
+				07A110311D2147000024A2D7 /* SortedDictionaryTests.swift */,
 				078142C01C7CFC49004B68D3 /* OrderedDictionaryTests.swift */,
 				078142C31C7CFF8D004B68D3 /* MergeTests.swift */,
 				078142C71C7CFFBF004B68D3 /* Supporting Files */,
@@ -204,8 +204,8 @@
 			isa = PBXGroup;
 			children = (
 				078142371C7CD70D004B68D3 /* KeyPath.swift */,
-				078142BD1C7CF602004B68D3 /* OrderedDictionary.swift */,
-				07404DBE1D20242A00E5F8E3 /* SortedOrderedDictionary.swift */,
+				076A23F11D94613800604CAA /* OrderedDictionary.swift */,
+				07404DBE1D20242A00E5F8E3 /* SortedDictionary.swift */,
 			);
 			name = Structures;
 			sourceTree = "<group>";
@@ -349,14 +349,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "James Bean";
 				TargetAttributes = {
 					078141F91C7CD629004B68D3 = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
 					};
 					078142031C7CD629004B68D3 = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
 					};
 					078142181C7CD66F004B68D3 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -454,9 +456,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0781423D1C7CD70D004B68D3 /* KeyPath.swift in Sources */,
-				078142BE1C7CF602004B68D3 /* OrderedDictionary.swift in Sources */,
 				07B93E6C1D2064B300851FE0 /* OrderedDictionaryType.swift in Sources */,
-				07404DBF1D20242A00E5F8E3 /* SortedOrderedDictionary.swift in Sources */,
+				076A23F21D94613800604CAA /* OrderedDictionary.swift in Sources */,
+				07404DBF1D20242A00E5F8E3 /* SortedDictionary.swift in Sources */,
 				07B93E691D20327500851FE0 /* DictionaryType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,7 +469,7 @@
 			files = (
 				076FDE6D1C7D092C006A47B4 /* DictionaryLiteralConvertibleValueTests.swift in Sources */,
 				076FDE681C7D02A1006A47B4 /* ArrayTypeValueTests.swift in Sources */,
-				07A110321D2147000024A2D7 /* SortedOrderedDictionaryTests.swift in Sources */,
+				07A110321D2147000024A2D7 /* SortedDictionaryTests.swift in Sources */,
 				078142C11C7CFC49004B68D3 /* OrderedDictionaryTests.swift in Sources */,
 				076FDE6A1C7D02A1006A47B4 /* KeyPathTests.swift in Sources */,
 				078142C41C7CFF8D004B68D3 /* MergeTests.swift in Sources */,
@@ -479,9 +481,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0781423E1C7CD70D004B68D3 /* KeyPath.swift in Sources */,
-				078142BF1C7CF602004B68D3 /* OrderedDictionary.swift in Sources */,
 				07B93E6D1D2064B300851FE0 /* OrderedDictionaryType.swift in Sources */,
-				07404DC01D20242A00E5F8E3 /* SortedOrderedDictionary.swift in Sources */,
+				076A23F31D94613800604CAA /* OrderedDictionary.swift in Sources */,
+				07404DC01D20242A00E5F8E3 /* SortedDictionary.swift in Sources */,
 				07B93E6A1D20327500851FE0 /* DictionaryType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -492,7 +494,7 @@
 			files = (
 				076FDE6E1C7D092C006A47B4 /* DictionaryLiteralConvertibleValueTests.swift in Sources */,
 				076FDE691C7D02A1006A47B4 /* ArrayTypeValueTests.swift in Sources */,
-				07A110331D2147000024A2D7 /* SortedOrderedDictionaryTests.swift in Sources */,
+				07A110331D2147000024A2D7 /* SortedDictionaryTests.swift in Sources */,
 				078142C21C7CFC49004B68D3 /* OrderedDictionaryTests.swift in Sources */,
 				076FDE6B1C7D02A1006A47B4 /* KeyPathTests.swift in Sources */,
 				078142C51C7CFF8D004B68D3 /* MergeTests.swift in Sources */,
@@ -518,6 +520,7 @@
 		0781420C1C7CD629004B68D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -528,15 +531,16 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -567,6 +571,7 @@
 		0781420D1C7CD629004B68D3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -577,15 +582,16 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -599,6 +605,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -609,12 +616,13 @@
 		0781420F1C7CD629004B68D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
 				INFOPLIST_FILE = DictionaryTools/Info.plist;
@@ -625,18 +633,20 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		078142101C7CD629004B68D3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
 				INFOPLIST_FILE = DictionaryTools/Info.plist;
@@ -646,14 +656,15 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bean.DictionaryTools;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		078142121C7CD629004B68D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(inherited)",
@@ -663,14 +674,15 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bean.DictionaryToolsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		078142131C7CD629004B68D3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(inherited)",
@@ -679,12 +691,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bean.DictionaryToolsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		0781422B1C7CD66F004B68D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -692,7 +706,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/Mac";
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = DictionaryTools/Info.plist;
@@ -704,12 +717,14 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		0781422C1C7CD66F004B68D3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -717,7 +732,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/Mac";
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = DictionaryTools/Info.plist;
@@ -728,16 +742,17 @@
 				PRODUCT_NAME = DictionaryTools;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		0781422E1C7CD66F004B68D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 					"$(inherited)",
@@ -749,16 +764,17 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		0781422F1C7CD66F004B68D3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 					"$(inherited)",
@@ -769,6 +785,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bean.DictionaryToolsMacTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

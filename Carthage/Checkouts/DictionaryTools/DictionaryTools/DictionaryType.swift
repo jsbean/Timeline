@@ -13,10 +13,20 @@ extension Dictionary: DictionaryType {
     // MARK: - `DictionaryType`
 }
 
+public protocol ArrayType: Collection {
+    associatedtype Element
+    init()
+    mutating func append(_ element: Element)
+    mutating func append<S : Sequence> (contentsOf newElements: S) where
+        S.Iterator.Element == Iterator.Element
+}
+
+extension Array: ArrayType { }
+
 /**
  Interface for Dictionary-like structures.
  */
-public protocol DictionaryType: CollectionType {
+public protocol DictionaryType: Collection {
     
     // MARK: - Associated Types
     
@@ -45,7 +55,7 @@ public protocol DictionaryType: CollectionType {
     subscript (key: Key) -> Value? { get set }
 }
 
-extension DictionaryType where Generator.Element == (Key, Value) {
+extension DictionaryType where Iterator.Element == (Key, Value) {
     
     // MARK: - Instance Methods
     
@@ -60,20 +70,19 @@ extension DictionaryType where Generator.Element == (Key, Value) {
     }
 }
 
-extension DictionaryType where Value: _ArrayType {
+extension DictionaryType where Value: ArrayType {
     
     /**
      Ensure that an Array-type value exists for the given `key`.
      */
     public mutating func ensureValue(for key: Key) {
-        if self[key] == nil { self[key] = [] }
+        if self[key] == nil { self[key] = Value() }
     }
     
     /**
      Safely append the given `value` to the Array-type `value` for the given `key`.
      */
-    public mutating func safelyAppend(value: Value.Generator.Element, toArrayWith key: Key)
-    {
+    public mutating func safelyAppend(_ value: Value.Element, toArrayWith key: Key) {
         ensureValue(for: key)
         self[key]!.append(value)
     }
@@ -83,27 +92,27 @@ extension DictionaryType where Value: _ArrayType {
      */
     public mutating func safelyAppendContents(of values: Value, toArrayWith key: Key) {
         ensureValue(for: key)
-        self[key]!.appendContentsOf(values)
+        self[key]!.append(contentsOf: values)
     }
 }
 
-extension DictionaryType where Value: _ArrayType, Value.Generator.Element: Equatable {
+extension DictionaryType where Value: ArrayType, Value.Element: Equatable {
     
     /**
      Safely append value to the array value for a given key. 
      
      If this value already exists in desired array, the new value will not be added.
      */
-    public mutating func safelyAndUniquelyAppend(
-        value: Value.Generator.Element,
-        toArrayWith key: Key
-    )
-    {
+    public mutating func safelyAndUniquelyAppend(_ value: Value.Element, toArrayWith key: Key) {
         ensureValue(for: key)
-        if self[key]!.contains(value) { return }
+        
+        // FIXME: Find a way to not cast to Array!
+        if (self[key] as! Array).contains(value) { return }
+        
         self[key]!.append(value)
     }
 }
+
 
 extension DictionaryType where
     Value: DictionaryType,
@@ -122,8 +131,13 @@ extension DictionaryType where
      
      - TODO: Use subscript (keyPath: KeyPath) { get set }
      */
-    public mutating func update(value: Value.Value, keyPath: KeyPath) {
-        guard let key = keyPath[0] as? Key, subKey = keyPath[1] as? Value.Key else { return }
+    public mutating func update(_ value: Value.Value, keyPath: KeyPath) {
+        
+        guard
+            let key = keyPath[0] as? Key,
+            let subKey = keyPath[1] as? Value.Key
+        else { return }
+        
         self.ensureValue(for: key)
         self[key]?[subKey] = value
     }
@@ -131,8 +145,8 @@ extension DictionaryType where
 
 extension DictionaryType where
     Value: DictionaryType,
-    Generator.Element == (Key, Value),
-    Value.Generator.Element == (Value.Key, Value.Value)
+    Iterator.Element == (Key, Value),
+    Value.Iterator.Element == (Value.Key, Value.Value)
 {
     
     /**
@@ -153,31 +167,39 @@ extension DictionaryType where
 
 extension DictionaryType where
     Value: DictionaryType,
-    Generator.Element == (Key, Value),
-    Value.Generator.Element == (Value.Key, Value.Value),
-    Value.Value: _ArrayType
+    Iterator.Element == (Key, Value),
+    Value.Iterator.Element == (Value.Key, Value.Value),
+    Value.Value: ArrayType
 {
-    
     /**
      Ensure that there is an Array-type value for the given `keyPath`.
      */
     public mutating func ensureValue(for keyPath: KeyPath) {
-        guard let key = keyPath[0] as? Key, subKey = keyPath[1] as? Value.Key else { return }
+        
+        guard
+            let key = keyPath[0] as? Key,
+            let subKey = keyPath[1] as? Value.Key
+        else { return }
+        
         ensureValue(for: key)
         self[key]!.ensureValue(for: subKey)
     }
-    
+
     /**
      Append the given `value` to the array at the given `keyPath`.
      
      > If no such subdictionary or array exists, these structures will be created.
      */
     public mutating func safelyAppend(
-        value: Value.Value.Generator.Element,
+        _ value: Value.Value.Element,
         toArrayWith keyPath: KeyPath
     )
     {
-        guard let key = keyPath[0] as? Key, subKey = keyPath[1] as? Value.Key else { return }
+        guard
+            let key = keyPath[0] as? Key,
+            let subKey = keyPath[1] as? Value.Key
+        else { return }
+        
         ensureValue(for: keyPath)
         self[key]!.safelyAppend(value, toArrayWith: subKey)
     }
@@ -192,7 +214,11 @@ extension DictionaryType where
         toArrayWith keyPath: KeyPath
     )
     {
-        guard let key = keyPath[0] as? Key, subKey = keyPath[1] as? Value.Key else { return }
+        guard
+            let key = keyPath[0] as? Key,
+            let subKey = keyPath[1] as? Value.Key
+        else { return }
+        
         ensureValue(for: keyPath)
         self[key]!.safelyAppendContents(of: values, toArrayWith: subKey)
     }
@@ -200,10 +226,10 @@ extension DictionaryType where
 
 extension DictionaryType where
     Value: DictionaryType,
-    Generator.Element == (Key, Value),
-    Value.Generator.Element == (Value.Key, Value.Value),
-    Value.Value: _ArrayType,
-    Value.Value.Generator.Element: Equatable
+    Iterator.Element == (Key, Value),
+    Value.Iterator.Element == (Value.Key, Value.Value),
+    Value.Value: ArrayType,
+    Value.Value.Element: Equatable
 {
     
     /**
@@ -213,11 +239,15 @@ extension DictionaryType where
      > If no such subdictionary or array exists, these structures will be created.
      */
     public mutating func safelyAndUniquelyAppend(
-        value: Value.Value.Generator.Element,
+        _ value: Value.Value.Element,
         toArrayWith keyPath: KeyPath
     )
     {
-        guard let key = keyPath[0] as? Key, subKey = keyPath[1] as? Value.Key else { return }
+        guard
+            let key = keyPath[0] as? Key,
+            let subKey = keyPath[1] as? Value.Key
+        else { return }
+        
         ensureValue(for: keyPath)
         self[key]!.safelyAndUniquelyAppend(value, toArrayWith: subKey)
     }
@@ -228,18 +258,14 @@ extension DictionaryType where
 /**
  - returns: `true` if all values in `[H: T]` types are equivalent. Otherwise, `false`.
 */
-public func == <
-    D: DictionaryType where
-        D.Generator.Element == (D.Key, D.Value),
-        D.Value: Equatable
-> (
-    lhs: D,
-    rhs: D
-) -> Bool
+public func == <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
+    D.Iterator.Element == (D.Key, D.Value),
+    D.Value: Equatable
 {
     for (key, _) in lhs {
-        guard let rhsValue = rhs[key] else { return false }
-        if lhs[key]! != rhsValue { return false }
+        guard let rhsValue = rhs[key], lhs[key]! == rhsValue else {
+            return false
+        }
     }
     return true
 }
@@ -247,14 +273,9 @@ public func == <
 /**
  - returns: `true` if any values in `[H: T]` types are not equivalent. Otherwise, `false`.
  */
-public func != <
-    D: DictionaryType where
-        D.Generator.Element == (D.Key, D.Value),
-        D.Value: Equatable
-> (
-    lhs: D,
-    rhs: D
-) -> Bool
+public func != <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
+    D.Iterator.Element == (D.Key, D.Value),
+    D.Value: Equatable
 {
     return !(lhs == rhs)
 }
@@ -262,20 +283,16 @@ public func != <
 /**
  - returns: `true` if all values in `[H: [T]]` types are equivalent. Otherwise, `false`.
  */
-public func == <
-    D: DictionaryType where
-        D.Generator.Element == (D.Key, D.Value),
-        D.Value: _ArrayType,
-        D.Value.Generator.Element: Equatable
-> (
-    lhs: D,
-    rhs: D
-) -> Bool
+public func == <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
+    D.Iterator.Element == (D.Key, D.Value),
+    D.Value: Collection,
+    D.Value.Iterator.Element: Equatable,
+    D.Value.Index == Int // FIXME: Find a way to do without this constraint
 {
     for (key, lhsArray) in lhs {
         guard let rhsArray = rhs[key] else { return false }
         if lhsArray.count != rhsArray.count { return false }
-        for i in 0 ..< lhsArray.count {
+        for i in 0 ..< lhsArray.endIndex {
             if lhsArray[i] != rhsArray[i] { return false }
         }
     }
@@ -285,15 +302,11 @@ public func == <
 /**
  - returns: `true` if any values in `[H: [T]]` types are not equivalent. Otherwise, `false`.
  */
-public func != <
-    D: DictionaryType where
-        D.Generator.Element == (D.Key, D.Value),
-        D.Value: _ArrayType,
-        D.Value.Generator.Element: Equatable
-> (
-    lhs: D,
-    rhs: D
-) -> Bool
+public func != <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
+    D.Iterator.Element == (D.Key, D.Value),
+    D.Value: Collection,
+    D.Value.Iterator.Element: Equatable,
+    D.Value.Index == Int // FIXME: Find a way to do without this constraint
 {
     return !(lhs == rhs)
 }
@@ -301,20 +314,16 @@ public func != <
 /**
  - returns: `true` if all values in `[H: [HH: T]]` types are equivalent. Otherwise, `false`.
  */
-public func == <
-    D: DictionaryType where
-        D.Generator.Element == (D.Key, D.Value),
-        D.Value: DictionaryType,
-        D.Value.Generator.Element == (D.Value.Key, D.Value.Value),
-        D.Value.Value: Equatable
-> (
-    lhs: D,
-    rhs: D
-) -> Bool
+public func == <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
+    D.Iterator.Element == (D.Key, D.Value),
+    D.Value: DictionaryType,
+    D.Value.Iterator.Element == (D.Value.Key, D.Value.Value),
+    D.Value.Value: Equatable
 {
     for (key, lhsDict) in lhs {
-        guard let rhsDict = rhs[key] else { return false }
-        if lhsDict != rhsDict { return false }
+        guard let rhsDict = rhs[key], lhsDict != rhsDict else {
+            return false
+        }
     }
     return true
 }
@@ -322,33 +331,26 @@ public func == <
 /**
  - returns: `true` if any values in `[H: [HH: T]]` types are not equivalent. Otherwise, `false`.
  */
-public func != <
-    D: DictionaryType where
-        D.Generator.Element == (D.Key, D.Value),
-        D.Value: DictionaryType,
-        D.Value.Generator.Element == (D.Value.Key, D.Value.Value),
-        D.Value.Value: Equatable
-> (
-    lhs: D,
-    rhs: D
-) -> Bool {
+public func != <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
+    D.Iterator.Element == (D.Key, D.Value),
+    D.Value: DictionaryType,
+    D.Value.Iterator.Element == (D.Value.Key, D.Value.Value),
+    D.Value.Value: Equatable
+{
     return !(lhs == rhs)
 }
 
 /**
  - returns: `true` if all values in `[H: [HH: [T]]]` types are equivalent. Otherwise, `false`.
  */
-public func == <
-    D: DictionaryType where
-        D.Generator.Element == (D.Key, D.Value),
-        D.Value: DictionaryType,
-        D.Value.Generator.Element == (D.Value.Key, D.Value.Value),
-        D.Value.Value: _ArrayType,
-        D.Value.Value.Generator.Element: Equatable
-> (
-    lhs: D,
-    rhs: D
-) -> Bool {
+public func == <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
+    D.Iterator.Element == (D.Key, D.Value),
+    D.Value: DictionaryType,
+    D.Value.Iterator.Element == (D.Value.Key, D.Value.Value),
+    D.Value.Value: Collection,
+    D.Value.Value.Iterator.Element: Equatable,
+    D.Value.Value.Index == Int // FIXME: Find a way to do without this constraint
+{
     for (key, lhsDict) in lhs {
         guard let rhsDict = rhs[key] else { return false }
         if lhsDict != rhsDict { return false }
@@ -360,20 +362,16 @@ public func == <
  - returns: `true` if any values in `[H: [HH: [T]]]` types are not equivalent.
  Otherwise, `false`.
  */
-public func != <
-    D: DictionaryType where
-        D.Generator.Element == (D.Key, D.Value),
-        D.Value: DictionaryType,
-        D.Value.Generator.Element == (D.Value.Key, D.Value.Value),
-        D.Value.Value: _ArrayType,
-        D.Value.Value.Generator.Element: Equatable
-> (
-    lhs: D,
-    rhs: D
-) -> Bool {
+public func != <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
+    D.Iterator.Element == (D.Key, D.Value),
+    D.Value: DictionaryType,
+    D.Value.Iterator.Element == (D.Value.Key, D.Value.Value),
+    D.Value.Value: Collection,
+    D.Value.Value.Iterator.Element: Equatable,
+    D.Value.Value.Index == Int // FIXME: Find a way to do without this constraint
+{
     return !(lhs == rhs)
 }
-
 
 // MARK: - Adding `DictionaryType` values
 
@@ -381,10 +379,8 @@ public func != <
  - returns: The result of merging the `DictionaryType` value on the right into the
  `DictionaryType` value on the left.
  */
-public func + <D: DictionaryType where D.Generator.Element == (D.Key, D.Value)> (
-    lhs: D,
-    rhs: D
-) -> D
+public func + <D: DictionaryType> (lhs: D, rhs: D) -> D where
+    D.Iterator.Element == (D.Key, D.Value)
 {
     var result = lhs
     result.merge(with: rhs)
@@ -395,15 +391,10 @@ public func + <D: DictionaryType where D.Generator.Element == (D.Key, D.Value)> 
  - returns: The result of merging the `DictionaryType` value on the right into the
  `DictionaryType` value on the left.
  */
-public func + <
-    D: DictionaryType where
-        D.Value: DictionaryType,
-        D.Generator.Element == (D.Key, D.Value),
-        D.Value.Generator.Element == (D.Value.Key, D.Value.Value)
-> (
-    lhs: D,
-    rhs: D
-) -> D
+public func + <D: DictionaryType> (lhs: D, rhs: D) -> D where
+    D.Value: DictionaryType,
+    D.Iterator.Element == (D.Key, D.Value),
+    D.Value.Iterator.Element == (D.Value.Key, D.Value.Value)
 {
     var result = lhs
     result.merge(with: rhs)
