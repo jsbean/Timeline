@@ -37,7 +37,7 @@ public struct OrderedDictionary<K: Hashable, V> {
     /**
     Append `value` for `key`.
     */
-    public mutating func append(value: Value, key: Key) {
+    public mutating func append(_ value: Value, key: Key) {
         keyStorage.append(key)
         values[key] = value
     }
@@ -45,8 +45,8 @@ public struct OrderedDictionary<K: Hashable, V> {
     /**
      Insert `value` for `key`, at a given `index`.
      */
-    public mutating func insert(value: Value, key: Key, index: Int) {
-        keyStorage.insert(key, atIndex: index)
+    public mutating func insert(_ value: Value, key: Key, index: Int) {
+        keyStorage.insert(key, at: index)
         values[key] = value
     }
     
@@ -54,7 +54,7 @@ public struct OrderedDictionary<K: Hashable, V> {
      Append the contents of another `OrderedDictionary`.
      */
     public mutating func appendContents(of orderedDictionary: OrderedDictionary<Key,Value>) {
-        keyStorage.appendContentsOf(orderedDictionary.keyStorage)
+        keyStorage.append(contentsOf: orderedDictionary.keyStorage)
         for key in orderedDictionary.keyStorage {
             values.updateValue(orderedDictionary[key]!, forKey: key)
         }
@@ -86,15 +86,15 @@ extension OrderedDictionary: OrderedDictionaryType {
     public typealias Value = V
     
     /**
-     - returns: Value for the given `key`, if available. Otherise `nil`.
+     - returns: Value for the given `key`, if available. Otherwise `nil`.
      */
     public subscript(key: Key) -> Value? {
         
         get { return values[key] }
         
-        set(newValue) {
+        set {
             if newValue == nil {
-                values.removeValueForKey(key)
+                values.removeValue(forKey: key)
                 keyStorage = keyStorage.filter { $0 != key }
                 return
             }
@@ -105,13 +105,18 @@ extension OrderedDictionary: OrderedDictionaryType {
     }
 }
 
-extension OrderedDictionary: CollectionType {
+extension OrderedDictionary: Collection {
     
     // MARK: - CollectionType
     
     public typealias Index = DictionaryIndex<Key, Value>
     public var startIndex: Index { return values.startIndex }
     public var endIndex: Index { return values.endIndex }
+    
+    public func index(after i: Index) -> Index {
+        guard i != endIndex else { fatalError("Cannot increment endIndex") }
+        return values.index(after: i)
+    }
     
     /**
      - returns: Value at the given `index`. Will crash if index out-of-range.

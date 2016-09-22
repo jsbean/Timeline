@@ -11,7 +11,7 @@
  
  - TODO: Make Generic, with typealias Key: Hashable
  */
-public class KeyPath {
+open class KeyPath {
     
     // MARK: - Instance Variables
     
@@ -20,10 +20,10 @@ public class KeyPath {
      
      - note: Investigate making this `private`, or at least `internal`
      */
-    private var keys: [String] = []
+    fileprivate var keys: [String] = []
 
     /// Amount of keys in `KeyPath`.
-    public var count: Int { return keys.count }
+    open var count: Int { return keys.count }
     
     // MARK: - Initializers
     
@@ -62,7 +62,7 @@ public class KeyPath {
     
     - returns: Key at given index, if available. Otherwise `nil`.
     */
-    public subscript(index: Int) -> String? {
+    open subscript(index: Int) -> String? {
         guard index >= 0 && index < keys.count else { return nil }
         return keys[index]
     }
@@ -78,7 +78,7 @@ extension KeyPath: CustomStringConvertible {
     
     public var description: String {
         var result = "Path: "
-        for (k, key) in keys.enumerate() {
+        for (k, key) in keys.enumerated() {
             if k > 0 { result += " -> " }
             result += key
         }

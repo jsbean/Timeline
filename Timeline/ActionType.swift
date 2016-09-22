@@ -18,7 +18,7 @@ public struct AtomicAction: ActionType {
     public let timeStamp: Seconds
     public let function: () -> ()
 
-    public init(timeStamp: Seconds, function: () -> ()) {
+    public init(timeStamp: Seconds, function: @escaping () -> ()) {
         self.timeStamp = timeStamp
         self.function = function
     }
@@ -29,7 +29,7 @@ public struct LoopingAction: ActionType {
     public let timeInterval: Seconds
     public let function: () -> ()
     
-    public init(timeInterval: Seconds, function: () -> ()) {
+    public init(timeInterval: Seconds, function: @escaping () -> ()) {
         self.timeInterval = timeInterval
         self.function = function
     }

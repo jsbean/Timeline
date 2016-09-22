@@ -22,7 +22,6 @@ public typealias Seconds = Double
 /// Time unit inverse to the `rate` of a `Timeline`.
 internal typealias Frames = UInt
 
-
 /**
  Scheduler that performs functions at given times.
  
@@ -91,27 +90,27 @@ public final class Timeline {
     }
     
     // Storage of actions.
-    internal var registry = SortedOrderedDictionary<[ActionType], Frames>()
+    internal var registry = SortedDictionary<[ActionType], Frames>()
     
     // Internal timer
-    private var timer: NSTimer = NSTimer()
+    fileprivate var timer: Timer = Timer()
     
     // Start time
-    private var startTime: Seconds = 0
+    fileprivate var startTime: Seconds = 0
     
     // The amount of time in seconds that has elapsed since starting or resuming from paused.
-    private var secondsElapsed: Seconds {
+    fileprivate var secondsElapsed: Seconds {
         return CACurrentMediaTime() - startTime
     }
 
     // The inverted rate.
-    private var interval: Seconds { return 1 / rate }
+    fileprivate var interval: Seconds { return 1 / rate }
     
     // - make private -- internal only for testing
     internal var currentFrame: Frames = 0
     
     // How often the timer should advance.
-    private let rate: Seconds
+    fileprivate let rate: Seconds
     
     // MARK: - Initializers
     
@@ -152,7 +151,7 @@ public final class Timeline {
      Add a looping action with the given `interval` between firings.
      */
     public func addLooping(
-        interval interval: Seconds,
+        interval: Seconds,
         offset: Seconds = 0,
         action function: Action
     )
@@ -161,7 +160,7 @@ public final class Timeline {
         add(action, at: offset)
     }
     
-    public func add(action: ActionType, at timeStamp: Seconds) {
+    public func add(_ action: ActionType, at timeStamp: Seconds) {
         registry.safelyAppend(action, toArrayWith: frames(from: timeStamp))
     }
     
@@ -169,7 +168,7 @@ public final class Timeline {
      Clear all elements from the timeline.
      */
     public func clear() {
-        registry = SortedOrderedDictionary()
+        registry = SortedDictionary()
     }
     
     // MARK: Operating the timeline
@@ -223,13 +222,13 @@ public final class Timeline {
         return registry
             .lazy
             .filter { $0.0 > self.currentFrame }
-            .sort { $0.0 < $1.0 }
+            .sorted { $0.0 < $1.0 }
             .first
     }
     
-    private func makeTimer() -> NSTimer {
-        return NSTimer.scheduledTimerWithTimeInterval(
-            rate,
+    fileprivate func makeTimer() -> Timer {
+        return Timer.scheduledTimer(
+            timeInterval: rate,
             target: self,
             selector: #selector(advance),
             userInfo: nil,
@@ -253,11 +252,11 @@ public final class Timeline {
         currentFrame += 1
     }
     
-    private func frames(from seconds: Seconds) -> Frames {
+    fileprivate func frames(from seconds: Seconds) -> Frames {
         return Frames(seconds * interval)
     }
     
-    private func seconds(from frames: Frames) -> Seconds {
+    fileprivate func seconds(from frames: Frames) -> Seconds {
         return Seconds(frames) / interval
     }
 }
@@ -265,6 +264,6 @@ public final class Timeline {
 extension Timeline: CustomStringConvertible {
     
     public var description: String {
-        return registry.map { "\($0)" }.joinWithSeparator("\n")
+        return registry.map { "\($0)" }.joined(separator: "\n")
     }
 }

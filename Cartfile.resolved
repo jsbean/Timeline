@@ -1,3 +1,3 @@
-github "dn-m/ArrayTools" "74bd96fd1b90f07e5be232d9354f7150b6946cfa"
-github "dn-m/ArithmeticTools" "bd5731164b14176c6ea287592a4c8f30186f5344"
-github "dn-m/DictionaryTools" "456360a055ab037fd0306785aa9bf069e5f0026f"
+github "dn-m/ArrayTools" "v2.0.3"
+github "dn-m/ArithmeticTools" "v0.3.17"
+github "dn-m/DictionaryTools" "v0.6.3"

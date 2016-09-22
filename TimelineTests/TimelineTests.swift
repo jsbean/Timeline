@@ -32,9 +32,7 @@ class TimelineTests: XCTestCase {
     
     func testMetronomeInjection() {
         let timeline = Timeline()
-        Seconds(0).stride(to: 10, by: 0.25).forEach {
-            timeline.add(at: $0) { () }
-        }
+        stride(from: Seconds(0), to: 10, by: 0.25).forEach { timeline.add(at: $0) { () } }
         XCTAssert(timeline.registry.count == 40)
     }
     
@@ -59,7 +57,7 @@ class TimelineTests: XCTestCase {
     
     func testSkip() {
         let timeline = Timeline()
-        Seconds(0).stride(to: 10, by: 1.0).forEach {
+        stride(from: Seconds(0), to: 10, by: 1.0).forEach {
             timeline.add(at: $0) { () }
         }
         timeline.skip(to: 4.5)
