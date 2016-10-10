@@ -1,8 +1,8 @@
 # Timeline
 
-[![Build Status](https://travis-ci.org/dn-m/DictionaryTools.svg?branch=master)](https://travis-ci.org/dn-m/Timeline)
+[![Build Status](https://travis-ci.org/dn-m/Timeline.svg?branch=master)](https://travis-ci.org/dn-m/Timeline)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) 
-[![GitHub version](https://badge.fury.io/gh/dn-m%2FDictionaryTools.svg)](https://badge.fury.io/gh/dn-m%2FTimeline)
+[![GitHub version](https://badge.fury.io/gh/dn-m%2FTimeline.svg)](https://badge.fury.io/gh/dn-m%2FTimeline)
 
 <a name="integration"></a>
 ## Integration
