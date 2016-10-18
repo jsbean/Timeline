@@ -18,7 +18,7 @@ class TimelineTests: XCTestCase {
         let timeStamp: Seconds = 0.5
         timeline.add(at: timeStamp, action: action)
         XCTAssert(timeline.registry.count == 1)
-        XCTAssert(timeline.registry[30] != nil)
+        XCTAssert(timeline.registry[UInt(30)] != nil)
     }
     
     func testDefaultInitAtOneOverSixty() {
@@ -27,7 +27,8 @@ class TimelineTests: XCTestCase {
         let timeStamp: Seconds = 0.5
         timeline.add(at: timeStamp, action: action)
         XCTAssert(timeline.registry.count == 1)
-        XCTAssert(timeline.registry[30] != nil)
+        print(timeline.registry)
+        XCTAssert(timeline.registry[UInt(30)] != nil)
     }
     
     func testMetronomeInjection() {

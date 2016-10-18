@@ -64,6 +64,7 @@ internal typealias Frames = UInt
  ```
  
  - TODO: Conform to `SequenceType` & `CollectionType`.
+ - TODO: Clean up `private` / `fileprivate` access levels.
 */
 public final class Timeline {
     
