@@ -90,7 +90,7 @@ public final class Timeline {
     }
     
     // Storage of actions.
-    internal var registry = SortedDictionary<[ActionType], Frames>()
+    internal var registry = SortedDictionary<Frames, [ActionType]>()
     
     // Internal timer
     fileprivate var timer: Timer = Timer()
