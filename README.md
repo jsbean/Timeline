@@ -1,6 +1,8 @@
 # Timeline
 
+![Swift](https://img.shields.io/badge/%20in-swift%203.0-orange.svg)
 [![Build Status](https://travis-ci.org/dn-m/Timeline.svg?branch=master)](https://travis-ci.org/dn-m/Timeline)
+[![codecov](https://codecov.io/gh/dn-m/Timeline/branch/master/graph/badge.svg)](https://codecov.io/gh/dn-m/Timeline/)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) 
 [![GitHub version](https://badge.fury.io/gh/dn-m%2FTimeline.svg)](https://badge.fury.io/gh/dn-m%2FTimeline)
 
