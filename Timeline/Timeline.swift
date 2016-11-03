@@ -100,6 +100,7 @@ public final class Timeline {
     fileprivate var startTime: Seconds = 0
     
     // The amount of time in seconds that has elapsed since starting or resuming from paused.
+    // TODO: Remove QuartzCore dependency if possible
     fileprivate var secondsElapsed: Seconds {
         return CACurrentMediaTime() - startTime
     }
