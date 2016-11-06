@@ -286,10 +286,16 @@ extension Timeline: Collection {
         return (key, actions)
     }
     
+    /**
+     - returns: Array of actions at the given `frames`, if present. Otherwise, `nil`.
+    */
     public subscript (frames: Frames) -> [ActionType]? {
         return registry[frames]
     }
     
+    /**
+     - returns: Array of actions at the given `seconds`, if present. Otherwise, `nil`.
+     */
     public subscript (seconds: Seconds) -> [ActionType]? {
         return registry[frames(from: seconds)]
     }
