@@ -10,20 +10,11 @@ import Foundation
 import QuartzCore
 import DictionaryTools
 
-/// Function to be performed by a `Timeline`.
-public typealias Action = () -> ()
-
-/// Time unit for beats-per-minute.
-public typealias Tempo = Double
-
-/// Time unit for seconds.
-public typealias Seconds = Double
-
 /// Time unit inverse to the `rate` of a `Timeline`.
-internal typealias Frames = UInt
+public typealias Frames = UInt
 
 /**
- Scheduler that performs functions at given times.
+ Scheduler that performs actions at given times.
  
  **Examples:**
  
@@ -62,57 +53,55 @@ internal typealias Frames = UInt
  timeline.addLooping(at: 60) { self.showMetronome() }
  timeline.addLooping(at: 60, offset: 0.2) { self.hideMetronome() }
  ```
- 
- - TODO: Conform to `SequenceType` & `CollectionType`.
- - TODO: Clean up `private` / `fileprivate` access levels.
 */
 public final class Timeline {
     
     // MARK: - Instance Properties
-
-    /// - returns: `true` if the internal timer is running. Otherwise, `false`.
-    public var isActive: Bool = false
     
     /// Offset in `Seconds` of internal timer.
-    public var currentOffset: Seconds {
+    internal var currentOffset: Seconds {
         return seconds(from: currentFrame)
     }
     
     /// Amount of time in `Seconds` until the next event, if present. Otherwise, `nil`.
-    public var secondsUntilNext: Seconds? {
+    internal var secondsUntilNext: Seconds? {
         guard let nextFrames = next()?.0 else { return nil }
         return seconds(from: nextFrames - currentFrame)
     }
     
     /// Offset in `Seconds` of the next event, if present. Otherwise, `nil`.
-    public var offsetOfNext: Seconds? {
+    internal var offsetOfNext: Seconds? {
         guard let next = next() else { return nil }
         return seconds(from: next.0)
     }
     
-    // Storage of actions.
+    // The current frame.
+    internal var currentFrame: Frames = 0
+    
+    /// Storage of actions.
+    /// - TODO: Make `fileprivate`
     internal var registry = SortedDictionary<Frames, [ActionType]>()
     
-    // Internal timer
-    fileprivate var timer: Timer = Timer()
+    // Internal timer.
+    private var timer = Timer()
     
-    // Start time
-    fileprivate var startTime: Seconds = 0
+    // Start time.
+    private var startTime: Seconds = 0
     
     // The amount of time in seconds that has elapsed since starting or resuming from paused.
     // TODO: Remove QuartzCore dependency if possible
-    fileprivate var secondsElapsed: Seconds {
+    private var secondsElapsed: Seconds {
         return CACurrentMediaTime() - startTime
     }
 
     // The inverted rate.
-    fileprivate var interval: Seconds { return 1 / rate }
+    private var interval: Seconds { return 1 / rate }
     
-    // - make private -- internal only for testing
-    internal var currentFrame: Frames = 0
+    /// - returns: `true` if the internal timer is running. Otherwise, `false`.
+    public var isActive: Bool = false
     
     // How often the timer should advance.
-    fileprivate let rate: Seconds
+    public let rate: Seconds
     
     // MARK: - Initializers
     
@@ -130,8 +119,8 @@ public final class Timeline {
     /**
      Add a given `action` at a given `timeStamp` in seconds.
      */
-    public func add(at timeStamp: Seconds, action function: @escaping Action) {
-        let action = AtomicAction(timeStamp: timeStamp, function: function)
+    public func add(at timeStamp: Seconds, body: @escaping ActionBody) {
+        let action = AtomicAction(timeStamp: timeStamp, body: body)
         add(action, at: timeStamp)
     }
     
@@ -141,11 +130,11 @@ public final class Timeline {
     public func addLooping(
         at tempo: Tempo,
         offset: Seconds = 0,
-        action function: @escaping Action
+        body: @escaping ActionBody
     )
     {
         let timeInterval = tempo / 60
-        let action = LoopingAction(timeInterval: timeInterval, function: function)
+        let action = LoopingAction(timeInterval: timeInterval, body: body)
         add(action, at: offset)
     }
     
@@ -155,10 +144,10 @@ public final class Timeline {
     public func addLooping(
         interval: Seconds,
         offset: Seconds = 0,
-        action function: @escaping Action
+        body: @escaping ActionBody
     )
     {
-        let action = LoopingAction(timeInterval: interval, function: function)
+        let action = LoopingAction(timeInterval: interval, body: body)
         add(action, at: offset)
     }
     
@@ -228,7 +217,7 @@ public final class Timeline {
             .first
     }
     
-    fileprivate func makeTimer() -> Timer {
+    private func makeTimer() -> Timer {
         return Timer.scheduledTimer(
             timeInterval: rate,
             target: self,
@@ -243,7 +232,7 @@ public final class Timeline {
             actions.forEach {
                 
                 // perform function
-                $0.function()
+                $0.body()
                 
                 // if looping action,
                 if let loopingAction = $0 as? LoopingAction {
@@ -254,12 +243,55 @@ public final class Timeline {
         currentFrame += 1
     }
     
-    fileprivate func frames(from seconds: Seconds) -> Frames {
+    internal func frames(from seconds: Seconds) -> Frames {
         return Frames(seconds * interval)
     }
     
-    fileprivate func seconds(from frames: Frames) -> Seconds {
+    internal func seconds(from frames: Frames) -> Seconds {
         return Seconds(frames) / interval
+    }
+}
+
+extension Timeline: Collection {
+    
+    /// Start index. Forwards `registry.keyStorage.startIndex`.
+    public var startIndex: Int { return registry.keyStorage.startIndex }
+    
+    /// End index. Forwards `registry.keyStorage.endIndex`.
+    public var endIndex: Int { return registry.keyStorage.endIndex }
+    
+    /// Next index. Forwards `registry.keyStorage.index(after:)`.
+    public func index(after i: Int) -> Int {
+        guard i != endIndex else { fatalError("Cannot increment endIndex") }
+        return registry.keyStorage.index(after: i)
+    }
+    
+    /**
+     - returns: Value at the given `index`. Will crash if index out-of-range.
+     */
+    public subscript (index: Int) -> (Frames, [ActionType]) {
+        
+        let key = registry.keyStorage[index]
+        
+        guard let actions = registry[key] else {
+            fatalError("Values not stored correctly")
+        }
+        
+        return (key, actions)
+    }
+    
+    /**
+     - returns: Array of actions at the given `frames`, if present. Otherwise, `nil`.
+    */
+    public subscript (frames: Frames) -> [ActionType]? {
+        return registry[frames]
+    }
+    
+    /**
+     - returns: Array of actions at the given `seconds`, if present. Otherwise, `nil`.
+     */
+    public subscript (seconds: Seconds) -> [ActionType]? {
+        return registry[frames(from: seconds)]
     }
 }
 
