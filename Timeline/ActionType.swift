@@ -14,7 +14,7 @@ import Foundation
 public protocol ActionType {
    
     /// The function to be performed at a given time.
-    var function: ActionBody { get }
+    var body: ActionBody { get }
 }
 
 /**
@@ -26,14 +26,14 @@ public struct AtomicAction: ActionType {
     public let timeStamp: Seconds
     
     /// The function to be performed when called.
-    public let function: ActionBody
+    public let body: ActionBody
 
     /**
      Create an `AtomicAction`.
      */
-    public init(timeStamp: Seconds, function: @escaping () -> ()) {
+    public init(timeStamp: Seconds, body: @escaping () -> ()) {
         self.timeStamp = timeStamp
-        self.function = function
+        self.body = body
     }
 }
 
@@ -46,13 +46,13 @@ public struct LoopingAction: ActionType {
     public let timeInterval: Seconds
     
     /// The function to be performed when called.
-    public let function: ActionBody
+    public let body: ActionBody
     
     /**
      Create a `LoopingAction`.
      */
-    public init(timeInterval: Seconds, function: @escaping () -> ()) {
+    public init(timeInterval: Seconds, body: @escaping () -> ()) {
         self.timeInterval = timeInterval
-        self.function = function
+        self.body = body
     }
 }

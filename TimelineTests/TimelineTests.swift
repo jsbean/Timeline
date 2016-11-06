@@ -14,18 +14,18 @@ class TimelineTests: XCTestCase {
 
     func testTimeStampToFrame() {
         let timeline = Timeline(rate: 1/60)
-        let action: () -> () = { print("something") }
+        let body: ActionBody = { print("something") }
         let timeStamp: Seconds = 0.5
-        timeline.add(at: timeStamp, action: action)
+        timeline.add(at: timeStamp, body: body)
         XCTAssert(timeline.registry.count == 1)
         XCTAssert(timeline.registry[UInt(30)] != nil)
     }
     
     func testDefaultInitAtOneOverSixty() {
         let timeline = Timeline()
-        let action: () -> () = { print("something") }
+        let body: ActionBody = { print("something") }
         let timeStamp: Seconds = 0.5
-        timeline.add(at: timeStamp, action: action)
+        timeline.add(at: timeStamp, body: body)
         XCTAssert(timeline.registry.count == 1)
         print(timeline.registry)
         XCTAssert(timeline.registry[UInt(30)] != nil)
