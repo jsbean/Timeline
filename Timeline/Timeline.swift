@@ -13,9 +13,6 @@ import DictionaryTools
 /// Function to be performed by a `Timeline`.
 public typealias ActionBody = () -> ()
 
-/// Time unit inverse to the `rate` of a `Timeline`.
-internal typealias Frames = UInt
-
 /**
  Scheduler that performs functions at given times.
  
@@ -61,6 +58,11 @@ internal typealias Frames = UInt
  - TODO: Clean up `private` / `fileprivate` access levels.
 */
 public final class Timeline {
+    
+    // MARK: - Associated Types
+    
+    /// Time unit inverse to the `rate` of a `Timeline`.
+    internal typealias Frames = UInt
     
     // MARK: - Instance Properties
 
