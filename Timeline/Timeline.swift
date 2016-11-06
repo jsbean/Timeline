@@ -11,7 +11,7 @@ import QuartzCore
 import DictionaryTools
 
 /// Function to be performed by a `Timeline`.
-public typealias Action = () -> ()
+public typealias ActionBody = () -> ()
 
 /// Time unit for beats-per-minute.
 public typealias Tempo = Double
@@ -130,7 +130,7 @@ public final class Timeline {
     /**
      Add a given `action` at a given `timeStamp` in seconds.
      */
-    public func add(at timeStamp: Seconds, action function: @escaping Action) {
+    public func add(at timeStamp: Seconds, action function: @escaping ActionBody) {
         let action = AtomicAction(timeStamp: timeStamp, function: function)
         add(action, at: timeStamp)
     }
@@ -141,7 +141,7 @@ public final class Timeline {
     public func addLooping(
         at tempo: Tempo,
         offset: Seconds = 0,
-        action function: @escaping Action
+        action function: @escaping ActionBody
     )
     {
         let timeInterval = tempo / 60
@@ -155,7 +155,7 @@ public final class Timeline {
     public func addLooping(
         interval: Seconds,
         offset: Seconds = 0,
-        action function: @escaping Action
+        action function: @escaping ActionBody
     )
     {
         let action = LoopingAction(timeInterval: interval, function: function)
