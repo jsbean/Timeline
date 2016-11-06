@@ -6,8 +6,6 @@
 //
 //
 
-import Foundation
-
 /**
  Protocol defining structures of timed, performable events.
  */
