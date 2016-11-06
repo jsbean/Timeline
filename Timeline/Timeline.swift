@@ -14,7 +14,7 @@ import DictionaryTools
 public typealias Frames = UInt
 
 /**
- Scheduler that performs functions at given times.
+ Scheduler that performs actions at given times.
  
  **Examples:**
  
