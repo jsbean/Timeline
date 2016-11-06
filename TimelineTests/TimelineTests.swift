@@ -95,7 +95,7 @@ class TimelineTests: XCTestCase {
         XCTAssertEqual(timeline.currentFrame, 160)
     }
     
-    func testSorted() {
+    func testIterationSorted() {
         
         let timeline = Timeline()
         timeline.add(at: 3) { () }
@@ -103,5 +103,10 @@ class TimelineTests: XCTestCase {
         timeline.add(at: 5) { () }
         timeline.add(at: 1) { () }
         timeline.add(at: 4) { () }
+        
+        XCTAssertEqual(
+            timeline.map { $0.0 },
+            [1,2,3,4,5].map { Frames(Seconds($0) / timeline.rate) }
+        )
     }
 }

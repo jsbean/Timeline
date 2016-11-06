@@ -107,7 +107,7 @@ public final class Timeline {
     internal var currentFrame: Frames = 0
     
     // How often the timer should advance.
-    fileprivate let rate: Seconds
+    public let rate: Seconds
     
     // MARK: - Initializers
     
