@@ -6,6 +6,9 @@
 //
 //
 
+/// Function to be performed by a `Timeline`.
+public typealias ActionBody = () -> ()
+
 /**
  Protocol defining structures of timed, performable events.
  */

@@ -10,8 +10,7 @@ import Foundation
 import QuartzCore
 import DictionaryTools
 
-/// Function to be performed by a `Timeline`.
-public typealias ActionBody = () -> ()
+
 
 /// Time unit inverse to the `rate` of a `Timeline`.
 public typealias Frames = UInt
