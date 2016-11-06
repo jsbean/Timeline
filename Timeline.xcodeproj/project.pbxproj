@@ -151,8 +151,8 @@
 		0BF6F038AF440276489097F1 /* Timeline */ = {
 			isa = PBXGroup;
 			children = (
-				07F738FD1D1AB4C800F83AE8 /* Timeline.swift */,
 				07B68ABC1DCFEB0200FE8F59 /* Duration.swift */,
+				07F738FD1D1AB4C800F83AE8 /* Timeline.swift */,
 				074B58111D2288AB00215565 /* ActionType.swift */,
 				B3EF3CD3DD68C6E9E54C7872 /* Supporting Files */,
 			);

@@ -13,6 +13,9 @@ import DictionaryTools
 /// Function to be performed by a `Timeline`.
 public typealias ActionBody = () -> ()
 
+/// Time unit inverse to the `rate` of a `Timeline`.
+public typealias Frames = UInt
+
 /**
  Scheduler that performs functions at given times.
  
@@ -59,34 +62,30 @@ public typealias ActionBody = () -> ()
 */
 public final class Timeline {
     
-    // MARK: - Associated Types
-    
-    /// Time unit inverse to the `rate` of a `Timeline`.
-    internal typealias Frames = UInt
-    
     // MARK: - Instance Properties
 
     /// - returns: `true` if the internal timer is running. Otherwise, `false`.
     public var isActive: Bool = false
     
     /// Offset in `Seconds` of internal timer.
-    public var currentOffset: Seconds {
+    internal var currentOffset: Seconds {
         return seconds(from: currentFrame)
     }
     
     /// Amount of time in `Seconds` until the next event, if present. Otherwise, `nil`.
-    public var secondsUntilNext: Seconds? {
+    internal var secondsUntilNext: Seconds? {
         guard let nextFrames = next()?.0 else { return nil }
         return seconds(from: nextFrames - currentFrame)
     }
     
     /// Offset in `Seconds` of the next event, if present. Otherwise, `nil`.
-    public var offsetOfNext: Seconds? {
+    internal var offsetOfNext: Seconds? {
         guard let next = next() else { return nil }
         return seconds(from: next.0)
     }
     
-    // Storage of actions.
+    /// Storage of actions.
+    /// - TODO: Make `fileprivate`
     internal var registry = SortedDictionary<Frames, [ActionType]>()
     
     // Internal timer
@@ -256,6 +255,43 @@ public final class Timeline {
     
     fileprivate func seconds(from frames: Frames) -> Seconds {
         return Seconds(frames) / interval
+    }
+}
+
+extension Timeline: Collection {
+    
+    /// Start index. Forwards `registry.keyStorage.startIndex`.
+    public var startIndex: Int { return registry.keyStorage.startIndex }
+    
+    /// End index. Forwards `registry.keyStorage.endIndex`.
+    public var endIndex: Int { return registry.keyStorage.endIndex }
+    
+    /// Next index. Forwards `registry.keyStorage.index(after:)`.
+    public func index(after i: Int) -> Int {
+        guard i != endIndex else { fatalError("Cannot increment endIndex") }
+        return registry.keyStorage.index(after: i)
+    }
+    
+    /**
+     - returns: Value at the given `index`. Will crash if index out-of-range.
+     */
+    public subscript (index: Int) -> (Frames, [ActionType]) {
+        
+        let key = registry.keyStorage[index]
+        
+        guard let actions = registry[key] else {
+            fatalError("Values not stored correctly")
+        }
+        
+        return (key, actions)
+    }
+    
+    public subscript (frames: Frames) -> [ActionType]? {
+        return registry[frames]
+    }
+    
+    public subscript (seconds: Seconds) -> [ActionType]? {
+        return registry[frames(from: seconds)]
     }
 }
 
