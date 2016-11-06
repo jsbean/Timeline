@@ -10,8 +10,6 @@ import Foundation
 import QuartzCore
 import DictionaryTools
 
-
-
 /// Time unit inverse to the `rate` of a `Timeline`.
 public typealias Frames = UInt
 
