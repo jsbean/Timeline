@@ -89,7 +89,7 @@ public final class Timeline {
     internal var registry = SortedDictionary<Frames, [ActionType]>()
     
     // Internal timer
-    fileprivate var timer: Timer = Timer()
+    fileprivate var timer = Timer()
     
     // Start time
     fileprivate var startTime: Seconds = 0
