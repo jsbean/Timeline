@@ -60,9 +60,6 @@ public typealias Frames = UInt
 public final class Timeline {
     
     // MARK: - Instance Properties
-
-    /// - returns: `true` if the internal timer is running. Otherwise, `false`.
-    public var isActive: Bool = false
     
     /// Offset in `Seconds` of internal timer.
     internal var currentOffset: Seconds {
@@ -81,14 +78,17 @@ public final class Timeline {
         return seconds(from: next.0)
     }
     
+    // The current frame.
+    internal var currentFrame: Frames = 0
+    
     /// Storage of actions.
     /// - TODO: Make `fileprivate`
     internal var registry = SortedDictionary<Frames, [ActionType]>()
     
-    // Internal timer
+    // Internal timer.
     private var timer = Timer()
     
-    // Start time
+    // Start time.
     private var startTime: Seconds = 0
     
     // The amount of time in seconds that has elapsed since starting or resuming from paused.
@@ -100,8 +100,8 @@ public final class Timeline {
     // The inverted rate.
     private var interval: Seconds { return 1 / rate }
     
-    // The current frame.
-    internal var currentFrame: Frames = 0
+    /// - returns: `true` if the internal timer is running. Otherwise, `false`.
+    public var isActive: Bool = false
     
     // How often the timer should advance.
     public let rate: Seconds
