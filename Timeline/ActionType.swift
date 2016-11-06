@@ -10,13 +10,13 @@ import Foundation
 
 public protocol ActionType {
     
-    var function: () -> () { get }
+    var function: ActionBody { get }
 }
 
 public struct AtomicAction: ActionType {
     
     public let timeStamp: Seconds
-    public let function: () -> ()
+    public let function: ActionBody
 
     public init(timeStamp: Seconds, function: @escaping () -> ()) {
         self.timeStamp = timeStamp
@@ -27,7 +27,7 @@ public struct AtomicAction: ActionType {
 public struct LoopingAction: ActionType {
     
     public let timeInterval: Seconds
-    public let function: () -> ()
+    public let function: ActionBody
     
     public init(timeInterval: Seconds, function: @escaping () -> ()) {
         self.timeInterval = timeInterval
