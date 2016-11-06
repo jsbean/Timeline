@@ -56,9 +56,6 @@ public typealias Frames = UInt
  timeline.addLooping(at: 60) { self.showMetronome() }
  timeline.addLooping(at: 60, offset: 0.2) { self.hideMetronome() }
  ```
- 
- - TODO: Conform to `SequenceType` & `CollectionType`.
- - TODO: Clean up `private` / `fileprivate` access levels.
 */
 public final class Timeline {
     
@@ -89,21 +86,21 @@ public final class Timeline {
     internal var registry = SortedDictionary<Frames, [ActionType]>()
     
     // Internal timer
-    fileprivate var timer = Timer()
+    private var timer = Timer()
     
     // Start time
-    fileprivate var startTime: Seconds = 0
+    private var startTime: Seconds = 0
     
     // The amount of time in seconds that has elapsed since starting or resuming from paused.
     // TODO: Remove QuartzCore dependency if possible
-    fileprivate var secondsElapsed: Seconds {
+    private var secondsElapsed: Seconds {
         return CACurrentMediaTime() - startTime
     }
 
     // The inverted rate.
-    fileprivate var interval: Seconds { return 1 / rate }
+    private var interval: Seconds { return 1 / rate }
     
-    // - make private -- internal only for testing
+    // The current frame.
     internal var currentFrame: Frames = 0
     
     // How often the timer should advance.
@@ -223,7 +220,7 @@ public final class Timeline {
             .first
     }
     
-    fileprivate func makeTimer() -> Timer {
+    private func makeTimer() -> Timer {
         return Timer.scheduledTimer(
             timeInterval: rate,
             target: self,
@@ -249,11 +246,11 @@ public final class Timeline {
         currentFrame += 1
     }
     
-    fileprivate func frames(from seconds: Seconds) -> Frames {
+    internal func frames(from seconds: Seconds) -> Frames {
         return Frames(seconds * interval)
     }
     
-    fileprivate func seconds(from frames: Frames) -> Seconds {
+    internal func seconds(from frames: Frames) -> Seconds {
         return Seconds(frames) / interval
     }
 }
