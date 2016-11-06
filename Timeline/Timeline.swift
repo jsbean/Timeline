@@ -13,12 +13,6 @@ import DictionaryTools
 /// Function to be performed by a `Timeline`.
 public typealias ActionBody = () -> ()
 
-/// Time unit for beats-per-minute.
-public typealias Tempo = Double
-
-/// Time unit for seconds.
-public typealias Seconds = Double
-
 /// Time unit inverse to the `rate` of a `Timeline`.
 internal typealias Frames = UInt
 
