@@ -173,7 +173,7 @@ public final class Timeline {
      */
     public func start() {
         currentFrame = 0
-        startTime = Seconds(clock.uptimeNanoseconds / 1_000_000_000)
+        startTime = seconds(from: clock.uptimeNanoseconds)
         isActive = true
         timer = makeTimer()
     }
@@ -202,7 +202,7 @@ public final class Timeline {
         if isActive { return }
         timer = makeTimer()
         isActive = true
-        startTime = Seconds(clock.uptimeNanoseconds / 1_000_000_000)
+        startTime = seconds(from: clock.uptimeNanoseconds)
     }
     
     /**
@@ -260,6 +260,10 @@ public final class Timeline {
     
     internal func seconds(from frames: Frames) -> Seconds {
         return Seconds(frames) / interval
+    }
+    
+    internal func seconds(from nanoseconds: UInt64) -> Seconds {
+        return Seconds(clock.uptimeNanoseconds / 1_000_000_000)
     }
 }
 
