@@ -209,6 +209,7 @@ public final class Timeline {
         currentFrame = frames(from: time)
     }
     
+    // FIXME: Now the registry should be inherently sorted.
     internal func next() -> (Frames, [ActionType])? {
         return registry
             .lazy
@@ -227,6 +228,8 @@ public final class Timeline {
         )
     }
 
+    // FIXME: We are accumulating drift here by incrementing currentFrame, and not checking
+    //   it against `secondsElapsed`.
     @objc internal func advance() {
         if let actions = registry[currentFrame] {
             actions.forEach {

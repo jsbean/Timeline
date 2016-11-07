@@ -109,4 +109,40 @@ class TimelineTests: XCTestCase {
             [1,2,3,4,5].map { Frames(Seconds($0) / timeline.rate) }
         )
     }
+    
+    func testClear() {
+        
+        let timeline = Timeline()
+        timeline.add(at: 3) { () }
+        timeline.add(at: 2) { () }
+        timeline.clear()
+        
+        XCTAssertEqual(timeline.count, 0)
+    }
+    
+    func testStart() {
+        
+        let timeline = Timeline()
+        timeline.add(at: 3) { () }
+        timeline.add(at: 2) { () }
+        
+        XCTAssertFalse(timeline.isActive)
+
+        timeline.start()
+        XCTAssertEqual(timeline.currentFrame, 0)
+        
+        XCTAssert(timeline.isActive)
+    }
+    
+    func testStop() {
+        
+        let timeline = Timeline()
+        timeline.add(at: 3) { () }
+        timeline.add(at: 2) { () }
+        timeline.start()
+        timeline.stop()
+        
+        XCTAssertFalse(timeline.isActive)
+        XCTAssertEqual(timeline.currentFrame, 0)
+    }
 }

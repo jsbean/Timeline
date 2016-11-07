@@ -13,6 +13,8 @@
 		074B58131D2288AB00215565 /* ActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074B58111D2288AB00215565 /* ActionType.swift */; };
 		07B68ABD1DCFEB0200FE8F59 /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B68ABC1DCFEB0200FE8F59 /* Duration.swift */; };
 		07B68ABE1DCFEB0200FE8F59 /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B68ABC1DCFEB0200FE8F59 /* Duration.swift */; };
+		07B68AC01DCFF99800FE8F59 /* ActionTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B68ABF1DCFF99800FE8F59 /* ActionTypeTests.swift */; };
+		07B68AC11DCFF99800FE8F59 /* ActionTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B68ABF1DCFF99800FE8F59 /* ActionTypeTests.swift */; };
 		07F63AA41D208A9900C7FB22 /* DictionaryTools.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A050C632E1221F2A36491428 /* DictionaryTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		07F739041D1AB4C800F83AE8 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F738FD1D1AB4C800F83AE8 /* Timeline.swift */; };
 		07F739051D1AB4C800F83AE8 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F738FD1D1AB4C800F83AE8 /* Timeline.swift */; };
@@ -86,6 +88,7 @@
 		0733E9F41D1BE8F500FDDE97 /* TimelineTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimelineTests.swift; path = TimelineTests/TimelineTests.swift; sourceTree = "<group>"; };
 		074B58111D2288AB00215565 /* ActionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionType.swift; path = Timeline/ActionType.swift; sourceTree = "<group>"; };
 		07B68ABC1DCFEB0200FE8F59 /* Duration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Duration.swift; path = Timeline/Duration.swift; sourceTree = "<group>"; };
+		07B68ABF1DCFF99800FE8F59 /* ActionTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionTypeTests.swift; path = TimelineTests/ActionTypeTests.swift; sourceTree = "<group>"; };
 		07F738FD1D1AB4C800F83AE8 /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Timeline/Timeline.swift; sourceTree = "<group>"; };
 		2A9280607A024DC801DF42E1 /* Timeline.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Timeline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BEB43C733D9565FF2DC2E4E /* DictionaryTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DictionaryTools.framework; path = Carthage/Build/Mac/DictionaryTools.framework; sourceTree = "<group>"; };
@@ -184,6 +187,7 @@
 			children = (
 				D4AB9B42FB308D95002C7F3C /* Supporting Files */,
 				0733E9F41D1BE8F500FDDE97 /* TimelineTests.swift */,
+				07B68ABF1DCFF99800FE8F59 /* ActionTypeTests.swift */,
 			);
 			name = TimelineTests;
 			sourceTree = "<group>";
@@ -433,6 +437,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0733E9F61D1BE8F500FDDE97 /* TimelineTests.swift in Sources */,
+				07B68AC11DCFF99800FE8F59 /* ActionTypeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +446,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0733E9F51D1BE8F500FDDE97 /* TimelineTests.swift in Sources */,
+				07B68AC01DCFF99800FE8F59 /* ActionTypeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
