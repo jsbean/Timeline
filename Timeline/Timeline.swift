@@ -260,7 +260,7 @@ public final class Timeline {
     }
     
     internal func frames(from clock: DispatchTime) -> Frames {
-        return frames(from: seconds(from: clock.uptimeNanoseconds))
+        return frames(from: seconds(from: clock))
     }
     
     internal func seconds(from frames: Frames) -> Seconds {
