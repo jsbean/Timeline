@@ -85,6 +85,7 @@ public final class Timeline {
     // Internal timer.
     private var timer = Timer()
     
+    // TODO: Consider encapsulating this
     private var clock = DispatchTime(uptimeNanoseconds: 0)
     
     // Start time.
@@ -245,7 +246,7 @@ public final class Timeline {
                 // perform function
                 $0.body()
                 
-                // if looping action,
+                // if looping action, add next action
                 if let loopingAction = $0 as? LoopingAction {
                     add(loopingAction, at: secondsElapsed + loopingAction.timeInterval)
                 }
