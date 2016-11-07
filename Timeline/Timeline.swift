@@ -95,7 +95,7 @@ public final class Timeline {
     private var secondsElapsed: Seconds {
         
         // FIXME: Make converter
-        return Seconds(clock.uptimeNanoseconds / 1_000_000_000) - startTime
+        return seconds(from: clock.uptimeNanoseconds) - startTime
     }
 
     // The inverted rate.
