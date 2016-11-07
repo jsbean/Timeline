@@ -145,4 +145,18 @@ class TimelineTests: XCTestCase {
         XCTAssertFalse(timeline.isActive)
         XCTAssertEqual(timeline.currentFrame, 0)
     }
+    
+    func testSubscriptSeconds() {
+        
+        let timeline = Timeline()
+        timeline.add(at: 3) { () }
+        timeline.add(at: 2) { () }
+        timeline.add(at: 5) { () }
+        timeline.add(at: 1) { () }
+        timeline.add(at: 4) { () }
+        
+        stride(from: Seconds(1), to: 5, by: 1).forEach { timeStamp in
+            XCTAssertNotNil(timeline[timeStamp])
+        }
+    }
 }
