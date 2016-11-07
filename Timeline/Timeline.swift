@@ -231,6 +231,10 @@ public final class Timeline {
     // FIXME: We are accumulating drift here by incrementing currentFrame, and not checking
     //   it against `secondsElapsed`.
     @objc internal func advance() {
+        
+        // TODO: Calculate offset time since start of `Timer` with `DispatchTime`,
+        //  then, calculate `currentFrame` from this offset
+        
         if let actions = registry[currentFrame] {
             actions.forEach {
                 
