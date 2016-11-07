@@ -259,12 +259,16 @@ public final class Timeline {
         return Frames(seconds * interval)
     }
     
+    internal func frames(from clock: DispatchTime) -> Frames {
+        return frames(from: seconds(from: clock.uptimeNanoseconds))
+    }
+    
     internal func seconds(from frames: Frames) -> Seconds {
         return Seconds(frames) / interval
     }
     
     internal func seconds(from nanoseconds: UInt64) -> Seconds {
-        return Seconds(clock.uptimeNanoseconds / 1_000_000_000)
+        return Seconds(nanoseconds / 1_000_000_000)
     }
 }
 
