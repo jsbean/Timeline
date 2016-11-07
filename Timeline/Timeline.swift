@@ -85,13 +85,17 @@ public final class Timeline {
     // Internal timer.
     private var timer = Timer()
     
+    private var clock = DispatchTime(uptimeNanoseconds: 0)
+    
     // Start time.
     private var startTime: Seconds = 0
     
     // The amount of time in seconds that has elapsed since starting or resuming from paused.
     // TODO: Remove QuartzCore dependency if possible
     private var secondsElapsed: Seconds {
-        return CACurrentMediaTime() - startTime
+        
+        // FIXME: Make converter
+        return Seconds(clock.uptimeNanoseconds / 1_000_000_000) - startTime
     }
 
     // The inverted rate.
@@ -169,7 +173,7 @@ public final class Timeline {
      */
     public func start() {
         currentFrame = 0
-        startTime = CACurrentMediaTime()
+        startTime = Seconds(clock.uptimeNanoseconds / 1_000_000_000)
         isActive = true
         timer = makeTimer()
     }
@@ -198,7 +202,7 @@ public final class Timeline {
         if isActive { return }
         timer = makeTimer()
         isActive = true
-        startTime = CACurrentMediaTime()
+        startTime = Seconds(clock.uptimeNanoseconds / 1_000_000_000)
     }
     
     /**
