@@ -201,7 +201,7 @@ class TimelineTests: XCTestCase {
                     let expectedTotalOffset = range[i]
                     
                     let actualLocalOffset = Seconds(current - last) / 1_000_000_000
-                    let expectedLocalOffset: Seconds = 1
+                    let expectedLocalOffset: Seconds = interval
                     
                     let globalError = abs(actualTotalOffset - expectedTotalOffset)
                     let localError = abs(expectedLocalOffset - actualLocalOffset)
@@ -251,12 +251,28 @@ class TimelineTests: XCTestCase {
     }
     
     func assertAccuracyWithPulseEverySecond(for duration: Seconds) {
-        assertAccuracyWithRepeatedPulse(interval: 1, for: 60)
+        assertAccuracyWithRepeatedPulse(interval: 1, for: duration)
     }
     
     // TODO: Implement: testAccuracyWithTimePoints([Seconds]) { }
     
     func testAccuracyWithPulseEverySecondForAMinute() {
         assertAccuracyWithPulseEverySecond(for: 60)
+    }
+    
+    func testAccuracyWithPulseEveryThirdOfASecondForAMinute() {
+        assertAccuracyWithRepeatedPulse(interval: 1/3, for: 60)
+    }
+    
+    func testAccuracyWithPulseEveryTenthOfASecondForAMinute() {
+        assertAccuracyWithRepeatedPulse(interval: 1/10, for: 60)
+    }
+    
+    func testAccuracyWithPulseAbritraryIntervalForAMinute() {
+        assertAccuracyWithRepeatedPulse(interval: 0.123456, for: 60)
+    }
+    
+    func testAccuracyOfLongIntervalForAMinute() {
+        assertAccuracyWithRepeatedPulse(interval: 12.3456, for: 60)
     }
 }
