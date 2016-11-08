@@ -83,8 +83,9 @@ public final class Timeline {
     internal var registry = SortedDictionary<Frames, [ActionType]>()
     
     // Internal timer.
-    private var timer = Timer()
+    private var timer: Timer!
     
+    // Clock that measures how much time has passed, in ms
     // TODO: Consider encapsulating this
     private var clock = DispatchTime(uptimeNanoseconds: 0)
     
@@ -171,6 +172,8 @@ public final class Timeline {
     
     /**
      Start the timeline.
+     
+     - TODO: Consider moving the reinitialization of `timer` to the beginning!
      */
     public func start() {
         currentFrame = 0
@@ -183,7 +186,9 @@ public final class Timeline {
      Stop the timeline.
      */
     public func stop() {
-        timer.invalidate()
+        
+        // TODO: Consider calling `pause()` to keep DRY.
+        timer?.invalidate()
         isActive = false
         currentFrame = 0
     }
@@ -192,7 +197,7 @@ public final class Timeline {
      Pause the timeline.
      */
     public func pause() {
-        timer.invalidate()
+        timer?.invalidate()
         isActive = false
     }
     
@@ -221,16 +226,20 @@ public final class Timeline {
             .filter { $0.0 > self.currentFrame }
             .sorted { $0.0 < $1.0 }
             .first
+        
     }
     
     private func makeTimer() -> Timer {
-        return Timer.scheduledTimer(
+        self.timer?.invalidate()
+        let timer = Timer.scheduledTimer(
             timeInterval: rate,
             target: self,
             selector: #selector(advance),
             userInfo: nil,
             repeats: true
         )
+        timer.fire()
+        return timer
     }
 
     // FIXME: We are accumulating drift here by incrementing currentFrame, and not checking
@@ -239,8 +248,9 @@ public final class Timeline {
         
         // TODO: Calculate offset time since start of `Timer` with `DispatchTime`,
         //  then, calculate `currentFrame` from this offset
-        
+
         if let actions = registry[currentFrame] {
+            
             actions.forEach {
                 
                 // perform function
@@ -252,6 +262,7 @@ public final class Timeline {
                 }
             }
         }
+        
         currentFrame += 1
     }
     
