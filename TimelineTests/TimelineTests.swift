@@ -170,13 +170,13 @@ class TimelineTests: XCTestCase {
         }
     }
     
-    func assertAccuracyWithPulseEverySeconds(for duration: Seconds) {
-        
+    func assertAccuracyWithRepeatedPulse(interval: Seconds, for duration: Seconds) {
+     
         guard duration > 0 else { return }
         
         let unfulfilledExpectation = expectation(description: "Test accuracy of Timer")
         
-        let range = stride(from: Seconds(0), to: Seconds(60), by: Seconds(1)).map { $0 }
+        let range = stride(from: Seconds(0), to: duration, by: interval).map { $0 }
         
         // Data
         var globalErrors: [Double] = []
@@ -193,7 +193,7 @@ class TimelineTests: XCTestCase {
             timeline.add(at: offset) {
                 
                 // For now, don't test an event on first hit, as the offset should be 0
-                if i > 0 {
+                if offset > 0 {
                     
                     let current = DispatchTime.now().uptimeNanoseconds
                     
@@ -250,9 +250,13 @@ class TimelineTests: XCTestCase {
         waitForExpectations(timeout: duration + 2) { _ in }
     }
     
+    func assertAccuracyWithPulseEverySecond(for duration: Seconds) {
+        assertAccuracyWithRepeatedPulse(interval: 1, for: 60)
+    }
+    
     // TODO: Implement: testAccuracyWithTimePoints([Seconds]) { }
     
     func testAccuracyWithPulseEverySecondForAMinute() {
-        assertAccuracyWithPulseEverySeconds(for: 60)
+        assertAccuracyWithPulseEverySecond(for: 60)
     }
 }
