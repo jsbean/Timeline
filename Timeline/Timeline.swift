@@ -174,10 +174,7 @@ public final class Timeline {
      Stop the timeline.
      */
     public func stop() {
-        
-        // TODO: Consider calling `pause()` to keep DRY.
-        timer?.invalidate()
-        isActive = false
+        pause()
         currentFrame = 0
     }
     
