@@ -185,7 +185,6 @@ class TimelineTests: XCTestCase {
         // Create `Timeline` to test
         let timeline = Timeline()
         
-        //
         let start: UInt64 = DispatchTime.now().uptimeNanoseconds
         var last: UInt64 = DispatchTime.now().uptimeNanoseconds
         
@@ -206,6 +205,10 @@ class TimelineTests: XCTestCase {
                     
                     let globalError = abs(actualTotalOffset - expectedTotalOffset)
                     let localError = abs(expectedLocalOffset - actualLocalOffset)
+                    
+                    print("Offset: \(offset)")
+                    print("- error from start: \(globalError)")
+                    print("- error since last: \(localError)")
                     
                     globalErrors.append(globalError)
                     localErrors.append(localError)
@@ -240,7 +243,10 @@ class TimelineTests: XCTestCase {
             unfulfilledExpectation.fulfill()
         }
         
+        // Start the timeline
         timeline.start()
+        
+        // Ensure that test lasts for enough time
         waitForExpectations(timeout: duration + 2) { _ in }
     }
     
