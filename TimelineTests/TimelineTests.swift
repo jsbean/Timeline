@@ -67,6 +67,7 @@ class TimelineTests: XCTestCase {
         XCTAssertEqual(timeline.currentOffset, 40)
     }
     
+    /*
     func testNext() {
         
         let timeline = Timeline()
@@ -86,6 +87,7 @@ class TimelineTests: XCTestCase {
         XCTAssertEqual(timeline.next()!.0, 5 * 60)
         XCTAssertEqual(timeline.secondsUntilNext, 0.5)
     }
+    */
     
     func testAdvancePauseAdvance() {
         
@@ -239,6 +241,15 @@ class TimelineTests: XCTestCase {
             print("- maximum local error: \(maxLocalError)")
             print("- average local error: \(averageLocalError)")
             
+            let xs = Array(range.dropLast())
+            let ys = globalErrors
+            
+            print("range: \(range)")
+            print("globalErrors: \(globalErrors)")
+            
+            let globalSlope = self.slope(xs, ys)
+            print("globalSlope: \(globalSlope)")
+            
             // Fulfill expecation
             unfulfilledExpectation.fulfill()
         }
@@ -274,5 +285,42 @@ class TimelineTests: XCTestCase {
     
     func testAccuracyOfLongIntervalForAMinute() {
         assertAccuracyWithRepeatedPulse(interval: 12.3456, for: 60)
+    }
+    
+    func testAccuracyWithPuleEverySecondFor30Minutes() {
+        assertAccuracyWithPulseEverySecond(for: 60)
+    }
+    
+    func testAccuracyWithPulseEverySecondForFiveSeconds() {
+        assertAccuracyWithRepeatedPulse(interval: 1, for: 5)
+    }
+    
+    // Taken from [Ray Wenderlich Swift Algorithm Club](https://github.com/raywenderlich/swift-algorithm-club/tree/master/Linear%20Regression)
+    // Should modify within ArithmeticTools
+    
+    func average(_ input: [Double]) -> Double {
+        return input.reduce(0, +) / Double(input.count)
+    }
+    
+    func multiply(_ input1: [Double], _ input2: [Double]) -> [Double] {
+        return input1.enumerated().map { (index, element) in
+            return element*input2[index]
+        }
+    }
+    
+    func slope(_ xVariable: [Double], _ yVariable: [Double]) -> Double {
+        let sum1 = average(multiply(xVariable, yVariable)) - average(xVariable) * average(yVariable)
+        let sum2 = average(multiply(xVariable, xVariable)) - pow(average(xVariable), 2)
+        return sum1 / sum2
+    }
+    
+    func linearRegression(_ xVariable: [Double], _ yVariable: [Double])
+        -> (Double) -> (Double)
+    {
+        let sum1 = average(multiply(xVariable, yVariable)) - average(xVariable) * average(yVariable)
+        let sum2 = average(multiply(xVariable, xVariable)) - pow(average(xVariable), 2)
+        let slope = sum1 / sum2
+        let intercept = average(yVariable) - slope * average(xVariable)
+        return { intercept + slope * $0 }
     }
 }
