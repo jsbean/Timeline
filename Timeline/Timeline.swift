@@ -62,20 +62,6 @@ public final class Timeline {
     internal var currentOffset: Seconds {
         return seconds(from: currentFrame)
     }
-    
-    /*
-    /// Amount of time in `Seconds` until the next event, if present. Otherwise, `nil`.
-    internal var secondsUntilNext: Seconds? {
-        guard let nextFrames = next()?.0 else { return nil }
-        return seconds(from: nextFrames - currentFrame)
-    }
-    
-    /// Offset in `Seconds` of the next event, if present. Otherwise, `nil`.
-    internal var offsetOfNext: Seconds? {
-        guard let next = next() else { return nil }
-        return seconds(from: next.0)
-    }
-    */
  
     // The current frame.
     internal var currentFrame: Frames = 0
@@ -220,18 +206,6 @@ public final class Timeline {
         pause()
         currentFrame = frames(from: time)
     }
-    
-    /*
-    // FIXME: Now the registry should be inherently sorted.
-    internal func next() -> (Frames, [ActionType])? {
-        return registry
-            .lazy
-            .filter { $0.0 > self.currentFrame }
-            .sorted { $0.0 < $1.0 }
-            .first
-        
-    }
-    */
     
     private func makeTimer() -> Timer {
         self.timer?.invalidate()
