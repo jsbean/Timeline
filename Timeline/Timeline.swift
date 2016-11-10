@@ -131,12 +131,7 @@ public final class Timeline {
     /**
      Add a looping action with the given `interval` between firings.
      */
-    public func addLooping(
-        interval: Seconds,
-        offset: Seconds = 0,
-        body: @escaping ActionBody
-    )
-    {
+    public func addLooping(interval: Seconds, offset: Seconds = 0, body: @escaping ActionBody) {
         let action = LoopingAction(timeInterval: interval, body: body)
         add(action, at: offset)
     }
