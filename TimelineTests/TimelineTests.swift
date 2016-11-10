@@ -242,13 +242,13 @@ class TimelineTests: XCTestCase {
             print("- average local error: \(averageLocalError)")
             
             let xs = Array(range.dropLast())
-            let ys = globalErrors
+            let globalYs = globalErrors
+            let localYs = localErrors
             
-            print("range: \(range)")
-            print("globalErrors: \(globalErrors)")
-            
-            let globalSlope = self.slope(xs, ys)
-            print("globalSlope: \(globalSlope)")
+            let globalSlope = self.slope(xs, globalYs)
+            let localSlope = self.slope(xs, localYs)
+            print("- globalSlope: \(globalSlope)")
+            print("- localSlope: \(localSlope)")
             
             // Fulfill expecation
             unfulfilledExpectation.fulfill()
@@ -298,6 +298,9 @@ class TimelineTests: XCTestCase {
     func DISABLE_testAccuracyWithPulseEverySecondForFiveSeconds() {
         assertAccuracyWithRepeatedPulse(interval: 1, for: 5)
     }
+    
+    
+    // TODO: This will be available in ArithmeticTools
     
     // Taken from [Ray Wenderlich Swift Algorithm Club](https://github.com/raywenderlich/swift-algorithm-club/tree/master/Linear%20Regression)
     // Should modify within ArithmeticTools

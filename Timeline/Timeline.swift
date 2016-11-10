@@ -64,7 +64,7 @@ public final class Timeline {
     }
  
     // The current frame.
-    internal var currentFrame: Frames = 0
+    internal private(set) var currentFrame: Frames = 0
     
     /// Storage of actions.
     /// - TODO: Make `fileprivate`
