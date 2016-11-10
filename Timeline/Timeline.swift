@@ -63,7 +63,7 @@ public final class Timeline {
     /// - returns: `true` if the internal timer is running. Otherwise, `false`.
     public private(set) var isActive: Bool = false
     
-    /// How often the timer should advance.
+    // How often the timer should advance.
     internal let rate: Seconds
     
     // Internal timer that increments at the `rate`.
