@@ -67,28 +67,6 @@ class TimelineTests: XCTestCase {
         XCTAssertEqual(timeline.currentOffset, 40)
     }
     
-    /*
-    func testNext() {
-        
-        let timeline = Timeline()
-        timeline.add(at: 1) { () }
-        
-        XCTAssertNotNil(timeline.next())
-        XCTAssertEqual(timeline.next()!.0, 60)
-        XCTAssertEqual(timeline.offsetOfNext, 1)
-    }
-    
-    func testSkip() {
-        
-        let timeline = Timeline()
-        stride(from: Seconds(0), to: 10, by: 1.0).forEach { timeline.add(at: $0) { () } }
-        timeline.skip(to: 4.5)
-        
-        XCTAssertEqual(timeline.next()!.0, 5 * 60)
-        XCTAssertEqual(timeline.secondsUntilNext, 0.5)
-    }
-    */
-    
     func testAdvancePauseAdvance() {
         
         let timeline = Timeline()
