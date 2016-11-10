@@ -219,6 +219,8 @@ class TimelineTests: XCTestCase {
             print("- maximum local error: \(maxLocalError)")
             print("- average local error: \(averageLocalError)")
             
+            // TODO: Assert that there is no drift by check the linear regression
+            
             let xs = Array(range.dropLast())
             let globalYs = globalErrors
             let localYs = localErrors
@@ -227,7 +229,7 @@ class TimelineTests: XCTestCase {
             let localSlope = slope(Dictionary(xs, localYs))
             print("- globalSlope: \(globalSlope)")
             print("- localSlope: \(localSlope)")
-            
+
             // Fulfill expecation
             unfulfilledExpectation.fulfill()
         }
