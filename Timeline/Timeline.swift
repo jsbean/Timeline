@@ -68,7 +68,7 @@ public final class Timeline {
     
     /// Storage of actions.
     /// - TODO: Make `fileprivate`
-    internal var registry = SortedDictionary<Frames, [ActionType]>()
+    fileprivate var registry = SortedDictionary<Frames, [ActionType]>()
     
     // Internal timer.
     private var timer: Timer!
@@ -92,7 +92,7 @@ public final class Timeline {
     private var interval: Seconds { return 1 / rate }
     
     /// - returns: `true` if the internal timer is running. Otherwise, `false`.
-    public var isActive: Bool = false
+    public private(set) var isActive: Bool = false
     
     // How often the timer should advance.
     public let rate: Seconds

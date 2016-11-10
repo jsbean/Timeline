@@ -265,7 +265,7 @@ class TimelineTests: XCTestCase {
         assertAccuracyWithRepeatedPulse(interval: 1, for: duration)
     }
     
-    func testAccuractWithFastPulseForFiveSeconds() {
+    func DISABLED_testAccuractWithFastPulseForFiveSeconds() {
         assertAccuracyWithRepeatedPulse(interval: 0.1, for: 5)
     }
     
