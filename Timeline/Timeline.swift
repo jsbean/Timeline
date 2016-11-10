@@ -215,8 +215,6 @@ public final class Timeline {
         return timer
     }
 
-    // FIXME: We are accumulating drift here by incrementing currentFrame, and not checking
-    //   it against `secondsElapsed`.
     @objc internal func advance() {
         
         // TODO: Calculate offset time since start of `Timer` with `DispatchTime`,
