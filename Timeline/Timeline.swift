@@ -122,12 +122,7 @@ public final class Timeline {
     /**
      Add a looping action at a given `tempo`.
      */
-    public func addLooping(
-        at tempo: Tempo,
-        offset: Seconds = 0,
-        body: @escaping ActionBody
-    )
-    {
+    public func addLooping(at tempo: Tempo, offset: Seconds = 0, body: @escaping ActionBody) {
         let timeInterval = tempo / 60
         let action = LoopingAction(timeInterval: timeInterval, body: body)
         add(action, at: offset)
