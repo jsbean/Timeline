@@ -227,8 +227,8 @@ class TimelineTests: XCTestCase {
 
             let globalSlope = slope(Dictionary(xs, globalYs))
             let localSlope = slope(Dictionary(xs, localYs))
-            print("- globalSlope: \(globalSlope)")
-            print("- localSlope: \(localSlope)")
+            print("- global slope: \(globalSlope)")
+            print("- local slope: \(localSlope)")
 
             // Fulfill expecation
             unfulfilledExpectation.fulfill()
