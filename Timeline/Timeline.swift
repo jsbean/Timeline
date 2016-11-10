@@ -58,23 +58,27 @@ public final class Timeline {
     
     // MARK: - Instance Properties
     
-    /// Offset in `Seconds` of internal timer.
+    // MARK: Timing
+    
+    /// How often the timer should advance.
+    internal let rate: Seconds
+    
+    /// - returns: `true` if the internal timer is running. Otherwise, `false`.
+    public private(set) var isActive: Bool = false
+    
+    // Internal timer that increments at the `rate`.
+    private var timer: Timer!
+    
+    // Clock that measures how much time has passed, in ms
+    private var clock = DispatchTime(uptimeNanoseconds: 0)
+    
+    // Offset in `Seconds` of internal timer.
     internal var currentOffset: Seconds {
         return seconds(from: currentFrame)
     }
  
     // The current frame.
     internal private(set) var currentFrame: Frames = 0
-    
-    /// Storage of actions.
-    fileprivate var registry = SortedDictionary<Frames, [ActionType]>()
-    
-    // Internal timer.
-    private var timer: Timer!
-    
-    // Clock that measures how much time has passed, in ms
-    // TODO: Consider encapsulating this
-    private var clock = DispatchTime(uptimeNanoseconds: 0)
     
     // Start time.
     private var startTime: Seconds = 0
@@ -86,15 +90,12 @@ public final class Timeline {
         // FIXME: Make converter
         return seconds(from: clock.uptimeNanoseconds) - startTime
     }
-
+    
     // The inverted rate.
     private var interval: Seconds { return 1 / rate }
     
-    /// - returns: `true` if the internal timer is running. Otherwise, `false`.
-    public private(set) var isActive: Bool = false
-    
-    // How often the timer should advance.
-    public let rate: Seconds
+    /// Storage of actions.
+    fileprivate var registry = SortedDictionary<Frames, [ActionType]>()
     
     // MARK: - Initializers
     
