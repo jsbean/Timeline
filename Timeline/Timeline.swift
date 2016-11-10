@@ -67,7 +67,6 @@ public final class Timeline {
     internal private(set) var currentFrame: Frames = 0
     
     /// Storage of actions.
-    /// - TODO: Make `fileprivate`
     fileprivate var registry = SortedDictionary<Frames, [ActionType]>()
     
     // Internal timer.
