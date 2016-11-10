@@ -208,7 +208,7 @@ public final class Timeline {
         )
         
         // Fire the `advance` method immediately, as the above method only starts after the
-        // delay of `rate`
+        // delay of `rate`.
         timer.fire()
         
         // Return the timer
