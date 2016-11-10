@@ -220,11 +220,12 @@ public final class Timeline {
         // TODO: Calculate offset time since start of `Timer` with `DispatchTime`,
         //  then, calculate `currentFrame` from this offset
 
+        // Retrieve the actions that need to be performed now, if any
         if let actions = registry[currentFrame] {
             
             actions.forEach {
                 
-                // perform function
+                // perform the action
                 $0.body()
                 
                 // if looping action, add next action
