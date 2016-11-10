@@ -223,8 +223,8 @@ class TimelineTests: XCTestCase {
             let globalYs = globalErrors
             let localYs = localErrors
             
-            let globalSlope = self.slope(xs, globalYs)
-            let localSlope = self.slope(xs, localYs)
+            let globalSlope = slope(xs, globalYs)
+            let localSlope = slope(xs, localYs)
             print("- globalSlope: \(globalSlope)")
             print("- localSlope: \(localSlope)")
             
@@ -278,6 +278,7 @@ class TimelineTests: XCTestCase {
     }
     
     
+    /*
     // TODO: This will be available in ArithmeticTools
     
     // Taken from [Ray Wenderlich Swift Algorithm Club](https://github.com/raywenderlich/swift-algorithm-club/tree/master/Linear%20Regression)
@@ -308,4 +309,5 @@ class TimelineTests: XCTestCase {
         let intercept = average(yVariable) - slope * average(xVariable)
         return { intercept + slope * $0 }
     }
+    */
 }
