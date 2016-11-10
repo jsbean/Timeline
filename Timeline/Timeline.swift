@@ -84,7 +84,6 @@ public final class Timeline {
     private var startTime: Seconds = 0
     
     // The amount of time in seconds that has elapsed since starting or resuming from paused.
-    // TODO: Remove QuartzCore dependency if possible
     private var secondsElapsed: Seconds {
         
         // FIXME: Make converter
