@@ -222,9 +222,9 @@ class TimelineTests: XCTestCase {
             let xs = Array(range.dropLast())
             let globalYs = globalErrors
             let localYs = localErrors
-            
-            let globalSlope = slope(xs, globalYs)
-            let localSlope = slope(xs, localYs)
+
+            let globalSlope = slope(Dictionary(xs, globalYs))
+            let localSlope = slope(Dictionary(xs, localYs))
             print("- globalSlope: \(globalSlope)")
             print("- localSlope: \(localSlope)")
             
@@ -276,38 +276,16 @@ class TimelineTests: XCTestCase {
     func DISABLE_testAccuracyWithPulseEverySecondForFiveSeconds() {
         assertAccuracyWithRepeatedPulse(interval: 1, for: 5)
     }
+}
+
+
+extension Dictionary {
     
-    
-    /*
-    // TODO: This will be available in ArithmeticTools
-    
-    // Taken from [Ray Wenderlich Swift Algorithm Club](https://github.com/raywenderlich/swift-algorithm-club/tree/master/Linear%20Regression)
-    // Should modify within ArithmeticTools
-    
-    func average(_ input: [Double]) -> Double {
-        return input.reduce(0, +) / Double(input.count)
-    }
-    
-    func multiply(_ input1: [Double], _ input2: [Double]) -> [Double] {
-        return input1.enumerated().map { (index, element) in
-            return element*input2[index]
+    fileprivate init(_ xs: [Key], _ ys: [Value]) {
+        self = zip(xs,ys).reduce([:]) { dict, cur in
+            var dict = dict
+            dict[cur.0] = cur.1
+            return dict
         }
     }
-    
-    func slope(_ xVariable: [Double], _ yVariable: [Double]) -> Double {
-        let sum1 = average(multiply(xVariable, yVariable)) - average(xVariable) * average(yVariable)
-        let sum2 = average(multiply(xVariable, xVariable)) - pow(average(xVariable), 2)
-        return sum1 / sum2
-    }
-    
-    func linearRegression(_ xVariable: [Double], _ yVariable: [Double])
-        -> (Double) -> (Double)
-    {
-        let sum1 = average(multiply(xVariable, yVariable)) - average(xVariable) * average(yVariable)
-        let sum2 = average(multiply(xVariable, xVariable)) - pow(average(xVariable), 2)
-        let slope = sum1 / sum2
-        let intercept = average(yVariable) - slope * average(xVariable)
-        return { intercept + slope * $0 }
-    }
-    */
 }
