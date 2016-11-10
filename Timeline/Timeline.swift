@@ -235,6 +235,7 @@ public final class Timeline {
             }
         }
         
+        // Increment frame
         currentFrame += 1
     }
     
