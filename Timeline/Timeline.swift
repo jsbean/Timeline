@@ -94,7 +94,9 @@ public final class Timeline {
     // The inverted rate.
     private var interval: Seconds { return 1 / rate }
     
-    /// Storage of actions.
+    // MARK: - Events
+    
+    // Storage of actions.
     fileprivate var registry = SortedDictionary<Frames, [ActionType]>()
     
     // MARK: - Initializers
