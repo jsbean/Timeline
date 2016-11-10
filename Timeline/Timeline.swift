@@ -160,8 +160,6 @@ public final class Timeline {
     
     /**
      Start the timeline.
-     
-     - TODO: Consider moving the reinitialization of `timer` to the beginning!
      */
     public func start() {
         currentFrame = 0
