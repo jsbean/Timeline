@@ -279,16 +279,3 @@ class TimelineTests: XCTestCase {
         assertAccuracyWithRepeatedPulse(interval: 1, for: 5)
     }
 }
-
-
-// TODO: Move up to `dn-m/DictionaryTools`
-extension Dictionary {
-    
-    fileprivate init(_ xs: [Key], _ ys: [Value]) {
-        self = zip(xs,ys).reduce([:]) { dict, cur in
-            var dict = dict
-            dict[cur.0] = cur.1
-            return dict
-        }
-    }
-}
