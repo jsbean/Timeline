@@ -203,7 +203,11 @@ public final class Timeline {
     }
     
     private func makeTimer() -> Timer {
+        
+        // Ensure that there is no zombie timer
         self.timer?.invalidate()
+        
+        // Create a `Timer` that will call the `advance` method at the given `rate`
         let timer = Timer.scheduledTimer(
             timeInterval: rate,
             target: self,
@@ -211,7 +215,12 @@ public final class Timeline {
             userInfo: nil,
             repeats: true
         )
+        
+        // Fire the `advance` method immediately, as the above method only starts after the
+        // delay of `rate`
         timer.fire()
+        
+        // Return the timer
         return timer
     }
 
