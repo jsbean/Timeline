@@ -43,7 +43,7 @@ class TimelineTests: XCTestCase {
         timeline.add(at: timeStamp, body: body)
         
         XCTAssertEqual(timeline.count, 1)
-        XCTAssertNotNil(timeline[Frames(30)])
+        XCTAssertNotNil(timeline[Frames(60)])
     }
     
     func testMetronomeInjection() {
@@ -76,13 +76,13 @@ class TimelineTests: XCTestCase {
         XCTAssertEqual(timeline.currentFrame, 100)
         
         timeline.skip(to: 1)
-        XCTAssertEqual(timeline.currentFrame, 60)
+        XCTAssertEqual(timeline.currentFrame, 120)
         
         timeline.resume()
-        XCTAssertEqual(timeline.currentFrame, 61)
+        XCTAssertEqual(timeline.currentFrame, 121)
         
         (0..<100).forEach { _ in timeline.advance() }
-        XCTAssertEqual(timeline.currentFrame, 161)
+        XCTAssertEqual(timeline.currentFrame, 221)
     }
     
     func testIterationSorted() {
@@ -186,10 +186,6 @@ class TimelineTests: XCTestCase {
                     let globalError = abs(actualTotalOffset - expectedTotalOffset)
                     let localError = abs(expectedLocalOffset - actualLocalOffset)
                     
-                    print("Offset: \(offset)")
-                    print("- error from start: \(globalError)")
-                    print("- error since last: \(localError)")
-                    
                     globalErrors.append(globalError)
                     localErrors.append(localError)
                     
@@ -245,37 +241,37 @@ class TimelineTests: XCTestCase {
         assertAccuracyWithRepeatedPulse(interval: 1, for: duration)
     }
     
-    func DISABLED_testAccuractWithFastPulseForFiveSeconds() {
+    func testAccuractWithFastPulseForFiveSeconds() {
         assertAccuracyWithRepeatedPulse(interval: 0.1, for: 5)
     }
     
     // TODO: Implement: testAccuracyWithTimePoints([Seconds]) { }
     
-    func DISABLED_testAccuracyWithPulseEverySecondForAMinute() {
+    func testAccuracyWithPulseEverySecondForAMinute() {
         assertAccuracyWithPulseEverySecond(for: 60)
     }
     
-    func DISABLED_testAccuracyWithPulseEveryThirdOfASecondForAMinute() {
+    func testAccuracyWithPulseEveryThirdOfASecondForAMinute() {
         assertAccuracyWithRepeatedPulse(interval: 1/3, for: 60)
     }
     
-    func DISABLED_testAccuracyWithPulseEveryTenthOfASecondForAMinute() {
+    func testAccuracyWithPulseEveryTenthOfASecondForAMinute() {
         assertAccuracyWithRepeatedPulse(interval: 1/10, for: 60)
     }
     
-    func DISABLED_testAccuracyWithPulseAbritraryIntervalForAMinute() {
+    func testAccuracyWithPulseAbritraryIntervalForAMinute() {
         assertAccuracyWithRepeatedPulse(interval: 0.123456, for: 60)
     }
     
-    func DISABLED_testAccuracyOfLongIntervalForAMinute() {
+    func testAccuracyOfLongIntervalForAMinute() {
         assertAccuracyWithRepeatedPulse(interval: 12.3456, for: 60)
     }
     
-    func DISABLED_testAccuracyWithPuleEverySecondFor30Minutes() {
+    func testAccuracyWithPuleEverySecondFor30Minutes() {
         assertAccuracyWithPulseEverySecond(for: 60)
     }
     
-    func DISABLE_testAccuracyWithPulseEverySecondForFiveSeconds() {
+    func testAccuracyWithPulseEverySecondForFiveSeconds() {
         assertAccuracyWithRepeatedPulse(interval: 1, for: 5)
     }
 }

@@ -103,7 +103,7 @@ public final class Timeline {
     /**
      Create a Timeline with an update rate.
      */
-    public init(rate: Seconds = 1/60) {
+    public init(rate: Seconds = 1/120) {
         self.rate = rate
     }
     
