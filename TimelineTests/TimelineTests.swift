@@ -43,7 +43,7 @@ class TimelineTests: XCTestCase {
         timeline.add(at: timeStamp, body: body)
         
         XCTAssertEqual(timeline.count, 1)
-        XCTAssertNotNil(timeline[Frames(30)])
+        XCTAssertNotNil(timeline[Frames(60)])
     }
     
     func testMetronomeInjection() {
@@ -76,13 +76,13 @@ class TimelineTests: XCTestCase {
         XCTAssertEqual(timeline.currentFrame, 100)
         
         timeline.skip(to: 1)
-        XCTAssertEqual(timeline.currentFrame, 60)
+        XCTAssertEqual(timeline.currentFrame, 120)
         
         timeline.resume()
-        XCTAssertEqual(timeline.currentFrame, 61)
+        XCTAssertEqual(timeline.currentFrame, 121)
         
         (0..<100).forEach { _ in timeline.advance() }
-        XCTAssertEqual(timeline.currentFrame, 161)
+        XCTAssertEqual(timeline.currentFrame, 221)
     }
     
     func testIterationSorted() {
@@ -187,13 +187,7 @@ class TimelineTests: XCTestCase {
                     
                     let globalError = abs(actualTotalOffset - expectedTotalOffset)
                     let localError = abs(expectedLocalOffset - actualLocalOffset)
-                    
-                    /*
-                    print("Offset: \(offset)")
-                    print("- error from start: \(globalError)")
-                    print("- error since last: \(localError)")
-                    */
-                    
+
                     globalErrors.append(globalError)
                     localErrors.append(localError)
                     
@@ -217,24 +211,6 @@ class TimelineTests: XCTestCase {
             XCTAssertLessThan(maxLocalError, 0.015)
             XCTAssertLessThan(averageLocalError, 0.015)
             
-            
-            print("Timing error after: \(duration) seconds:")
-            print("- maximum global error: \(maxGlobalError)")
-            print("- average global error: \(averageGlobalError)")
-            print("- maximum local error: \(maxLocalError)")
-            print("- average local error: \(averageLocalError)")
-            
-            // TODO: Assert that there is no drift by check the linear regression
-            
-            let xs = Array(range.dropLast())
-            let globalYs = globalErrors
-            let localYs = localErrors
-
-            let globalSlope = slope(Dictionary(xs, globalYs))
-            let localSlope = slope(Dictionary(xs, localYs))
-            print("- global slope: \(globalSlope)")
-            print("- local slope: \(localSlope)")
-
             // Fulfill expecation
             unfulfilledExpectation.fulfill()
         }
@@ -274,7 +250,7 @@ class TimelineTests: XCTestCase {
         assertAccuracyWithRepeatedPulse(interval: 12.3456, for: 60)
     }
     
-    func estAccuracyWithPuleEverySecondFor30Minutes() {
+    func testAccuracyWithPuleEverySecondFor30Minutes() {
         assertAccuracyWithPulseEverySecond(for: 60)
     }
     
