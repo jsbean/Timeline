@@ -123,7 +123,7 @@ public final class Timeline {
      Add a looping action at a given `tempo`.
      */
     public func addLooping(at tempo: Tempo, offset: Seconds = 0, body: @escaping ActionBody) {
-        let timeInterval = tempo / 60
+        let timeInterval = seconds(from: tempo)
         let action = LoopingAction(timeInterval: timeInterval, body: body)
         add(action, at: offset)
     }
@@ -257,6 +257,11 @@ public final class Timeline {
     
     internal func seconds(from nanoseconds: UInt64) -> Seconds {
         return Seconds(nanoseconds / 1_000_000_000)
+    }
+    
+    /// - returns: `Seconds` value from a given `Tempo` value.
+    public func seconds(from tempo: Tempo) -> Seconds {
+        return 60 / tempo
     }
 }
 
