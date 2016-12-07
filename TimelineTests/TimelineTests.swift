@@ -150,6 +150,8 @@ class TimelineTests: XCTestCase {
         }
     }
     
+    // TODO: Implement: testAccuracyWithTimePoints([Seconds]) { }
+    
     func assertAccuracyWithRepeatedPulse(interval: Seconds, for duration: Seconds) {
      
         guard duration > 0 else { return }
@@ -163,7 +165,7 @@ class TimelineTests: XCTestCase {
         var localErrors: [Double] = []
         
         // Create `Timeline` to test
-        let timeline = Timeline()
+        let timeline = Timeline(rate: 1/120)
         
         let start: UInt64 = DispatchTime.now().uptimeNanoseconds
         var last: UInt64 = DispatchTime.now().uptimeNanoseconds
@@ -185,7 +187,7 @@ class TimelineTests: XCTestCase {
                     
                     let globalError = abs(actualTotalOffset - expectedTotalOffset)
                     let localError = abs(expectedLocalOffset - actualLocalOffset)
-                    
+
                     globalErrors.append(globalError)
                     localErrors.append(localError)
                     
@@ -209,23 +211,6 @@ class TimelineTests: XCTestCase {
             XCTAssertLessThan(maxLocalError, 0.015)
             XCTAssertLessThan(averageLocalError, 0.015)
             
-            print("Timing error after: \(duration) seconds:")
-            print("- maximum global error: \(maxGlobalError)")
-            print("- average global error: \(averageGlobalError)")
-            print("- maximum local error: \(maxLocalError)")
-            print("- average local error: \(averageLocalError)")
-            
-            // TODO: Assert that there is no drift by check the linear regression
-            
-            let xs = Array(range.dropLast())
-            let globalYs = globalErrors
-            let localYs = localErrors
-
-            let globalSlope = slope(Dictionary(xs, globalYs))
-            let localSlope = slope(Dictionary(xs, localYs))
-            print("- global slope: \(globalSlope)")
-            print("- local slope: \(localSlope)")
-
             // Fulfill expecation
             unfulfilledExpectation.fulfill()
         }
@@ -244,8 +229,6 @@ class TimelineTests: XCTestCase {
     func testAccuractWithFastPulseForFiveSeconds() {
         assertAccuracyWithRepeatedPulse(interval: 0.1, for: 5)
     }
-    
-    // TODO: Implement: testAccuracyWithTimePoints([Seconds]) { }
     
     func testAccuracyWithPulseEverySecondForAMinute() {
         assertAccuracyWithPulseEverySecond(for: 60)
