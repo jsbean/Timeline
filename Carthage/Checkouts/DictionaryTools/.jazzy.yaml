@@ -1,0 +1,19 @@
+module: DictionaryTools
+author: James Bean
+author_url: http://github.io/dn-m/DictionaryTools
+github_url: https://github.com/dn-m/DictionaryTools
+min_acl: public
+readme: /README.md
+swift_version: 2.2
+
+custom_categories:
+  - name: DictionaryType
+    children:
+    - DictionaryType
+    - OrderedDictionaryType
+    - OrderedDictionary
+    - SortedOrderedDictionary
+
+  - name: KeyPath
+    children: 
+    - KeyPath
