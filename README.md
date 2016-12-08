@@ -21,3 +21,10 @@ Integrate **Timeline** into your OSX or iOS project with [Carthage](https://gith
 ### Documentation
 
 See the [documentation](http://dn-m.github.io/Timeline/).
+
+
+***
+
+### Reading
+
+[Timer Problems](https://www.cocoawithlove.com/blog/2016/07/30/timer-problems.html)
