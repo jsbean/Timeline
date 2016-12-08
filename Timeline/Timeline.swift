@@ -69,9 +69,6 @@ public final class Timeline {
     // Internal timer that increments at the `rate`.
     private var timer: Timer!
     
-    // Clock that measures how much time has passed, in ms
-    private var clock = DispatchTime(uptimeNanoseconds: 0)
-    
     // Offset in `Seconds` of internal timer.
     internal var currentOffset: Seconds {
         return seconds(from: currentFrame)
@@ -81,13 +78,11 @@ public final class Timeline {
     internal private(set) var currentFrame: Frames = 0
     
     // Start time.
-    private var startTime: Seconds = 0
+    private var startTime: Seconds = CACurrentMediaTime()
     
     // The amount of time in seconds that has elapsed since starting or resuming from paused.
     private var secondsElapsed: Seconds {
-        
-        // FIXME: Make converter
-        return seconds(from: clock.uptimeNanoseconds) - startTime
+        return CACurrentMediaTime() - startTime
     }
     
     // The inverted rate.
@@ -154,7 +149,7 @@ public final class Timeline {
      */
     public func start() {
         currentFrame = 0
-        startTime = seconds(from: clock.uptimeNanoseconds)
+        startTime = CACurrentMediaTime()
         isActive = true
         timer = makeTimer()
     }
@@ -182,7 +177,7 @@ public final class Timeline {
         if isActive { return }
         timer = makeTimer()
         isActive = true
-        startTime = seconds(from: clock.uptimeNanoseconds)
+        startTime = CACurrentMediaTime()
     }
     
     /**
