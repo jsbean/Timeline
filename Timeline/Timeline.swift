@@ -69,11 +69,6 @@ public final class Timeline {
     // Internal timer that increments at the `rate`.
     private var timer: Timer!
     
-    // Offset in `Seconds` of internal timer.
-    internal var currentOffset: Seconds {
-        return seconds(from: currentFrame)
-    }
- 
     // The current frame.
     internal private(set) var currentFrame: Frames = 0
     
@@ -209,12 +204,11 @@ public final class Timeline {
         // Return the timer
         return timer
     }
-
+    
     @objc internal func advance() {
         
-        // TODO: Calculate offset time since start of `Timer` with `DispatchTime`,
-        //  then, calculate `currentFrame` from this offset
-
+        currentFrame = frames(from: secondsElapsed)
+        
         // Retrieve the actions that need to be performed now, if any
         if let actions = registry[currentFrame] {
             
@@ -229,29 +223,14 @@ public final class Timeline {
                 }
             }
         }
-        
-        // Increment frame
-        currentFrame += 1
     }
     
     internal func frames(from seconds: Seconds) -> Frames {
-        return Frames(seconds * interval)
-    }
-    
-    internal func frames(from clock: DispatchTime) -> Frames {
-        return frames(from: seconds(from: clock))
+        return Frames(round(seconds * interval))
     }
     
     internal func seconds(from frames: Frames) -> Seconds {
         return Seconds(frames) / interval
-    }
-    
-    internal func seconds(from clock: DispatchTime) -> Seconds {
-        return seconds(from: clock.uptimeNanoseconds)
-    }
-    
-    internal func seconds(from nanoseconds: UInt64) -> Seconds {
-        return Seconds(nanoseconds / 1_000_000_000)
     }
     
     /// - returns: `Seconds` value from a given `Tempo` value.
@@ -290,7 +269,7 @@ extension Timeline: Collection {
     
     /**
      - returns: Array of actions at the given `frames`, if present. Otherwise, `nil`.
-    */
+     */
     public subscript (frames: Frames) -> [ActionType]? {
         return registry[frames]
     }
