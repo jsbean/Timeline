@@ -8,7 +8,7 @@
 
 import Foundation
 import QuartzCore
-import DictionaryTools
+import Collections
 
 /// Time unit inverse to the `rate` of a `Timeline`.
 public typealias Frames = UInt
@@ -242,15 +242,15 @@ public final class Timeline {
 extension Timeline: Collection {
     
     /// Start index. Forwards `registry.keyStorage.startIndex`.
-    public var startIndex: Int { return registry.keyStorage.startIndex }
+    public var startIndex: Int { return registry.keys.startIndex }
     
     /// End index. Forwards `registry.keyStorage.endIndex`.
-    public var endIndex: Int { return registry.keyStorage.endIndex }
+    public var endIndex: Int { return registry.keys.endIndex }
     
     /// Next index. Forwards `registry.keyStorage.index(after:)`.
     public func index(after i: Int) -> Int {
         guard i != endIndex else { fatalError("Cannot increment endIndex") }
-        return registry.keyStorage.index(after: i)
+        return registry.keys.index(after: i)
     }
     
     /**
@@ -258,7 +258,7 @@ extension Timeline: Collection {
      */
     public subscript (index: Int) -> (Frames, [ActionType]) {
         
-        let key = registry.keyStorage[index]
+        let key = registry.keys[index]
         
         guard let actions = registry[key] else {
             fatalError("Values not stored correctly")
