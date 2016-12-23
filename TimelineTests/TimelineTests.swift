@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import DictionaryTools
+import Collections
 import ArithmeticTools
 @testable import Timeline
 
@@ -58,33 +58,7 @@ class TimelineTests: XCTestCase {
         let timeline = Timeline()
         XCTAssertEqual(timeline.currentFrame, 0)
     }
-    
-    func testCurrentOffset() {
-        
-        let timeline = Timeline()
-        timeline.skip(to: 40)
-        
-        XCTAssertEqual(timeline.currentOffset, 40)
-    }
-    
-    func testAdvancePauseAdvance() {
-        
-        let timeline = Timeline()
-        
-        (0..<100).forEach { _ in timeline.advance() }
-        timeline.pause()
-        XCTAssertEqual(timeline.currentFrame, 100)
-        
-        timeline.skip(to: 1)
-        XCTAssertEqual(timeline.currentFrame, 120)
-        
-        timeline.resume()
-        XCTAssertEqual(timeline.currentFrame, 121)
-        
-        (0..<100).forEach { _ in timeline.advance() }
-        XCTAssertEqual(timeline.currentFrame, 221)
-    }
-    
+
     func testIterationSorted() {
         
         let timeline = Timeline()
@@ -119,7 +93,6 @@ class TimelineTests: XCTestCase {
         XCTAssertFalse(timeline.isActive)
 
         timeline.start()
-        XCTAssertEqual(timeline.currentFrame, 1)
         
         XCTAssert(timeline.isActive)
     }
@@ -222,6 +195,7 @@ class TimelineTests: XCTestCase {
         waitForExpectations(timeout: duration + 2) { _ in }
     }
     
+    /*
     func assertAccuracyWithPulseEverySecond(for duration: Seconds) {
         assertAccuracyWithRepeatedPulse(interval: 1, for: duration)
     }
@@ -257,4 +231,5 @@ class TimelineTests: XCTestCase {
     func testAccuracyWithPulseEverySecondForFiveSeconds() {
         assertAccuracyWithRepeatedPulse(interval: 1, for: 5)
     }
+    */
 }
