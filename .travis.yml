@@ -2,11 +2,20 @@ language: objective-c
 osx_image: xcode8
 env:
   matrix:
+    - DESTINATION="platform=iOS Simulator,OS=9.3,name=iPad 2" 
+      SCHEME="Timeline"
     - DESTINATION="platform=iOS Simulator,OS=10.0,name=iPad Pro (12.9 inch)"
+      SCHEME="Timeline"
+    - DESTINATION="platform=OS X" 
+      SCHEME="TimelineMac"
 
 before_script: carthage update
 
-script: xcodebuild test -project Timeline.xcodeproj -scheme Timeline -destination "${DESTINATION}" TOOLCHAINS=swift
+script: travis_retry xcodebuild test 
+  -project Timeline.xcodeproj
+  -scheme "${SCHEME}"
+  -destination "${DESTINATION}"
+  TOOLCHAINS=swift
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
