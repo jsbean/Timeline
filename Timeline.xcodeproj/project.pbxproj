@@ -15,18 +15,13 @@
 		07B68ABE1DCFEB0200FE8F59 /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B68ABC1DCFEB0200FE8F59 /* Duration.swift */; };
 		07B68AC01DCFF99800FE8F59 /* ActionTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B68ABF1DCFF99800FE8F59 /* ActionTypeTests.swift */; };
 		07B68AC11DCFF99800FE8F59 /* ActionTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B68ABF1DCFF99800FE8F59 /* ActionTypeTests.swift */; };
-		07F63AA41D208A9900C7FB22 /* DictionaryTools.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A050C632E1221F2A36491428 /* DictionaryTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		07F739041D1AB4C800F83AE8 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F738FD1D1AB4C800F83AE8 /* Timeline.swift */; };
 		07F739051D1AB4C800F83AE8 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F738FD1D1AB4C800F83AE8 /* Timeline.swift */; };
 		4CDD7BB1493FFCC588FE8E74 /* ArithmeticTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5DCC098392100ECC36114D7 /* ArithmeticTools.framework */; };
 		5394053C63C1BC3EC26C9E30 /* Timeline.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E56B3E6B36991781F5BE132E /* Timeline.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		581414A189A131EC6CB6E7FC /* Timeline.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 58D632B9454ED0DEF3968D80 /* Timeline.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		59353C706578CAA37CF10214 /* ArithmeticTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 622FBF870B78DF5ABD85BACD /* ArithmeticTools.framework */; };
-		6766D7242446EDD9F887D642 /* DictionaryTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BEB43C733D9565FF2DC2E4E /* DictionaryTools.framework */; };
-		7568E255DEC95D1A693266E2 /* ArrayTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D289E64E7B479D8CEAA9BEDF /* ArrayTools.framework */; };
 		7E697FFB67A8CA0108A650CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38EA6D0B56F5E38C592E339D /* Foundation.framework */; };
-		8635D8023FD4565C1E483F34 /* DictionaryTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A050C632E1221F2A36491428 /* DictionaryTools.framework */; };
-		C0B020848DE582698034B584 /* ArrayTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BCAE46D4F979FD0B4090399 /* ArrayTools.framework */; };
 		D171022B32A91C5EEDFC38C9 /* Timeline.h in Headers */ = {isa = PBXBuildFile; fileRef = BA4AD68D0FB5C5FD2A9FA6ED /* Timeline.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D24FE8F637BE95FDC50421E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38EA6D0B56F5E38C592E339D /* Foundation.framework */; };
 		E843F5515BCA5C6999A01D21 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE2DCDE916A157D4548E230 /* Cocoa.framework */; };
@@ -58,7 +53,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				07F63AA41D208A9900C7FB22 /* DictionaryTools.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,7 +85,6 @@
 		07B68ABF1DCFF99800FE8F59 /* ActionTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionTypeTests.swift; path = TimelineTests/ActionTypeTests.swift; sourceTree = "<group>"; };
 		07F738FD1D1AB4C800F83AE8 /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Timeline/Timeline.swift; sourceTree = "<group>"; };
 		2A9280607A024DC801DF42E1 /* Timeline.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Timeline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2BEB43C733D9565FF2DC2E4E /* DictionaryTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DictionaryTools.framework; path = Carthage/Build/Mac/DictionaryTools.framework; sourceTree = "<group>"; };
 		3675DA15B3B3792DDF613132 /* TimelineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimelineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		38EA6D0B56F5E38C592E339D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		4735E26869726502F89506FC /* Timeline.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Timeline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,11 +93,8 @@
 		622FBF870B78DF5ABD85BACD /* ArithmeticTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ArithmeticTools.framework; path = Carthage/Build/iOS/ArithmeticTools.framework; sourceTree = "<group>"; };
 		63EA99BBD7D15C3F63874AD5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = Timeline/Info.plist; sourceTree = "<group>"; };
 		8EF4EDB20FD2A919E1969C8A /* TimelineMacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimelineMacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9BCAE46D4F979FD0B4090399 /* ArrayTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ArrayTools.framework; path = Carthage/Build/iOS/ArrayTools.framework; sourceTree = "<group>"; };
-		A050C632E1221F2A36491428 /* DictionaryTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DictionaryTools.framework; path = Carthage/Build/iOS/DictionaryTools.framework; sourceTree = "<group>"; };
 		B5DCC098392100ECC36114D7 /* ArithmeticTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ArithmeticTools.framework; path = Carthage/Build/Mac/ArithmeticTools.framework; sourceTree = "<group>"; };
 		BA4AD68D0FB5C5FD2A9FA6ED /* Timeline.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Timeline.h; path = Timeline/Timeline.h; sourceTree = "<group>"; };
-		D289E64E7B479D8CEAA9BEDF /* ArrayTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ArrayTools.framework; path = Carthage/Build/Mac/ArrayTools.framework; sourceTree = "<group>"; };
 		E56B3E6B36991781F5BE132E /* Timeline.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; path = Timeline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDE2DCDE916A157D4548E230 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
@@ -116,8 +106,6 @@
 			files = (
 				7E697FFB67A8CA0108A650CB /* Foundation.framework in Frameworks */,
 				59353C706578CAA37CF10214 /* ArithmeticTools.framework in Frameworks */,
-				C0B020848DE582698034B584 /* ArrayTools.framework in Frameworks */,
-				8635D8023FD4565C1E483F34 /* DictionaryTools.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,8 +123,6 @@
 			files = (
 				E843F5515BCA5C6999A01D21 /* Cocoa.framework in Frameworks */,
 				4CDD7BB1493FFCC588FE8E74 /* ArithmeticTools.framework in Frameworks */,
-				7568E255DEC95D1A693266E2 /* ArrayTools.framework in Frameworks */,
-				6766D7242446EDD9F887D642 /* DictionaryTools.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,8 +191,6 @@
 			children = (
 				38EA6D0B56F5E38C592E339D /* Foundation.framework */,
 				622FBF870B78DF5ABD85BACD /* ArithmeticTools.framework */,
-				9BCAE46D4F979FD0B4090399 /* ArrayTools.framework */,
-				A050C632E1221F2A36491428 /* DictionaryTools.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -216,8 +200,6 @@
 			children = (
 				FDE2DCDE916A157D4548E230 /* Cocoa.framework */,
 				B5DCC098392100ECC36114D7 /* ArithmeticTools.framework */,
-				D289E64E7B479D8CEAA9BEDF /* ArrayTools.framework */,
-				2BEB43C733D9565FF2DC2E4E /* DictionaryTools.framework */,
 			);
 			name = "OS X";
 			sourceTree = "<group>";
