@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0800"
+   LastUpgradeVersion = "0820"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "91DC8A44B3CAFBAB4BF3BCCC"
                BuildableName = "Timeline.framework"
-               BlueprintName = "TimelineMac"
+               BlueprintName = "Timeline macOS"
                ReferencedContainer = "container:Timeline.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,8 +29,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B5BE519D2E9E8F4B1B24439B"
-               BuildableName = "TimelineMacTests.xctest"
-               BlueprintName = "TimelineMacTests"
+               BuildableName = "Timeline macOS Test.xctest"
+               BlueprintName = "Timeline macOS Test"
                ReferencedContainer = "container:Timeline.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -48,8 +48,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B5BE519D2E9E8F4B1B24439B"
-               BuildableName = "TimelineMacTests.xctest"
-               BlueprintName = "TimelineMacTests"
+               BuildableName = "Timeline macOS Test.xctest"
+               BlueprintName = "Timeline macOS Test"
                ReferencedContainer = "container:Timeline.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -72,7 +72,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "91DC8A44B3CAFBAB4BF3BCCC"
             BuildableName = "Timeline.framework"
-            BlueprintName = "TimelineMac"
+            BlueprintName = "Timeline macOS"
             ReferencedContainer = "container:Timeline.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
