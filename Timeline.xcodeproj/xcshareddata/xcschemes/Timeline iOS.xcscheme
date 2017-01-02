@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0800"
+   LastUpgradeVersion = "0820"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F99F563D5A6BE18CD5DCC426"
                BuildableName = "Timeline.framework"
-               BlueprintName = "Timeline"
+               BlueprintName = "Timeline iOS"
                ReferencedContainer = "container:Timeline.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,8 +29,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "77449C31C17575342EC4CE77"
-               BuildableName = "TimelineTests.xctest"
-               BlueprintName = "TimelineTests"
+               BuildableName = "Timeline iOS Tests.xctest"
+               BlueprintName = "Timeline iOS Tests"
                ReferencedContainer = "container:Timeline.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -48,8 +48,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "77449C31C17575342EC4CE77"
-               BuildableName = "TimelineTests.xctest"
-               BlueprintName = "TimelineTests"
+               BuildableName = "Timeline iOS Tests.xctest"
+               BlueprintName = "Timeline iOS Tests"
                ReferencedContainer = "container:Timeline.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -72,7 +72,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F99F563D5A6BE18CD5DCC426"
             BuildableName = "Timeline.framework"
-            BlueprintName = "Timeline"
+            BlueprintName = "Timeline iOS"
             ReferencedContainer = "container:Timeline.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
