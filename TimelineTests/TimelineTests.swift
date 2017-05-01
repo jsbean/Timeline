@@ -195,7 +195,7 @@ class TimelineTests: XCTestCase {
         waitForExpectations(timeout: duration + 2) { _ in }
     }
     
-    /*
+    
     func assertAccuracyWithPulseEverySecond(for duration: Seconds) {
         assertAccuracyWithRepeatedPulse(interval: 1, for: duration)
     }
@@ -204,6 +204,7 @@ class TimelineTests: XCTestCase {
         assertAccuracyWithRepeatedPulse(interval: 0.1, for: 5)
     }
     
+    /*
     func testAccuracyWithPulseEverySecondForAMinute() {
         assertAccuracyWithPulseEverySecond(for: 60)
     }
@@ -227,9 +228,9 @@ class TimelineTests: XCTestCase {
     func testAccuracyWithPuleEverySecondFor30Minutes() {
         assertAccuracyWithPulseEverySecond(for: 60)
     }
+     */
     
     func testAccuracyWithPulseEverySecondForFiveSeconds() {
         assertAccuracyWithRepeatedPulse(interval: 1, for: 5)
     }
-    */
 }

@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import QuartzCore
 import Collections
 
 /// Time unit inverse to the `rate` of a `Timeline`.
@@ -73,11 +72,11 @@ public final class Timeline {
     internal private(set) var currentFrame: Frames = 0
     
     // Start time.
-    private var startTime: Seconds = CACurrentMediaTime()
+    private var startTime: Seconds = Seconds(DispatchTime.now().uptimeNanoseconds) / 1_000_000_000
     
     // The amount of time in seconds that has elapsed since starting or resuming from paused.
     private var secondsElapsed: Seconds {
-        return CACurrentMediaTime() - startTime
+        return Seconds(DispatchTime.now().uptimeNanoseconds) / 1_000_000_000 - startTime
     }
     
     // The inverted rate.
@@ -144,7 +143,7 @@ public final class Timeline {
      */
     public func start() {
         currentFrame = 0
-        startTime = CACurrentMediaTime()
+        startTime = Seconds(DispatchTime.now().uptimeNanoseconds) / 1_000_000_000
         isActive = true
         timer = makeTimer()
     }
@@ -172,7 +171,7 @@ public final class Timeline {
         if isActive { return }
         timer = makeTimer()
         isActive = true
-        startTime = CACurrentMediaTime()
+        startTime = Seconds(DispatchTime.now().uptimeNanoseconds) / 1_000_000_000
     }
     
     /**
