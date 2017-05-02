@@ -185,16 +185,23 @@ public class Timeline: TimelineProtocol {
 
         if #available(OSX 10.12, iOS 10, *) {
             
-            let queue = DispatchQueue(label: "com.bean.timer", attributes: .concurrent)
+            //let queue = DispatchQueue(label: "com.bean.timer", attributes: .concurrent)
+            let queue = DispatchQueue(
+                label: "com.bean.timer",
+                qos: .userInteractive,
+                attributes: .concurrent
+            )
+            
             let timer = DispatchSource.makeTimerSource(queue: queue)
             
             let interval = DispatchTimeInterval.nanoseconds(Int(rate * 1_000_000_000))
             
             timer.scheduleRepeating(deadline: .now(), interval: interval)
+            
             timer.setEventHandler {
                 self.advance()
             }
-            
+
             timer.resume()
             return timer
             
@@ -249,7 +256,7 @@ public class Timeline: TimelineProtocol {
     // MARK: - Helper functions
     
     internal func frames(seconds: Seconds) -> Frames {
-        return Frames(floor(seconds * interval))
+        return Frames(round(seconds * interval))
     }
     
     internal func seconds(frames: Frames) -> Seconds {
