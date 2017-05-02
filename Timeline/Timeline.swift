@@ -16,7 +16,7 @@ public class Clock {
     
     /// - returns: Current offset in `Seconds`.
     private static var now: Seconds {
-        return Seconds(DispatchTime.now().uptimeNanoseconds) / 1_000_000_000
+        return Date().timeIntervalSince1970
     }
     
     private var startTime: Seconds = Clock.now
@@ -204,15 +204,19 @@ public class Timeline: TimelineProtocol {
     @objc internal func advance() {
 
         let currentFrame = frames(seconds: clock.elapsed)
+        
+        print("current frame: \(currentFrame); elapsed: \(clock.elapsed)")
 
         // Retrieve the actions that need to be performed now, if any
         if let actions = schedule[currentFrame] {
+            
+            print("actions: \(actions)")
 
             actions.forEach { action in
                 
                 // perform the action
                 action.body()
-
+                
                 // if looping action, add next action
                 if let loopingAction = action as? LoopingAction {
                     add(loopingAction, at: clock.elapsed + loopingAction.interval)
