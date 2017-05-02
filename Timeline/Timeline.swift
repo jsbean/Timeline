@@ -55,8 +55,14 @@ public class Timeline: TimelineProtocol {
         return 1 / rate
     }
 
+    /// Clock.
+    ///
+    /// - TODO: Implement Clock protocol.
     private var clock = Clock()
     
+    /// Timer.
+    ///
+    /// - TODO: Implement Timer protocol.
     private var timer: DispatchSourceTimer?
     
     // MARK: - Initializers
@@ -205,14 +211,14 @@ public class Timeline: TimelineProtocol {
 
         let currentFrame = frames(seconds: clock.elapsed)
         
-        print("current frame: \(currentFrame); elapsed: \(clock.elapsed)")
+        //print("current frame: \(currentFrame); elapsed: \(clock.elapsed)")
 
         // Retrieve the actions that need to be performed now, if any
         if let actions = schedule[currentFrame] {
             
-            print("actions: \(actions)")
-
             actions.forEach { action in
+                
+                print("action: \(action.identifier)")
                 
                 // perform the action
                 action.body()
