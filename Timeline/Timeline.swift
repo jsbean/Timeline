@@ -57,7 +57,7 @@ public class Timeline: TimelineProtocol {
 
     private var clock = Clock()
     
-    private var timer: Timer?
+    private var timer: DispatchSourceTimer?
     
     // MARK: - Initializers
     
@@ -129,7 +129,7 @@ public class Timeline: TimelineProtocol {
     
     /// Stops the `Timeline` from executing, and is placed at the beginning.
     public func stop() {
-        timer?.invalidate()
+        timer?.cancel()
         state = .stopped
     }
     
@@ -156,36 +156,49 @@ public class Timeline: TimelineProtocol {
         fatalError()
     }
     
-    private func makeTimer() -> Timer {
+    private func makeTimer() -> DispatchSourceTimer {
         
         // Ensure that there is no zombie timer
-        self.timer?.invalidate()
-        
-        let timer: Timer
-        
-        if #available(OSX 10.12, *) {
-            timer = Timer.scheduledTimer(withTimeInterval: rate, repeats: true) { _ in
+        //self.timer?.invalidate()
+        self.timer?.cancel()
+
+        if #available(OSX 10.12, iOS 10, *) {
+            
+            let queue = DispatchQueue(label: "com.bean.timer", attributes: .concurrent)
+            let timer = DispatchSource.makeTimerSource(queue: queue)
+            
+            let interval = DispatchTimeInterval.nanoseconds(Int(rate * 1_000_000_000))
+            
+            timer.scheduleRepeating(deadline: .now(), interval: interval)
+            timer.setEventHandler {
                 self.advance()
             }
+            
+            timer.resume()
+            return timer
+            
         } else {
 
-            // Create a `Timer` that will call the `advance` method at the given `rate`
-            timer = Timer.scheduledTimer(
-                timeInterval: rate,
-                target: self,
-                selector: #selector(advance),
-                userInfo: nil,
-                repeats: true
-            )
+            fatalError()
+//            
+//            // Create a `Timer` that will call the `advance` method at the given `rate`
+//            timer = Timer.scheduledTimer(
+//                timeInterval: rate,
+//                target: self,
+//                selector: #selector(advance),
+//                userInfo: nil,
+//                repeats: true
+//            )
 
         }
 
         // Fire the `advance` method immediately, as the above method only starts after the
         // delay of `rate`.
-        timer.fire()
+        //timer.fire()
+        
         
         // Return the timer
-        return timer
+        //return timer
     }
     
     @objc internal func advance() {
