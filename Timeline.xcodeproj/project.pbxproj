@@ -200,7 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				38EA6D0B56F5E38C592E339D /* Foundation.framework */,
-				0744006E1E0DA01000E4F396 /* Collections.framework */,
+				0744006C1E0DA00900E4F396 /* Collections.framework */,
 				622FBF870B78DF5ABD85BACD /* ArithmeticTools.framework */,
 			);
 			name = iOS;
@@ -210,7 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				FDE2DCDE916A157D4548E230 /* Cocoa.framework */,
-				0744006C1E0DA00900E4F396 /* Collections.framework */,
+				0744006E1E0DA01000E4F396 /* Collections.framework */,
 				B5DCC098392100ECC36114D7 /* ArithmeticTools.framework */,
 			);
 			name = "OS X";

@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Timeline Example iOS/Timeline Example iOS.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "container:Timeline.xcodeproj">
    </FileRef>
 </Workspace>
