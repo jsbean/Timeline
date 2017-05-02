@@ -239,6 +239,8 @@ class TimelineTests: XCTestCase {
             
             let action = {
                 
+                NSBeep()
+                
                 // For now, don't test an event on first hit, as the offset should be 0
                 if offset > 0 {
                     
