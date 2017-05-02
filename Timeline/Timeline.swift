@@ -10,11 +10,15 @@ import Foundation
 
 public typealias Frames = Int
 
-public protocol TimerProtocol {
-    init(interval: Double, advance: () -> ())
+public protocol TimerGenerator {
+    
+    associatedtype Timer
+    
+    static func makeTimer(interval: Seconds, advance: @escaping () -> ()) -> Timer
     func start()
     func stop()
 }
+
 
 public protocol ClockProtocol {
     var elapsed: Seconds { get }
@@ -245,7 +249,7 @@ public class Timeline: TimelineProtocol {
     // MARK: - Helper functions
     
     internal func frames(seconds: Seconds) -> Frames {
-        return Frames(round(seconds * interval))
+        return Frames(floor(seconds * interval))
     }
     
     internal func seconds(frames: Frames) -> Seconds {
