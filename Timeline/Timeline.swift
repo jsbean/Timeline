@@ -89,9 +89,6 @@ public class Timeline: TimelineProtocol {
         offsetBy offset: Seconds
     )
     {
-        
-        print("loop: \(identifier); interval: \(interval)")
-        
         let action = LoopingAction(identifier: identifier, interval: interval, body: body)
         add(action, at: offset)
     }
@@ -137,16 +134,24 @@ public class Timeline: TimelineProtocol {
     }
     
     /// Pauses the `Timeline`.
+    ///
+    /// - warning: Not currently available.
+    ///
     public func pause() {
         fatalError()
     }
     
     /// Resumes the `Timeline`.
+    ///
+    /// - warning: Not currently available.
+    ///
     public func resume() {
         fatalError()
     }
     
     /// Skips the given `time` in `Seconds`.
+    ///
+    /// - warning: Not currently available.
     public func skip(to time: Seconds) {
         fatalError()
     }
@@ -156,14 +161,24 @@ public class Timeline: TimelineProtocol {
         // Ensure that there is no zombie timer
         self.timer?.invalidate()
         
-        // Create a `Timer` that will call the `advance` method at the given `rate`
-        let timer = Timer.scheduledTimer(
-            timeInterval: rate,
-            target: self,
-            selector: #selector(advance),
-            userInfo: nil,
-            repeats: true
-        )
+        let timer: Timer
+        
+        if #available(OSX 10.12, *) {
+            timer = Timer.scheduledTimer(withTimeInterval: rate, repeats: true) { _ in
+                self.advance()
+            }
+        } else {
+
+            // Create a `Timer` that will call the `advance` method at the given `rate`
+            timer = Timer.scheduledTimer(
+                timeInterval: rate,
+                target: self,
+                selector: #selector(advance),
+                userInfo: nil,
+                repeats: true
+            )
+
+        }
 
         // Fire the `advance` method immediately, as the above method only starts after the
         // delay of `rate`.

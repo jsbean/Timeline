@@ -321,27 +321,27 @@ class TimelineTests: XCTestCase {
     
     // MARK: - Long Tests
 
-    func testAccuracyWithPulseEverySecondForAMinute() {
-        assertAccuracyWithPulseEverySecond(for: 60)
-    }
-    
-    func testAccuracyWithPulseEveryThirdOfASecondForAMinute() {
-        assertAccuracyWithRepeatedPulse(interval: 1/3, for: 60)
-    }
-    
-    func testAccuracyWithPulseEveryTenthOfASecondForAMinute() {
-        assertAccuracyWithRepeatedPulse(interval: 1/10, for: 60)
-    }
-    
-    func testAccuracyWithPulseAbritraryIntervalForAMinute() {
-        assertAccuracyWithRepeatedPulse(interval: 0.123456, for: 60)
-    }
-    
-    func testAccuracyOfLongIntervalForAMinute() {
-        assertAccuracyWithRepeatedPulse(interval: 12.3456, for: 60)
-    }
-    
-    func testAccuracyWithPuleEverySecondFor30Minutes() {
-        assertAccuracyWithPulseEverySecond(for: 60)
-    }
+//    func testAccuracyWithPulseEverySecondForAMinute() {
+//        assertAccuracyWithPulseEverySecond(for: 60)
+//    }
+//    
+//    func testAccuracyWithPulseEveryThirdOfASecondForAMinute() {
+//        assertAccuracyWithRepeatedPulse(interval: 1/3, for: 60)
+//    }
+//    
+//    func testAccuracyWithPulseEveryTenthOfASecondForAMinute() {
+//        assertAccuracyWithRepeatedPulse(interval: 1/10, for: 60)
+//    }
+//    
+//    func testAccuracyWithPulseAbritraryIntervalForAMinute() {
+//        assertAccuracyWithRepeatedPulse(interval: 0.123456, for: 60)
+//    }
+//    
+//    func testAccuracyOfLongIntervalForAMinute() {
+//        assertAccuracyWithRepeatedPulse(interval: 12.3456, for: 60)
+//    }
+//    
+//    func testAccuracyWithPuleEverySecondFor30Minutes() {
+//        assertAccuracyWithPulseEverySecond(for: 60)
+//    }
 }
