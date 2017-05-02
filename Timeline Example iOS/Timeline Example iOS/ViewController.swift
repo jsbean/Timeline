@@ -28,6 +28,8 @@ class ViewController: UIViewController {
         view.addSubview(square)
         
         timeline.start()
+        
+        // TODO: Make basic clock app.
     }
     
     func printSomething() {

@@ -10,9 +10,20 @@ import Foundation
 
 public typealias Frames = Int
 
+public protocol TimerProtocol {
+    init(interval: Double, advance: () -> ())
+    func start()
+    func stop()
+}
+
+public protocol ClockProtocol {
+    var elapsed: Seconds { get }
+    func start()
+}
+
 // TODO: Make Clock protocol 
 // Implement DispatchTime for newer iOS
-public class Clock {
+public class Clock: ClockProtocol {
     
     /// - returns: Current offset in `Seconds`.
     private static var now: Seconds {
@@ -211,7 +222,7 @@ public class Timeline: TimelineProtocol {
 
         let currentFrame = frames(seconds: clock.elapsed)
         
-        //print("current frame: \(currentFrame); elapsed: \(clock.elapsed)")
+        print("current frame: \(currentFrame); elapsed: \(clock.elapsed)")
 
         // Retrieve the actions that need to be performed now, if any
         if let actions = schedule[currentFrame] {
