@@ -20,7 +20,7 @@ import Collections
 //    
 //}
 
-public enum TimelineState {
+public enum TimelineStatus {
     case stopped
     case playing
     case paused(Frames)
@@ -36,7 +36,8 @@ public protocol TimelineProtocol: class {
     // MARK: Building the `Timeline`.
     
     /// Schedule that store actions to be performed by their offset time.
-    var schedule: [Frames: [Action]] { get set }
+    //var schedule: [Frames: [Action]] { get set }
+    var schedule: SortedDictionary<Seconds, [Action]> { get set }
     
     /// Adds the given `action` at the given `offset` in `Seconds`.
     func add(action: @escaping ActionBody, identifier: String, at offset: Seconds)
@@ -55,8 +56,8 @@ public protocol TimelineProtocol: class {
     
     // MARK: Operating the `Timeline`.
     
-    /// The current state of the `Timeline`.
-    var state: TimelineState { get }
+    /// The current status of the `Timeline`.
+    var status: TimelineStatus { get }
     
     /// The rate at which the `Timeline` is played-back. Defaults to `1`.
     var playbackRate: Double { get set }

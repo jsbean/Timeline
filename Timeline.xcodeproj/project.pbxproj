@@ -17,6 +17,8 @@
 		076D70221EB7F6C200F93CE8 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D70201EB7F6C200F93CE8 /* Timeline.swift */; };
 		076D70241EB7FFBA00F93CE8 /* TimelineProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D70231EB7FFBA00F93CE8 /* TimelineProtocol.swift */; };
 		076D70251EB7FFBA00F93CE8 /* TimelineProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D70231EB7FFBA00F93CE8 /* TimelineProtocol.swift */; };
+		07B53F651EBA7433008DB23A /* ScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B53F641EBA7433008DB23A /* ScheduleTests.swift */; };
+		07B53F661EBA7469008DB23A /* ScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B53F641EBA7433008DB23A /* ScheduleTests.swift */; };
 		07B68ABD1DCFEB0200FE8F59 /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B68ABC1DCFEB0200FE8F59 /* Duration.swift */; };
 		07B68ABE1DCFEB0200FE8F59 /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B68ABC1DCFEB0200FE8F59 /* Duration.swift */; };
 		07C3FD9D1E1AE3A8009F0565 /* Timeline.h in Headers */ = {isa = PBXBuildFile; fileRef = BA4AD68D0FB5C5FD2A9FA6ED /* Timeline.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -89,6 +91,7 @@
 		074B58111D2288AB00215565 /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Action.swift; path = Timeline/Action.swift; sourceTree = "<group>"; };
 		076D70201EB7F6C200F93CE8 /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Timeline/Timeline.swift; sourceTree = "<group>"; };
 		076D70231EB7FFBA00F93CE8 /* TimelineProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimelineProtocol.swift; path = Timeline/TimelineProtocol.swift; sourceTree = "<group>"; };
+		07B53F641EBA7433008DB23A /* ScheduleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleTests.swift; path = TimelineTests/ScheduleTests.swift; sourceTree = "<group>"; };
 		07B68ABC1DCFEB0200FE8F59 /* Duration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Duration.swift; path = Timeline/Duration.swift; sourceTree = "<group>"; };
 		07F738FD1D1AB4C800F83AE8 /* _Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = _Timeline.swift; path = Timeline/_Timeline.swift; sourceTree = "<group>"; };
 		2A9280607A024DC801DF42E1 /* Timeline.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Timeline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,6 +185,7 @@
 		A0CE11A8EA7A9198261C6706 /* TimelineTests */ = {
 			isa = PBXGroup;
 			children = (
+				07B53F641EBA7433008DB23A /* ScheduleTests.swift */,
 				D4AB9B42FB308D95002C7F3C /* Supporting Files */,
 				0733E9F41D1BE8F500FDDE97 /* TimelineTests.swift */,
 			);
@@ -432,6 +436,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07B53F661EBA7469008DB23A /* ScheduleTests.swift in Sources */,
 				0733E9F61D1BE8F500FDDE97 /* TimelineTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,6 +445,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07B53F651EBA7433008DB23A /* ScheduleTests.swift in Sources */,
 				0733E9F51D1BE8F500FDDE97 /* TimelineTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

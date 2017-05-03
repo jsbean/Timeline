@@ -36,7 +36,7 @@ class TimelineTests: XCTestCase {
     
     func testStateAtInitStopped() {
         let timeline = Timeline()
-        guard case .stopped = timeline.state else {
+        guard case .stopped = timeline.status else {
             XCTFail()
             return
         }
@@ -45,7 +45,6 @@ class TimelineTests: XCTestCase {
     func testAddWithIdentifier() {
         let timeline = Timeline()
         timeline.add(action: { }, identifier: "id", at: 0)
-        // assert something
     }
     
     func testRemoveAll() {
@@ -78,14 +77,39 @@ class TimelineTests: XCTestCase {
         XCTAssertEqual(timeline.schedule.count, 3)
     }
     
+
+
+    // MARK: - Playback
     
     func testStateAfterStartPlaying() {
         let timeline = Timeline()
         timeline.start()
-        guard case .playing = timeline.state else {
+        guard case .playing = timeline.status else {
             XCTFail()
             return
         }
+        timeline.stop()
+    }
+    
+    func testFrameOffsetZeroAtStart() {
+        let timeline = Timeline()
+        timeline.start()
+        XCTAssertEqual(timeline.frameOffset, 0)
+        timeline.stop()
+    }
+    
+    func testFrameOffsetAtPauseAtOneSecond() {
+        
+        let timeline = Timeline(rate: 1/120)
+        
+        let assertion = {
+            timeline.pause()
+            XCTAssertEqual(timeline.frameOffset, 120)
+            timeline.stop()
+        }
+        
+        timeline.add(action: assertion, identifier: "", at: 1)
+        timeline.start()
     }
     
     func testFiveEventsGetTriggered() {
@@ -108,6 +132,7 @@ class TimelineTests: XCTestCase {
         let assertion = {
             XCTAssertEqual(count, 5)
             unfulfilledExpectation.fulfill()
+            timeline.stop()
         }
         
         timeline.add(action: assertion, identifier: "", at: 5)
@@ -125,7 +150,10 @@ class TimelineTests: XCTestCase {
         
         // Gross little counter for testing
         var count = 0
-        let increment = { count += 1 }
+        let increment = {
+            count += 1
+            print("increment: \(count)")
+        }
         
         // Create Timeline
         let timeline = Timeline()
@@ -143,8 +171,21 @@ class TimelineTests: XCTestCase {
         timeline.start()
         waitForExpectations(timeout: 4.2)
     }
-
     
+//    func testPause() {
+//        
+//        let unfulfilledExpectation = expectation(description: "Test pause")
+//        
+//        let timeline = Timeline()
+//        
+//        timeline.add(action: { timeline.pause() }, identifier: "pause", at: 4)
+//        timeline.add(action: { unfulfilledExpectation.fulfill() }, identifier: "", at: 4.1)
+//        
+//        timeline.start()
+//        
+//        waitForExpectations(timeout: 4.2)
+//    }
+
     
 //    func testCurrentFrameInitZero() {
 //        let timeline = Timeline()
@@ -217,6 +258,37 @@ class TimelineTests: XCTestCase {
 //    
 //    // TODO: Implement: testAccuracyWithTimePoints([Seconds]) { }
 //    
+    
+    func testPlaybackRateHalf() {
+        
+        let unfulfilledExpectation = expectation(description: "Playback rate: 0.5")
+        
+        let clock = Clock()        
+        let timeline = Timeline { unfulfilledExpectation.fulfill() }
+
+        for offset in 0..<5 {
+            
+            // actual time
+            let playbackTime = Seconds(offset) * 2
+            
+            let assertion = {
+                XCTAssertEqualWithAccuracy(clock.elapsed, playbackTime, accuracy: 0.01)
+            }
+            
+            timeline.add(action: assertion, identifier: "", at: Seconds(offset))
+        }
+        
+        clock.start()
+        
+        timeline.playbackRate = 0.5
+        timeline.start()
+        
+        waitForExpectations(timeout: 10) { _ in
+            timeline.stop()
+        }
+    }
+    
+    
     func assertAccuracyWithRepeatedPulse(interval: Seconds, for duration: Seconds) {
      
         guard duration > 0 else { return }
@@ -230,7 +302,7 @@ class TimelineTests: XCTestCase {
         var localErrors: [Double] = []
         
         // Create `Timeline` to test
-        let timeline = Timeline(rate: 1/120)
+        let timeline = Timeline()
         
         let start: UInt64 = DispatchTime.now().uptimeNanoseconds
         var last: UInt64 = DispatchTime.now().uptimeNanoseconds
@@ -238,8 +310,6 @@ class TimelineTests: XCTestCase {
         for (i, offset) in range.enumerated() {
             
             let action = {
-                
-                NSBeep()
                 
                 // For now, don't test an event on first hit, as the offset should be 0
                 if offset > 0 {
@@ -288,6 +358,8 @@ class TimelineTests: XCTestCase {
             
             // Fulfill expecation
             unfulfilledExpectation.fulfill()
+            
+            timeline.stop()
         }
         
         timeline.add(action: assertion, identifier: "assertion", at: range.last!)
@@ -315,37 +387,37 @@ class TimelineTests: XCTestCase {
     
     // MARK: - Medium Tests
     
-    func testAccuracyWithFastPulseForFiveSeconds() {
-        assertAccuracyWithRepeatedPulse(interval: 0.1, for: 5)
-    }
-    
-    func testAccuracyWithIrregularFastPulseForFiveSeconds() {
-        assertAccuracyWithRepeatedPulse(interval: 0.5, for: 5)
-    }
+//    func testAccuracyWithFastPulseForFiveSeconds() {
+//        assertAccuracyWithRepeatedPulse(interval: 0.1, for: 5)
+//    }
+//    
+//    func testAccuracyWithIrregularFastPulseForFiveSeconds() {
+//        assertAccuracyWithRepeatedPulse(interval: 0.5, for: 5)
+//    }
     
     // MARK: - Long Tests
 
-    func testAccuracyWithPulseEverySecondForAMinute() {
-        assertAccuracyWithPulseEverySecond(for: 60)
-    }
-    
-    func testAccuracyWithPulseEveryThirdOfASecondForAMinute() {
-        assertAccuracyWithRepeatedPulse(interval: 1/3, for: 60)
-    }
-    
-    func testAccuracyWithPulseEveryTenthOfASecondForAMinute() {
-        assertAccuracyWithRepeatedPulse(interval: 1/10, for: 60)
-    }
-    
-    func testAccuracyWithPulseAbritraryIntervalForAMinute() {
-        assertAccuracyWithRepeatedPulse(interval: 0.123456, for: 60)
-    }
-    
-    func testAccuracyOfLongIntervalForAMinute() {
-        assertAccuracyWithRepeatedPulse(interval: 12.3456, for: 60)
-    }
-    
-    func testAccuracyWithPuleEverySecondFor30Minutes() {
-        assertAccuracyWithPulseEverySecond(for: 60)
-    }
+//    func testAccuracyWithPulseEverySecondForAMinute() {
+//        assertAccuracyWithPulseEverySecond(for: 60)
+//    }
+//    
+//    func testAccuracyWithPulseEveryThirdOfASecondForAMinute() {
+//        assertAccuracyWithRepeatedPulse(interval: 1/3, for: 60)
+//    }
+//    
+//    func testAccuracyWithPulseEveryTenthOfASecondForAMinute() {
+//        assertAccuracyWithRepeatedPulse(interval: 1/10, for: 60)
+//    }
+//    
+//    func testAccuracyWithPulseAbritraryIntervalForAMinute() {
+//        assertAccuracyWithRepeatedPulse(interval: 0.123456, for: 60)
+//    }
+//    
+//    func testAccuracyOfLongIntervalForAMinute() {
+//        assertAccuracyWithRepeatedPulse(interval: 12.3456, for: 60)
+//    }
+//    
+//    func testAccuracyWithPuleEverySecondFor30Minutes() {
+//        assertAccuracyWithPulseEverySecond(for: 60)
+//    }
 }

@@ -7,27 +7,11 @@
 //
 
 import Foundation
+import Collections
 
-public typealias Frames = Int
+public typealias Frames = UInt64
 
-public protocol TimerGenerator {
-    
-    associatedtype Timer
-    
-    static func makeTimer(interval: Seconds, advance: @escaping () -> ()) -> Timer
-    func start()
-    func stop()
-}
-
-
-public protocol ClockProtocol {
-    var elapsed: Seconds { get }
-    func start()
-}
-
-// TODO: Make Clock protocol 
-// Implement DispatchTime for newer iOS
-public class Clock: ClockProtocol {
+public class Clock {
     
     /// - returns: Current offset in `Seconds`.
     private static var now: Seconds {
@@ -47,8 +31,11 @@ public class Clock: ClockProtocol {
     }
 }
 
-public class Timeline: TimelineProtocol {
+/// Consider implementing fully fledged type Schedule
+public typealias Schedule = SortedDictionary<Seconds, [Action]>
 
+public class Timeline: TimelineProtocol {
+    
     // MARK: - Instance Properties
     
     /// Schedule that store actions to be performed by their offset time.
@@ -56,36 +43,46 @@ public class Timeline: TimelineProtocol {
     /// At each offset point, any number of `Actions` can be performed.
     ///
     /// - TODO: Implement `ScheduleProtocol`.
-    public var schedule: [Frames: [Action]]
+    public var schedule: Schedule
+    
+    private var playbackOffsets: [Frames] = []
+    
+    private var playbackIndex: Int = 0
     
     /// Current state of the `Timeline`.
-    public var state: TimelineState = .stopped
+    public var status: TimelineStatus = .stopped
+    
+    /// - TODO: Make a computed property
+    internal var currentFrame: Frames {
+        return frameOffset + frames(seconds: clock.elapsed, rate: rate)
+    }
     
     /// The rate at which the `Timeline` is played-back. Defaults to `1`.
     public var playbackRate: Double = 1
     
     internal var rate: Seconds
-
-    internal var interval: Seconds {
-        return 1 / rate
-    }
+    
+    internal var frameOffset: Frames = 0
 
     /// Clock.
     ///
     /// - TODO: Implement Clock protocol.
-    private var clock = Clock()
+    public var clock = Clock()
     
     /// Timer.
     ///
     /// - TODO: Implement Timer protocol.
-    private var timer: DispatchSourceTimer?
+    public var timer: DispatchSourceTimer?
+    
+    private var completion: (() -> ())?
     
     // MARK: - Initializers
     
     /// Creates an empty `Timeline`.
-    public init(rate: Seconds = 1/60) {
-        self.rate = 1.0 / 120
+    public init(rate: Seconds = 1/100, completion: (() -> ())? = nil) {
+        self.rate = rate
         self.schedule = [:]
+        self.completion = completion
     }
     
     // MARK: - Instance Methods
@@ -107,7 +104,7 @@ public class Timeline: TimelineProtocol {
         action body:  @escaping ActionBody,
         identifier: String,
         every interval: Seconds,
-        offsetBy offset: Seconds
+        offsetBy offset: Seconds = 0
     )
     {
         let action = LoopingAction(identifier: identifier, interval: interval, body: body)
@@ -115,11 +112,12 @@ public class Timeline: TimelineProtocol {
     }
     
     private func add(_ action: Action, at offset: Seconds) {
-        let offset = frames(seconds: offset)
         schedule.safelyAppend(action, toArrayWith: offset)
     }
     
     /// Removes all of the `Actions` from the `Timeline` with the given identifiers
+    ///
+    /// - TODO: Refactor to `Schedule` struct
     public func removeAll(identifiers: [String] = []) {
         
         // If no identifiers are provided, clear schedule entirely
@@ -137,21 +135,24 @@ public class Timeline: TimelineProtocol {
             }
             
             // If no actions are left in an array, remove value at given offset
-            schedule[offset] = filtered.isEmpty ? nil : filtered
+            schedule[offset] = !filtered.isEmpty ? filtered : nil
         }
     }
     
     /// Starts the `Timeline`.
     public func start() {
+        playbackIndex = 0
+        frameOffset = 0
+        status = .playing
         timer = makeTimer()
         clock.start()
-        state = .playing
     }
     
     /// Stops the `Timeline` from executing, and is placed at the beginning.
     public func stop() {
+        frameOffset = 0
         timer?.cancel()
-        state = .stopped
+        status = .stopped
     }
     
     /// Pauses the `Timeline`.
@@ -159,7 +160,9 @@ public class Timeline: TimelineProtocol {
     /// - warning: Not currently available.
     ///
     public func pause() {
-        fatalError()
+        timer?.cancel()
+        frameOffset = currentFrame
+        status = .paused(frameOffset)
     }
     
     /// Resumes the `Timeline`.
@@ -167,7 +170,9 @@ public class Timeline: TimelineProtocol {
     /// - warning: Not currently available.
     ///
     public func resume() {
-        fatalError()
+        timer = makeTimer()
+        clock.start()
+        status = .playing
     }
     
     /// Skips the given `time` in `Seconds`.
@@ -179,29 +184,22 @@ public class Timeline: TimelineProtocol {
     
     private func makeTimer() -> DispatchSourceTimer {
         
-        // Ensure that there is no zombie timer
-        //self.timer?.invalidate()
-        self.timer?.cancel()
+        timer?.cancel()
 
         if #available(OSX 10.12, iOS 10, *) {
             
-            //let queue = DispatchQueue(label: "com.bean.timer", attributes: .concurrent)
+            //let interval = DispatchTimeInterval.nanoseconds(Int(rate * 1_000_000_000))
+            let interval = DispatchTimeInterval.milliseconds(4)
+            
             let queue = DispatchQueue(
                 label: "com.bean.timer",
                 qos: .userInteractive,
                 attributes: .concurrent
             )
-            
-            let timer = DispatchSource.makeTimerSource(queue: queue)
-            
-            let interval = DispatchTimeInterval.nanoseconds(Int(rate * 1_000_000_000))
-            
-            timer.scheduleRepeating(deadline: .now(), interval: interval)
-            
-            timer.setEventHandler {
-                self.advance()
-            }
 
+            let timer = DispatchSource.makeTimerSource(queue: queue)
+            timer.setEventHandler(handler: advance)
+            timer.scheduleRepeating(deadline: .now(), interval: interval)
             timer.resume()
             return timer
             
@@ -217,51 +215,52 @@ public class Timeline: TimelineProtocol {
 //                userInfo: nil,
 //                repeats: true
 //            )
+        }
+    }
+    
+    private var next: (Frames, [Action])? {
 
+        guard playbackIndex < schedule.keys.endIndex else {
+            return nil
         }
 
-        // Fire the `advance` method immediately, as the above method only starts after the
-        // delay of `rate`.
-        //timer.fire()
-        
-        
-        // Return the timer
-        //return timer
+        let (nextSeconds, nextActions) = schedule[playbackIndex]
+        return (frames(seconds: nextSeconds, rate: self.rate * playbackRate), nextActions)
     }
     
     @objc internal func advance() {
 
-        let currentFrame = frames(seconds: clock.elapsed)
+        guard let (nextFrame, nextActions) = next else {
+            completion?()
+            stop()
+            return
+        }
         
-        print("current frame: \(currentFrame); elapsed: \(clock.elapsed)")
-
-        // Retrieve the actions that need to be performed now, if any
-        if let actions = schedule[currentFrame] {
-            
-            actions.forEach { action in
-                
-                print("action: \(action.identifier)")
-                
-                // perform the action
-                action.body()
-                
-                // if looping action, add next action
-                if let loopingAction = action as? LoopingAction {
-                    add(loopingAction, at: clock.elapsed + loopingAction.interval)
-                }
-            }
+        if currentFrame >= nextFrame {
+            perform(actions: nextActions)
+            playbackIndex += 1
         }
     }
     
-    // MARK: - Helper functions
-    
-    internal func frames(seconds: Seconds) -> Frames {
-        return Frames(round(seconds * interval))
+    func perform(actions: [Action]) {
+        
+        actions.forEach { action in
+            
+            // perform the action body
+            action.body()
+            
+            // if looping action, add next action
+            if let loopingAction = action as? LoopingAction {
+                let next = clock.elapsed + loopingAction.interval
+                add(loopingAction, at: next)
+            }
+        }
     }
-    
-    internal func seconds(frames: Frames) -> Seconds {
-        return Seconds(frames) / interval
-    }
+}
+
+internal func frames(seconds: Seconds, rate: Seconds) -> Frames {
+    let interval = 1 / rate
+    return Frames(round(seconds * interval))
 }
 
 //extension Timeline: Collection {
@@ -314,9 +313,9 @@ public class Timeline: TimelineProtocol {
 //    }
 //}
 //
-//extension Timeline: CustomStringConvertible {
-//
-//    public var description: String {
-//        return registry.map { "\($0)" }.joined(separator: "\n")
-//    }
-//}
+extension Timeline: CustomStringConvertible {
+
+    public var description: String {
+        return schedule.map { "\($0)" }.joined(separator: "\n")
+    }
+}
