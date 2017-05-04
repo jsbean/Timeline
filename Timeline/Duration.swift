@@ -6,8 +6,5 @@
 //
 //
 
-/// Time unit for beats-per-minute.
-public typealias Tempo = Double
-
 /// Time unit for seconds.
 public typealias Seconds = Double
