@@ -23,6 +23,8 @@ public class Timeline {
     /// Storage of arrays of `Action` objects to be performed at offsets.
     public typealias Schedule = SortedDictionary<Seconds, [Action]>
     
+    // MARK: - Nested Types
+    
     /// Status of the `Timeline`.
     public enum Status {
         

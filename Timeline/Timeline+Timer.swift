@@ -71,7 +71,7 @@ extension Timeline {
             }
         }
 
-        /// Wrapper for the `Foundation.Timer` implementation.
+        /// objc-necessitated wrapper for the `Foundation.Timer` implementation.
         @objc func performClosure() {
             closure()
         }
