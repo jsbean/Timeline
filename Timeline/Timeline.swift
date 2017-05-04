@@ -11,50 +11,43 @@ import Collections
 
 public typealias Frames = UInt64
 
-public class Clock {
-    
-    /// - returns: Current offset in `Seconds`.
-    private static var now: Seconds {
-        return Date().timeIntervalSince1970
-    }
-    
-    private var startTime: Seconds = Clock.now
-    
-    /// - returns: Time elapsed since `start()`.
-    public var elapsed: Seconds {
-        return Clock.now - startTime
-    }
-    
-    /// Stores the current time for measurement.
-    public func start() {
-        startTime = Clock.now
-    }
-}
-
 /// Consider implementing fully fledged type Schedule
 public typealias Schedule = SortedDictionary<Seconds, [Action]>
 
-public class Timeline/*: TimelineProtocol*/ {
+/// Store closures to be performed at offsets.
+///
+/// Playback can occur at real-time, or modified by the `playbackRate`.
+///
+public class Timeline {
     
     // MARK: - Instance Properties
+    
+    /// Closure to be called when the `Timeline` has reached the end.
+    public var completion: (() -> ())?
 
-    private var playbackIndex: Int = 0
+    /// The rate at which the `Timeline` is played-back. Defaults to `1`.
+    ///
+    /// - TODO: Add didSet to make mutable.
+    public var playbackRate: Double = 1
     
     /// Current state of the `Timeline`.
     public var status: TimelineStatus = .stopped
     
-    /// - TODO: Make a computed property
+    /// 
+    internal var playbackIndex: Int = 0
+    
+    /// The current frame.
     internal var currentFrame: Frames {
         return frameOffset + frames(seconds: clock.elapsed, rate: rate)
     }
-    
-    /// The rate at which the `Timeline` is played-back. Defaults to `1`.
-    public var playbackRate: Double = 1
-    
-    ///
+
+    /// Scale of `Seconds` to `Frames`.
     internal var rate: Seconds
     
+    /// Frames stored at `pause()`, as starting point upon `resume()`.
     internal var frameOffset: Frames = 0
+    
+    // MARK: - Mechanisms
     
     /// Schedule that store actions to be performed by their offset time.
     ///
@@ -63,19 +56,15 @@ public class Timeline/*: TimelineProtocol*/ {
     /// - TODO: Implement `ScheduleProtocol`.
     public var schedule: Schedule
     
-    /// Timer.
-    ///
-    /// - TODO: Implement Timer protocol.
+    /// Calls the `advance()` function rapidly.
     public var timer: Timer?
 
     /// Clock.
     ///
-    /// Measures timing between successive shots of the `timer`.
+    /// Measures timing between successive shots of the `timer`, to ensure accuracy and to 
+    /// prevent drifting.
     public var clock = Clock()
 
-    /// Closure to be called when the `Timeline` has reached the end.
-    public var completion: (() -> ())?
-    
     // MARK: - Initializers
     
     /// Creates an empty `Timeline`.
@@ -86,63 +75,6 @@ public class Timeline/*: TimelineProtocol*/ {
     }
     
     // MARK: - Instance Methods
-    
-    /// Adds the given `action` at the given `offset` in `Seconds`.
-    public func add(
-        action body: @escaping Action.Body,
-        identifier: String,
-        at offset: Seconds
-    )
-    {
-        let action = Action(kind: .atomic, identifier: identifier, body: body)
-        add(action, at: offset)
-    }
-    
-    /// Adds the given `action`, to be performed every `interval`, offset by the given
-    /// `offset`.
-    public func loop(
-        action body:  @escaping Action.Body,
-        identifier: String,
-        every interval: Seconds,
-        offsetBy offset: Seconds = 0
-    )
-    {
-        let action = Action(
-            kind: .looping(interval: interval, status: .source),
-            identifier: identifier,
-            body: body
-        )
-
-        add(action, at: offset)
-    }
-    
-    private func add(_ action: Action, at offset: Seconds) {
-        schedule.safelyAppend(action, toArrayWith: offset)
-    }
-    
-    /// Removes all of the `Actions` from the `Timeline` with the given identifiers
-    ///
-    /// - TODO: Refactor to `Schedule` struct
-    public func removeAll(identifiers: [String] = []) {
-        
-        // If no identifiers are provided, clear schedule entirely
-        guard !identifiers.isEmpty else {
-            schedule = [:]
-            return
-        }
-        
-        // Otherwise, remove the actions with matching the given identifiers
-        for (offset, actions) in schedule {
-
-            // Remove the actions with identifiers that match those requested for removal
-            let filtered = actions.filter { action in
-                !identifiers.contains(action.identifier)
-            }
-            
-            // If no actions are left in an array, remove value at given offset
-            schedule[offset] = !filtered.isEmpty ? filtered : nil
-        }
-    }
     
     /// Starts the `Timeline`.
     public func start() {
@@ -245,22 +177,6 @@ public class Timeline/*: TimelineProtocol*/ {
         }
     }
 }
-
-//func clearEchoes(from actions: [Action]) -> [Action]? {
-//    
-//    let filtered = actions.filter { action in
-//        switch action.kind {
-//        case .atomic:
-//            return true
-//        case let .looping(_, status) where status == .source:
-//            return true
-//        default:
-//            return false
-//        }
-//    }
-//    
-//    return !filtered.isEmpty ? filtered : nil
-//}
 
 internal func frames(seconds: Seconds, rate: Seconds) -> Frames {
     let interval = 1 / rate

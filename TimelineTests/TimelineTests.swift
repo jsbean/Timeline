@@ -263,7 +263,7 @@ class TimelineTests: XCTestCase {
         
         let unfulfilledExpectation = expectation(description: "Playback rate: 0.5")
         
-        let clock = Clock()        
+        let clock = Timeline.Clock()
         let timeline = Timeline { unfulfilledExpectation.fulfill() }
 
         for offset in 0..<5 {

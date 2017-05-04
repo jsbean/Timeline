@@ -335,7 +335,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Timeline Example iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../Carthage/Build/iOS @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bean.Timeline-Example-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -354,7 +354,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Timeline Example iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../Carthage/Build/iOS @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bean.Timeline-Example-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
