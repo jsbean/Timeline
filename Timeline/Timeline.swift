@@ -34,19 +34,10 @@ public class Clock {
 /// Consider implementing fully fledged type Schedule
 public typealias Schedule = SortedDictionary<Seconds, [Action]>
 
-public class Timeline: TimelineProtocol {
+public class Timeline/*: TimelineProtocol*/ {
     
     // MARK: - Instance Properties
-    
-    /// Schedule that store actions to be performed by their offset time.
-    ///
-    /// At each offset point, any number of `Actions` can be performed.
-    ///
-    /// - TODO: Implement `ScheduleProtocol`.
-    public var schedule: Schedule
-    
-    private var playbackOffsets: [Frames] = []
-    
+
     private var playbackIndex: Int = 0
     
     /// Current state of the `Timeline`.
@@ -64,17 +55,24 @@ public class Timeline: TimelineProtocol {
     internal var rate: Seconds
     
     internal var frameOffset: Frames = 0
-
-    /// Clock.
+    
+    /// Schedule that store actions to be performed by their offset time.
     ///
-    /// - TODO: Implement Clock protocol.
-    public var clock = Clock()
+    /// At each offset point, any number of `Actions` can be performed.
+    ///
+    /// - TODO: Implement `ScheduleProtocol`.
+    public var schedule: Schedule
     
     /// Timer.
     ///
     /// - TODO: Implement Timer protocol.
     public var timer: DispatchSourceTimer?
-    
+
+    /// Clock.
+    ///
+    /// Measures timing between successive shots of the `timer`.
+    public var clock = Clock()
+
     /// Closure to be called when the `Timeline` has reached the end.
     public var completion: (() -> ())?
     
@@ -189,18 +187,15 @@ public class Timeline: TimelineProtocol {
 
         if #available(OSX 10.12, iOS 10, *) {
             
-            //let interval = DispatchTimeInterval.nanoseconds(Int(rate * 1_000_000_000))
-            let interval = DispatchTimeInterval.milliseconds(4)
-            
             let queue = DispatchQueue(
                 label: "com.bean.timer",
                 qos: .userInteractive,
                 attributes: .concurrent
             )
-
+            
             let timer = DispatchSource.makeTimerSource(queue: queue)
             timer.setEventHandler(handler: advance)
-            timer.scheduleRepeating(deadline: .now(), interval: interval)
+            timer.scheduleRepeating(deadline: .now(), interval: .milliseconds(4))
             timer.resume()
             return timer
             
@@ -277,21 +272,21 @@ public class Timeline: TimelineProtocol {
     }
 }
 
-func clearEchoes(from actions: [Action]) -> [Action]? {
-    
-    let filtered = actions.filter { action in
-        switch action.kind {
-        case .atomic:
-            return true
-        case let .looping(_, status) where status == .source:
-            return true
-        default:
-            return false
-        }
-    }
-    
-    return !filtered.isEmpty ? filtered : nil
-}
+//func clearEchoes(from actions: [Action]) -> [Action]? {
+//    
+//    let filtered = actions.filter { action in
+//        switch action.kind {
+//        case .atomic:
+//            return true
+//        case let .looping(_, status) where status == .source:
+//            return true
+//        default:
+//            return false
+//        }
+//    }
+//    
+//    return !filtered.isEmpty ? filtered : nil
+//}
 
 internal func frames(seconds: Seconds, rate: Seconds) -> Frames {
     let interval = 1 / rate

@@ -16,6 +16,10 @@
 		0749332F1EB8F834009F2B97 /* Timeline.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0749332D1EB8F834009F2B97 /* Timeline.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0749333E1EB8F956009F2B97 /* ArithmeticTools.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0749333D1EB8F956009F2B97 /* ArithmeticTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		074933441EB8F98D009F2B97 /* Collections.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 074933431EB8F98D009F2B97 /* Collections.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		079359B21EBAC7B300F0F104 /* MetronomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079359B11EBAC7B300F0F104 /* MetronomeController.swift */; };
+		079359B41EBAC7D200F0F104 /* MusicalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079359B31EBAC7D200F0F104 /* MusicalModel.swift */; };
+		079359B51EBAC80E00F0F104 /* Collections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 074933431EB8F98D009F2B97 /* Collections.framework */; };
+		079359B61EBAC80E00F0F104 /* ArithmeticTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0749333D1EB8F956009F2B97 /* ArithmeticTools.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +49,8 @@
 		0749332D1EB8F834009F2B97 /* Timeline.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Timeline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0749333D1EB8F956009F2B97 /* ArithmeticTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ArithmeticTools.framework; path = ../Carthage/Build/iOS/ArithmeticTools.framework; sourceTree = "<group>"; };
 		074933431EB8F98D009F2B97 /* Collections.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Collections.framework; path = ../Carthage/Build/iOS/Collections.framework; sourceTree = "<group>"; };
+		079359B11EBAC7B300F0F104 /* MetronomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetronomeController.swift; sourceTree = "<group>"; };
+		079359B31EBAC7D200F0F104 /* MusicalModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicalModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +59,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0749332E1EB8F834009F2B97 /* Timeline.framework in Frameworks */,
+				079359B51EBAC80E00F0F104 /* Collections.framework in Frameworks */,
+				079359B61EBAC80E00F0F104 /* ArithmeticTools.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +89,8 @@
 			children = (
 				074933151EB8F783009F2B97 /* AppDelegate.swift */,
 				074933171EB8F783009F2B97 /* ViewController.swift */,
+				079359B11EBAC7B300F0F104 /* MetronomeController.swift */,
+				079359B31EBAC7D200F0F104 /* MusicalModel.swift */,
 				074933191EB8F783009F2B97 /* Main.storyboard */,
 				0749331C1EB8F783009F2B97 /* Assets.xcassets */,
 				0749331E1EB8F783009F2B97 /* LaunchScreen.storyboard */,
@@ -192,7 +202,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				079359B41EBAC7D200F0F104 /* MusicalModel.swift in Sources */,
 				074933181EB8F783009F2B97 /* ViewController.swift in Sources */,
+				079359B21EBAC7B300F0F104 /* MetronomeController.swift in Sources */,
 				074933161EB8F783009F2B97 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,12 +331,12 @@
 				DEVELOPMENT_TEAM = F8LCL8SXLX;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
+					"$(SRCROOT)/../Carthage/Build/iOS",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Timeline Example iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../Carthage/Build/iOS @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bean.Timeline-Example-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -338,12 +350,12 @@
 				DEVELOPMENT_TEAM = F8LCL8SXLX;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
+					"$(SRCROOT)/../Carthage/Build/iOS",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Timeline Example iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../Carthage/Build/iOS @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bean.Timeline-Example-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -369,6 +381,7 @@
 				074933261EB8F783009F2B97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
