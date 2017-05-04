@@ -40,12 +40,12 @@ public protocol TimelineProtocol: class {
     var schedule: SortedDictionary<Seconds, [Action]> { get set }
     
     /// Adds the given `action` at the given `offset` in `Seconds`.
-    func add(action: @escaping ActionBody, identifier: String, at offset: Seconds)
+    func add(action: @escaping Action.Body, identifier: String, at offset: Seconds)
     
     /// Adds the given `action`, to be performed every `interval`, offset by the given
     /// `offset`.
     func loop(
-        action: @escaping ActionBody,
+        action: @escaping Action.Body,
         identifier: String,
         every interval: Seconds,
         offsetBy offset: Seconds

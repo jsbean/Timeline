@@ -24,7 +24,7 @@ class TimelineTests: XCTestCase {
 
     func testTimeStampToFrame() {
         
-        let body: ActionBody = { print("something") }
+        let body: Action.Body = { print("something") }
         let timeStamp: Seconds = 0.5
         
         let timeline = Timeline(rate: 1/60)
@@ -150,23 +150,23 @@ class TimelineTests: XCTestCase {
         
         // Gross little counter for testing
         var count = 0
-        let increment = {
-            count += 1
-            print("increment: \(count)")
-        }
+        let increment = { count += 1 }
         
         // Create Timeline
         let timeline = Timeline()
         
         timeline.loop(action: increment, identifier: "increment", every: 1, offsetBy: 0)
         
-        let assertion = {
-            XCTAssertEqual(count, 5)
-            unfulfilledExpectation.fulfill()
-            timeline.stop()
-        }
-        
-        timeline.add(action: assertion, identifier: "assertion", at: 4.1)
+        timeline.add(
+            action: {
+                XCTAssertEqual(count, 5)
+                
+                timeline.stop()
+                unfulfilledExpectation.fulfill()
+            },
+            identifier: "stop",
+            at: 4.1
+        )
         
         timeline.start()
         waitForExpectations(timeout: 4.2)

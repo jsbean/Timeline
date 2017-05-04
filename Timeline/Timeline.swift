@@ -60,6 +60,7 @@ public class Timeline: TimelineProtocol {
     /// The rate at which the `Timeline` is played-back. Defaults to `1`.
     public var playbackRate: Double = 1
     
+    ///
     internal var rate: Seconds
     
     internal var frameOffset: Frames = 0
@@ -74,12 +75,13 @@ public class Timeline: TimelineProtocol {
     /// - TODO: Implement Timer protocol.
     public var timer: DispatchSourceTimer?
     
-    private var completion: (() -> ())?
+    /// Closure to be called when the `Timeline` has reached the end.
+    public var completion: (() -> ())?
     
     // MARK: - Initializers
     
     /// Creates an empty `Timeline`.
-    public init(rate: Seconds = 1/100, completion: (() -> ())? = nil) {
+    public init(rate: Seconds = 1/120, completion: (() -> ())? = nil) {
         self.rate = rate
         self.schedule = [:]
         self.completion = completion
@@ -89,25 +91,30 @@ public class Timeline: TimelineProtocol {
     
     /// Adds the given `action` at the given `offset` in `Seconds`.
     public func add(
-        action body: @escaping ActionBody,
+        action body: @escaping Action.Body,
         identifier: String,
         at offset: Seconds
     )
     {
-        let action = AtomicAction(identifier: identifier, body: body)
+        let action = Action(kind: .atomic, identifier: identifier, body: body)
         add(action, at: offset)
     }
     
     /// Adds the given `action`, to be performed every `interval`, offset by the given
     /// `offset`.
     public func loop(
-        action body:  @escaping ActionBody,
+        action body:  @escaping Action.Body,
         identifier: String,
         every interval: Seconds,
         offsetBy offset: Seconds = 0
     )
     {
-        let action = LoopingAction(identifier: identifier, interval: interval, body: body)
+        let action = Action(
+            kind: .looping(interval: interval, status: .source),
+            identifier: identifier,
+            body: body
+        )
+
         add(action, at: offset)
     }
     
@@ -156,19 +163,13 @@ public class Timeline: TimelineProtocol {
     }
     
     /// Pauses the `Timeline`.
-    ///
-    /// - warning: Not currently available.
-    ///
     public func pause() {
-        timer?.cancel()
         frameOffset = currentFrame
+        timer?.cancel()
         status = .paused(frameOffset)
     }
     
     /// Resumes the `Timeline`.
-    ///
-    /// - warning: Not currently available.
-    ///
     public func resume() {
         timer = makeTimer()
         clock.start()
@@ -218,44 +219,78 @@ public class Timeline: TimelineProtocol {
         }
     }
     
-    private var next: (Frames, [Action])? {
+    private var next: (Seconds, Frames, [Action])? {
 
         guard playbackIndex < schedule.keys.endIndex else {
             return nil
         }
 
         let (nextSeconds, nextActions) = schedule[playbackIndex]
-        return (frames(seconds: nextSeconds, rate: self.rate * playbackRate), nextActions)
+        
+        return (
+            nextSeconds,
+            frames(seconds: nextSeconds, rate: self.rate * playbackRate),
+            nextActions
+        )
     }
+    
+    private var previous: (Seconds, Frames, [Action])? {
+        
+        guard playbackIndex > schedule.keys.startIndex else {
+            return nil
+        }
+        
+        let (prevSeconds, prevActions) = schedule[playbackIndex - 1]
+        
+        return (
+            prevSeconds,
+            frames(seconds: prevSeconds, rate: self.rate * playbackRate),
+            prevActions
+        )
+    }
+    
+    // loops: [Seconds: Action]
+    var loops: [Seconds: Action] = [:]
     
     @objc internal func advance() {
 
-        guard let (nextFrame, nextActions) = next else {
+        guard let (nextSeconds, nextFrame, nextActions) = next else {
             completion?()
             stop()
             return
         }
         
         if currentFrame >= nextFrame {
-            perform(actions: nextActions)
+            
+            nextActions.forEach { action in
+                
+                // perform the action body
+                action.body()
+                
+                if case let .looping(interval, _) = action.kind {
+                    add(action.echo, at: nextSeconds + interval)
+                }
+            }
+            
             playbackIndex += 1
         }
     }
+}
+
+func clearEchoes(from actions: [Action]) -> [Action]? {
     
-    func perform(actions: [Action]) {
-        
-        actions.forEach { action in
-            
-            // perform the action body
-            action.body()
-            
-            // if looping action, add next action
-            if let loopingAction = action as? LoopingAction {
-                let next = clock.elapsed + loopingAction.interval
-                add(loopingAction, at: next)
-            }
+    let filtered = actions.filter { action in
+        switch action.kind {
+        case .atomic:
+            return true
+        case let .looping(_, status) where status == .source:
+            return true
+        default:
+            return false
         }
     }
+    
+    return !filtered.isEmpty ? filtered : nil
 }
 
 internal func frames(seconds: Seconds, rate: Seconds) -> Frames {

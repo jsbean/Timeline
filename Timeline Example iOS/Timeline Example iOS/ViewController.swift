@@ -67,24 +67,19 @@ class ViewController: UIViewController {
         slowLabel.font = UIFont(name: "Courier", size: 100)
         slowLabel.textAlignment = .center
         view.addSubview(slowLabel)
-        
-        for offset in 1...1000 {
-            
-            fastTimeline.add(
-                action: { self.updateFastLabel(offset) },
-                identifier: "",
-                at: Seconds(offset) / 30
-            )
-            
-            slowTimeline.add(
-                action: { self.updateSlowLabel(offset) },
-                identifier: "",
-                at: Seconds(offset) / 30
-            )
-        }
 
+        let increment = {
+            self.updateSlowLabel(Int(self.slowTimeline.clock.elapsed * 1000))
+        }
+        
+        slowTimeline.loop(
+            action: increment,
+            identifier: "",
+            every: 1/30
+        )
+        
         fastTimeline.playbackRate = 1
-        slowTimeline.playbackRate = 0.3333
+        slowTimeline.playbackRate = 1
     }
     
     func start() {
