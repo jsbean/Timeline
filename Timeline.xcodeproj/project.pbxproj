@@ -11,6 +11,8 @@
 		0733E9F61D1BE8F500FDDE97 /* TimelineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0733E9F41D1BE8F500FDDE97 /* TimelineTests.swift */; };
 		0744006D1E0DA00900E4F396 /* Collections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0744006C1E0DA00900E4F396 /* Collections.framework */; };
 		0744006F1E0DA01000E4F396 /* Collections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0744006E1E0DA01000E4F396 /* Collections.framework */; };
+		0747732B1EBBA02900F2CCA2 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0747732A1EBBA02900F2CCA2 /* Timer.swift */; };
+		0747732C1EBBA02900F2CCA2 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0747732A1EBBA02900F2CCA2 /* Timer.swift */; };
 		074B58121D2288AB00215565 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074B58111D2288AB00215565 /* Action.swift */; };
 		074B58131D2288AB00215565 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074B58111D2288AB00215565 /* Action.swift */; };
 		076D70211EB7F6C200F93CE8 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D70201EB7F6C200F93CE8 /* Timeline.swift */; };
@@ -88,6 +90,7 @@
 		0733E9F41D1BE8F500FDDE97 /* TimelineTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimelineTests.swift; path = TimelineTests/TimelineTests.swift; sourceTree = "<group>"; };
 		0744006C1E0DA00900E4F396 /* Collections.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Collections.framework; path = Carthage/Build/iOS/Collections.framework; sourceTree = "<group>"; };
 		0744006E1E0DA01000E4F396 /* Collections.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Collections.framework; path = Carthage/Build/Mac/Collections.framework; sourceTree = "<group>"; };
+		0747732A1EBBA02900F2CCA2 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Timer.swift; path = Timeline/Timer.swift; sourceTree = "<group>"; };
 		074B58111D2288AB00215565 /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Action.swift; path = Timeline/Action.swift; sourceTree = "<group>"; };
 		076D70201EB7F6C200F93CE8 /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Timeline/Timeline.swift; sourceTree = "<group>"; };
 		076D70231EB7FFBA00F93CE8 /* TimelineProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimelineProtocol.swift; path = Timeline/TimelineProtocol.swift; sourceTree = "<group>"; };
@@ -154,6 +157,7 @@
 			children = (
 				07B68ABC1DCFEB0200FE8F59 /* Duration.swift */,
 				076D70201EB7F6C200F93CE8 /* Timeline.swift */,
+				0747732A1EBBA02900F2CCA2 /* Timer.swift */,
 				076D70231EB7FFBA00F93CE8 /* TimelineProtocol.swift */,
 				07F738FD1D1AB4C800F83AE8 /* _Timeline.swift */,
 				074B58111D2288AB00215565 /* Action.swift */,
@@ -415,6 +419,7 @@
 				076D70241EB7FFBA00F93CE8 /* TimelineProtocol.swift in Sources */,
 				076D70211EB7F6C200F93CE8 /* Timeline.swift in Sources */,
 				07B68ABD1DCFEB0200FE8F59 /* Duration.swift in Sources */,
+				0747732B1EBBA02900F2CCA2 /* Timer.swift in Sources */,
 				07F739041D1AB4C800F83AE8 /* _Timeline.swift in Sources */,
 				074B58121D2288AB00215565 /* Action.swift in Sources */,
 			);
@@ -427,6 +432,7 @@
 				076D70251EB7FFBA00F93CE8 /* TimelineProtocol.swift in Sources */,
 				076D70221EB7F6C200F93CE8 /* Timeline.swift in Sources */,
 				07B68ABE1DCFEB0200FE8F59 /* Duration.swift in Sources */,
+				0747732C1EBBA02900F2CCA2 /* Timer.swift in Sources */,
 				07F739051D1AB4C800F83AE8 /* _Timeline.swift in Sources */,
 				074B58131D2288AB00215565 /* Action.swift in Sources */,
 			);

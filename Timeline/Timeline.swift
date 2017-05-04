@@ -66,7 +66,7 @@ public class Timeline/*: TimelineProtocol*/ {
     /// Timer.
     ///
     /// - TODO: Implement Timer protocol.
-    public var timer: DispatchSourceTimer?
+    public var timer: Timer?
 
     /// Clock.
     ///
@@ -156,14 +156,14 @@ public class Timeline/*: TimelineProtocol*/ {
     /// Stops the `Timeline` from executing, and is placed at the beginning.
     public func stop() {
         frameOffset = 0
-        timer?.cancel()
+        timer?.stop()
         status = .stopped
     }
     
     /// Pauses the `Timeline`.
     public func pause() {
         frameOffset = currentFrame
-        timer?.cancel()
+        timer?.stop()
         status = .paused(frameOffset)
     }
     
@@ -181,37 +181,41 @@ public class Timeline/*: TimelineProtocol*/ {
         fatalError()
     }
     
-    private func makeTimer() -> DispatchSourceTimer {
+    private func makeTimer() -> Timer {
+        self.timer?.stop()
+        let timer = Timer(interval: 1/120, performing: advance)
+        timer.start()
+        return timer
         
-        timer?.cancel()
-
-        if #available(OSX 10.12, iOS 10, *) {
-            
-            let queue = DispatchQueue(
-                label: "com.bean.timer",
-                qos: .userInteractive,
-                attributes: .concurrent
-            )
-            
-            let timer = DispatchSource.makeTimerSource(queue: queue)
-            timer.setEventHandler(handler: advance)
-            timer.scheduleRepeating(deadline: .now(), interval: .milliseconds(4))
-            timer.resume()
-            return timer
-            
-        } else {
-
-            fatalError()
+//        timer?.cancel()
+//
+//        if #available(OSX 10.12, iOS 10, *) {
 //            
-//            // Create a `Timer` that will call the `advance` method at the given `rate`
-//            timer = Timer.scheduledTimer(
-//                timeInterval: rate,
-//                target: self,
-//                selector: #selector(advance),
-//                userInfo: nil,
-//                repeats: true
+//            let queue = DispatchQueue(
+//                label: "com.bean.timer",
+//                qos: .userInteractive,
+//                attributes: .concurrent
 //            )
-        }
+//            
+//            let timer = DispatchSource.makeTimerSource(queue: queue)
+//            timer.setEventHandler(handler: advance)
+//            timer.scheduleRepeating(deadline: .now(), interval: .milliseconds(4))
+//            timer.resume()
+//            return timer
+//            
+//        } else {
+//
+//            fatalError()
+////            
+////            // Create a `Timer` that will call the `advance` method at the given `rate`
+////            timer = Timer.scheduledTimer(
+////                timeInterval: rate,
+////                target: self,
+////                selector: #selector(advance),
+////                userInfo: nil,
+////                repeats: true
+////            )
+//        }
     }
     
     private var next: (Seconds, Frames, [Action])? {
