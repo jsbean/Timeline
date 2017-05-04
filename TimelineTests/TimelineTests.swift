@@ -78,8 +78,48 @@ class TimelineTests: XCTestCase {
         XCTAssertEqual(timeline.schedule.count, 3)
     }
     
-
-
+    func testFrameCalculationPlaybackRateOfOne() {
+        
+        let rate: Seconds = 1/120
+        let scheduledDate: Seconds = 2
+        let expectedFrames: Frames = 240
+        
+        let result = frames(
+            scheduledDate: scheduledDate,
+            playbackRateChangedOffset: 0,
+            rate: rate,
+            playbackRate: 1
+        )
+        
+        XCTAssertEqual(expectedFrames, result)
+    }
+    
+    func testFrameCalculationPlaybackRateChanged() {
+        
+        let rate: Seconds = 1/120
+        
+        // event scheduled at 2 seconds
+        let scheduledDate: Seconds = 2
+        
+        // playback rate changed at 1 seconds
+        let playbackRateChangedOffset: Seconds = 1
+        
+        // new playback rate: twice as fast
+        let newPlaybackRate = 2.0
+        
+        let expectedFrames: Frames = 180
+        
+        let result = frames(
+            scheduledDate: scheduledDate,
+            playbackRateChangedOffset: playbackRateChangedOffset,
+            rate: rate,
+            playbackRate: newPlaybackRate
+        )
+        
+        XCTAssertEqual(expectedFrames, result)
+        
+    }
+    
     // MARK: - Playback
     
     func testStateAfterStartPlaying() {
@@ -99,19 +139,19 @@ class TimelineTests: XCTestCase {
         timeline.stop()
     }
     
-    func testFrameOffsetAtPauseAtOneSecond() {
-        
-        let timeline = Timeline(rate: 1/120)
-        
-        let assertion = {
-            timeline.pause()
-            XCTAssertEqual(timeline.frameOffset, 120)
-            timeline.stop()
-        }
-        
-        timeline.add(action: assertion, identifier: "", at: 1)
-        timeline.start()
-    }
+//    func testFrameOffsetAtPauseAtOneSecond() {
+//        
+//        let timeline = Timeline(rate: 1/120)
+//        
+//        let assertion = {
+//            timeline.pause()
+//            XCTAssertEqual(timeline.frameOffset, 120)
+//            timeline.stop()
+//        }
+//        
+//        timeline.add(action: assertion, identifier: "", at: 1)
+//        timeline.start()
+//    }
     
     func testFiveEventsGetTriggered() {
         
@@ -279,20 +319,124 @@ class TimelineTests: XCTestCase {
             timeline.add(action: assertion, identifier: "", at: Seconds(offset))
         }
         
-        clock.start()
-        
         timeline.playbackRate = 0.5
         timeline.start()
+        clock.start()
         
         waitForExpectations(timeout: 10) { _ in
             timeline.stop()
         }
     }
     
+    func testPlaybackRateTwice() {
+        
+        let unfulfilledExpectation = expectation(description: "Playback rate: 2")
+        
+        let clock = Timeline.Clock()
+        let timeline = Timeline { unfulfilledExpectation.fulfill() }
+        
+        for offset in 0..<5 {
+            
+            // actual time
+            let playbackTime = Seconds(offset) / 2
+            
+            let assertion = {
+                XCTAssertEqualWithAccuracy(clock.elapsed, playbackTime, accuracy: 0.01)
+            }
+            
+            timeline.add(action: assertion, identifier: "", at: Seconds(offset))
+        }
+        
+        timeline.playbackRate = 2
+        timeline.start()
+        clock.start()
+        
+        waitForExpectations(timeout: 10) { _ in
+            timeline.stop()
+        }
+    }
+    
+    func testPlaybackRateChangesMidway() {
+        
+        let unfulfilledExpectation = expectation(description: "Playback rate: 2")
+        
+        let clock = Timeline.Clock()
+        let timeline = Timeline { unfulfilledExpectation.fulfill() }
+        
+        // change playback rate to two at one second in
+        
+        let oneSecond = {
+            XCTAssertEqualWithAccuracy(clock.elapsed, 1, accuracy: 0.01)
+            timeline.playbackRate = 2.0
+        }
+        
+        let twoSeconds = {
+            XCTAssertEqualWithAccuracy(clock.elapsed, 1.5, accuracy: 0.01)
+        }
+        
+        timeline.add(action: oneSecond, identifier: "", at: 1)
+        timeline.add(action: twoSeconds, identifier: "", at: 2)
+        
+        clock.start()
+        timeline.start()
+        
+        
+        waitForExpectations(timeout: 10) { _ in
+            timeline.stop()
+        }
+    }
+    
+    func testPauseResume() {
+        
+        let unfulfilledExpectation = expectation(description: "Pause / resume")
+        
+        let clock = Timeline.Clock()
+        
+        let referenceTimeline = Timeline { unfulfilledExpectation.fulfill() }
+        let realLifeTimeline = Timeline()
+        
+        // store events in the reference timeline at one and two seconds
+        let oneSecondReference = {
+            XCTAssertEqualWithAccuracy(clock.elapsed, 1, accuracy: 0.01)
+        }
+        
+        // should happen at 3 seconds (real-life time)
+        let twoSecondsReference = {
+            XCTAssertEqualWithAccuracy(clock.elapsed, 3, accuracy: 0.01)
+        }
+        
+        referenceTimeline.add(action: oneSecondReference, identifier: "", at: 1)
+        referenceTimeline.add(action: twoSecondsReference, identifier: "", at: 2)
+        
+        // pause the reference timeline at one second
+        let oneSecondRealLife = {
+            print("one second IN REAL LIFE: pausing reference timeline")
+            referenceTimeline.pause()
+        }
+        
+        let twoSecondsRealLife = {
+            print("two seconds in REAL LIFE: resuming reference timeline")
+            referenceTimeline.resume()
+        }
+        
+        realLifeTimeline.add(action: oneSecondRealLife, identifier: "", at: 1)
+        realLifeTimeline.add(action: twoSecondsRealLife, identifier: "", at: 2)
+        
+        clock.start()
+        referenceTimeline.start()
+        realLifeTimeline.start()
+
+        waitForExpectations(timeout: 10) { _ in
+            referenceTimeline.stop()
+            realLifeTimeline.stop()
+        }
+    }
     
     func assertAccuracyWithRepeatedPulse(interval: Seconds, for duration: Seconds) {
      
-        guard duration > 0 else { return }
+        guard duration > 0 else {
+            return
+        }
         
         let unfulfilledExpectation = expectation(description: "Test accuracy of Timer")
         

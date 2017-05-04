@@ -8,6 +8,7 @@
 
 import Foundation
 import Collections
+import ArithmeticTools
 
 /// Quantization of `Seconds` values by the `rate`.
 public typealias Frames = UInt64
@@ -35,7 +36,7 @@ public class Timeline {
         case stopped
         
         /// The `Timeline` is paused at the given frame offset.
-        case paused(Frames)
+        case paused(Seconds)
     }
     
     // MARK: - Instance Properties
@@ -44,9 +45,18 @@ public class Timeline {
     public var completion: (() -> ())?
 
     /// The rate at which the `Timeline` is played-back. Defaults to `1`.
-    ///
-    /// - TODO: Add didSet to make mutable.
-    public var playbackRate: Double = 1
+    public var playbackRate: Double = 1 {
+        
+        didSet {
+            
+            guard case .playing = status else {
+                return
+            }
+            
+            pause()
+            resume()
+        }
+    }
     
     /// Current state of the `Timeline`.
     public var status: Status = .stopped
@@ -56,15 +66,21 @@ public class Timeline {
     
     /// The current frame.
     internal var currentFrame: Frames {
-        return frameOffset + frames(seconds: clock.elapsed, rate: rate)
+
+        return frames(
+            scheduledDate: clock.elapsed + lastPausedDate,
+            lastPausedDate: lastPausedDate,
+            rate: rate,
+            playbackRate: 1 // always move through time as if playback rate doesn't matter
+        )
     }
 
     /// Scale of `Seconds` to `Frames`.
     internal var rate: Seconds
     
-    /// Frames stored at `pause()`, as starting point upon `resume()`.
-    internal var frameOffset: Frames = 0
-    
+    /// Seconds (in schedule-time) of last pause.
+    internal var lastPausedDate: Seconds = 0
+
     // MARK: - Mechanisms
     
     /// Schedule that store actions to be performed by their offset time.
@@ -94,31 +110,51 @@ public class Timeline {
     
     /// Starts the `Timeline`.
     public func start() {
+        
+        if case .playing = status {
+            return
+        }
+        
         playbackIndex = 0
-        frameOffset = 0
-        status = .playing
-        timer = makeTimer()
+        lastPausedDate = 0
         clock.start()
+        timer = makeTimer()
+        status = .playing
     }
     
     /// Stops the `Timeline` from executing, and is placed at the beginning.
     public func stop() {
-        frameOffset = 0
+        
+        if case .stopped = status {
+            return
+        }
+        
+        lastPausedDate = 0
         timer?.stop()
         status = .stopped
     }
     
     /// Pauses the `Timeline`.
     public func pause() {
-        frameOffset = currentFrame
+
+        if case .paused = status {
+            return
+        }
+        
+        lastPausedDate += clock.elapsed * playbackRate
         timer?.stop()
-        status = .paused(frameOffset)
+        status = .paused(lastPausedDate)
     }
     
     /// Resumes the `Timeline`.
     public func resume() {
-        timer = makeTimer()
+        
+        if case .playing = status {
+            return
+        }
+        
         clock.start()
+        timer = makeTimer()
         status = .playing
     }
     
@@ -146,28 +182,18 @@ public class Timeline {
         }
 
         let (nextSeconds, nextActions) = schedule[playbackIndex]
+
+        let nextFrames = frames(
+            scheduledDate: nextSeconds,
+            lastPausedDate: lastPausedDate,
+            rate: rate,
+            playbackRate: playbackRate
+        )
         
         return (
             nextSeconds,
-            frames(seconds: nextSeconds, rate: self.rate * playbackRate),
+            nextFrames,
             nextActions
-        )
-    }
-    
-    /// - returns: The seconds, frames, and actions values of the previous event, if present.
-    /// Otherwise, `nil`.
-    private var previous: (Seconds, Frames, [Action])? {
-        
-        guard playbackIndex > schedule.keys.startIndex else {
-            return nil
-        }
-        
-        let (prevSeconds, prevActions) = schedule[playbackIndex - 1]
-        
-        return (
-            prevSeconds,
-            frames(seconds: prevSeconds, rate: self.rate * playbackRate),
-            prevActions
         )
     }
 
@@ -201,9 +227,30 @@ public class Timeline {
 }
 
 /// Converts seconds into frames for the given rate.
-internal func frames(seconds: Seconds, rate: Seconds) -> Frames {
+internal func frames(
+    scheduledDate: Seconds,
+    lastPausedDate: Seconds = 0,
+    rate: Seconds,
+    playbackRate: Double
+) -> Frames
+{
+
     let interval = 1 / rate
-    return Frames(round(seconds * interval))
+    
+    let timeSincePlaybackRateChange = scheduledDate - lastPausedDate
+    
+    guard timeSincePlaybackRateChange > 0 else {
+        return 0
+    }
+    
+    let playbackInterval = interval / playbackRate
+    
+    return Frames(
+        round(
+            lastPausedDate * interval +
+            playbackInterval * timeSincePlaybackRateChange
+        )
+    )
 }
 
 extension Timeline: CustomStringConvertible {
