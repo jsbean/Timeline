@@ -186,36 +186,6 @@ public class Timeline/*: TimelineProtocol*/ {
         let timer = Timer(interval: 1/120, performing: advance)
         timer.start()
         return timer
-        
-//        timer?.cancel()
-//
-//        if #available(OSX 10.12, iOS 10, *) {
-//            
-//            let queue = DispatchQueue(
-//                label: "com.bean.timer",
-//                qos: .userInteractive,
-//                attributes: .concurrent
-//            )
-//            
-//            let timer = DispatchSource.makeTimerSource(queue: queue)
-//            timer.setEventHandler(handler: advance)
-//            timer.scheduleRepeating(deadline: .now(), interval: .milliseconds(4))
-//            timer.resume()
-//            return timer
-//            
-//        } else {
-//
-//            fatalError()
-////            
-////            // Create a `Timer` that will call the `advance` method at the given `rate`
-////            timer = Timer.scheduledTimer(
-////                timeInterval: rate,
-////                target: self,
-////                selector: #selector(advance),
-////                userInfo: nil,
-////                repeats: true
-////            )
-//        }
     }
     
     private var next: (Seconds, Frames, [Action])? {

@@ -13,9 +13,7 @@ extension Timeline {
     /// Wraps `DispatchSourceTimer` for OSX 10.12+ / iOS 10+, and `Timer` for others.
     public class Timer {
         
-        let timer: AnyObject
-        
-        init(interval: Seconds, performing closure: @escaping () -> ()) {
+        lazy var timer: AnyObject? = {
             
             if #available(OSX 10.12, iOS 10, *) {
                 
@@ -26,19 +24,36 @@ extension Timeline {
                 )
                 
                 let timer = DispatchSource.makeTimerSource(queue: queue)
-                timer.setEventHandler(handler: closure)
+                timer.setEventHandler(handler: self.closure)
                 timer.scheduleRepeating(
                     deadline: .now(),
                     interval: DispatchTimeInterval.milliseconds(4)
                 )
                 
-                self.timer = timer
+                return timer
                 
             } else {
-                fatalError()
+                
+                // Create a `Timer` that will call the `advance` method at the given `rate`
+                return Foundation.Timer.scheduledTimer(
+                    timeInterval: 0.004,
+                    target: self,
+                    selector: #selector(advance),
+                    userInfo: nil,
+                    repeats: true
+                )
             }
+        }()
+        
+        /// The closure to be performed repeatedly.
+        let closure: () -> ()
+        
+        /// Creates a `Timer` which performs the given `closure` and the given `interval`.
+        init(interval: Seconds, performing closure: @escaping () -> ()) {
+            self.closure = closure
         }
         
+        /// Starts the `Timer`.
         func start() {
             
             if #available(OSX 10.12, iOS 10, *) {
@@ -48,6 +63,7 @@ extension Timeline {
             }
         }
         
+        /// Stops the `Timer`.
         func stop() {
             
             if #available(OSX 10.12, iOS 10, *) {
@@ -55,6 +71,11 @@ extension Timeline {
             } else {
                 fatalError()
             }
+        }
+
+        /// Wrapper for the `Foundation.Timer` implementation.
+        @objc func performClosure() {
+            closure()
         }
     }
 }
