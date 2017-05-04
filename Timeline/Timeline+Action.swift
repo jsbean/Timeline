@@ -26,7 +26,7 @@ extension Timeline {
             /// The first occurrence of a looping action.
             case source
             
-            /// The second of late occurrence of a looping action.
+            /// The second or later occurrence of a looping action.
             case echo
         }
         
