@@ -189,9 +189,9 @@
 		A0CE11A8EA7A9198261C6706 /* TimelineTests */ = {
 			isa = PBXGroup;
 			children = (
-				07B53F641EBA7433008DB23A /* ScheduleTests.swift */,
 				D4AB9B42FB308D95002C7F3C /* Supporting Files */,
 				0733E9F41D1BE8F500FDDE97 /* TimelineTests.swift */,
+				07B53F641EBA7433008DB23A /* ScheduleTests.swift */,
 			);
 			name = TimelineTests;
 			sourceTree = "<group>";

@@ -13,6 +13,8 @@ import ArithmeticTools
 
 class TimelineTests: XCTestCase {
     
+    // TODO: Use `Timeline.Clock`
+    
     // Current time in nanoseconds (convert to Double then divide by 1_000_000_000)
     var now: UInt64 {
         return DispatchTime.now().uptimeNanoseconds
@@ -24,14 +26,13 @@ class TimelineTests: XCTestCase {
 
     func testTimeStampToFrame() {
         
-        let body: Action.Body = { print("something") }
+        let body: Timeline.Action.Body = { print("something") }
         let timeStamp: Seconds = 0.5
         
         let timeline = Timeline(rate: 1/60)
         timeline.add(action: body, identifier: "", at: timeStamp)
         
         XCTAssertEqual(timeline.schedule.count, 1)
-        //XCTAssertNotNil(timeline[Frames(30)])
     }
     
     func testStateAtInitStopped() {
@@ -329,6 +330,7 @@ class TimelineTests: XCTestCase {
                     localErrors.append(localError)
                     
                     print("local error: \(localError)")
+                    print("global error: \(globalError)")
                     
                     last = current
                 }
@@ -387,13 +389,13 @@ class TimelineTests: XCTestCase {
     
     // MARK: - Medium Tests
     
-//    func testAccuracyWithFastPulseForFiveSeconds() {
-//        assertAccuracyWithRepeatedPulse(interval: 0.1, for: 5)
-//    }
-//    
-//    func testAccuracyWithIrregularFastPulseForFiveSeconds() {
-//        assertAccuracyWithRepeatedPulse(interval: 0.5, for: 5)
-//    }
+    func testAccuracyWithFastPulseForFiveSeconds() {
+        assertAccuracyWithRepeatedPulse(interval: 0.1, for: 5)
+    }
+    
+    func testAccuracyWithIrregularFastPulseForFiveSeconds() {
+        assertAccuracyWithRepeatedPulse(interval: 0.5, for: 5)
+    }
     
     // MARK: - Long Tests
 
