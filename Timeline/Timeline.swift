@@ -45,8 +45,6 @@ public class Timeline {
     public var completion: (() -> ())?
 
     /// The rate at which the `Timeline` is played-back. Defaults to `1`.
-    ///
-    /// - TODO: Add didSet to make mutable.
     public var playbackRate: Double = 1 {
         
         didSet {
