@@ -68,8 +68,8 @@ public class Timeline {
     internal var currentFrame: Frames {
 
         return frames(
-            scheduledDate: clock.elapsed + secondsOffset,
-            playbackRateChangedOffset: secondsOffset,
+            scheduledDate: clock.elapsed + lastPausedDate,
+            lastPausedDate: lastPausedDate,
             rate: rate,
             playbackRate: 1 // always move through time as if playback rate doesn't matter
         )
@@ -79,7 +79,7 @@ public class Timeline {
     internal var rate: Seconds
     
     /// Seconds (in schedule-time) of last pause.
-    internal var secondsOffset: Seconds = 0
+    internal var lastPausedDate: Seconds = 0
 
     // MARK: - Mechanisms
     
@@ -116,7 +116,7 @@ public class Timeline {
         }
         
         playbackIndex = 0
-        secondsOffset = 0
+        lastPausedDate = 0
         clock.start()
         timer = makeTimer()
         status = .playing
@@ -129,7 +129,7 @@ public class Timeline {
             return
         }
         
-        secondsOffset = 0
+        lastPausedDate = 0
         timer?.stop()
         status = .stopped
     }
@@ -141,9 +141,9 @@ public class Timeline {
             return
         }
         
-        secondsOffset += clock.elapsed * playbackRate
+        lastPausedDate += clock.elapsed * playbackRate
         timer?.stop()
-        status = .paused(secondsOffset)
+        status = .paused(lastPausedDate)
     }
     
     /// Resumes the `Timeline`.
@@ -185,7 +185,7 @@ public class Timeline {
 
         let nextFrames = frames(
             scheduledDate: nextSeconds,
-            playbackRateChangedOffset: secondsOffset,
+            lastPausedDate: lastPausedDate,
             rate: rate,
             playbackRate: playbackRate
         )
@@ -196,23 +196,6 @@ public class Timeline {
             nextActions
         )
     }
-//    
-//    /// - returns: The seconds, frames, and actions values of the previous event, if present.
-//    /// Otherwise, `nil`.
-//    private var previous: (Seconds, Frames, [Action])? {
-//        
-//        guard playbackIndex > schedule.keys.startIndex else {
-//            return nil
-//        }
-//        
-//        let (prevSeconds, prevActions) = schedule[playbackIndex - 1]
-//        
-//        return (
-//            prevSeconds,
-//            frames(seconds: prevSeconds, offset: 0, rate: self.rate * playbackRate),
-//            prevActions
-//        )
-//    }
 
     /// Called rapidly by the `timer`, a check is made based on the elapsed time whether or not
     /// actions need to be executed.
@@ -226,8 +209,6 @@ public class Timeline {
             return
         }
         
-        print("currentFrame: \(currentFrame)")
-
         if currentFrame >= nextFrame {
             
             nextActions.forEach { action in
@@ -248,7 +229,7 @@ public class Timeline {
 /// Converts seconds into frames for the given rate.
 internal func frames(
     scheduledDate: Seconds,
-    playbackRateChangedOffset: Seconds = 0,
+    lastPausedDate: Seconds = 0,
     rate: Seconds,
     playbackRate: Double
 ) -> Frames
@@ -256,7 +237,7 @@ internal func frames(
 
     let interval = 1 / rate
     
-    let timeSincePlaybackRateChange = scheduledDate - playbackRateChangedOffset
+    let timeSincePlaybackRateChange = scheduledDate - lastPausedDate
     
     guard timeSincePlaybackRateChange > 0 else {
         return 0
@@ -266,7 +247,7 @@ internal func frames(
     
     return Frames(
         round(
-            playbackRateChangedOffset * interval +
+            lastPausedDate * interval +
             playbackInterval * timeSincePlaybackRateChange
         )
     )
