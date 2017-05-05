@@ -17,7 +17,7 @@ extension Timeline {
         action body: @escaping Action.Body,
         identifier: String,
         at offset: Seconds
-        )
+    )
     {
         let action = Action(kind: .atomic, identifier: identifier, body: body)
         add(action, at: offset)
