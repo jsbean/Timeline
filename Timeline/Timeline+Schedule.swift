@@ -46,6 +46,13 @@ extension Timeline {
         schedule.safelyAppend(action, toArrayWith: offset)
     }
     
+    /// Adds the contents of the given `timeline` to `schedule`.
+    public func add(_ timeline: Timeline) {
+        timeline.schedule.forEach { offset, actions in
+            schedule.safelyAppendContents(of: actions, toArrayWith: offset)
+        }
+    }
+    
     /// Removes all of the `Actions` from the `Timeline` with the given identifiers
     ///
     /// - TODO: Refactor to `Schedule` struct
