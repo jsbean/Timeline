@@ -45,14 +45,10 @@ public class Timeline {
     public var completion: (() -> ())?
 
     /// The rate at which the `Timeline` is played-back. Defaults to `1`.
-    public var playbackRate: Double = 1 {
+    public var playbackRate: Double {
         
         didSet {
-            
-            guard case .playing = status else {
-                return
-            }
-            
+            guard case .playing = status else { return }
             pause()
             resume()
         }
@@ -100,10 +96,18 @@ public class Timeline {
     // MARK: - Initializers
     
     /// Creates an empty `Timeline`.
-    public init(rate: Seconds = 1/120, completion: (() -> ())? = nil) {
+    public init(
+        actions: [(Seconds, Action)] = [],
+        rate: Seconds = 1/120,
+        playbackRate: Double = 1,
+        completion: (() -> ())? = nil
+    )
+    {
         self.rate = rate
+        self.playbackRate = playbackRate
         self.schedule = [:]
         self.completion = completion
+        actions.forEach { offset, action in add(action, at: offset) }
     }
     
     // MARK: - Instance Methods
@@ -235,6 +239,8 @@ internal func frames(
 ) -> Frames
 {
 
+    // TODO: Prevent against division by zero!
+    
     let interval = 1 / rate
     
     let timeSincePlaybackRateChange = scheduledDate - lastPausedDate

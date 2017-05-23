@@ -41,6 +41,7 @@ extension Timeline {
         add(action, at: offset)
     }
     
+    /// Adds the given `action` at the given `offset`.
     public func add(_ action: Action, at offset: Seconds) {
         schedule.safelyAppend(action, toArrayWith: offset)
     }
