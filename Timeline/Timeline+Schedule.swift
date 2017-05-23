@@ -53,6 +53,10 @@ extension Timeline {
         }
     }
     
+    public func add(_ timelines: Timeline...) {
+        timelines.forEach(add)
+    }
+    
     /// Removes all of the `Actions` from the `Timeline` with the given identifiers
     ///
     /// - TODO: Refactor to `Schedule` struct
