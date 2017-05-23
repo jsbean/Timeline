@@ -17,7 +17,7 @@ extension Timeline {
         action body: @escaping Action.Body,
         identifier: String,
         at offset: Seconds
-        )
+    )
     {
         let action = Action(kind: .atomic, identifier: identifier, body: body)
         add(action, at: offset)
@@ -41,6 +41,7 @@ extension Timeline {
         add(action, at: offset)
     }
     
+    /// Adds the given `action` at the given `offset`.
     public func add(_ action: Action, at offset: Seconds) {
         schedule.safelyAppend(action, toArrayWith: offset)
     }
