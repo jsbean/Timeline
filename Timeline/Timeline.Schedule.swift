@@ -1,5 +1,5 @@
 //
-//  Timeline+Schedule.swift
+//  Timeline.Schedule.swift
 //  Timeline
 //
 //  Created by James Bean on 5/4/17.
@@ -13,13 +13,8 @@ extension Timeline {
     // MARK: - Schedule
     
     /// Adds the given `action` at the given `offset` in `Seconds`.
-    public func add(
-        action body: @escaping Action.Body,
-        identifier: String,
-        at offset: Seconds
-    )
-    {
-        let action = Action(kind: .atomic, identifier: identifier, body: body)
+    public func add(action body: @escaping Action.Body, at offset: Seconds) {
+        let action = Action(kind: .atomic, body: body)
         add(action, at: offset)
     }
     
@@ -27,14 +22,12 @@ extension Timeline {
     /// `offset`.
     public func loop(
         action body:  @escaping Action.Body,
-        identifier: String,
         every interval: Seconds,
         offsetBy offset: Seconds = 0
     )
     {
         let action = Action(
             kind: .looping(interval: interval, status: .source),
-            identifier: identifier,
             body: body
         )
         
@@ -43,13 +36,14 @@ extension Timeline {
     
     /// Adds the given `action` at the given `offset`.
     public func add(_ action: Action, at offset: Seconds) {
+        action.identifierPath.append(identifier)
         schedule.safelyAppend(action, toArrayWith: offset)
     }
     
     /// Adds the contents of the given `timeline` to `schedule`.
     public func add(_ timeline: Timeline) {
         timeline.schedule.forEach { offset, actions in
-            schedule.safelyAppendContents(of: actions, toArrayWith: offset)
+            actions.forEach { action in add(action, at: offset) }
         }
     }
     
@@ -73,7 +67,7 @@ extension Timeline {
             
             // Remove the actions with identifiers that match those requested for removal
             let filtered = actions.filter { action in
-                !identifiers.contains(action.identifier)
+                !Set(identifiers).intersection(action.identifierPath).isEmpty
             }
             
             // If no actions are left in an array, remove value at given offset

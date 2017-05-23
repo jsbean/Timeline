@@ -30,7 +30,7 @@ class TimelineTests: XCTestCase {
         let timeStamp: Seconds = 0.5
         
         let timeline = Timeline(rate: 1/60)
-        timeline.add(action: body, identifier: "", at: timeStamp)
+        timeline.add(action: body, at: timeStamp)
         
         XCTAssertEqual(timeline.schedule.count, 1)
     }
@@ -43,39 +43,17 @@ class TimelineTests: XCTestCase {
         }
     }
     
-    func testAddWithIdentifier() {
-        let timeline = Timeline()
-        timeline.add(action: { }, identifier: "id", at: 0)
-    }
-    
     func testRemoveAll() {
         
         let timeline = Timeline()
         
         for offset in 0..<5 {
-            timeline.add(action: { }, identifier: "id", at: Seconds(offset))
+            timeline.add(action: { }, at: Seconds(offset))
         }
         
         XCTAssertEqual(timeline.schedule.count, 5)
         timeline.removeAll()
         XCTAssertEqual(timeline.schedule.count, 0)
-    }
-    
-    func testRemoveAllWithIdentifiers() {
-        
-        let timeline = Timeline()
-        
-        for offset in 0..<5 {
-            timeline.add(action: { }, identifier: "removed", at: Seconds(offset))
-        }
-        
-        for offset in 5..<8 {
-            timeline.add(action: { }, identifier: "kept", at: Seconds(offset))
-        }
-        
-        XCTAssertEqual(timeline.schedule.count, 8)
-        timeline.removeAll(identifiers: ["removed"])
-        XCTAssertEqual(timeline.schedule.count, 3)
     }
     
     func testFrameCalculationPlaybackRateOfOne() {
@@ -86,7 +64,7 @@ class TimelineTests: XCTestCase {
         
         let result = frames(
             scheduledDate: scheduledDate,
-            playbackRateChangedOffset: 0,
+            lastPausedDate: 0,
             rate: rate,
             playbackRate: 1
         )
@@ -111,7 +89,7 @@ class TimelineTests: XCTestCase {
         
         let result = frames(
             scheduledDate: scheduledDate,
-            playbackRateChangedOffset: playbackRateChangedOffset,
+            lastPausedDate: playbackRateChangedOffset,
             rate: rate,
             playbackRate: newPlaybackRate
         )
@@ -132,27 +110,6 @@ class TimelineTests: XCTestCase {
         timeline.stop()
     }
     
-    func testFrameOffsetZeroAtStart() {
-        let timeline = Timeline()
-        timeline.start()
-        XCTAssertEqual(timeline.frameOffset, 0)
-        timeline.stop()
-    }
-    
-//    func testFrameOffsetAtPauseAtOneSecond() {
-//        
-//        let timeline = Timeline(rate: 1/120)
-//        
-//        let assertion = {
-//            timeline.pause()
-//            XCTAssertEqual(timeline.frameOffset, 120)
-//            timeline.stop()
-//        }
-//        
-//        timeline.add(action: assertion, identifier: "", at: 1)
-//        timeline.start()
-//    }
-    
     func testFiveEventsGetTriggered() {
         
         let unfulfilledExpectation = expectation(description: "Counter")
@@ -166,7 +123,7 @@ class TimelineTests: XCTestCase {
         
         // Fill up Timeline
         for offset in 0..<5 {
-            timeline.add(action: increment, identifier: "", at: Seconds(offset))
+            timeline.add(action: increment, at: Seconds(offset))
         }
         
         // Assert that we have counted to five
@@ -176,7 +133,7 @@ class TimelineTests: XCTestCase {
             timeline.stop()
         }
         
-        timeline.add(action: assertion, identifier: "", at: 5)
+        timeline.add(action: assertion, at: 5)
         
         // Get things started
         timeline.start()
@@ -196,7 +153,7 @@ class TimelineTests: XCTestCase {
         // Create Timeline
         let timeline = Timeline()
         
-        timeline.loop(action: increment, identifier: "increment", every: 1, offsetBy: 0)
+        timeline.loop(action: increment, every: 1, offsetBy: 0)
         
         timeline.add(
             action: {
@@ -205,100 +162,12 @@ class TimelineTests: XCTestCase {
                 timeline.stop()
                 unfulfilledExpectation.fulfill()
             },
-            identifier: "stop",
             at: 4.1
         )
         
         timeline.start()
         waitForExpectations(timeout: 4.2)
     }
-    
-//    func testPause() {
-//        
-//        let unfulfilledExpectation = expectation(description: "Test pause")
-//        
-//        let timeline = Timeline()
-//        
-//        timeline.add(action: { timeline.pause() }, identifier: "pause", at: 4)
-//        timeline.add(action: { unfulfilledExpectation.fulfill() }, identifier: "", at: 4.1)
-//        
-//        timeline.start()
-//        
-//        waitForExpectations(timeout: 4.2)
-//    }
-
-    
-//    func testCurrentFrameInitZero() {
-//        let timeline = Timeline()
-//        XCTAssertEqual(timeline.currentFrame, 0)
-//    }
-
-//    func testIterationSorted() {
-//        
-//        let timeline = Timeline()
-//        timeline.add(at: 3) { () }
-//        timeline.add(at: 2) { () }
-//        timeline.add(at: 5) { () }
-//        timeline.add(at: 1) { () }
-//        timeline.add(at: 4) { () }
-//        
-//        XCTAssertEqual(
-//            timeline.map { $0.0 },
-//            [1,2,3,4,5].map { Frames(Seconds($0) / timeline.rate) }
-//        )
-//    }
-//
-//    func testClear() {
-//        
-//        let timeline = Timeline()
-//        timeline.add(at: 3) { () }
-//        timeline.add(at: 2) { () }
-//        timeline.clear()
-//        
-//        XCTAssertEqual(timeline.count, 0)
-//    }
-//    
-//    func testStart() {
-//        
-//        let timeline = Timeline()
-//        timeline.add(at: 3) { () }
-//        timeline.add(at: 2) { () }
-//        
-//        XCTAssertFalse(timeline.isActive)
-//
-//        timeline.start()
-//        
-//        XCTAssert(timeline.isActive)
-//    }
-//
-//    func testStop() {
-//        
-//        let timeline = Timeline()
-//        timeline.add(at: 3) { () }
-//        timeline.add(at: 2) { () }
-//        timeline.start()
-//        timeline.stop()
-//        
-//        XCTAssertFalse(timeline.isActive)
-//        XCTAssertEqual(timeline.currentFrame, 0)
-//    }
-//    
-//    func testSubscriptSeconds() {
-//        
-//        let timeline = Timeline()
-//        timeline.add(at: 3) { () }
-//        timeline.add(at: 2) { () }
-//        timeline.add(at: 5) { () }
-//        timeline.add(at: 1) { () }
-//        timeline.add(at: 4) { () }
-//        
-//        stride(from: Seconds(1), to: 5, by: 1).forEach { timeStamp in
-//            XCTAssertNotNil(timeline[timeStamp])
-//        }
-//    }
-//    
-//    // TODO: Implement: testAccuracyWithTimePoints([Seconds]) { }
-//    
     
     func testPlaybackRateHalf() {
         
@@ -316,7 +185,7 @@ class TimelineTests: XCTestCase {
                 XCTAssertEqualWithAccuracy(clock.elapsed, playbackTime, accuracy: 0.01)
             }
             
-            timeline.add(action: assertion, identifier: "", at: Seconds(offset))
+            timeline.add(action: assertion, at: Seconds(offset))
         }
         
         timeline.playbackRate = 0.5
@@ -344,7 +213,7 @@ class TimelineTests: XCTestCase {
                 XCTAssertEqualWithAccuracy(clock.elapsed, playbackTime, accuracy: 0.01)
             }
             
-            timeline.add(action: assertion, identifier: "", at: Seconds(offset))
+            timeline.add(action: assertion, at: Seconds(offset))
         }
         
         timeline.playbackRate = 2
@@ -374,8 +243,8 @@ class TimelineTests: XCTestCase {
             XCTAssertEqualWithAccuracy(clock.elapsed, 1.5, accuracy: 0.01)
         }
         
-        timeline.add(action: oneSecond, identifier: "", at: 1)
-        timeline.add(action: twoSeconds, identifier: "", at: 2)
+        timeline.add(action: oneSecond, at: 1)
+        timeline.add(action: twoSeconds, at: 2)
         
         clock.start()
         timeline.start()
@@ -405,8 +274,8 @@ class TimelineTests: XCTestCase {
             XCTAssertEqualWithAccuracy(clock.elapsed, 3, accuracy: 0.01)
         }
         
-        referenceTimeline.add(action: oneSecondReference, identifier: "", at: 1)
-        referenceTimeline.add(action: twoSecondsReference, identifier: "", at: 2)
+        referenceTimeline.add(action: oneSecondReference, at: 1)
+        referenceTimeline.add(action: twoSecondsReference, at: 2)
         
         // pause the reference timeline at one second
         let oneSecondRealLife = {
@@ -419,8 +288,8 @@ class TimelineTests: XCTestCase {
             referenceTimeline.resume()
         }
         
-        realLifeTimeline.add(action: oneSecondRealLife, identifier: "", at: 1)
-        realLifeTimeline.add(action: twoSecondsRealLife, identifier: "", at: 2)
+        realLifeTimeline.add(action: oneSecondRealLife, at: 1)
+        realLifeTimeline.add(action: twoSecondsRealLife, at: 2)
         
         clock.start()
         referenceTimeline.start()
@@ -480,7 +349,7 @@ class TimelineTests: XCTestCase {
                 }
             }
             
-            timeline.add(action: action, identifier: "measure", at: offset)
+            timeline.add(action: action, at: offset)
         }
         
         // Finish up 1 second after done
@@ -508,7 +377,7 @@ class TimelineTests: XCTestCase {
             timeline.stop()
         }
         
-        timeline.add(action: assertion, identifier: "assertion", at: range.last!)
+        timeline.add(action: assertion, at: range.last!)
         
         // Start the timeline
         timeline.start()
