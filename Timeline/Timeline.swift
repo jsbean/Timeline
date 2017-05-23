@@ -40,13 +40,9 @@ public class Timeline {
     }
     
     // MARK: - Instance Properties
-    
-    /// Closure to be called when the `Timeline` has reached the end.
-    public var completion: (() -> ())?
 
     /// The rate at which the `Timeline` is played-back. Defaults to `1`.
     public var playbackRate: Double {
-        
         didSet {
             guard case .playing = status else { return }
             pause()
@@ -62,7 +58,6 @@ public class Timeline {
     
     /// The current frame.
     internal var currentFrame: Frames {
-
         return frames(
             scheduledDate: clock.elapsed + lastPausedDate,
             lastPausedDate: lastPausedDate,
@@ -92,17 +87,25 @@ public class Timeline {
     /// Measures timing between successive shots of the `timer`, to ensure accuracy and to 
     /// prevent drifting.
     public var clock = Clock()
+    
+    /// Closure to be called when the `Timeline` has reached the end.
+    public var completion: (() -> ())?
+    
+    /// Identifier of `Timeline`.
+    public let identifier: String
 
     // MARK: - Initializers
     
     /// Creates an empty `Timeline`.
     public init(
+        identifier: String = "",
         actions: [(Seconds, Action)] = [],
         rate: Seconds = 1/120,
         playbackRate: Double = 1,
         completion: (() -> ())? = nil
     )
     {
+        self.identifier = identifier
         self.rate = rate
         self.playbackRate = playbackRate
         self.schedule = [:]
