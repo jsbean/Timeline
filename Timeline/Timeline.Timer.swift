@@ -1,5 +1,5 @@
 //
-//  Timeline+Timer.swift
+//  Timeline.Timer.swift
 //  Timeline
 //
 //  Created by James Bean on 5/4/17.

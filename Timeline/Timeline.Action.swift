@@ -1,5 +1,5 @@
 ////
-////  Timeline+Action.swift
+////  Timeline.Action.swift
 ////  Timeline
 ////
 ////  Created by James Bean on 6/28/16.
@@ -51,28 +51,23 @@ extension Timeline {
                 fatalError("Can only create an echo of a looping Action")
             }
             
-            return Action(
-                kind: .looping(interval: interval, status: .echo),
-                identifier: identifier,
-                body: body
-            )
+            return Action(kind: .looping(interval: interval, status: .echo), body: body)
         }
         
         /// Kind of `Action`.
         public let kind: Kind
         
-        /// Identifier.
-        public let identifier: String
-        
         /// Closure to be performed.
         public let body: Body
         
+        /// Identifier.
+        internal var identifierPath: [String] = []
+        
         // MARK: - Initializers
         
-        /// Creates an `Action` with the given `kind`, `identifier` and `body` to be performed.
-        public init(kind: Kind, identifier: String = "", body: @escaping Body) {
+        /// Creates an `Action` with the given `kind`, and `body` to be performed.
+        public init(kind: Kind, body: @escaping Body) {
             self.kind = kind
-            self.identifier = identifier
             self.body = body
         }
     }
