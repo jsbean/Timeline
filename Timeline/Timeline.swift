@@ -241,11 +241,7 @@ internal func frames(
     playbackRate: Double
 ) -> Frames
 {
-
-    // TODO: Prevent against division by zero!
-    
     let interval = 1 / rate
-    
     let timeSincePlaybackRateChange = scheduledDate - lastPausedDate
     
     guard timeSincePlaybackRateChange > 0 else {
