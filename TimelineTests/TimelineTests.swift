@@ -224,37 +224,7 @@ class TimelineTests: XCTestCase {
             timeline.stop()
         }
     }
-    
-    func testPlaybackRateChangesMidway() {
-        
-        let unfulfilledExpectation = expectation(description: "Playback rate: 2")
-        
-        let clock = Timeline.Clock()
-        let timeline = Timeline { unfulfilledExpectation.fulfill() }
-        
-        // change playback rate to two at one second in
-        
-        let oneSecond = {
-            XCTAssertEqualWithAccuracy(clock.elapsed, 1, accuracy: 0.01)
-            timeline.playbackRate = 2.0
-        }
-        
-        let twoSeconds = {
-            XCTAssertEqualWithAccuracy(clock.elapsed, 1.5, accuracy: 0.01)
-        }
-        
-        timeline.add(action: oneSecond, at: 1)
-        timeline.add(action: twoSeconds, at: 2)
-        
-        clock.start()
-        timeline.start()
-        
-        
-        waitForExpectations(timeout: 10) { _ in
-            timeline.stop()
-        }
-    }
-    
+
     func testPauseResume() {
         
         let unfulfilledExpectation = expectation(description: "Pause / resume")
@@ -412,27 +382,27 @@ class TimelineTests: XCTestCase {
     
     // MARK: - Long Tests
 
-//    func testAccuracyWithPulseEverySecondForAMinute() {
-//        assertAccuracyWithPulseEverySecond(for: 60)
-//    }
-//    
-//    func testAccuracyWithPulseEveryThirdOfASecondForAMinute() {
-//        assertAccuracyWithRepeatedPulse(interval: 1/3, for: 60)
-//    }
-//    
-//    func testAccuracyWithPulseEveryTenthOfASecondForAMinute() {
-//        assertAccuracyWithRepeatedPulse(interval: 1/10, for: 60)
-//    }
-//    
-//    func testAccuracyWithPulseAbritraryIntervalForAMinute() {
-//        assertAccuracyWithRepeatedPulse(interval: 0.123456, for: 60)
-//    }
-//    
-//    func testAccuracyOfLongIntervalForAMinute() {
-//        assertAccuracyWithRepeatedPulse(interval: 12.3456, for: 60)
-//    }
-//    
-//    func testAccuracyWithPuleEverySecondFor30Minutes() {
-//        assertAccuracyWithPulseEverySecond(for: 60)
-//    }
+    func testAccuracyWithPulseEverySecondForAMinute() {
+        assertAccuracyWithPulseEverySecond(for: 60)
+    }
+    
+    func testAccuracyWithPulseEveryThirdOfASecondForAMinute() {
+        assertAccuracyWithRepeatedPulse(interval: 1/3, for: 60)
+    }
+    
+    func testAccuracyWithPulseEveryTenthOfASecondForAMinute() {
+        assertAccuracyWithRepeatedPulse(interval: 1/10, for: 60)
+    }
+    
+    func testAccuracyWithPulseAbritraryIntervalForAMinute() {
+        assertAccuracyWithRepeatedPulse(interval: 0.123456, for: 60)
+    }
+    
+    func testAccuracyOfLongIntervalForAMinute() {
+        assertAccuracyWithRepeatedPulse(interval: 12.3456, for: 60)
+    }
+    
+    func testAccuracyWithPuleEverySecondFor30Minutes() {
+        assertAccuracyWithPulseEverySecond(for: 60)
+    }
 }
