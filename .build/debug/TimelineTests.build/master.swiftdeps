@@ -1,6 +1,0 @@
-version: "Apple Swift version 4.0 (swiftlang-900.0.54.11 clang-900.0.31)"
-options: "8d4d1fa5c3b1d6775f533b3bd13f5977"
-build_time: [1501710899, 34369000]
-inputs:
-  "/Users/BEAN/dn-m/Frameworks/Timeline/Tests/TimelineTests/ScheduleTests.swift": [1501710576, 0]
-  "/Users/BEAN/dn-m/Frameworks/Timeline/Tests/TimelineTests/TimelineTests.swift": [1501710862, 0]

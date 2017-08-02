@@ -1,5 +1,0 @@
-version: "Apple Swift version 4.0 (swiftlang-900.0.54.11 clang-900.0.31)"
-options: "3ddb147dca0266ba98a5fd3daea58744"
-build_time: [1501710499, 963922000]
-inputs:
-  "/Users/BEAN/dn-m/Frameworks/Timeline/.build/checkouts/Structure--7247618097682469052/Sources/Destructure/Destructure.swift": [1501710496, 0]
