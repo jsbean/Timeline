@@ -1,0 +1,384 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "RandomProducing"
+provides-nominal:
+- "4Math15RandomProducingP"
+- "Si"
+- "Sf"
+- "Sd"
+provides-member:
+- ["4Math15RandomProducingP", ""]
+- ["Si", ""]
+- ["Sf", ""]
+- ["Sd", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "+"
+- !private "-"
+- "Double"
+- "Float"
+- "FloatLiteralType"
+- "Int"
+- "IntegerLiteralType"
+- "RandomProducing"
+- !private "UInt32"
+- !private "arc4random_uniform"
+- !private "ordered"
+depends-member:
+- !private ["7Algebra8AdditiveP", "Double"]
+- !private ["7Algebra8AdditiveP", "Float"]
+- !private ["7Algebra8AdditiveP", "Int"]
+- !private ["7Algebra8AdditiveP", "UInt32"]
+- !private ["7Algebra8AdditiveP", "arc4random_uniform"]
+- !private ["7Algebra8AdditiveP", "init"]
+- !private ["7Algebra8AdditiveP", "ordered"]
+- ["7Algebra8AdditiveP", "random"]
+- !private ["7Algebra17AdditiveSemigroupP", "Double"]
+- !private ["7Algebra17AdditiveSemigroupP", "Float"]
+- !private ["7Algebra17AdditiveSemigroupP", "Int"]
+- !private ["7Algebra17AdditiveSemigroupP", "UInt32"]
+- !private ["7Algebra17AdditiveSemigroupP", "arc4random_uniform"]
+- !private ["7Algebra17AdditiveSemigroupP", "init"]
+- !private ["7Algebra17AdditiveSemigroupP", "ordered"]
+- ["7Algebra17AdditiveSemigroupP", "random"]
+- !private ["s19BinaryFloatingPointP", "Double"]
+- !private ["s19BinaryFloatingPointP", "Float"]
+- !private ["s19BinaryFloatingPointP", "UInt32"]
+- !private ["s19BinaryFloatingPointP", "arc4random_uniform"]
+- !private ["s19BinaryFloatingPointP", "init"]
+- !private ["s19BinaryFloatingPointP", "ordered"]
+- ["s19BinaryFloatingPointP", "random"]
+- !private ["s13BinaryIntegerP", "Int"]
+- !private ["s13BinaryIntegerP", "UInt32"]
+- !private ["s13BinaryIntegerP", "arc4random_uniform"]
+- !private ["s13BinaryIntegerP", "init"]
+- !private ["s13BinaryIntegerP", "ordered"]
+- ["s13BinaryIntegerP", "random"]
+- !private ["s7CVarArgP", "Double"]
+- !private ["s7CVarArgP", "Float"]
+- !private ["s7CVarArgP", "Int"]
+- !private ["s7CVarArgP", "UInt32"]
+- !private ["s7CVarArgP", "arc4random_uniform"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "ordered"]
+- ["s7CVarArgP", "random"]
+- !private ["s10ComparableP", "Double"]
+- !private ["s10ComparableP", "Float"]
+- !private ["s10ComparableP", "Int"]
+- !private ["s10ComparableP", "UInt32"]
+- !private ["s10ComparableP", "arc4random_uniform"]
+- !private ["s10ComparableP", "init"]
+- !private ["s10ComparableP", "ordered"]
+- ["s10ComparableP", "random"]
+- !private ["s28CustomDebugStringConvertibleP", "Double"]
+- !private ["s28CustomDebugStringConvertibleP", "Float"]
+- !private ["s28CustomDebugStringConvertibleP", "UInt32"]
+- !private ["s28CustomDebugStringConvertibleP", "arc4random_uniform"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "ordered"]
+- ["s28CustomDebugStringConvertibleP", "random"]
+- !private ["s29CustomPlaygroundQuickLookableP", "Double"]
+- !private ["s29CustomPlaygroundQuickLookableP", "Float"]
+- !private ["s29CustomPlaygroundQuickLookableP", "Int"]
+- !private ["s29CustomPlaygroundQuickLookableP", "UInt32"]
+- !private ["s29CustomPlaygroundQuickLookableP", "arc4random_uniform"]
+- !private ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s29CustomPlaygroundQuickLookableP", "ordered"]
+- ["s29CustomPlaygroundQuickLookableP", "random"]
+- !private ["s17CustomReflectableP", "Double"]
+- !private ["s17CustomReflectableP", "Float"]
+- !private ["s17CustomReflectableP", "Int"]
+- !private ["s17CustomReflectableP", "UInt32"]
+- !private ["s17CustomReflectableP", "arc4random_uniform"]
+- !private ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "ordered"]
+- ["s17CustomReflectableP", "random"]
+- !private ["s23CustomStringConvertibleP", "Double"]
+- !private ["s23CustomStringConvertibleP", "Float"]
+- !private ["s23CustomStringConvertibleP", "Int"]
+- !private ["s23CustomStringConvertibleP", "UInt32"]
+- !private ["s23CustomStringConvertibleP", "arc4random_uniform"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "ordered"]
+- ["s23CustomStringConvertibleP", "random"]
+- !private ["s9DecodableP", "Double"]
+- !private ["s9DecodableP", "Float"]
+- !private ["s9DecodableP", "Int"]
+- !private ["s9DecodableP", "UInt32"]
+- !private ["s9DecodableP", "arc4random_uniform"]
+- !private ["s9DecodableP", "init"]
+- !private ["s9DecodableP", "ordered"]
+- ["s9DecodableP", "random"]
+- ["Sd", "Double"]
+- !private ["Sd", "UInt32"]
+- !private ["Sd", "arc4random_uniform"]
+- ["Sd", "deinit"]
+- !private ["Sd", "init"]
+- !private ["Sd", "ordered"]
+- ["Sd", "random"]
+- !private ["s9EncodableP", "Double"]
+- !private ["s9EncodableP", "Float"]
+- !private ["s9EncodableP", "Int"]
+- !private ["s9EncodableP", "UInt32"]
+- !private ["s9EncodableP", "arc4random_uniform"]
+- !private ["s9EncodableP", "init"]
+- !private ["s9EncodableP", "ordered"]
+- ["s9EncodableP", "random"]
+- !private ["s9EquatableP", "Double"]
+- !private ["s9EquatableP", "Float"]
+- !private ["s9EquatableP", "Int"]
+- !private ["s9EquatableP", "UInt32"]
+- !private ["s9EquatableP", "arc4random_uniform"]
+- !private ["s9EquatableP", "init"]
+- !private ["s9EquatableP", "ordered"]
+- ["s9EquatableP", "random"]
+- !private ["s25ExpressibleByFloatLiteralP", "Double"]
+- !private ["s25ExpressibleByFloatLiteralP", "Float"]
+- !private ["s25ExpressibleByFloatLiteralP", "UInt32"]
+- !private ["s25ExpressibleByFloatLiteralP", "arc4random_uniform"]
+- !private ["s25ExpressibleByFloatLiteralP", "init"]
+- !private ["s25ExpressibleByFloatLiteralP", "ordered"]
+- ["s25ExpressibleByFloatLiteralP", "random"]
+- !private ["s27ExpressibleByIntegerLiteralP", "Double"]
+- !private ["s27ExpressibleByIntegerLiteralP", "Float"]
+- !private ["s27ExpressibleByIntegerLiteralP", "Int"]
+- !private ["s27ExpressibleByIntegerLiteralP", "UInt32"]
+- !private ["s27ExpressibleByIntegerLiteralP", "arc4random_uniform"]
+- !private ["s27ExpressibleByIntegerLiteralP", "init"]
+- !private ["s27ExpressibleByIntegerLiteralP", "ordered"]
+- ["s27ExpressibleByIntegerLiteralP", "random"]
+- !private ["s17FixedWidthIntegerP", "Int"]
+- !private ["s17FixedWidthIntegerP", "UInt32"]
+- !private ["s17FixedWidthIntegerP", "arc4random_uniform"]
+- !private ["s17FixedWidthIntegerP", "init"]
+- !private ["s17FixedWidthIntegerP", "ordered"]
+- ["s17FixedWidthIntegerP", "random"]
+- ["Sf", "Float"]
+- !private ["Sf", "UInt32"]
+- !private ["Sf", "arc4random_uniform"]
+- ["Sf", "deinit"]
+- !private ["Sf", "init"]
+- !private ["Sf", "ordered"]
+- ["Sf", "random"]
+- !private ["s13FloatingPointP", "Double"]
+- !private ["s13FloatingPointP", "Float"]
+- !private ["s13FloatingPointP", "UInt32"]
+- !private ["s13FloatingPointP", "arc4random_uniform"]
+- !private ["s13FloatingPointP", "init"]
+- !private ["s13FloatingPointP", "ordered"]
+- ["s13FloatingPointP", "random"]
+- !private ["s8HashableP", "Double"]
+- !private ["s8HashableP", "Float"]
+- !private ["s8HashableP", "Int"]
+- !private ["s8HashableP", "UInt32"]
+- !private ["s8HashableP", "arc4random_uniform"]
+- !private ["s8HashableP", "init"]
+- !private ["s8HashableP", "ordered"]
+- ["s8HashableP", "random"]
+- ["Si", "Int"]
+- !private ["Si", "UInt32"]
+- !private ["Si", "arc4random_uniform"]
+- ["Si", "deinit"]
+- !private ["Si", "init"]
+- !private ["Si", "ordered"]
+- ["Si", "random"]
+- !private ["s25LosslessStringConvertibleP", "Double"]
+- !private ["s25LosslessStringConvertibleP", "Float"]
+- !private ["s25LosslessStringConvertibleP", "UInt32"]
+- !private ["s25LosslessStringConvertibleP", "arc4random_uniform"]
+- !private ["s25LosslessStringConvertibleP", "init"]
+- !private ["s25LosslessStringConvertibleP", "ordered"]
+- ["s25LosslessStringConvertibleP", "random"]
+- !private ["s10MirrorPathP", "Int"]
+- !private ["s10MirrorPathP", "UInt32"]
+- !private ["s10MirrorPathP", "arc4random_uniform"]
+- !private ["s10MirrorPathP", "init"]
+- !private ["s10MirrorPathP", "ordered"]
+- ["s10MirrorPathP", "random"]
+- !private ["7Algebra14MultiplicativeP", "Double"]
+- !private ["7Algebra14MultiplicativeP", "Float"]
+- !private ["7Algebra14MultiplicativeP", "Int"]
+- !private ["7Algebra14MultiplicativeP", "UInt32"]
+- !private ["7Algebra14MultiplicativeP", "arc4random_uniform"]
+- !private ["7Algebra14MultiplicativeP", "init"]
+- !private ["7Algebra14MultiplicativeP", "ordered"]
+- ["7Algebra14MultiplicativeP", "random"]
+- !private ["7Algebra23MultiplicativeSemigroupP", "Double"]
+- !private ["7Algebra23MultiplicativeSemigroupP", "Float"]
+- !private ["7Algebra23MultiplicativeSemigroupP", "Int"]
+- !private ["7Algebra23MultiplicativeSemigroupP", "UInt32"]
+- !private ["7Algebra23MultiplicativeSemigroupP", "arc4random_uniform"]
+- !private ["7Algebra23MultiplicativeSemigroupP", "init"]
+- !private ["7Algebra23MultiplicativeSemigroupP", "ordered"]
+- ["7Algebra23MultiplicativeSemigroupP", "random"]
+- !private ["s7NumericP", "Double"]
+- !private ["s7NumericP", "Float"]
+- !private ["s7NumericP", "Int"]
+- !private ["s7NumericP", "UInt32"]
+- !private ["s7NumericP", "arc4random_uniform"]
+- !private ["s7NumericP", "init"]
+- !private ["s7NumericP", "ordered"]
+- ["s7NumericP", "random"]
+- !private ["7Algebra3OneP", "Double"]
+- !private ["7Algebra3OneP", "Float"]
+- !private ["7Algebra3OneP", "Int"]
+- !private ["7Algebra3OneP", "UInt32"]
+- !private ["7Algebra3OneP", "arc4random_uniform"]
+- !private ["7Algebra3OneP", "init"]
+- !private ["7Algebra3OneP", "ordered"]
+- ["7Algebra3OneP", "random"]
+- !private ["4Math15RandomProducingP", "Double"]
+- !private ["4Math15RandomProducingP", "Float"]
+- !private ["4Math15RandomProducingP", "Int"]
+- ["4Math15RandomProducingP", "Self"]
+- !private ["4Math15RandomProducingP", "UInt32"]
+- !private ["4Math15RandomProducingP", "arc4random_uniform"]
+- !private ["4Math15RandomProducingP", "init"]
+- !private ["4Math15RandomProducingP", "ordered"]
+- ["4Math15RandomProducingP", "random"]
+- ["4Math15RandomProducingP", ""]
+- !private ["s13SignedIntegerP", "Int"]
+- !private ["s13SignedIntegerP", "UInt32"]
+- !private ["s13SignedIntegerP", "arc4random_uniform"]
+- !private ["s13SignedIntegerP", "init"]
+- !private ["s13SignedIntegerP", "ordered"]
+- ["s13SignedIntegerP", "random"]
+- !private ["s13SignedNumericP", "Double"]
+- !private ["s13SignedNumericP", "Float"]
+- !private ["s13SignedNumericP", "Int"]
+- !private ["s13SignedNumericP", "UInt32"]
+- !private ["s13SignedNumericP", "arc4random_uniform"]
+- !private ["s13SignedNumericP", "init"]
+- !private ["s13SignedNumericP", "ordered"]
+- ["s13SignedNumericP", "random"]
+- !private ["s10StrideableP", "Double"]
+- !private ["s10StrideableP", "Float"]
+- !private ["s10StrideableP", "Int"]
+- !private ["s10StrideableP", "UInt32"]
+- !private ["s10StrideableP", "arc4random_uniform"]
+- !private ["s10StrideableP", "init"]
+- !private ["s10StrideableP", "ordered"]
+- ["s10StrideableP", "random"]
+- !private ["s6UInt32V", "init"]
+- !private ["s15UnsignedIntegerP", "init"]
+- !private ["7Algebra4ZeroP", "Double"]
+- !private ["7Algebra4ZeroP", "Float"]
+- !private ["7Algebra4ZeroP", "Int"]
+- !private ["7Algebra4ZeroP", "UInt32"]
+- !private ["7Algebra4ZeroP", "arc4random_uniform"]
+- !private ["7Algebra4ZeroP", "init"]
+- !private ["7Algebra4ZeroP", "ordered"]
+- ["7Algebra4ZeroP", "random"]
+- !private ["s18_BitwiseOperationsP", "Int"]
+- !private ["s18_BitwiseOperationsP", "UInt32"]
+- !private ["s18_BitwiseOperationsP", "arc4random_uniform"]
+- !private ["s18_BitwiseOperationsP", "init"]
+- !private ["s18_BitwiseOperationsP", "ordered"]
+- ["s18_BitwiseOperationsP", "random"]
+- !private ["s15_CVarArgAlignedP", "Double"]
+- !private ["s15_CVarArgAlignedP", "Float"]
+- !private ["s15_CVarArgAlignedP", "UInt32"]
+- !private ["s15_CVarArgAlignedP", "arc4random_uniform"]
+- !private ["s15_CVarArgAlignedP", "init"]
+- !private ["s15_CVarArgAlignedP", "ordered"]
+- ["s15_CVarArgAlignedP", "random"]
+- !private ["s22_CVarArgPassedAsDoubleP", "Double"]
+- !private ["s22_CVarArgPassedAsDoubleP", "Float"]
+- !private ["s22_CVarArgPassedAsDoubleP", "UInt32"]
+- !private ["s22_CVarArgPassedAsDoubleP", "arc4random_uniform"]
+- !private ["s22_CVarArgPassedAsDoubleP", "init"]
+- !private ["s22_CVarArgPassedAsDoubleP", "ordered"]
+- ["s22_CVarArgPassedAsDoubleP", "random"]
+- !private ["s33_ExpressibleByBuiltinFloatLiteralP", "Double"]
+- !private ["s33_ExpressibleByBuiltinFloatLiteralP", "Float"]
+- !private ["s33_ExpressibleByBuiltinFloatLiteralP", "UInt32"]
+- !private ["s33_ExpressibleByBuiltinFloatLiteralP", "arc4random_uniform"]
+- !private ["s33_ExpressibleByBuiltinFloatLiteralP", "init"]
+- !private ["s33_ExpressibleByBuiltinFloatLiteralP", "ordered"]
+- ["s33_ExpressibleByBuiltinFloatLiteralP", "random"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "Double"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "Float"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "Int"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "UInt32"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "arc4random_uniform"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "ordered"]
+- ["s35_ExpressibleByBuiltinIntegerLiteralP", "random"]
+- !private ["s21_ObjectiveCBridgeableP", "Double"]
+- !private ["s21_ObjectiveCBridgeableP", "Float"]
+- !private ["s21_ObjectiveCBridgeableP", "Int"]
+- !private ["s21_ObjectiveCBridgeableP", "UInt32"]
+- !private ["s21_ObjectiveCBridgeableP", "arc4random_uniform"]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "ordered"]
+- ["s21_ObjectiveCBridgeableP", "random"]
+- !private ["s11_StrideableP", "Double"]
+- !private ["s11_StrideableP", "Float"]
+- !private ["s11_StrideableP", "Int"]
+- !private ["s11_StrideableP", "UInt32"]
+- !private ["s11_StrideableP", "arc4random_uniform"]
+- !private ["s11_StrideableP", "init"]
+- !private ["s11_StrideableP", "ordered"]
+- ["s11_StrideableP", "random"]
+depends-nominal:
+- "7Algebra8AdditiveP"
+- "7Algebra17AdditiveSemigroupP"
+- "s19BinaryFloatingPointP"
+- "s13BinaryIntegerP"
+- "s7CVarArgP"
+- "s10ComparableP"
+- "s28CustomDebugStringConvertibleP"
+- "s29CustomPlaygroundQuickLookableP"
+- "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- "s9DecodableP"
+- "Sd"
+- "s9EncodableP"
+- "s9EquatableP"
+- "s25ExpressibleByFloatLiteralP"
+- "s27ExpressibleByIntegerLiteralP"
+- "s17FixedWidthIntegerP"
+- "Sf"
+- "s13FloatingPointP"
+- "s8HashableP"
+- "Si"
+- "s25LosslessStringConvertibleP"
+- "s10MirrorPathP"
+- "7Algebra14MultiplicativeP"
+- "7Algebra23MultiplicativeSemigroupP"
+- "s7NumericP"
+- "7Algebra3OneP"
+- "4Math15RandomProducingP"
+- "s13SignedIntegerP"
+- "s13SignedNumericP"
+- "s10StrideableP"
+- !private "s6UInt32V"
+- !private "s15UnsignedIntegerP"
+- "7Algebra4ZeroP"
+- "s18_BitwiseOperationsP"
+- "s15_CVarArgAlignedP"
+- "s22_CVarArgPassedAsDoubleP"
+- "s33_ExpressibleByBuiltinFloatLiteralP"
+- "s35_ExpressibleByBuiltinIntegerLiteralP"
+- "s21_ObjectiveCBridgeableP"
+- "s11_StrideableP"
+depends-dynamic-lookup:
+depends-external:
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.apinotesc"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
+- "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.swiftmodule"
+- "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Structure.swiftmodule"
+- "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Destructure.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Darwin.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Foundation.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreFoundation.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Swift.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+interface-hash: "58d22f1ade2242644fee3b6beab6137f"

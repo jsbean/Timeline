@@ -1,0 +1,10 @@
+version: "Apple Swift version 4.0 (swiftlang-900.0.54.11 clang-900.0.31)"
+options: "f66acfc1831783aa1909b94c9c6985a5"
+build_time: [1501710534, 395720000]
+inputs:
+  "/Users/BEAN/dn-m/Frameworks/Timeline/Sources/Timeline/Duration.swift": !dirty [1493925033, 0]
+  "/Users/BEAN/dn-m/Frameworks/Timeline/Sources/Timeline/Timeline.Action.swift": !dirty [1495576202, 0]
+  "/Users/BEAN/dn-m/Frameworks/Timeline/Sources/Timeline/Timeline.Clock.swift": !dirty [1495576202, 0]
+  "/Users/BEAN/dn-m/Frameworks/Timeline/Sources/Timeline/Timeline.Schedule.swift": !dirty [1495576202, 0]
+  "/Users/BEAN/dn-m/Frameworks/Timeline/Sources/Timeline/Timeline.Timer.swift": !dirty [1495576202, 0]
+  "/Users/BEAN/dn-m/Frameworks/Timeline/Sources/Timeline/Timeline.swift": !dirty [1495582171, 0]

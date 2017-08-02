@@ -1,0 +1,11 @@
+version: "Apple Swift version 4.0 (swiftlang-900.0.54.11 clang-900.0.31)"
+options: "202094556565434d38fe32290829ae5b"
+build_time: [1501710499, 997337000]
+inputs:
+  "/Users/BEAN/dn-m/Frameworks/Timeline/.build/checkouts/Structure--7247618097682469052/Sources/StructureWrapping/CollectionWrapping.swift": [1501710496, 0]
+  "/Users/BEAN/dn-m/Frameworks/Timeline/.build/checkouts/Structure--7247618097682469052/Sources/StructureWrapping/DoubleWrapping.swift": [1501710496, 0]
+  "/Users/BEAN/dn-m/Frameworks/Timeline/.build/checkouts/Structure--7247618097682469052/Sources/StructureWrapping/FloatWrapping.swift": [1501710496, 0]
+  "/Users/BEAN/dn-m/Frameworks/Timeline/.build/checkouts/Structure--7247618097682469052/Sources/StructureWrapping/IntegerWrapping.swift": [1501710496, 0]
+  "/Users/BEAN/dn-m/Frameworks/Timeline/.build/checkouts/Structure--7247618097682469052/Sources/StructureWrapping/RandomAccessCollectionWrapping.swift": [1501710496, 0]
+  "/Users/BEAN/dn-m/Frameworks/Timeline/.build/checkouts/Structure--7247618097682469052/Sources/StructureWrapping/SequenceWrapping.swift": [1501710496, 0]
+  "/Users/BEAN/dn-m/Frameworks/Timeline/.build/checkouts/Structure--7247618097682469052/Sources/StructureWrapping/SortedCollectionWrapping.swift": [1501710496, 0]

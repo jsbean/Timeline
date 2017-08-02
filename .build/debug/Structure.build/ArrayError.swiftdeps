@@ -1,0 +1,104 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "ArrayError"
+provides-nominal:
+- "9Structure10ArrayErrorO"
+provides-member:
+- ["9Structure10ArrayErrorO", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- "=="
+- "ArrayError"
+- "Error"
+- !private "FloatLiteralType"
+- !private "IntegerLiteralType"
+depends-member:
+- ["9Structure10ArrayErrorO", "__derived_enum_equals"]
+- ["9Structure10ArrayErrorO", "_code"]
+- ["9Structure10ArrayErrorO", "_domain"]
+- ["9Structure10ArrayErrorO", "_getEmbeddedNSError"]
+- ["9Structure10ArrayErrorO", "_userInfo"]
+- ["9Structure10ArrayErrorO", "deinit"]
+- ["9Structure10ArrayErrorO", "hashValue"]
+- ["9Structure10ArrayErrorO", "insertionError"]
+- ["9Structure10ArrayErrorO", "removalError"]
+- !private ["s13BinaryIntegerP", "hashValue"]
+- !private ["s7CVarArgP", "hashValue"]
+- !private ["s10ComparableP", "hashValue"]
+- !private ["s29CustomPlaygroundQuickLookableP", "hashValue"]
+- !private ["s17CustomReflectableP", "hashValue"]
+- !private ["s23CustomStringConvertibleP", "hashValue"]
+- !private ["s9DecodableP", "hashValue"]
+- !private ["s9EncodableP", "hashValue"]
+- ["s9EquatableP", "_code"]
+- ["s9EquatableP", "_domain"]
+- ["s9EquatableP", "_getEmbeddedNSError"]
+- ["s9EquatableP", "_userInfo"]
+- ["s9EquatableP", "hashValue"]
+- ["s9EquatableP", ""]
+- ["s5ErrorP", "_code"]
+- ["s5ErrorP", "_domain"]
+- ["s5ErrorP", "_getEmbeddedNSError"]
+- ["s5ErrorP", "_userInfo"]
+- ["s5ErrorP", "hashValue"]
+- ["s5ErrorP", ""]
+- !private ["s27ExpressibleByIntegerLiteralP", "hashValue"]
+- !private ["s17FixedWidthIntegerP", "hashValue"]
+- ["s8HashableP", "_code"]
+- ["s8HashableP", "_domain"]
+- ["s8HashableP", "_getEmbeddedNSError"]
+- ["s8HashableP", "_userInfo"]
+- ["s8HashableP", "hashValue"]
+- ["s8HashableP", ""]
+- !private ["Si", "hashValue"]
+- !private ["s10MirrorPathP", "hashValue"]
+- !private ["s7NumericP", "hashValue"]
+- !private ["s13SignedIntegerP", "hashValue"]
+- !private ["s13SignedNumericP", "hashValue"]
+- !private ["s10StrideableP", "hashValue"]
+- !private ["s18_BitwiseOperationsP", "hashValue"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "hashValue"]
+- !private ["s21_ObjectiveCBridgeableP", "hashValue"]
+- !private ["s11_StrideableP", "hashValue"]
+depends-nominal:
+- "9Structure10ArrayErrorO"
+- !private "s13BinaryIntegerP"
+- !private "s7CVarArgP"
+- !private "s10ComparableP"
+- !private "s29CustomPlaygroundQuickLookableP"
+- !private "s17CustomReflectableP"
+- !private "s23CustomStringConvertibleP"
+- !private "s9DecodableP"
+- !private "s9EncodableP"
+- "s9EquatableP"
+- "s5ErrorP"
+- !private "s27ExpressibleByIntegerLiteralP"
+- !private "s17FixedWidthIntegerP"
+- "s8HashableP"
+- !private "Si"
+- !private "s10MirrorPathP"
+- !private "s7NumericP"
+- !private "s13SignedIntegerP"
+- !private "s13SignedNumericP"
+- !private "s10StrideableP"
+- !private "s18_BitwiseOperationsP"
+- !private "s35_ExpressibleByBuiltinIntegerLiteralP"
+- !private "s21_ObjectiveCBridgeableP"
+- !private "s11_StrideableP"
+depends-dynamic-lookup:
+depends-external:
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.apinotesc"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Darwin.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Foundation.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreFoundation.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Swift.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+interface-hash: "8351e3f203123455a8d6e7e995c4a7a1"

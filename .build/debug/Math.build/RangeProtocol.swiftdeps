@@ -1,0 +1,172 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "RangeProtocol"
+- "+"
+provides-nominal:
+- "4Math13RangeProtocolP"
+- "s5RangeV"
+- "s14CountableRangeV"
+- "s11ClosedRangeV"
+- "s20CountableClosedRangeV"
+provides-member:
+- ["4Math13RangeProtocolP", ""]
+- ["s5RangeV", ""]
+- ["s14CountableRangeV", ""]
+- ["s11ClosedRangeV", ""]
+- ["s20CountableClosedRangeV", ""]
+- ["4Math13RangeProtocolP", "zero"]
+- ["4Math13RangeProtocolP", "+"]
+- ["4Math13RangeProtocolP", "length"]
+- ["4Math13RangeProtocolP", "shifted"]
+provides-dynamic-lookup:
+depends-top-level:
+- "+"
+- !private "-"
+- "Additive"
+- "ClosedRange"
+- "Comparable"
+- "CountableClosedRange"
+- "CountableRange"
+- "Numeric"
+- "Range"
+- "RangeProtocol"
+- "SignedNumeric"
+- !private "max"
+- !private "min"
+depends-member:
+- !private ["7Algebra8AdditiveP", "zero"]
+- !private ["7Algebra17AdditiveSemigroupP", "zero"]
+- ["s23BidirectionalCollectionP", "Bound"]
+- ["s23BidirectionalCollectionP", "init"]
+- ["s23BidirectionalCollectionP", "lowerBound"]
+- ["s23BidirectionalCollectionP", "upperBound"]
+- ["s11ClosedRangeV", "Bound"]
+- ["s11ClosedRangeV", "deinit"]
+- ["s11ClosedRangeV", "init"]
+- ["s11ClosedRangeV", "lowerBound"]
+- ["s11ClosedRangeV", "upperBound"]
+- ["s10CollectionP", "Bound"]
+- ["s10CollectionP", "init"]
+- ["s10CollectionP", "lowerBound"]
+- ["s10CollectionP", "upperBound"]
+- !private ["s10ComparableP", "zero"]
+- ["s20CountableClosedRangeV", "Bound"]
+- ["s20CountableClosedRangeV", "deinit"]
+- ["s20CountableClosedRangeV", "init"]
+- ["s20CountableClosedRangeV", "lowerBound"]
+- ["s20CountableClosedRangeV", "upperBound"]
+- ["s14CountableRangeV", "Bound"]
+- ["s14CountableRangeV", "deinit"]
+- ["s14CountableRangeV", "init"]
+- ["s14CountableRangeV", "lowerBound"]
+- ["s14CountableRangeV", "upperBound"]
+- ["s28CustomDebugStringConvertibleP", "Bound"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- ["s28CustomDebugStringConvertibleP", "lowerBound"]
+- ["s28CustomDebugStringConvertibleP", "upperBound"]
+- ["s17CustomReflectableP", "Bound"]
+- ["s17CustomReflectableP", "init"]
+- ["s17CustomReflectableP", "lowerBound"]
+- ["s17CustomReflectableP", "upperBound"]
+- ["s23CustomStringConvertibleP", "Bound"]
+- ["s23CustomStringConvertibleP", "init"]
+- ["s23CustomStringConvertibleP", "lowerBound"]
+- ["s23CustomStringConvertibleP", "upperBound"]
+- ["s9EquatableP", "Bound"]
+- ["s9EquatableP", "init"]
+- ["s9EquatableP", "lowerBound"]
+- ["s9EquatableP", "upperBound"]
+- !private ["s9EquatableP", "zero"]
+- ["s22RandomAccessCollectionP", "Bound"]
+- ["s22RandomAccessCollectionP", "init"]
+- ["s22RandomAccessCollectionP", "lowerBound"]
+- ["s22RandomAccessCollectionP", "upperBound"]
+- ["s5RangeV", "Bound"]
+- ["s5RangeV", "deinit"]
+- ["s5RangeV", "init"]
+- ["s5RangeV", "lowerBound"]
+- ["s5RangeV", "upperBound"]
+- ["s15RangeExpressionP", "Bound"]
+- ["s15RangeExpressionP", "init"]
+- ["s15RangeExpressionP", "lowerBound"]
+- ["s15RangeExpressionP", "upperBound"]
+- ["4Math13RangeProtocolP", "+"]
+- ["4Math13RangeProtocolP", "Additive"]
+- ["4Math13RangeProtocolP", "Bound"]
+- ["4Math13RangeProtocolP", "Comparable"]
+- ["4Math13RangeProtocolP", "Numeric"]
+- ["4Math13RangeProtocolP", "Self"]
+- ["4Math13RangeProtocolP", "SignedNumeric"]
+- ["4Math13RangeProtocolP", "init"]
+- ["4Math13RangeProtocolP", "length"]
+- ["4Math13RangeProtocolP", "lowerBound"]
+- !private ["4Math13RangeProtocolP", "max"]
+- !private ["4Math13RangeProtocolP", "min"]
+- ["4Math13RangeProtocolP", "shifted"]
+- ["4Math13RangeProtocolP", "upperBound"]
+- ["4Math13RangeProtocolP", "zero"]
+- ["4Math13RangeProtocolP", ""]
+- ["s8SequenceP", "Bound"]
+- ["s8SequenceP", "init"]
+- ["s8SequenceP", "lowerBound"]
+- ["s8SequenceP", "upperBound"]
+- !private ["7Algebra4ZeroP", "zero"]
+- ["s23_BidirectionalIndexableP", "Bound"]
+- ["s23_BidirectionalIndexableP", "init"]
+- ["s23_BidirectionalIndexableP", "lowerBound"]
+- ["s23_BidirectionalIndexableP", "upperBound"]
+- ["s10_IndexableP", "Bound"]
+- ["s10_IndexableP", "init"]
+- ["s10_IndexableP", "lowerBound"]
+- ["s10_IndexableP", "upperBound"]
+- ["s14_IndexableBaseP", "Bound"]
+- ["s14_IndexableBaseP", "init"]
+- ["s14_IndexableBaseP", "lowerBound"]
+- ["s14_IndexableBaseP", "upperBound"]
+- ["s22_RandomAccessIndexableP", "Bound"]
+- ["s22_RandomAccessIndexableP", "init"]
+- ["s22_RandomAccessIndexableP", "lowerBound"]
+- ["s22_RandomAccessIndexableP", "upperBound"]
+depends-nominal:
+- !private "7Algebra8AdditiveP"
+- !private "7Algebra17AdditiveSemigroupP"
+- "s23BidirectionalCollectionP"
+- "s11ClosedRangeV"
+- "s10CollectionP"
+- !private "s10ComparableP"
+- "s20CountableClosedRangeV"
+- "s14CountableRangeV"
+- "s28CustomDebugStringConvertibleP"
+- "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- "s9EquatableP"
+- "s22RandomAccessCollectionP"
+- "s5RangeV"
+- "s15RangeExpressionP"
+- "4Math13RangeProtocolP"
+- "s8SequenceP"
+- !private "7Algebra4ZeroP"
+- "s23_BidirectionalIndexableP"
+- "s10_IndexableP"
+- "s14_IndexableBaseP"
+- "s22_RandomAccessIndexableP"
+depends-dynamic-lookup:
+depends-external:
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.apinotesc"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
+- "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.swiftmodule"
+- "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Structure.swiftmodule"
+- "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Destructure.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Darwin.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Foundation.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreFoundation.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Swift.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+interface-hash: "b2bcc717bca76cc711004331cf460232"

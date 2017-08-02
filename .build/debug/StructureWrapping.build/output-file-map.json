@@ -1,0 +1,47 @@
+{
+  "": {
+    "swift-dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/StructureWrapping.build/master.swiftdeps"
+  },
+  "/Users/BEAN/dn-m/Frameworks/Timeline/.build/checkouts/Structure--7247618097682469052/Sources/StructureWrapping/CollectionWrapping.swift": {
+    "dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/StructureWrapping.build/CollectionWrapping.d",
+    "object": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/StructureWrapping.build/CollectionWrapping.swift.o",
+    "swiftmodule": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/StructureWrapping.build/CollectionWrapping~partial.swiftmodule",
+    "swift-dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/StructureWrapping.build/CollectionWrapping.swiftdeps"
+  },
+  "/Users/BEAN/dn-m/Frameworks/Timeline/.build/checkouts/Structure--7247618097682469052/Sources/StructureWrapping/DoubleWrapping.swift": {
+    "dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/StructureWrapping.build/DoubleWrapping.d",
+    "object": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/StructureWrapping.build/DoubleWrapping.swift.o",
+    "swiftmodule": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/StructureWrapping.build/DoubleWrapping~partial.swiftmodule",
+    "swift-dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/StructureWrapping.build/DoubleWrapping.swiftdeps"
+  },
+  "/Users/BEAN/dn-m/Frameworks/Timeline/.build/checkouts/Structure--7247618097682469052/Sources/StructureWrapping/FloatWrapping.swift": {
+    "dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/StructureWrapping.build/FloatWrapping.d",
+    "object": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/StructureWrapping.build/FloatWrapping.swift.o",
+    "swiftmodule": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/StructureWrapping.build/FloatWrapping~partial.swiftmodule",
+    "swift-dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/StructureWrapping.build/FloatWrapping.swiftdeps"
+  },
+  "/Users/BEAN/dn-m/Frameworks/Timeline/.build/checkouts/Structure--7247618097682469052/Sources/StructureWrapping/IntegerWrapping.swift": {
+    "dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/StructureWrapping.build/IntegerWrapping.d",
+    "object": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/StructureWrapping.build/IntegerWrapping.swift.o",
+    "swiftmodule": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/StructureWrapping.build/IntegerWrapping~partial.swiftmodule",
+    "swift-dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/StructureWrapping.build/IntegerWrapping.swiftdeps"
+  },
+  "/Users/BEAN/dn-m/Frameworks/Timeline/.build/checkouts/Structure--7247618097682469052/Sources/StructureWrapping/RandomAccessCollectionWrapping.swift": {
+    "dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/StructureWrapping.build/RandomAccessCollectionWrapping.d",
+    "object": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/StructureWrapping.build/RandomAccessCollectionWrapping.swift.o",
+    "swiftmodule": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/StructureWrapping.build/RandomAccessCollectionWrapping~partial.swiftmodule",
+    "swift-dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/StructureWrapping.build/RandomAccessCollectionWrapping.swiftdeps"
+  },
+  "/Users/BEAN/dn-m/Frameworks/Timeline/.build/checkouts/Structure--7247618097682469052/Sources/StructureWrapping/SequenceWrapping.swift": {
+    "dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/StructureWrapping.build/SequenceWrapping.d",
+    "object": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/StructureWrapping.build/SequenceWrapping.swift.o",
+    "swiftmodule": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/StructureWrapping.build/SequenceWrapping~partial.swiftmodule",
+    "swift-dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/StructureWrapping.build/SequenceWrapping.swiftdeps"
+  },
+  "/Users/BEAN/dn-m/Frameworks/Timeline/.build/checkouts/Structure--7247618097682469052/Sources/StructureWrapping/SortedCollectionWrapping.swift": {
+    "dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/StructureWrapping.build/SortedCollectionWrapping.d",
+    "object": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/StructureWrapping.build/SortedCollectionWrapping.swift.o",
+    "swiftmodule": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/StructureWrapping.build/SortedCollectionWrapping~partial.swiftmodule",
+    "swift-dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/StructureWrapping.build/SortedCollectionWrapping.swiftdeps"
+  }
+}

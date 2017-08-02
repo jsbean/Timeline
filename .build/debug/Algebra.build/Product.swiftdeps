@@ -1,0 +1,72 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "Product"
+- "<>"
+provides-nominal:
+- "7Algebra7ProductV"
+provides-member:
+- ["7Algebra7ProductV", ""]
+- ["7Algebra14MultiplicativeP", ""]
+- ["7Algebra14MultiplicativeP", "product"]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "*"
+- "<>"
+- "AssignmentPrecedence"
+- "MonoidView"
+- "Multiplicative"
+- "Product"
+depends-member:
+- !private ["7Algebra6MonoidP", "Product"]
+- !private ["7Algebra6MonoidP", "T"]
+- ["7Algebra6MonoidP", "Value"]
+- ["7Algebra6MonoidP", "identity"]
+- ["7Algebra6MonoidP", "init"]
+- ["7Algebra6MonoidP", "value"]
+- ["7Algebra6MonoidP", ""]
+- !private ["7Algebra10MonoidViewP", "Product"]
+- !private ["7Algebra10MonoidViewP", "T"]
+- ["7Algebra10MonoidViewP", "Value"]
+- ["7Algebra10MonoidViewP", "identity"]
+- ["7Algebra10MonoidViewP", "init"]
+- ["7Algebra10MonoidViewP", "value"]
+- ["7Algebra10MonoidViewP", ""]
+- ["7Algebra14MultiplicativeP", "Product"]
+- ["7Algebra14MultiplicativeP", "Self"]
+- !private ["7Algebra14MultiplicativeP", "one"]
+- ["7Algebra14MultiplicativeP", "product"]
+- ["7Algebra23MultiplicativeSemigroupP", "Product"]
+- ["7Algebra23MultiplicativeSemigroupP", "Self"]
+- !private ["7Algebra23MultiplicativeSemigroupP", "one"]
+- ["7Algebra3OneP", "Product"]
+- ["7Algebra3OneP", "Self"]
+- !private ["7Algebra3OneP", "one"]
+- ["7Algebra7ProductV", "<>"]
+- ["7Algebra7ProductV", "Product"]
+- ["7Algebra7ProductV", "T"]
+- ["7Algebra7ProductV", "Value"]
+- ["7Algebra7ProductV", "deinit"]
+- ["7Algebra7ProductV", "identity"]
+- ["7Algebra7ProductV", "init"]
+- ["7Algebra7ProductV", "value"]
+- !private ["7Algebra9SemigroupP", "Product"]
+- !private ["7Algebra9SemigroupP", "T"]
+- ["7Algebra9SemigroupP", "Value"]
+- ["7Algebra9SemigroupP", "identity"]
+- ["7Algebra9SemigroupP", "init"]
+- ["7Algebra9SemigroupP", "value"]
+- ["7Algebra9SemigroupP", ""]
+depends-nominal:
+- "7Algebra6MonoidP"
+- "7Algebra10MonoidViewP"
+- "7Algebra14MultiplicativeP"
+- "7Algebra23MultiplicativeSemigroupP"
+- "7Algebra3OneP"
+- "7Algebra7ProductV"
+- "7Algebra9SemigroupP"
+depends-dynamic-lookup:
+depends-external:
+- "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Destructure.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Swift.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/SwiftOnoneSupport.swiftmodule"
+interface-hash: "1d4530207153edc489fa3e93a97421a2"

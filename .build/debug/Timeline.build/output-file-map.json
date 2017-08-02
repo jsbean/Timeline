@@ -1,0 +1,41 @@
+{
+  "": {
+    "swift-dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Timeline.build/master.swiftdeps"
+  },
+  "/Users/BEAN/dn-m/Frameworks/Timeline/Sources/Timeline/Duration.swift": {
+    "dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Timeline.build/Duration.d",
+    "object": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Timeline.build/Duration.swift.o",
+    "swiftmodule": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Timeline.build/Duration~partial.swiftmodule",
+    "swift-dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Timeline.build/Duration.swiftdeps"
+  },
+  "/Users/BEAN/dn-m/Frameworks/Timeline/Sources/Timeline/Timeline.Action.swift": {
+    "dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Timeline.build/Timeline.Action.d",
+    "object": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Timeline.build/Timeline.Action.swift.o",
+    "swiftmodule": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Timeline.build/Timeline.Action~partial.swiftmodule",
+    "swift-dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Timeline.build/Timeline.Action.swiftdeps"
+  },
+  "/Users/BEAN/dn-m/Frameworks/Timeline/Sources/Timeline/Timeline.Clock.swift": {
+    "dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Timeline.build/Timeline.Clock.d",
+    "object": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Timeline.build/Timeline.Clock.swift.o",
+    "swiftmodule": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Timeline.build/Timeline.Clock~partial.swiftmodule",
+    "swift-dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Timeline.build/Timeline.Clock.swiftdeps"
+  },
+  "/Users/BEAN/dn-m/Frameworks/Timeline/Sources/Timeline/Timeline.Schedule.swift": {
+    "dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Timeline.build/Timeline.Schedule.d",
+    "object": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Timeline.build/Timeline.Schedule.swift.o",
+    "swiftmodule": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Timeline.build/Timeline.Schedule~partial.swiftmodule",
+    "swift-dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Timeline.build/Timeline.Schedule.swiftdeps"
+  },
+  "/Users/BEAN/dn-m/Frameworks/Timeline/Sources/Timeline/Timeline.Timer.swift": {
+    "dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Timeline.build/Timeline.Timer.d",
+    "object": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Timeline.build/Timeline.Timer.swift.o",
+    "swiftmodule": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Timeline.build/Timeline.Timer~partial.swiftmodule",
+    "swift-dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Timeline.build/Timeline.Timer.swiftdeps"
+  },
+  "/Users/BEAN/dn-m/Frameworks/Timeline/Sources/Timeline/Timeline.swift": {
+    "dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Timeline.build/Timeline.d",
+    "object": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Timeline.build/Timeline.swift.o",
+    "swiftmodule": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Timeline.build/Timeline~partial.swiftmodule",
+    "swift-dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Timeline.build/Timeline.swiftdeps"
+  }
+}

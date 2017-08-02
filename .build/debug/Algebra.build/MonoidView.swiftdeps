@@ -1,0 +1,38 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "MonoidView"
+provides-nominal:
+- "7Algebra10MonoidViewP"
+provides-member:
+- ["7Algebra10MonoidViewP", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- "Monoid"
+- "MonoidView"
+depends-member:
+- ["7Algebra6MonoidP", "Self"]
+- ["7Algebra6MonoidP", "Value"]
+- ["7Algebra6MonoidP", "identity"]
+- ["7Algebra6MonoidP", "init"]
+- ["7Algebra6MonoidP", "value"]
+- ["7Algebra6MonoidP", ""]
+- ["7Algebra10MonoidViewP", "Self"]
+- ["7Algebra10MonoidViewP", "Value"]
+- ["7Algebra10MonoidViewP", "identity"]
+- ["7Algebra10MonoidViewP", "init"]
+- ["7Algebra10MonoidViewP", "value"]
+- ["7Algebra9SemigroupP", "Self"]
+- ["7Algebra9SemigroupP", "Value"]
+- ["7Algebra9SemigroupP", "identity"]
+- ["7Algebra9SemigroupP", "init"]
+- ["7Algebra9SemigroupP", "value"]
+depends-nominal:
+- "7Algebra6MonoidP"
+- "7Algebra10MonoidViewP"
+- "7Algebra9SemigroupP"
+depends-dynamic-lookup:
+depends-external:
+- "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Destructure.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Swift.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/SwiftOnoneSupport.swiftmodule"
+interface-hash: "9a844c679c7e7b1bc0d7a48fcea19a16"

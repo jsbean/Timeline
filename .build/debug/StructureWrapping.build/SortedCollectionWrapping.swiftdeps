@@ -1,0 +1,123 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "SortedCollectionWrapping"
+provides-nominal:
+- "17StructureWrapping016SortedCollectionB0P"
+provides-member:
+- ["17StructureWrapping016SortedCollectionB0P", ""]
+- ["17StructureWrapping016SortedCollectionB0P", "min"]
+- ["17StructureWrapping016SortedCollectionB0P", "max"]
+- ["17StructureWrapping016SortedCollectionB0P", "sorted"]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "Array"
+- "BidirectionalCollection"
+- "Collection"
+- "SortedCollectionWrapping"
+depends-member:
+- !private ["Sa", "init"]
+- !private ["s23BidirectionalCollectionP", "first"]
+- !private ["s23BidirectionalCollectionP", "init"]
+- !private ["s23BidirectionalCollectionP", "last"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s10CollectionP", "Array"]
+- ["s10CollectionP", "Base"]
+- ["s10CollectionP", "BidirectionalCollection"]
+- ["s10CollectionP", "Element"]
+- ["s10CollectionP", "base"]
+- !private ["s10CollectionP", "first"]
+- !private ["s10CollectionP", "init"]
+- !private ["s10CollectionP", "last"]
+- ["s10CollectionP", ""]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s17CustomReflectableP", "init"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s9DecodableP", "init"]
+- !private ["s9EncodableP", "init"]
+- !private ["s25ExpressibleByArrayLiteralP", "init"]
+- !private ["s17MutableCollectionP", "init"]
+- !private ["s22RandomAccessCollectionP", "init"]
+- !private ["s26RangeReplaceableCollectionP", "init"]
+- !private ["s8SequenceP", "Array"]
+- ["s8SequenceP", "Base"]
+- ["s8SequenceP", "BidirectionalCollection"]
+- ["s8SequenceP", "Element"]
+- ["s8SequenceP", "base"]
+- !private ["s8SequenceP", "first"]
+- !private ["s8SequenceP", "init"]
+- !private ["s8SequenceP", "last"]
+- !private ["17StructureWrapping016SortedCollectionB0P", "Array"]
+- ["17StructureWrapping016SortedCollectionB0P", "Base"]
+- ["17StructureWrapping016SortedCollectionB0P", "BidirectionalCollection"]
+- ["17StructureWrapping016SortedCollectionB0P", "Element"]
+- ["17StructureWrapping016SortedCollectionB0P", "base"]
+- ["17StructureWrapping016SortedCollectionB0P", "max"]
+- ["17StructureWrapping016SortedCollectionB0P", "min"]
+- ["17StructureWrapping016SortedCollectionB0P", "sorted"]
+- !private ["s14_ArrayProtocolP", "init"]
+- !private ["s23_BidirectionalIndexableP", "first"]
+- !private ["s23_BidirectionalIndexableP", "init"]
+- !private ["s23_BidirectionalIndexableP", "last"]
+- !private ["s24_DestructorSafeContainerP", "init"]
+- !private ["s10_IndexableP", "Array"]
+- ["s10_IndexableP", "Base"]
+- ["s10_IndexableP", "BidirectionalCollection"]
+- ["s10_IndexableP", "Element"]
+- ["s10_IndexableP", "base"]
+- !private ["s10_IndexableP", "first"]
+- !private ["s10_IndexableP", "init"]
+- !private ["s10_IndexableP", "last"]
+- !private ["s14_IndexableBaseP", "Array"]
+- ["s14_IndexableBaseP", "Base"]
+- ["s14_IndexableBaseP", "BidirectionalCollection"]
+- ["s14_IndexableBaseP", "Element"]
+- ["s14_IndexableBaseP", "base"]
+- !private ["s14_IndexableBaseP", "first"]
+- !private ["s14_IndexableBaseP", "init"]
+- !private ["s14_IndexableBaseP", "last"]
+- !private ["s17_MutableIndexableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s22_RandomAccessIndexableP", "init"]
+- !private ["s26_RangeReplaceableIndexableP", "init"]
+depends-nominal:
+- !private "Sa"
+- !private "s23BidirectionalCollectionP"
+- !private "s7CVarArgP"
+- "s10CollectionP"
+- !private "s28CustomDebugStringConvertibleP"
+- !private "s17CustomReflectableP"
+- !private "s23CustomStringConvertibleP"
+- !private "s9DecodableP"
+- !private "s9EncodableP"
+- !private "s25ExpressibleByArrayLiteralP"
+- !private "s17MutableCollectionP"
+- !private "s22RandomAccessCollectionP"
+- !private "s26RangeReplaceableCollectionP"
+- "s8SequenceP"
+- "17StructureWrapping016SortedCollectionB0P"
+- !private "s14_ArrayProtocolP"
+- !private "s23_BidirectionalIndexableP"
+- !private "s24_DestructorSafeContainerP"
+- "s10_IndexableP"
+- "s14_IndexableBaseP"
+- !private "s17_MutableIndexableP"
+- !private "s21_ObjectiveCBridgeableP"
+- !private "s22_RandomAccessIndexableP"
+- !private "s26_RangeReplaceableIndexableP"
+depends-dynamic-lookup:
+depends-external:
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.apinotesc"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Darwin.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Foundation.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreFoundation.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Swift.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+interface-hash: "7eb217554d0b6316d0ec54403e6d7859"

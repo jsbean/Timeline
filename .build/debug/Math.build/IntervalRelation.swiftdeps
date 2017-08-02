@@ -1,0 +1,511 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "IntervalRelation"
+provides-nominal:
+- "4Math16IntervalRelationV"
+provides-member:
+- ["4Math16IntervalRelationV", ""]
+- ["4Math13RangeProtocolP", ""]
+- ["4Math13RangeProtocolP", "relation"]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "&&"
+- !private "<"
+- "<<"
+- "=="
+- !private ">"
+- "AssignmentPrecedence"
+- !private "Bool"
+- "CustomStringConvertible"
+- "FloatLiteralType"
+- "Int"
+- "IntegerLiteralType"
+- "IntervalRelation"
+- "InvertibleOptionSet"
+- "RangeProtocol"
+- "String"
+- !private "StringLiteralType"
+- !private "~="
+depends-member:
+- !private ["s23BidirectionalCollectionP", "init"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s10CollectionP", "init"]
+- !private ["s10ComparableP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
+- !private ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
+- !private ["s17CustomReflectableP", "init"]
+- ["s23CustomStringConvertibleP", "ArrayLiteralElement"]
+- ["s23CustomStringConvertibleP", "Element"]
+- ["s23CustomStringConvertibleP", "IntervalRelation"]
+- ["s23CustomStringConvertibleP", "RawValue"]
+- !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
+- ["s23CustomStringConvertibleP", "containedBy"]
+- ["s23CustomStringConvertibleP", "contains"]
+- ["s23CustomStringConvertibleP", "description"]
+- ["s23CustomStringConvertibleP", "equals"]
+- ["s23CustomStringConvertibleP", "finishedBy"]
+- ["s23CustomStringConvertibleP", "finishes"]
+- ["s23CustomStringConvertibleP", "formIntersection"]
+- ["s23CustomStringConvertibleP", "formSymmetricDifference"]
+- ["s23CustomStringConvertibleP", "formUnion"]
+- ["s23CustomStringConvertibleP", "init"]
+- ["s23CustomStringConvertibleP", "insert"]
+- ["s23CustomStringConvertibleP", "intersection"]
+- ["s23CustomStringConvertibleP", "inverse"]
+- ["s23CustomStringConvertibleP", "isDisjoint"]
+- ["s23CustomStringConvertibleP", "isEmpty"]
+- ["s23CustomStringConvertibleP", "isSubset"]
+- ["s23CustomStringConvertibleP", "isSuperset"]
+- ["s23CustomStringConvertibleP", "meets"]
+- ["s23CustomStringConvertibleP", "metBy"]
+- ["s23CustomStringConvertibleP", "optionsCount"]
+- ["s23CustomStringConvertibleP", "overlappedBy"]
+- ["s23CustomStringConvertibleP", "overlaps"]
+- ["s23CustomStringConvertibleP", "precededBy"]
+- ["s23CustomStringConvertibleP", "precedes"]
+- ["s23CustomStringConvertibleP", "rawValue"]
+- ["s23CustomStringConvertibleP", "remove"]
+- ["s23CustomStringConvertibleP", "startedBy"]
+- ["s23CustomStringConvertibleP", "starts"]
+- ["s23CustomStringConvertibleP", "subtract"]
+- ["s23CustomStringConvertibleP", "subtracting"]
+- ["s23CustomStringConvertibleP", "symmetricDifference"]
+- ["s23CustomStringConvertibleP", "union"]
+- ["s23CustomStringConvertibleP", "update"]
+- ["s23CustomStringConvertibleP", ""]
+- !private ["s9DecodableP", "_getBuiltinLogicValue"]
+- !private ["s9DecodableP", "init"]
+- !private ["s9EncodableP", "_getBuiltinLogicValue"]
+- !private ["s9EncodableP", "init"]
+- ["s9EquatableP", "ArrayLiteralElement"]
+- ["s9EquatableP", "Element"]
+- ["s9EquatableP", "IntervalRelation"]
+- ["s9EquatableP", "RawValue"]
+- !private ["s9EquatableP", "_getBuiltinLogicValue"]
+- ["s9EquatableP", "containedBy"]
+- ["s9EquatableP", "contains"]
+- ["s9EquatableP", "description"]
+- ["s9EquatableP", "equals"]
+- ["s9EquatableP", "finishedBy"]
+- ["s9EquatableP", "finishes"]
+- ["s9EquatableP", "formIntersection"]
+- ["s9EquatableP", "formSymmetricDifference"]
+- ["s9EquatableP", "formUnion"]
+- ["s9EquatableP", "init"]
+- ["s9EquatableP", "insert"]
+- ["s9EquatableP", "intersection"]
+- ["s9EquatableP", "inverse"]
+- ["s9EquatableP", "isDisjoint"]
+- ["s9EquatableP", "isEmpty"]
+- ["s9EquatableP", "isSubset"]
+- ["s9EquatableP", "isSuperset"]
+- ["s9EquatableP", "meets"]
+- ["s9EquatableP", "metBy"]
+- ["s9EquatableP", "optionsCount"]
+- ["s9EquatableP", "overlappedBy"]
+- ["s9EquatableP", "overlaps"]
+- ["s9EquatableP", "precededBy"]
+- ["s9EquatableP", "precedes"]
+- ["s9EquatableP", "rawValue"]
+- ["s9EquatableP", "remove"]
+- ["s9EquatableP", "startedBy"]
+- ["s9EquatableP", "starts"]
+- ["s9EquatableP", "subtract"]
+- ["s9EquatableP", "subtracting"]
+- ["s9EquatableP", "symmetricDifference"]
+- ["s9EquatableP", "union"]
+- ["s9EquatableP", "update"]
+- ["s9EquatableP", ""]
+- ["s25ExpressibleByArrayLiteralP", "ArrayLiteralElement"]
+- ["s25ExpressibleByArrayLiteralP", "Element"]
+- ["s25ExpressibleByArrayLiteralP", "IntervalRelation"]
+- ["s25ExpressibleByArrayLiteralP", "RawValue"]
+- ["s25ExpressibleByArrayLiteralP", "containedBy"]
+- ["s25ExpressibleByArrayLiteralP", "contains"]
+- ["s25ExpressibleByArrayLiteralP", "description"]
+- ["s25ExpressibleByArrayLiteralP", "equals"]
+- ["s25ExpressibleByArrayLiteralP", "finishedBy"]
+- ["s25ExpressibleByArrayLiteralP", "finishes"]
+- ["s25ExpressibleByArrayLiteralP", "formIntersection"]
+- ["s25ExpressibleByArrayLiteralP", "formSymmetricDifference"]
+- ["s25ExpressibleByArrayLiteralP", "formUnion"]
+- ["s25ExpressibleByArrayLiteralP", "init"]
+- ["s25ExpressibleByArrayLiteralP", "insert"]
+- ["s25ExpressibleByArrayLiteralP", "intersection"]
+- ["s25ExpressibleByArrayLiteralP", "inverse"]
+- ["s25ExpressibleByArrayLiteralP", "isDisjoint"]
+- ["s25ExpressibleByArrayLiteralP", "isEmpty"]
+- ["s25ExpressibleByArrayLiteralP", "isSubset"]
+- ["s25ExpressibleByArrayLiteralP", "isSuperset"]
+- ["s25ExpressibleByArrayLiteralP", "meets"]
+- ["s25ExpressibleByArrayLiteralP", "metBy"]
+- ["s25ExpressibleByArrayLiteralP", "optionsCount"]
+- ["s25ExpressibleByArrayLiteralP", "overlappedBy"]
+- ["s25ExpressibleByArrayLiteralP", "overlaps"]
+- ["s25ExpressibleByArrayLiteralP", "precededBy"]
+- ["s25ExpressibleByArrayLiteralP", "precedes"]
+- ["s25ExpressibleByArrayLiteralP", "rawValue"]
+- ["s25ExpressibleByArrayLiteralP", "remove"]
+- ["s25ExpressibleByArrayLiteralP", "startedBy"]
+- ["s25ExpressibleByArrayLiteralP", "starts"]
+- ["s25ExpressibleByArrayLiteralP", "subtract"]
+- ["s25ExpressibleByArrayLiteralP", "subtracting"]
+- ["s25ExpressibleByArrayLiteralP", "symmetricDifference"]
+- ["s25ExpressibleByArrayLiteralP", "union"]
+- ["s25ExpressibleByArrayLiteralP", "update"]
+- ["s25ExpressibleByArrayLiteralP", ""]
+- !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["s8HashableP", "_getBuiltinLogicValue"]
+- !private ["s8HashableP", "init"]
+- ["4Math16IntervalRelationV", "ArrayLiteralElement"]
+- ["4Math16IntervalRelationV", "Element"]
+- ["4Math16IntervalRelationV", "Int"]
+- ["4Math16IntervalRelationV", "IntervalRelation"]
+- ["4Math16IntervalRelationV", "RawValue"]
+- ["4Math16IntervalRelationV", "String"]
+- ["4Math16IntervalRelationV", "containedBy"]
+- ["4Math16IntervalRelationV", "contains"]
+- ["4Math16IntervalRelationV", "deinit"]
+- ["4Math16IntervalRelationV", "description"]
+- ["4Math16IntervalRelationV", "equals"]
+- ["4Math16IntervalRelationV", "finishedBy"]
+- ["4Math16IntervalRelationV", "finishes"]
+- ["4Math16IntervalRelationV", "formIntersection"]
+- ["4Math16IntervalRelationV", "formSymmetricDifference"]
+- ["4Math16IntervalRelationV", "formUnion"]
+- ["4Math16IntervalRelationV", "init"]
+- ["4Math16IntervalRelationV", "insert"]
+- ["4Math16IntervalRelationV", "intersection"]
+- ["4Math16IntervalRelationV", "inverse"]
+- ["4Math16IntervalRelationV", "isDisjoint"]
+- ["4Math16IntervalRelationV", "isEmpty"]
+- ["4Math16IntervalRelationV", "isSubset"]
+- ["4Math16IntervalRelationV", "isSuperset"]
+- ["4Math16IntervalRelationV", "meets"]
+- ["4Math16IntervalRelationV", "metBy"]
+- ["4Math16IntervalRelationV", "optionsCount"]
+- ["4Math16IntervalRelationV", "overlappedBy"]
+- ["4Math16IntervalRelationV", "overlaps"]
+- ["4Math16IntervalRelationV", "precededBy"]
+- ["4Math16IntervalRelationV", "precedes"]
+- ["4Math16IntervalRelationV", "rawValue"]
+- ["4Math16IntervalRelationV", "remove"]
+- ["4Math16IntervalRelationV", "startedBy"]
+- ["4Math16IntervalRelationV", "starts"]
+- ["4Math16IntervalRelationV", "subtract"]
+- ["4Math16IntervalRelationV", "subtracting"]
+- ["4Math16IntervalRelationV", "symmetricDifference"]
+- ["4Math16IntervalRelationV", "union"]
+- ["4Math16IntervalRelationV", "update"]
+- ["9Structure10InvertibleP", "ArrayLiteralElement"]
+- ["9Structure10InvertibleP", "Element"]
+- ["9Structure10InvertibleP", "IntervalRelation"]
+- ["9Structure10InvertibleP", "RawValue"]
+- ["9Structure10InvertibleP", "containedBy"]
+- ["9Structure10InvertibleP", "contains"]
+- ["9Structure10InvertibleP", "description"]
+- ["9Structure10InvertibleP", "equals"]
+- ["9Structure10InvertibleP", "finishedBy"]
+- ["9Structure10InvertibleP", "finishes"]
+- ["9Structure10InvertibleP", "formIntersection"]
+- ["9Structure10InvertibleP", "formSymmetricDifference"]
+- ["9Structure10InvertibleP", "formUnion"]
+- ["9Structure10InvertibleP", "init"]
+- ["9Structure10InvertibleP", "insert"]
+- ["9Structure10InvertibleP", "intersection"]
+- ["9Structure10InvertibleP", "inverse"]
+- ["9Structure10InvertibleP", "isDisjoint"]
+- ["9Structure10InvertibleP", "isEmpty"]
+- ["9Structure10InvertibleP", "isSubset"]
+- ["9Structure10InvertibleP", "isSuperset"]
+- ["9Structure10InvertibleP", "meets"]
+- ["9Structure10InvertibleP", "metBy"]
+- ["9Structure10InvertibleP", "optionsCount"]
+- ["9Structure10InvertibleP", "overlappedBy"]
+- ["9Structure10InvertibleP", "overlaps"]
+- ["9Structure10InvertibleP", "precededBy"]
+- ["9Structure10InvertibleP", "precedes"]
+- ["9Structure10InvertibleP", "rawValue"]
+- ["9Structure10InvertibleP", "remove"]
+- ["9Structure10InvertibleP", "startedBy"]
+- ["9Structure10InvertibleP", "starts"]
+- ["9Structure10InvertibleP", "subtract"]
+- ["9Structure10InvertibleP", "subtracting"]
+- ["9Structure10InvertibleP", "symmetricDifference"]
+- ["9Structure10InvertibleP", "union"]
+- ["9Structure10InvertibleP", "update"]
+- ["9Structure10InvertibleP", ""]
+- ["9Structure19InvertibleOptionSetP", "ArrayLiteralElement"]
+- ["9Structure19InvertibleOptionSetP", "Element"]
+- ["9Structure19InvertibleOptionSetP", "IntervalRelation"]
+- ["9Structure19InvertibleOptionSetP", "RawValue"]
+- ["9Structure19InvertibleOptionSetP", "containedBy"]
+- ["9Structure19InvertibleOptionSetP", "contains"]
+- ["9Structure19InvertibleOptionSetP", "description"]
+- ["9Structure19InvertibleOptionSetP", "equals"]
+- ["9Structure19InvertibleOptionSetP", "finishedBy"]
+- ["9Structure19InvertibleOptionSetP", "finishes"]
+- ["9Structure19InvertibleOptionSetP", "formIntersection"]
+- ["9Structure19InvertibleOptionSetP", "formSymmetricDifference"]
+- ["9Structure19InvertibleOptionSetP", "formUnion"]
+- ["9Structure19InvertibleOptionSetP", "init"]
+- ["9Structure19InvertibleOptionSetP", "insert"]
+- ["9Structure19InvertibleOptionSetP", "intersection"]
+- ["9Structure19InvertibleOptionSetP", "inverse"]
+- ["9Structure19InvertibleOptionSetP", "isDisjoint"]
+- ["9Structure19InvertibleOptionSetP", "isEmpty"]
+- ["9Structure19InvertibleOptionSetP", "isSubset"]
+- ["9Structure19InvertibleOptionSetP", "isSuperset"]
+- ["9Structure19InvertibleOptionSetP", "meets"]
+- ["9Structure19InvertibleOptionSetP", "metBy"]
+- ["9Structure19InvertibleOptionSetP", "optionsCount"]
+- ["9Structure19InvertibleOptionSetP", "overlappedBy"]
+- ["9Structure19InvertibleOptionSetP", "overlaps"]
+- ["9Structure19InvertibleOptionSetP", "precededBy"]
+- ["9Structure19InvertibleOptionSetP", "precedes"]
+- ["9Structure19InvertibleOptionSetP", "rawValue"]
+- ["9Structure19InvertibleOptionSetP", "remove"]
+- ["9Structure19InvertibleOptionSetP", "startedBy"]
+- ["9Structure19InvertibleOptionSetP", "starts"]
+- ["9Structure19InvertibleOptionSetP", "subtract"]
+- ["9Structure19InvertibleOptionSetP", "subtracting"]
+- ["9Structure19InvertibleOptionSetP", "symmetricDifference"]
+- ["9Structure19InvertibleOptionSetP", "union"]
+- ["9Structure19InvertibleOptionSetP", "update"]
+- ["9Structure19InvertibleOptionSetP", ""]
+- !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s25LosslessStringConvertibleP", "init"]
+- !private ["s10MirrorPathP", "init"]
+- !private ["So8NSCodingP", "init"]
+- !private ["So9NSCopyingP", "init"]
+- !private ["So21NSItemProviderReadingP", "init"]
+- !private ["So21NSItemProviderWritingP", "init"]
+- !private ["So16NSMutableCopyingP", "init"]
+- !private ["So16NSObjectProtocolP", "init"]
+- !private ["So14NSSecureCodingP", "init"]
+- !private ["So8NSStringC", "init"]
+- ["s9OptionSetP", "ArrayLiteralElement"]
+- ["s9OptionSetP", "Element"]
+- ["s9OptionSetP", "IntervalRelation"]
+- ["s9OptionSetP", "RawValue"]
+- ["s9OptionSetP", "containedBy"]
+- ["s9OptionSetP", "contains"]
+- ["s9OptionSetP", "description"]
+- ["s9OptionSetP", "equals"]
+- ["s9OptionSetP", "finishedBy"]
+- ["s9OptionSetP", "finishes"]
+- ["s9OptionSetP", "formIntersection"]
+- ["s9OptionSetP", "formSymmetricDifference"]
+- ["s9OptionSetP", "formUnion"]
+- ["s9OptionSetP", "init"]
+- ["s9OptionSetP", "insert"]
+- ["s9OptionSetP", "intersection"]
+- ["s9OptionSetP", "inverse"]
+- ["s9OptionSetP", "isDisjoint"]
+- ["s9OptionSetP", "isEmpty"]
+- ["s9OptionSetP", "isSubset"]
+- ["s9OptionSetP", "isSuperset"]
+- ["s9OptionSetP", "meets"]
+- ["s9OptionSetP", "metBy"]
+- ["s9OptionSetP", "optionsCount"]
+- ["s9OptionSetP", "overlappedBy"]
+- ["s9OptionSetP", "overlaps"]
+- ["s9OptionSetP", "precededBy"]
+- ["s9OptionSetP", "precedes"]
+- ["s9OptionSetP", "rawValue"]
+- ["s9OptionSetP", "remove"]
+- ["s9OptionSetP", "startedBy"]
+- ["s9OptionSetP", "starts"]
+- ["s9OptionSetP", "subtract"]
+- ["s9OptionSetP", "subtracting"]
+- ["s9OptionSetP", "symmetricDifference"]
+- ["s9OptionSetP", "union"]
+- ["s9OptionSetP", "update"]
+- ["s9OptionSetP", ""]
+- !private ["4Math13RangeProtocolP", "Bool"]
+- !private ["4Math13RangeProtocolP", "Bound"]
+- ["4Math13RangeProtocolP", "IntervalRelation"]
+- ["4Math13RangeProtocolP", "Self"]
+- !private ["4Math13RangeProtocolP", "lowerBound"]
+- !private ["4Math13RangeProtocolP", "openContains"]
+- ["4Math13RangeProtocolP", "relation"]
+- !private ["4Math13RangeProtocolP", "upperBound"]
+- !private ["s26RangeReplaceableCollectionP", "init"]
+- ["s16RawRepresentableP", "ArrayLiteralElement"]
+- ["s16RawRepresentableP", "Element"]
+- ["s16RawRepresentableP", "IntervalRelation"]
+- ["s16RawRepresentableP", "RawValue"]
+- ["s16RawRepresentableP", "containedBy"]
+- ["s16RawRepresentableP", "contains"]
+- ["s16RawRepresentableP", "description"]
+- ["s16RawRepresentableP", "equals"]
+- ["s16RawRepresentableP", "finishedBy"]
+- ["s16RawRepresentableP", "finishes"]
+- ["s16RawRepresentableP", "formIntersection"]
+- ["s16RawRepresentableP", "formSymmetricDifference"]
+- ["s16RawRepresentableP", "formUnion"]
+- ["s16RawRepresentableP", "init"]
+- ["s16RawRepresentableP", "insert"]
+- ["s16RawRepresentableP", "intersection"]
+- ["s16RawRepresentableP", "inverse"]
+- ["s16RawRepresentableP", "isDisjoint"]
+- ["s16RawRepresentableP", "isEmpty"]
+- ["s16RawRepresentableP", "isSubset"]
+- ["s16RawRepresentableP", "isSuperset"]
+- ["s16RawRepresentableP", "meets"]
+- ["s16RawRepresentableP", "metBy"]
+- ["s16RawRepresentableP", "optionsCount"]
+- ["s16RawRepresentableP", "overlappedBy"]
+- ["s16RawRepresentableP", "overlaps"]
+- ["s16RawRepresentableP", "precededBy"]
+- ["s16RawRepresentableP", "precedes"]
+- ["s16RawRepresentableP", "rawValue"]
+- ["s16RawRepresentableP", "remove"]
+- ["s16RawRepresentableP", "startedBy"]
+- ["s16RawRepresentableP", "starts"]
+- ["s16RawRepresentableP", "subtract"]
+- ["s16RawRepresentableP", "subtracting"]
+- ["s16RawRepresentableP", "symmetricDifference"]
+- ["s16RawRepresentableP", "union"]
+- ["s16RawRepresentableP", "update"]
+- ["s16RawRepresentableP", ""]
+- !private ["s8SequenceP", "init"]
+- ["s10SetAlgebraP", "ArrayLiteralElement"]
+- ["s10SetAlgebraP", "Element"]
+- ["s10SetAlgebraP", "IntervalRelation"]
+- ["s10SetAlgebraP", "RawValue"]
+- ["s10SetAlgebraP", "containedBy"]
+- ["s10SetAlgebraP", "contains"]
+- ["s10SetAlgebraP", "description"]
+- ["s10SetAlgebraP", "equals"]
+- ["s10SetAlgebraP", "finishedBy"]
+- ["s10SetAlgebraP", "finishes"]
+- ["s10SetAlgebraP", "formIntersection"]
+- ["s10SetAlgebraP", "formSymmetricDifference"]
+- ["s10SetAlgebraP", "formUnion"]
+- ["s10SetAlgebraP", "init"]
+- ["s10SetAlgebraP", "insert"]
+- ["s10SetAlgebraP", "intersection"]
+- ["s10SetAlgebraP", "inverse"]
+- ["s10SetAlgebraP", "isDisjoint"]
+- ["s10SetAlgebraP", "isEmpty"]
+- ["s10SetAlgebraP", "isSubset"]
+- ["s10SetAlgebraP", "isSuperset"]
+- ["s10SetAlgebraP", "meets"]
+- ["s10SetAlgebraP", "metBy"]
+- ["s10SetAlgebraP", "optionsCount"]
+- ["s10SetAlgebraP", "overlappedBy"]
+- ["s10SetAlgebraP", "overlaps"]
+- ["s10SetAlgebraP", "precededBy"]
+- ["s10SetAlgebraP", "precedes"]
+- ["s10SetAlgebraP", "rawValue"]
+- ["s10SetAlgebraP", "remove"]
+- ["s10SetAlgebraP", "startedBy"]
+- ["s10SetAlgebraP", "starts"]
+- ["s10SetAlgebraP", "subtract"]
+- ["s10SetAlgebraP", "subtracting"]
+- ["s10SetAlgebraP", "symmetricDifference"]
+- ["s10SetAlgebraP", "union"]
+- ["s10SetAlgebraP", "update"]
+- ["s10SetAlgebraP", ""]
+- !private ["SS", "init"]
+- !private ["s14StringProtocolP", "init"]
+- !private ["s16TextOutputStreamP", "init"]
+- !private ["s20TextOutputStreamableP", "init"]
+- !private ["s23_BidirectionalIndexableP", "init"]
+- !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s33_ExpressibleByStringInterpolationP", "init"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "init"]
+- !private ["s10_IndexableP", "init"]
+- !private ["s14_IndexableBaseP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s26_RangeReplaceableIndexableP", "init"]
+- !private ["s16_SwiftStringViewP", "init"]
+depends-nominal:
+- !private "s23BidirectionalCollectionP"
+- !private "Sb"
+- !private "s7CVarArgP"
+- !private "s10CollectionP"
+- !private "s10ComparableP"
+- !private "s28CustomDebugStringConvertibleP"
+- !private "s29CustomPlaygroundQuickLookableP"
+- !private "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- !private "s9DecodableP"
+- !private "s9EncodableP"
+- "s9EquatableP"
+- "s25ExpressibleByArrayLiteralP"
+- !private "s27ExpressibleByBooleanLiteralP"
+- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s26ExpressibleByStringLiteralP"
+- !private "s33ExpressibleByUnicodeScalarLiteralP"
+- !private "s8HashableP"
+- "4Math16IntervalRelationV"
+- "9Structure10InvertibleP"
+- "9Structure19InvertibleOptionSetP"
+- !private "s25LosslessStringConvertibleP"
+- !private "s10MirrorPathP"
+- !private "So8NSCodingP"
+- !private "So9NSCopyingP"
+- !private "So21NSItemProviderReadingP"
+- !private "So21NSItemProviderWritingP"
+- !private "So16NSMutableCopyingP"
+- !private "So16NSObjectProtocolP"
+- !private "So14NSSecureCodingP"
+- !private "So8NSStringC"
+- "s9OptionSetP"
+- "4Math13RangeProtocolP"
+- !private "s26RangeReplaceableCollectionP"
+- "s16RawRepresentableP"
+- !private "s8SequenceP"
+- "s10SetAlgebraP"
+- !private "SS"
+- !private "s14StringProtocolP"
+- !private "s16TextOutputStreamP"
+- !private "s20TextOutputStreamableP"
+- !private "s23_BidirectionalIndexableP"
+- !private "s35_ExpressibleByBuiltinBooleanLiteralP"
+- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s34_ExpressibleByBuiltinStringLiteralP"
+- !private "s39_ExpressibleByBuiltinUTF16StringLiteralP"
+- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- !private "s33_ExpressibleByStringInterpolationP"
+- !private "s35_HasCustomAnyHashableRepresentationP"
+- !private "s10_IndexableP"
+- !private "s14_IndexableBaseP"
+- !private "10Foundation27_KeyValueCodingAndObservingP"
+- !private "s21_ObjectiveCBridgeableP"
+- !private "s26_RangeReplaceableIndexableP"
+- !private "s16_SwiftStringViewP"
+depends-dynamic-lookup:
+depends-external:
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.apinotesc"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
+- "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.swiftmodule"
+- "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Structure.swiftmodule"
+- "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Destructure.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Darwin.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Foundation.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreFoundation.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Swift.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+interface-hash: "94a985f3cd311482f0f20f499b2b76b4"

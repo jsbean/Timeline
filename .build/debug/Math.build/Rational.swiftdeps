@@ -1,0 +1,739 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "Rational"
+- "-"
+- "+"
+- "+="
+- "-"
+- "-="
+- "*"
+- "*="
+- "/"
+- "/="
+- "<"
+- "=="
+provides-nominal:
+- "4Math8RationalP"
+provides-member:
+- ["4Math8RationalP", ""]
+- ["4Math8RationalP", "zero"]
+- ["4Math8RationalP", "one"]
+- ["4Math8RationalP", "-"]
+- ["4Math8RationalP", "advanced"]
+- ["4Math8RationalP", "distance"]
+- ["4Math8RationalP", "scaling"]
+- ["4Math8RationalP", "scaling"]
+- ["4Math8RationalP", "reciprocal"]
+- ["4Math8RationalP", "magnitude"]
+- ["4Math8RationalP", "init"]
+- ["4Math8RationalP", "+"]
+- ["4Math8RationalP", "+="]
+- ["4Math8RationalP", "-"]
+- ["4Math8RationalP", "-="]
+- ["4Math8RationalP", "*"]
+- ["4Math8RationalP", "*="]
+- ["4Math8RationalP", "/"]
+- ["4Math8RationalP", "/="]
+- ["4Math8RationalP", "mutating"]
+- ["4Math8RationalP", "mutating"]
+- ["4Math8RationalP", "isReduced"]
+- ["4Math8RationalP", "floatValue"]
+- ["4Math8RationalP", "doubleValue"]
+- ["4Math8RationalP", "inverse"]
+- ["4Math8RationalP", "reduced"]
+- ["4Math8RationalP", "<"]
+- ["4Math8RationalP", "reduced"]
+- ["4Math8RationalP", "normalized"]
+- ["4Math8RationalP", "=="]
+- ["4Math8RationalP", "hashValue"]
+- ["4Math8RationalP", "description"]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "!="
+- "*"
+- "*="
+- "+"
+- "+="
+- "-"
+- "-="
+- "/"
+- "/="
+- "<"
+- "=="
+- !private ">"
+- "Additive"
+- "AssignmentPrecedence"
+- "BinaryInteger"
+- "Bool"
+- "CustomStringConvertible"
+- "Double"
+- "Float"
+- !private "FloatLiteralType"
+- "Hashable"
+- "Int"
+- !private "IntegerLiteralType"
+- "Multiplicative"
+- "Rational"
+- "SignedNumeric"
+- "Strideable"
+- "String"
+- !private "StringLiteralType"
+- "TernaryPrecedence"
+- !private "UnicodeScalarType"
+- !private "abs"
+- !private "assert"
+- !private "gcd"
+- !private "lcm"
+- !private "map"
+depends-member:
+- ["7Algebra8AdditiveP", "BinaryInteger"]
+- ["7Algebra8AdditiveP", "Bool"]
+- ["7Algebra8AdditiveP", "Double"]
+- ["7Algebra8AdditiveP", "Float"]
+- ["7Algebra8AdditiveP", "Int"]
+- ["7Algebra8AdditiveP", "Rational"]
+- ["7Algebra8AdditiveP", "Self"]
+- ["7Algebra8AdditiveP", "String"]
+- !private ["7Algebra8AdditiveP", "abs"]
+- !private ["7Algebra8AdditiveP", "assert"]
+- ["7Algebra8AdditiveP", "denominator"]
+- ["7Algebra8AdditiveP", "doubleValue"]
+- ["7Algebra8AdditiveP", "floatValue"]
+- !private ["7Algebra8AdditiveP", "gcd"]
+- !private ["7Algebra8AdditiveP", "hashValue"]
+- ["7Algebra8AdditiveP", "init"]
+- ["7Algebra8AdditiveP", "inverse"]
+- ["7Algebra8AdditiveP", "isReduced"]
+- !private ["7Algebra8AdditiveP", "lcm"]
+- !private ["7Algebra8AdditiveP", "map"]
+- ["7Algebra8AdditiveP", "mutating"]
+- !private ["7Algebra8AdditiveP", "normalized"]
+- ["7Algebra8AdditiveP", "numerator"]
+- !private ["7Algebra8AdditiveP", "reciprocal"]
+- ["7Algebra8AdditiveP", "reduced"]
+- ["7Algebra8AdditiveP", "scaling"]
+- !private ["7Algebra8AdditiveP", "truncatingRemainder"]
+- ["7Algebra8AdditiveP", ""]
+- ["7Algebra17AdditiveSemigroupP", "BinaryInteger"]
+- ["7Algebra17AdditiveSemigroupP", "Bool"]
+- ["7Algebra17AdditiveSemigroupP", "Double"]
+- ["7Algebra17AdditiveSemigroupP", "Float"]
+- ["7Algebra17AdditiveSemigroupP", "Int"]
+- ["7Algebra17AdditiveSemigroupP", "Rational"]
+- ["7Algebra17AdditiveSemigroupP", "Self"]
+- ["7Algebra17AdditiveSemigroupP", "String"]
+- !private ["7Algebra17AdditiveSemigroupP", "abs"]
+- !private ["7Algebra17AdditiveSemigroupP", "assert"]
+- ["7Algebra17AdditiveSemigroupP", "denominator"]
+- ["7Algebra17AdditiveSemigroupP", "doubleValue"]
+- ["7Algebra17AdditiveSemigroupP", "floatValue"]
+- !private ["7Algebra17AdditiveSemigroupP", "gcd"]
+- !private ["7Algebra17AdditiveSemigroupP", "hashValue"]
+- ["7Algebra17AdditiveSemigroupP", "init"]
+- ["7Algebra17AdditiveSemigroupP", "inverse"]
+- ["7Algebra17AdditiveSemigroupP", "isReduced"]
+- !private ["7Algebra17AdditiveSemigroupP", "lcm"]
+- !private ["7Algebra17AdditiveSemigroupP", "map"]
+- ["7Algebra17AdditiveSemigroupP", "mutating"]
+- !private ["7Algebra17AdditiveSemigroupP", "normalized"]
+- ["7Algebra17AdditiveSemigroupP", "numerator"]
+- !private ["7Algebra17AdditiveSemigroupP", "reciprocal"]
+- ["7Algebra17AdditiveSemigroupP", "reduced"]
+- ["7Algebra17AdditiveSemigroupP", "scaling"]
+- !private ["7Algebra17AdditiveSemigroupP", "truncatingRemainder"]
+- !private ["s23BidirectionalCollectionP", "init"]
+- !private ["s19BinaryFloatingPointP", "hashValue"]
+- !private ["s19BinaryFloatingPointP", "init"]
+- !private ["s19BinaryFloatingPointP", "truncatingRemainder"]
+- !private ["s13BinaryIntegerP", "init"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["s7CVarArgP", "hashValue"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "truncatingRemainder"]
+- !private ["s10CollectionP", "init"]
+- ["s10ComparableP", "BinaryInteger"]
+- ["s10ComparableP", "Bool"]
+- ["s10ComparableP", "Double"]
+- ["s10ComparableP", "Float"]
+- ["s10ComparableP", "Int"]
+- ["s10ComparableP", "Rational"]
+- ["s10ComparableP", "Self"]
+- ["s10ComparableP", "String"]
+- !private ["s10ComparableP", "abs"]
+- !private ["s10ComparableP", "assert"]
+- ["s10ComparableP", "denominator"]
+- ["s10ComparableP", "doubleValue"]
+- ["s10ComparableP", "floatValue"]
+- !private ["s10ComparableP", "gcd"]
+- !private ["s10ComparableP", "hashValue"]
+- ["s10ComparableP", "init"]
+- ["s10ComparableP", "inverse"]
+- ["s10ComparableP", "isReduced"]
+- !private ["s10ComparableP", "lcm"]
+- !private ["s10ComparableP", "map"]
+- ["s10ComparableP", "mutating"]
+- !private ["s10ComparableP", "normalized"]
+- ["s10ComparableP", "numerator"]
+- !private ["s10ComparableP", "reciprocal"]
+- ["s10ComparableP", "reduced"]
+- ["s10ComparableP", "scaling"]
+- !private ["s10ComparableP", "truncatingRemainder"]
+- !private ["s28CustomDebugStringConvertibleP", "hashValue"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "truncatingRemainder"]
+- !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
+- !private ["s29CustomPlaygroundQuickLookableP", "hashValue"]
+- !private ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s29CustomPlaygroundQuickLookableP", "truncatingRemainder"]
+- !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
+- !private ["s17CustomReflectableP", "hashValue"]
+- !private ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "truncatingRemainder"]
+- ["s23CustomStringConvertibleP", "BinaryInteger"]
+- ["s23CustomStringConvertibleP", "Bool"]
+- ["s23CustomStringConvertibleP", "Double"]
+- ["s23CustomStringConvertibleP", "Float"]
+- ["s23CustomStringConvertibleP", "Int"]
+- ["s23CustomStringConvertibleP", "Rational"]
+- ["s23CustomStringConvertibleP", "Self"]
+- ["s23CustomStringConvertibleP", "String"]
+- !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s23CustomStringConvertibleP", "abs"]
+- !private ["s23CustomStringConvertibleP", "assert"]
+- ["s23CustomStringConvertibleP", "denominator"]
+- ["s23CustomStringConvertibleP", "doubleValue"]
+- ["s23CustomStringConvertibleP", "floatValue"]
+- !private ["s23CustomStringConvertibleP", "gcd"]
+- !private ["s23CustomStringConvertibleP", "hashValue"]
+- ["s23CustomStringConvertibleP", "init"]
+- ["s23CustomStringConvertibleP", "inverse"]
+- ["s23CustomStringConvertibleP", "isReduced"]
+- !private ["s23CustomStringConvertibleP", "lcm"]
+- !private ["s23CustomStringConvertibleP", "map"]
+- ["s23CustomStringConvertibleP", "mutating"]
+- !private ["s23CustomStringConvertibleP", "normalized"]
+- ["s23CustomStringConvertibleP", "numerator"]
+- !private ["s23CustomStringConvertibleP", "reciprocal"]
+- ["s23CustomStringConvertibleP", "reduced"]
+- ["s23CustomStringConvertibleP", "scaling"]
+- !private ["s23CustomStringConvertibleP", "truncatingRemainder"]
+- ["s23CustomStringConvertibleP", ""]
+- !private ["s9DecodableP", "_getBuiltinLogicValue"]
+- !private ["s9DecodableP", "hashValue"]
+- !private ["s9DecodableP", "init"]
+- !private ["s9DecodableP", "truncatingRemainder"]
+- !private ["Sd", "init"]
+- !private ["Sd", "truncatingRemainder"]
+- !private ["s9EncodableP", "_getBuiltinLogicValue"]
+- !private ["s9EncodableP", "hashValue"]
+- !private ["s9EncodableP", "init"]
+- !private ["s9EncodableP", "truncatingRemainder"]
+- ["s9EquatableP", "BinaryInteger"]
+- ["s9EquatableP", "Bool"]
+- ["s9EquatableP", "Double"]
+- ["s9EquatableP", "Float"]
+- ["s9EquatableP", "Int"]
+- ["s9EquatableP", "Rational"]
+- ["s9EquatableP", "Self"]
+- ["s9EquatableP", "String"]
+- !private ["s9EquatableP", "_getBuiltinLogicValue"]
+- !private ["s9EquatableP", "abs"]
+- !private ["s9EquatableP", "assert"]
+- ["s9EquatableP", "denominator"]
+- ["s9EquatableP", "doubleValue"]
+- ["s9EquatableP", "floatValue"]
+- !private ["s9EquatableP", "gcd"]
+- !private ["s9EquatableP", "hashValue"]
+- ["s9EquatableP", "init"]
+- ["s9EquatableP", "inverse"]
+- ["s9EquatableP", "isReduced"]
+- !private ["s9EquatableP", "lcm"]
+- !private ["s9EquatableP", "map"]
+- ["s9EquatableP", "mutating"]
+- !private ["s9EquatableP", "normalized"]
+- ["s9EquatableP", "numerator"]
+- !private ["s9EquatableP", "reciprocal"]
+- ["s9EquatableP", "reduced"]
+- ["s9EquatableP", "scaling"]
+- !private ["s9EquatableP", "truncatingRemainder"]
+- !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s25ExpressibleByFloatLiteralP", "hashValue"]
+- !private ["s25ExpressibleByFloatLiteralP", "init"]
+- !private ["s25ExpressibleByFloatLiteralP", "truncatingRemainder"]
+- ["s27ExpressibleByIntegerLiteralP", "BinaryInteger"]
+- ["s27ExpressibleByIntegerLiteralP", "Bool"]
+- ["s27ExpressibleByIntegerLiteralP", "Double"]
+- ["s27ExpressibleByIntegerLiteralP", "Float"]
+- ["s27ExpressibleByIntegerLiteralP", "Int"]
+- ["s27ExpressibleByIntegerLiteralP", "Rational"]
+- ["s27ExpressibleByIntegerLiteralP", "Self"]
+- ["s27ExpressibleByIntegerLiteralP", "String"]
+- !private ["s27ExpressibleByIntegerLiteralP", "abs"]
+- !private ["s27ExpressibleByIntegerLiteralP", "assert"]
+- ["s27ExpressibleByIntegerLiteralP", "denominator"]
+- ["s27ExpressibleByIntegerLiteralP", "doubleValue"]
+- ["s27ExpressibleByIntegerLiteralP", "floatValue"]
+- !private ["s27ExpressibleByIntegerLiteralP", "gcd"]
+- !private ["s27ExpressibleByIntegerLiteralP", "hashValue"]
+- ["s27ExpressibleByIntegerLiteralP", "init"]
+- ["s27ExpressibleByIntegerLiteralP", "inverse"]
+- ["s27ExpressibleByIntegerLiteralP", "isReduced"]
+- !private ["s27ExpressibleByIntegerLiteralP", "lcm"]
+- !private ["s27ExpressibleByIntegerLiteralP", "map"]
+- ["s27ExpressibleByIntegerLiteralP", "mutating"]
+- !private ["s27ExpressibleByIntegerLiteralP", "normalized"]
+- ["s27ExpressibleByIntegerLiteralP", "numerator"]
+- !private ["s27ExpressibleByIntegerLiteralP", "reciprocal"]
+- ["s27ExpressibleByIntegerLiteralP", "reduced"]
+- ["s27ExpressibleByIntegerLiteralP", "scaling"]
+- !private ["s27ExpressibleByIntegerLiteralP", "truncatingRemainder"]
+- !private ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["s17FixedWidthIntegerP", "init"]
+- !private ["Sf", "hashValue"]
+- !private ["Sf", "init"]
+- !private ["s13FloatingPointP", "hashValue"]
+- !private ["s13FloatingPointP", "init"]
+- !private ["s13FloatingPointP", "truncatingRemainder"]
+- ["s8HashableP", "BinaryInteger"]
+- ["s8HashableP", "Bool"]
+- ["s8HashableP", "Double"]
+- ["s8HashableP", "Float"]
+- ["s8HashableP", "Int"]
+- ["s8HashableP", "Rational"]
+- ["s8HashableP", "Self"]
+- ["s8HashableP", "String"]
+- !private ["s8HashableP", "_getBuiltinLogicValue"]
+- !private ["s8HashableP", "abs"]
+- !private ["s8HashableP", "assert"]
+- ["s8HashableP", "denominator"]
+- ["s8HashableP", "doubleValue"]
+- ["s8HashableP", "floatValue"]
+- !private ["s8HashableP", "gcd"]
+- !private ["s8HashableP", "hashValue"]
+- ["s8HashableP", "init"]
+- ["s8HashableP", "inverse"]
+- ["s8HashableP", "isReduced"]
+- !private ["s8HashableP", "lcm"]
+- !private ["s8HashableP", "map"]
+- ["s8HashableP", "mutating"]
+- !private ["s8HashableP", "normalized"]
+- ["s8HashableP", "numerator"]
+- !private ["s8HashableP", "reciprocal"]
+- ["s8HashableP", "reduced"]
+- ["s8HashableP", "scaling"]
+- !private ["s8HashableP", "truncatingRemainder"]
+- ["s8HashableP", ""]
+- !private ["Si", "init"]
+- !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s25LosslessStringConvertibleP", "hashValue"]
+- !private ["s25LosslessStringConvertibleP", "init"]
+- !private ["s25LosslessStringConvertibleP", "truncatingRemainder"]
+- !private ["s10MirrorPathP", "init"]
+- ["7Algebra14MultiplicativeP", "BinaryInteger"]
+- ["7Algebra14MultiplicativeP", "Bool"]
+- ["7Algebra14MultiplicativeP", "Double"]
+- ["7Algebra14MultiplicativeP", "Float"]
+- ["7Algebra14MultiplicativeP", "Int"]
+- ["7Algebra14MultiplicativeP", "Rational"]
+- ["7Algebra14MultiplicativeP", "Self"]
+- ["7Algebra14MultiplicativeP", "String"]
+- !private ["7Algebra14MultiplicativeP", "abs"]
+- !private ["7Algebra14MultiplicativeP", "assert"]
+- ["7Algebra14MultiplicativeP", "denominator"]
+- ["7Algebra14MultiplicativeP", "doubleValue"]
+- ["7Algebra14MultiplicativeP", "floatValue"]
+- !private ["7Algebra14MultiplicativeP", "gcd"]
+- !private ["7Algebra14MultiplicativeP", "hashValue"]
+- ["7Algebra14MultiplicativeP", "init"]
+- ["7Algebra14MultiplicativeP", "inverse"]
+- ["7Algebra14MultiplicativeP", "isReduced"]
+- !private ["7Algebra14MultiplicativeP", "lcm"]
+- !private ["7Algebra14MultiplicativeP", "map"]
+- ["7Algebra14MultiplicativeP", "mutating"]
+- !private ["7Algebra14MultiplicativeP", "normalized"]
+- ["7Algebra14MultiplicativeP", "numerator"]
+- !private ["7Algebra14MultiplicativeP", "reciprocal"]
+- ["7Algebra14MultiplicativeP", "reduced"]
+- ["7Algebra14MultiplicativeP", "scaling"]
+- !private ["7Algebra14MultiplicativeP", "truncatingRemainder"]
+- ["7Algebra14MultiplicativeP", ""]
+- ["7Algebra23MultiplicativeSemigroupP", "BinaryInteger"]
+- ["7Algebra23MultiplicativeSemigroupP", "Bool"]
+- ["7Algebra23MultiplicativeSemigroupP", "Double"]
+- ["7Algebra23MultiplicativeSemigroupP", "Float"]
+- ["7Algebra23MultiplicativeSemigroupP", "Int"]
+- ["7Algebra23MultiplicativeSemigroupP", "Rational"]
+- ["7Algebra23MultiplicativeSemigroupP", "Self"]
+- ["7Algebra23MultiplicativeSemigroupP", "String"]
+- !private ["7Algebra23MultiplicativeSemigroupP", "abs"]
+- !private ["7Algebra23MultiplicativeSemigroupP", "assert"]
+- ["7Algebra23MultiplicativeSemigroupP", "denominator"]
+- ["7Algebra23MultiplicativeSemigroupP", "doubleValue"]
+- ["7Algebra23MultiplicativeSemigroupP", "floatValue"]
+- !private ["7Algebra23MultiplicativeSemigroupP", "gcd"]
+- !private ["7Algebra23MultiplicativeSemigroupP", "hashValue"]
+- ["7Algebra23MultiplicativeSemigroupP", "init"]
+- ["7Algebra23MultiplicativeSemigroupP", "inverse"]
+- ["7Algebra23MultiplicativeSemigroupP", "isReduced"]
+- !private ["7Algebra23MultiplicativeSemigroupP", "lcm"]
+- !private ["7Algebra23MultiplicativeSemigroupP", "map"]
+- ["7Algebra23MultiplicativeSemigroupP", "mutating"]
+- !private ["7Algebra23MultiplicativeSemigroupP", "normalized"]
+- ["7Algebra23MultiplicativeSemigroupP", "numerator"]
+- !private ["7Algebra23MultiplicativeSemigroupP", "reciprocal"]
+- ["7Algebra23MultiplicativeSemigroupP", "reduced"]
+- ["7Algebra23MultiplicativeSemigroupP", "scaling"]
+- !private ["7Algebra23MultiplicativeSemigroupP", "truncatingRemainder"]
+- !private ["So8NSCodingP", "init"]
+- !private ["So9NSCopyingP", "init"]
+- !private ["So21NSItemProviderReadingP", "init"]
+- !private ["So21NSItemProviderWritingP", "init"]
+- !private ["So16NSMutableCopyingP", "init"]
+- !private ["So16NSObjectProtocolP", "init"]
+- !private ["So14NSSecureCodingP", "init"]
+- !private ["So8NSStringC", "init"]
+- ["s7NumericP", "BinaryInteger"]
+- ["s7NumericP", "Bool"]
+- ["s7NumericP", "Double"]
+- ["s7NumericP", "Float"]
+- ["s7NumericP", "Int"]
+- ["s7NumericP", "Rational"]
+- ["s7NumericP", "Self"]
+- ["s7NumericP", "String"]
+- !private ["s7NumericP", "abs"]
+- !private ["s7NumericP", "assert"]
+- ["s7NumericP", "denominator"]
+- ["s7NumericP", "doubleValue"]
+- ["s7NumericP", "floatValue"]
+- !private ["s7NumericP", "gcd"]
+- !private ["s7NumericP", "hashValue"]
+- ["s7NumericP", "init"]
+- ["s7NumericP", "inverse"]
+- ["s7NumericP", "isReduced"]
+- !private ["s7NumericP", "lcm"]
+- !private ["s7NumericP", "map"]
+- ["s7NumericP", "mutating"]
+- !private ["s7NumericP", "normalized"]
+- ["s7NumericP", "numerator"]
+- !private ["s7NumericP", "reciprocal"]
+- ["s7NumericP", "reduced"]
+- ["s7NumericP", "scaling"]
+- !private ["s7NumericP", "truncatingRemainder"]
+- ["7Algebra3OneP", "BinaryInteger"]
+- ["7Algebra3OneP", "Bool"]
+- ["7Algebra3OneP", "Double"]
+- ["7Algebra3OneP", "Float"]
+- ["7Algebra3OneP", "Int"]
+- ["7Algebra3OneP", "Rational"]
+- ["7Algebra3OneP", "Self"]
+- ["7Algebra3OneP", "String"]
+- !private ["7Algebra3OneP", "abs"]
+- !private ["7Algebra3OneP", "assert"]
+- ["7Algebra3OneP", "denominator"]
+- ["7Algebra3OneP", "doubleValue"]
+- ["7Algebra3OneP", "floatValue"]
+- !private ["7Algebra3OneP", "gcd"]
+- !private ["7Algebra3OneP", "hashValue"]
+- ["7Algebra3OneP", "init"]
+- ["7Algebra3OneP", "inverse"]
+- ["7Algebra3OneP", "isReduced"]
+- !private ["7Algebra3OneP", "lcm"]
+- !private ["7Algebra3OneP", "map"]
+- ["7Algebra3OneP", "mutating"]
+- !private ["7Algebra3OneP", "normalized"]
+- ["7Algebra3OneP", "numerator"]
+- !private ["7Algebra3OneP", "reciprocal"]
+- ["7Algebra3OneP", "reduced"]
+- ["7Algebra3OneP", "scaling"]
+- !private ["7Algebra3OneP", "truncatingRemainder"]
+- !private ["4Math15RandomProducingP", "hashValue"]
+- !private ["4Math15RandomProducingP", "init"]
+- !private ["4Math15RandomProducingP", "truncatingRemainder"]
+- !private ["s26RangeReplaceableCollectionP", "init"]
+- ["4Math8RationalP", "*"]
+- ["4Math8RationalP", "*="]
+- ["4Math8RationalP", "+"]
+- ["4Math8RationalP", "+="]
+- ["4Math8RationalP", "-"]
+- ["4Math8RationalP", "-="]
+- ["4Math8RationalP", "/"]
+- ["4Math8RationalP", "/="]
+- ["4Math8RationalP", "<"]
+- ["4Math8RationalP", "=="]
+- ["4Math8RationalP", "BinaryInteger"]
+- ["4Math8RationalP", "Bool"]
+- ["4Math8RationalP", "Double"]
+- ["4Math8RationalP", "Float"]
+- ["4Math8RationalP", "Int"]
+- ["4Math8RationalP", "Rational"]
+- ["4Math8RationalP", "Self"]
+- ["4Math8RationalP", "String"]
+- !private ["4Math8RationalP", "abs"]
+- ["4Math8RationalP", "advanced"]
+- !private ["4Math8RationalP", "assert"]
+- ["4Math8RationalP", "denominator"]
+- ["4Math8RationalP", "description"]
+- ["4Math8RationalP", "distance"]
+- ["4Math8RationalP", "doubleValue"]
+- ["4Math8RationalP", "floatValue"]
+- !private ["4Math8RationalP", "gcd"]
+- ["4Math8RationalP", "hashValue"]
+- ["4Math8RationalP", "init"]
+- ["4Math8RationalP", "inverse"]
+- ["4Math8RationalP", "isReduced"]
+- !private ["4Math8RationalP", "lcm"]
+- ["4Math8RationalP", "magnitude"]
+- !private ["4Math8RationalP", "map"]
+- ["4Math8RationalP", "mutating"]
+- ["4Math8RationalP", "normalized"]
+- ["4Math8RationalP", "numerator"]
+- ["4Math8RationalP", "one"]
+- ["4Math8RationalP", "reciprocal"]
+- ["4Math8RationalP", "reduced"]
+- ["4Math8RationalP", "scaling"]
+- ["4Math8RationalP", "zero"]
+- !private ["s8SequenceP", "init"]
+- !private ["s13SignedIntegerP", "init"]
+- ["s13SignedNumericP", "BinaryInteger"]
+- ["s13SignedNumericP", "Bool"]
+- ["s13SignedNumericP", "Double"]
+- ["s13SignedNumericP", "Float"]
+- ["s13SignedNumericP", "Int"]
+- ["s13SignedNumericP", "Rational"]
+- ["s13SignedNumericP", "Self"]
+- ["s13SignedNumericP", "String"]
+- !private ["s13SignedNumericP", "abs"]
+- !private ["s13SignedNumericP", "assert"]
+- ["s13SignedNumericP", "denominator"]
+- ["s13SignedNumericP", "doubleValue"]
+- ["s13SignedNumericP", "floatValue"]
+- !private ["s13SignedNumericP", "gcd"]
+- !private ["s13SignedNumericP", "hashValue"]
+- ["s13SignedNumericP", "init"]
+- ["s13SignedNumericP", "inverse"]
+- ["s13SignedNumericP", "isReduced"]
+- !private ["s13SignedNumericP", "lcm"]
+- !private ["s13SignedNumericP", "map"]
+- ["s13SignedNumericP", "mutating"]
+- !private ["s13SignedNumericP", "normalized"]
+- ["s13SignedNumericP", "numerator"]
+- !private ["s13SignedNumericP", "reciprocal"]
+- ["s13SignedNumericP", "reduced"]
+- ["s13SignedNumericP", "scaling"]
+- !private ["s13SignedNumericP", "truncatingRemainder"]
+- ["s13SignedNumericP", ""]
+- !private ["s12StaticStringV", "init"]
+- ["s10StrideableP", "BinaryInteger"]
+- ["s10StrideableP", "Bool"]
+- ["s10StrideableP", "Double"]
+- ["s10StrideableP", "Float"]
+- ["s10StrideableP", "Int"]
+- ["s10StrideableP", "Rational"]
+- ["s10StrideableP", "Self"]
+- ["s10StrideableP", "String"]
+- !private ["s10StrideableP", "abs"]
+- !private ["s10StrideableP", "assert"]
+- ["s10StrideableP", "denominator"]
+- ["s10StrideableP", "doubleValue"]
+- ["s10StrideableP", "floatValue"]
+- !private ["s10StrideableP", "gcd"]
+- !private ["s10StrideableP", "hashValue"]
+- ["s10StrideableP", "init"]
+- ["s10StrideableP", "inverse"]
+- ["s10StrideableP", "isReduced"]
+- !private ["s10StrideableP", "lcm"]
+- !private ["s10StrideableP", "map"]
+- ["s10StrideableP", "mutating"]
+- !private ["s10StrideableP", "normalized"]
+- ["s10StrideableP", "numerator"]
+- !private ["s10StrideableP", "reciprocal"]
+- ["s10StrideableP", "reduced"]
+- ["s10StrideableP", "scaling"]
+- !private ["s10StrideableP", "truncatingRemainder"]
+- ["s10StrideableP", ""]
+- !private ["SS", "init"]
+- !private ["s14StringProtocolP", "init"]
+- !private ["s16TextOutputStreamP", "init"]
+- !private ["s20TextOutputStreamableP", "init"]
+- ["7Algebra4ZeroP", "BinaryInteger"]
+- ["7Algebra4ZeroP", "Bool"]
+- ["7Algebra4ZeroP", "Double"]
+- ["7Algebra4ZeroP", "Float"]
+- ["7Algebra4ZeroP", "Int"]
+- ["7Algebra4ZeroP", "Rational"]
+- ["7Algebra4ZeroP", "Self"]
+- ["7Algebra4ZeroP", "String"]
+- !private ["7Algebra4ZeroP", "abs"]
+- !private ["7Algebra4ZeroP", "assert"]
+- ["7Algebra4ZeroP", "denominator"]
+- ["7Algebra4ZeroP", "doubleValue"]
+- ["7Algebra4ZeroP", "floatValue"]
+- !private ["7Algebra4ZeroP", "gcd"]
+- !private ["7Algebra4ZeroP", "hashValue"]
+- ["7Algebra4ZeroP", "init"]
+- ["7Algebra4ZeroP", "inverse"]
+- ["7Algebra4ZeroP", "isReduced"]
+- !private ["7Algebra4ZeroP", "lcm"]
+- !private ["7Algebra4ZeroP", "map"]
+- ["7Algebra4ZeroP", "mutating"]
+- !private ["7Algebra4ZeroP", "normalized"]
+- ["7Algebra4ZeroP", "numerator"]
+- !private ["7Algebra4ZeroP", "reciprocal"]
+- ["7Algebra4ZeroP", "reduced"]
+- ["7Algebra4ZeroP", "scaling"]
+- !private ["7Algebra4ZeroP", "truncatingRemainder"]
+- !private ["s23_BidirectionalIndexableP", "init"]
+- !private ["s18_BitwiseOperationsP", "init"]
+- !private ["s15_CVarArgAlignedP", "hashValue"]
+- !private ["s15_CVarArgAlignedP", "init"]
+- !private ["s15_CVarArgAlignedP", "truncatingRemainder"]
+- !private ["s22_CVarArgPassedAsDoubleP", "hashValue"]
+- !private ["s22_CVarArgPassedAsDoubleP", "init"]
+- !private ["s22_CVarArgPassedAsDoubleP", "truncatingRemainder"]
+- !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s33_ExpressibleByBuiltinFloatLiteralP", "hashValue"]
+- !private ["s33_ExpressibleByBuiltinFloatLiteralP", "init"]
+- !private ["s33_ExpressibleByBuiltinFloatLiteralP", "truncatingRemainder"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "hashValue"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "truncatingRemainder"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s33_ExpressibleByStringInterpolationP", "init"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "init"]
+- !private ["s10_IndexableP", "init"]
+- !private ["s14_IndexableBaseP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
+- !private ["s21_ObjectiveCBridgeableP", "hashValue"]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "truncatingRemainder"]
+- !private ["s26_RangeReplaceableIndexableP", "init"]
+- ["s11_StrideableP", "BinaryInteger"]
+- ["s11_StrideableP", "Bool"]
+- ["s11_StrideableP", "Double"]
+- ["s11_StrideableP", "Float"]
+- ["s11_StrideableP", "Int"]
+- ["s11_StrideableP", "Rational"]
+- ["s11_StrideableP", "Self"]
+- ["s11_StrideableP", "String"]
+- !private ["s11_StrideableP", "abs"]
+- !private ["s11_StrideableP", "assert"]
+- ["s11_StrideableP", "denominator"]
+- ["s11_StrideableP", "doubleValue"]
+- ["s11_StrideableP", "floatValue"]
+- !private ["s11_StrideableP", "gcd"]
+- !private ["s11_StrideableP", "hashValue"]
+- ["s11_StrideableP", "init"]
+- ["s11_StrideableP", "inverse"]
+- ["s11_StrideableP", "isReduced"]
+- !private ["s11_StrideableP", "lcm"]
+- !private ["s11_StrideableP", "map"]
+- ["s11_StrideableP", "mutating"]
+- !private ["s11_StrideableP", "normalized"]
+- ["s11_StrideableP", "numerator"]
+- !private ["s11_StrideableP", "reciprocal"]
+- ["s11_StrideableP", "reduced"]
+- ["s11_StrideableP", "scaling"]
+- !private ["s11_StrideableP", "truncatingRemainder"]
+- !private ["s16_SwiftStringViewP", "init"]
+depends-nominal:
+- "7Algebra8AdditiveP"
+- "7Algebra17AdditiveSemigroupP"
+- !private "s23BidirectionalCollectionP"
+- !private "s19BinaryFloatingPointP"
+- !private "s13BinaryIntegerP"
+- !private "Sb"
+- !private "s7CVarArgP"
+- !private "s10CollectionP"
+- "s10ComparableP"
+- !private "s28CustomDebugStringConvertibleP"
+- !private "s29CustomPlaygroundQuickLookableP"
+- !private "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- !private "s9DecodableP"
+- !private "Sd"
+- !private "s9EncodableP"
+- "s9EquatableP"
+- !private "s27ExpressibleByBooleanLiteralP"
+- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s25ExpressibleByFloatLiteralP"
+- "s27ExpressibleByIntegerLiteralP"
+- !private "s26ExpressibleByStringLiteralP"
+- !private "s33ExpressibleByUnicodeScalarLiteralP"
+- !private "s17FixedWidthIntegerP"
+- !private "Sf"
+- !private "s13FloatingPointP"
+- "s8HashableP"
+- !private "Si"
+- !private "s25LosslessStringConvertibleP"
+- !private "s10MirrorPathP"
+- "7Algebra14MultiplicativeP"
+- "7Algebra23MultiplicativeSemigroupP"
+- !private "So8NSCodingP"
+- !private "So9NSCopyingP"
+- !private "So21NSItemProviderReadingP"
+- !private "So21NSItemProviderWritingP"
+- !private "So16NSMutableCopyingP"
+- !private "So16NSObjectProtocolP"
+- !private "So14NSSecureCodingP"
+- !private "So8NSStringC"
+- "s7NumericP"
+- "7Algebra3OneP"
+- !private "4Math15RandomProducingP"
+- !private "s26RangeReplaceableCollectionP"
+- "4Math8RationalP"
+- !private "s8SequenceP"
+- !private "s13SignedIntegerP"
+- "s13SignedNumericP"
+- !private "s12StaticStringV"
+- "s10StrideableP"
+- !private "SS"
+- !private "s14StringProtocolP"
+- !private "s16TextOutputStreamP"
+- !private "s20TextOutputStreamableP"
+- "7Algebra4ZeroP"
+- !private "s23_BidirectionalIndexableP"
+- !private "s18_BitwiseOperationsP"
+- !private "s15_CVarArgAlignedP"
+- !private "s22_CVarArgPassedAsDoubleP"
+- !private "s35_ExpressibleByBuiltinBooleanLiteralP"
+- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s33_ExpressibleByBuiltinFloatLiteralP"
+- !private "s35_ExpressibleByBuiltinIntegerLiteralP"
+- !private "s34_ExpressibleByBuiltinStringLiteralP"
+- !private "s39_ExpressibleByBuiltinUTF16StringLiteralP"
+- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- !private "s33_ExpressibleByStringInterpolationP"
+- !private "s35_HasCustomAnyHashableRepresentationP"
+- !private "s10_IndexableP"
+- !private "s14_IndexableBaseP"
+- !private "10Foundation27_KeyValueCodingAndObservingP"
+- !private "s21_ObjectiveCBridgeableP"
+- !private "s26_RangeReplaceableIndexableP"
+- "s11_StrideableP"
+- !private "s16_SwiftStringViewP"
+depends-dynamic-lookup:
+depends-external:
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.apinotesc"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
+- "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.swiftmodule"
+- "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Structure.swiftmodule"
+- "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Destructure.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Darwin.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Foundation.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreFoundation.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Swift.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+interface-hash: "1eb855a1dead8dd579b5a9e9527c85a9"

@@ -1,0 +1,97 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "ReferenceGraph"
+provides-nominal:
+- "14DataStructures14ReferenceGraphC"
+provides-member:
+- ["14DataStructures14ReferenceGraphC", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "+"
+- !private "??"
+- !private "Array"
+- "Float"
+- "ReferenceGraph"
+depends-member:
+- !private ["14DataStructures14ReferenceGraphC13AdjacencyListC", "addDirectedEdge"]
+- !private ["14DataStructures14ReferenceGraphC13AdjacencyListC", "addVertex"]
+- !private ["14DataStructures14ReferenceGraphC13AdjacencyListC", "deinit"]
+- ["14DataStructures14ReferenceGraphC13AdjacencyListC", "init"]
+- !private ["14DataStructures14ReferenceGraphC13AdjacencyListC", "reduce"]
+- !private ["14DataStructures14ReferenceGraphC13AdjacencyListC", "subscript"]
+- !private ["s10CollectionP", "addDirectedEdge"]
+- !private ["s10CollectionP", "addVertex"]
+- ["s10CollectionP", "init"]
+- !private ["s10CollectionP", "reduce"]
+- !private ["s10CollectionP", "subscript"]
+- !private ["17StructureWrapping010CollectionB0P", "addDirectedEdge"]
+- !private ["17StructureWrapping010CollectionB0P", "addVertex"]
+- ["17StructureWrapping010CollectionB0P", "init"]
+- !private ["17StructureWrapping010CollectionB0P", "reduce"]
+- !private ["17StructureWrapping010CollectionB0P", "subscript"]
+- !private ["14DataStructures14ReferenceGraphC8EdgeListC", "edges"]
+- !private ["14DataStructures14ReferenceGraphC8EdgeListC", "vertex"]
+- !private ["14DataStructures14ReferenceGraphC8EdgeListC", "weight"]
+- ["14DataStructures14ReferenceGraphC", "AdjacencyList"]
+- ["14DataStructures14ReferenceGraphC", "Edge"]
+- ["14DataStructures14ReferenceGraphC", "Float"]
+- ["14DataStructures14ReferenceGraphC", "Node"]
+- ["14DataStructures14ReferenceGraphC", "addDirectedEdge"]
+- ["14DataStructures14ReferenceGraphC", "addVertex"]
+- !private ["14DataStructures14ReferenceGraphC", "adjacencyList"]
+- ["14DataStructures14ReferenceGraphC", "deinit"]
+- ["14DataStructures14ReferenceGraphC", "edges"]
+- ["14DataStructures14ReferenceGraphC", "init"]
+- ["14DataStructures14ReferenceGraphC", "vertices"]
+- ["14DataStructures14ReferenceGraphC", "weight"]
+- !private ["s8SequenceP", "addDirectedEdge"]
+- !private ["s8SequenceP", "addVertex"]
+- ["s8SequenceP", "init"]
+- !private ["s8SequenceP", "reduce"]
+- !private ["s8SequenceP", "subscript"]
+- !private ["14DataStructures11SortedArrayV", "deinit"]
+- !private ["14DataStructures5StackV", "deinit"]
+- !private ["s10_IndexableP", "addDirectedEdge"]
+- !private ["s10_IndexableP", "addVertex"]
+- ["s10_IndexableP", "init"]
+- !private ["s10_IndexableP", "reduce"]
+- !private ["s10_IndexableP", "subscript"]
+- !private ["s14_IndexableBaseP", "addDirectedEdge"]
+- !private ["s14_IndexableBaseP", "addVertex"]
+- ["s14_IndexableBaseP", "init"]
+- !private ["s14_IndexableBaseP", "reduce"]
+- !private ["s14_IndexableBaseP", "subscript"]
+depends-nominal:
+- "14DataStructures14ReferenceGraphC13AdjacencyListC"
+- "s10CollectionP"
+- "17StructureWrapping010CollectionB0P"
+- !private "14DataStructures14ReferenceGraphC8EdgeListC"
+- "14DataStructures14ReferenceGraphC"
+- "s8SequenceP"
+- !private "14DataStructures11SortedArrayV"
+- !private "14DataStructures5StackV"
+- "s10_IndexableP"
+- "s14_IndexableBaseP"
+depends-dynamic-lookup:
+depends-external:
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.apinotesc"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
+- "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.swiftmodule"
+- "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Structure.swiftmodule"
+- "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Destructure.swiftmodule"
+- "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Restructure.swiftmodule"
+- "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/StructureWrapping.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.swiftmodule"
+- "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/DictionaryProtocol.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Darwin.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Foundation.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreFoundation.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Swift.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+interface-hash: "9a5ac9039bf652b535b7cc2804ec3fde"

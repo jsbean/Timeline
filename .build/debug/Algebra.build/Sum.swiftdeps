@@ -1,0 +1,72 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "Sum"
+- "<>"
+provides-nominal:
+- "7Algebra3SumV"
+provides-member:
+- ["7Algebra3SumV", ""]
+- ["7Algebra8AdditiveP", ""]
+- ["7Algebra8AdditiveP", "sum"]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "+"
+- "<>"
+- "Additive"
+- "AssignmentPrecedence"
+- "MonoidView"
+- "Sum"
+depends-member:
+- ["7Algebra8AdditiveP", "Self"]
+- ["7Algebra8AdditiveP", "Sum"]
+- ["7Algebra8AdditiveP", "sum"]
+- !private ["7Algebra8AdditiveP", "zero"]
+- ["7Algebra17AdditiveSemigroupP", "Self"]
+- ["7Algebra17AdditiveSemigroupP", "Sum"]
+- !private ["7Algebra17AdditiveSemigroupP", "zero"]
+- !private ["7Algebra6MonoidP", "Sum"]
+- !private ["7Algebra6MonoidP", "T"]
+- ["7Algebra6MonoidP", "Value"]
+- ["7Algebra6MonoidP", "identity"]
+- ["7Algebra6MonoidP", "init"]
+- ["7Algebra6MonoidP", "value"]
+- ["7Algebra6MonoidP", ""]
+- !private ["7Algebra10MonoidViewP", "Sum"]
+- !private ["7Algebra10MonoidViewP", "T"]
+- ["7Algebra10MonoidViewP", "Value"]
+- ["7Algebra10MonoidViewP", "identity"]
+- ["7Algebra10MonoidViewP", "init"]
+- ["7Algebra10MonoidViewP", "value"]
+- ["7Algebra10MonoidViewP", ""]
+- !private ["7Algebra9SemigroupP", "Sum"]
+- !private ["7Algebra9SemigroupP", "T"]
+- ["7Algebra9SemigroupP", "Value"]
+- ["7Algebra9SemigroupP", "identity"]
+- ["7Algebra9SemigroupP", "init"]
+- ["7Algebra9SemigroupP", "value"]
+- ["7Algebra9SemigroupP", ""]
+- ["7Algebra3SumV", "<>"]
+- ["7Algebra3SumV", "Sum"]
+- ["7Algebra3SumV", "T"]
+- ["7Algebra3SumV", "Value"]
+- ["7Algebra3SumV", "deinit"]
+- ["7Algebra3SumV", "identity"]
+- ["7Algebra3SumV", "init"]
+- ["7Algebra3SumV", "value"]
+- ["7Algebra4ZeroP", "Self"]
+- ["7Algebra4ZeroP", "Sum"]
+- !private ["7Algebra4ZeroP", "zero"]
+depends-nominal:
+- "7Algebra8AdditiveP"
+- "7Algebra17AdditiveSemigroupP"
+- "7Algebra6MonoidP"
+- "7Algebra10MonoidViewP"
+- "7Algebra9SemigroupP"
+- "7Algebra3SumV"
+- "7Algebra4ZeroP"
+depends-dynamic-lookup:
+depends-external:
+- "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Destructure.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Swift.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/SwiftOnoneSupport.swiftmodule"
+interface-hash: "fbfb37461c1d00dc310588647d91679b"

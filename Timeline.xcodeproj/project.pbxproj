@@ -6,816 +6,1934 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		"Timeline::TimelinePackageTests::ProductTarget" /* TimelinePackageTests */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = OBJ_324 /* Build configuration list for PBXAggregateTarget "TimelinePackageTests" */;
+			buildPhases = (
+			);
+			dependencies = (
+				OBJ_327 /* PBXTargetDependency */,
+			);
+			name = TimelinePackageTests;
+			productName = TimelinePackageTests;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
-		0733E9F51D1BE8F500FDDE97 /* TimelineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0733E9F41D1BE8F500FDDE97 /* TimelineTests.swift */; };
-		0733E9F61D1BE8F500FDDE97 /* TimelineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0733E9F41D1BE8F500FDDE97 /* TimelineTests.swift */; };
-		0744006D1E0DA00900E4F396 /* Collections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0744006C1E0DA00900E4F396 /* Collections.framework */; };
-		0744006F1E0DA01000E4F396 /* Collections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0744006E1E0DA01000E4F396 /* Collections.framework */; };
-		0747732B1EBBA02900F2CCA2 /* Timeline.Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0747732A1EBBA02900F2CCA2 /* Timeline.Timer.swift */; };
-		0747732C1EBBA02900F2CCA2 /* Timeline.Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0747732A1EBBA02900F2CCA2 /* Timeline.Timer.swift */; };
-		0747732E1EBBA59700F2CCA2 /* Timeline.Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0747732D1EBBA59700F2CCA2 /* Timeline.Clock.swift */; };
-		0747732F1EBBA59700F2CCA2 /* Timeline.Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0747732D1EBBA59700F2CCA2 /* Timeline.Clock.swift */; };
-		074773311EBBA5B300F2CCA2 /* Timeline.Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074773301EBBA5B300F2CCA2 /* Timeline.Schedule.swift */; };
-		074773321EBBA5B300F2CCA2 /* Timeline.Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074773301EBBA5B300F2CCA2 /* Timeline.Schedule.swift */; };
-		074B58121D2288AB00215565 /* Timeline.Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074B58111D2288AB00215565 /* Timeline.Action.swift */; };
-		074B58131D2288AB00215565 /* Timeline.Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074B58111D2288AB00215565 /* Timeline.Action.swift */; };
-		076D70211EB7F6C200F93CE8 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D70201EB7F6C200F93CE8 /* Timeline.swift */; };
-		076D70221EB7F6C200F93CE8 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D70201EB7F6C200F93CE8 /* Timeline.swift */; };
-		079D60371F2A6AA900AC83A5 /* Timeline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9280607A024DC801DF42E1 /* Timeline.framework */; };
-		079D60381F2A6AAB00AC83A5 /* Timeline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4735E26869726502F89506FC /* Timeline.framework */; };
-		07B53F651EBA7433008DB23A /* ScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B53F641EBA7433008DB23A /* ScheduleTests.swift */; };
-		07B53F661EBA7469008DB23A /* ScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B53F641EBA7433008DB23A /* ScheduleTests.swift */; };
-		07B68ABD1DCFEB0200FE8F59 /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B68ABC1DCFEB0200FE8F59 /* Duration.swift */; };
-		07B68ABE1DCFEB0200FE8F59 /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B68ABC1DCFEB0200FE8F59 /* Duration.swift */; };
-		07C3FD9D1E1AE3A8009F0565 /* Timeline.h in Headers */ = {isa = PBXBuildFile; fileRef = BA4AD68D0FB5C5FD2A9FA6ED /* Timeline.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4CDD7BB1493FFCC588FE8E74 /* ArithmeticTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5DCC098392100ECC36114D7 /* ArithmeticTools.framework */; };
-		5394053C63C1BC3EC26C9E30 /* Timeline.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E56B3E6B36991781F5BE132E /* Timeline.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		581414A189A131EC6CB6E7FC /* Timeline.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 58D632B9454ED0DEF3968D80 /* Timeline.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		59353C706578CAA37CF10214 /* ArithmeticTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 622FBF870B78DF5ABD85BACD /* ArithmeticTools.framework */; };
-		7E697FFB67A8CA0108A650CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38EA6D0B56F5E38C592E339D /* Foundation.framework */; };
-		D171022B32A91C5EEDFC38C9 /* Timeline.h in Headers */ = {isa = PBXBuildFile; fileRef = BA4AD68D0FB5C5FD2A9FA6ED /* Timeline.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D24FE8F637BE95FDC50421E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38EA6D0B56F5E38C592E339D /* Foundation.framework */; };
-		E843F5515BCA5C6999A01D21 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE2DCDE916A157D4548E230 /* Cocoa.framework */; };
-		EF5A0030C21E447070CE3636 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE2DCDE916A157D4548E230 /* Cocoa.framework */; };
+		OBJ_125 /* ScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* ScheduleTests.swift */; };
+		OBJ_126 /* TimelineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* TimelineTests.swift */; };
+		OBJ_128 /* Timeline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Timeline::Timeline::Product" /* Timeline.framework */; };
+		OBJ_129 /* Math.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Math::Math::Product" /* Math.framework */; };
+		OBJ_130 /* DataStructures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Structure::DataStructures::Product" /* DataStructures.framework */; };
+		OBJ_131 /* Structure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Structure::Structure::Product" /* Structure.framework */; };
+		OBJ_132 /* StructureWrapping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Structure::StructureWrapping::Product" /* StructureWrapping.framework */; };
+		OBJ_133 /* DictionaryProtocol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Structure::DictionaryProtocol::Product" /* DictionaryProtocol.framework */; };
+		OBJ_134 /* Restructure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Structure::Restructure::Product" /* Restructure.framework */; };
+		OBJ_135 /* Algebra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Structure::Algebra::Product" /* Algebra.framework */; };
+		OBJ_136 /* Destructure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Structure::Destructure::Product" /* Destructure.framework */; };
+		OBJ_159 /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* Duration.swift */; };
+		OBJ_160 /* Timeline.Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* Timeline.Action.swift */; };
+		OBJ_161 /* Timeline.Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* Timeline.Clock.swift */; };
+		OBJ_162 /* Timeline.Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* Timeline.Schedule.swift */; };
+		OBJ_163 /* Timeline.Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* Timeline.Timer.swift */; };
+		OBJ_164 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* Timeline.swift */; };
+		OBJ_166 /* Math.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Math::Math::Product" /* Math.framework */; };
+		OBJ_167 /* DataStructures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Structure::DataStructures::Product" /* DataStructures.framework */; };
+		OBJ_168 /* Structure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Structure::Structure::Product" /* Structure.framework */; };
+		OBJ_169 /* StructureWrapping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Structure::StructureWrapping::Product" /* StructureWrapping.framework */; };
+		OBJ_170 /* DictionaryProtocol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Structure::DictionaryProtocol::Product" /* DictionaryProtocol.framework */; };
+		OBJ_171 /* Restructure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Structure::Restructure::Product" /* Restructure.framework */; };
+		OBJ_172 /* Algebra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Structure::Algebra::Product" /* Algebra.framework */; };
+		OBJ_173 /* Destructure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Structure::Destructure::Product" /* Destructure.framework */; };
+		OBJ_186 /* BidirectionalCollectionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* BidirectionalCollectionExtensions.swift */; };
+		OBJ_187 /* BinaryFloatingPointExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* BinaryFloatingPointExtensions.swift */; };
+		OBJ_188 /* DoubleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* DoubleExtensions.swift */; };
+		OBJ_189 /* Fraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* Fraction.swift */; };
+		OBJ_190 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* Functions.swift */; };
+		OBJ_191 /* GCDDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_29 /* GCDDomain.swift */; };
+		OBJ_192 /* IntegerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* IntegerExtensions.swift */; };
+		OBJ_193 /* IntervalRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* IntervalRelation.swift */; };
+		OBJ_194 /* LinearRegression.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* LinearRegression.swift */; };
+		OBJ_195 /* Power.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* Power.swift */; };
+		OBJ_196 /* PowerGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* PowerGenerator.swift */; };
+		OBJ_197 /* PowerSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* PowerSequence.swift */; };
+		OBJ_198 /* Quadratic.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* Quadratic.swift */; };
+		OBJ_199 /* RandomProducing.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_37 /* RandomProducing.swift */; };
+		OBJ_200 /* RangeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_38 /* RangeProtocol.swift */; };
+		OBJ_201 /* Rational.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_39 /* Rational.swift */; };
+		OBJ_202 /* StringFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_40 /* StringFormatting.swift */; };
+		OBJ_203 /* Vector2.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_41 /* Vector2.swift */; };
+		OBJ_205 /* Structure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Structure::Structure::Product" /* Structure.framework */; };
+		OBJ_206 /* Algebra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Structure::Algebra::Product" /* Algebra.framework */; };
+		OBJ_207 /* Destructure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Structure::Destructure::Product" /* Destructure.framework */; };
+		OBJ_215 /* CircularArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_92 /* CircularArray.swift */; };
+		OBJ_216 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_93 /* LinkedList.swift */; };
+		OBJ_217 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_94 /* Matrix.swift */; };
+		OBJ_218 /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_95 /* OrderedDictionary.swift */; };
+		OBJ_219 /* ReferenceGraph.AdjacencyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_96 /* ReferenceGraph.AdjacencyList.swift */; };
+		OBJ_220 /* ReferenceGraph.Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_97 /* ReferenceGraph.Edge.swift */; };
+		OBJ_221 /* ReferenceGraph.EdgeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_98 /* ReferenceGraph.EdgeList.swift */; };
+		OBJ_222 /* ReferenceGraph.Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_99 /* ReferenceGraph.Node.swift */; };
+		OBJ_223 /* ReferenceGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_100 /* ReferenceGraph.swift */; };
+		OBJ_224 /* ReferenceTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_101 /* ReferenceTree.swift */; };
+		OBJ_225 /* ReferenceTreeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_102 /* ReferenceTreeProtocol.swift */; };
+		OBJ_226 /* SingleTypedTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_103 /* SingleTypedTree.swift */; };
+		OBJ_227 /* SortedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_104 /* SortedArray.swift */; };
+		OBJ_228 /* SortedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_105 /* SortedDictionary.swift */; };
+		OBJ_229 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_106 /* Stack.swift */; };
+		OBJ_230 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_107 /* Tree.swift */; };
+		OBJ_231 /* Zip3Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_108 /* Zip3Sequence.swift */; };
+		OBJ_233 /* Structure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Structure::Structure::Product" /* Structure.framework */; };
+		OBJ_234 /* StructureWrapping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Structure::StructureWrapping::Product" /* StructureWrapping.framework */; };
+		OBJ_235 /* DictionaryProtocol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Structure::DictionaryProtocol::Product" /* DictionaryProtocol.framework */; };
+		OBJ_236 /* Restructure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Structure::Restructure::Product" /* Restructure.framework */; };
+		OBJ_237 /* Algebra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Structure::Algebra::Product" /* Algebra.framework */; };
+		OBJ_238 /* Destructure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Structure::Destructure::Product" /* Destructure.framework */; };
+		OBJ_249 /* ArrayError.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_70 /* ArrayError.swift */; };
+		OBJ_250 /* Bitwise.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_71 /* Bitwise.swift */; };
+		OBJ_251 /* Combinations.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_72 /* Combinations.swift */; };
+		OBJ_252 /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_73 /* Either.swift */; };
+		OBJ_253 /* ElementsAtIndices.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_74 /* ElementsAtIndices.swift */; };
+		OBJ_254 /* InvertibleOptionSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_75 /* InvertibleOptionSet.swift */; };
+		OBJ_255 /* Pairs.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_76 /* Pairs.swift */; };
+		OBJ_256 /* PatternMatching.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_77 /* PatternMatching.swift */; };
+		OBJ_257 /* Predicates.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_78 /* Predicates.swift */; };
+		OBJ_258 /* RawRepresentable+AllCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_79 /* RawRepresentable+AllCases.swift */; };
+		OBJ_259 /* RawRepresentable+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_80 /* RawRepresentable+Comparable.swift */; };
+		OBJ_260 /* RawRepresentable+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_81 /* RawRepresentable+Equatable.swift */; };
+		OBJ_261 /* RemoveElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_82 /* RemoveElements.swift */; };
+		OBJ_262 /* ReplaceElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_83 /* ReplaceElements.swift */; };
+		OBJ_263 /* Split.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_84 /* Split.swift */; };
+		OBJ_264 /* StableSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_85 /* StableSort.swift */; };
+		OBJ_265 /* Subsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_86 /* Subsets.swift */; };
+		OBJ_266 /* Swap.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_87 /* Swap.swift */; };
+		OBJ_267 /* TupleMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_88 /* TupleMap.swift */; };
+		OBJ_269 /* Algebra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Structure::Algebra::Product" /* Algebra.framework */; };
+		OBJ_270 /* Destructure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Structure::Destructure::Product" /* Destructure.framework */; };
+		OBJ_277 /* CollectionWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_46 /* CollectionWrapping.swift */; };
+		OBJ_278 /* DoubleWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_47 /* DoubleWrapping.swift */; };
+		OBJ_279 /* FloatWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_48 /* FloatWrapping.swift */; };
+		OBJ_280 /* IntegerWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_49 /* IntegerWrapping.swift */; };
+		OBJ_281 /* RandomAccessCollectionWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_50 /* RandomAccessCollectionWrapping.swift */; };
+		OBJ_282 /* SequenceWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_51 /* SequenceWrapping.swift */; };
+		OBJ_283 /* SortedCollectionWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_52 /* SortedCollectionWrapping.swift */; };
+		OBJ_289 /* DictionaryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_44 /* DictionaryProtocol.swift */; };
+		OBJ_295 /* Restructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_90 /* Restructure.swift */; };
+		OBJ_301 /* Accumulate.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_56 /* Accumulate.swift */; };
+		OBJ_302 /* Additive.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_57 /* Additive.swift */; };
+		OBJ_303 /* AdditiveSemigroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_58 /* AdditiveSemigroup.swift */; };
+		OBJ_304 /* AlgebraAdapters.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_59 /* AlgebraAdapters.swift */; };
+		OBJ_305 /* Monoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_60 /* Monoid.swift */; };
+		OBJ_306 /* MonoidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_61 /* MonoidView.swift */; };
+		OBJ_307 /* Multiplicative.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_62 /* Multiplicative.swift */; };
+		OBJ_308 /* MultiplicativeSemigroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_63 /* MultiplicativeSemigroup.swift */; };
+		OBJ_309 /* One.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_64 /* One.swift */; };
+		OBJ_310 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_65 /* Product.swift */; };
+		OBJ_311 /* Semigroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_66 /* Semigroup.swift */; };
+		OBJ_312 /* Sum.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_67 /* Sum.swift */; };
+		OBJ_313 /* Zero.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_68 /* Zero.swift */; };
+		OBJ_315 /* Destructure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Structure::Destructure::Product" /* Destructure.framework */; };
+		OBJ_321 /* Destructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_54 /* Destructure.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		41EAB7C6F668123C66A1A8F7 /* PBXContainerItemProxy */ = {
+		07887C4C1F3281A200D6D66B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 4A99D6D2F8DB297EFC459775 /* Project object */;
+			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 91DC8A44B3CAFBAB4BF3BCCC;
-			remoteInfo = TimelineMac;
+			remoteGlobalIDString = "Math::Math";
+			remoteInfo = Math;
 		};
-		FCFDD3CE43833F2D8A5F9202 /* PBXContainerItemProxy */ = {
+		07887C4D1F3281A200D6D66B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 4A99D6D2F8DB297EFC459775 /* Project object */;
+			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F99F563D5A6BE18CD5DCC426;
+			remoteGlobalIDString = "Structure::Structure";
+			remoteInfo = Structure;
+		};
+		07887C4E1F3281A200D6D66B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Structure::Algebra";
+			remoteInfo = Algebra;
+		};
+		07887C4F1F3281A200D6D66B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Structure::Destructure";
+			remoteInfo = Destructure;
+		};
+		07887C501F3281A200D6D66B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Structure::Destructure";
+			remoteInfo = Destructure;
+		};
+		07887C511F3281A200D6D66B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Structure::Algebra";
+			remoteInfo = Algebra;
+		};
+		07887C521F3281A200D6D66B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Structure::Destructure";
+			remoteInfo = Destructure;
+		};
+		07887C531F3281A200D6D66B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Structure::DataStructures";
+			remoteInfo = DataStructures;
+		};
+		07887C541F3281A200D6D66B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Structure::Structure";
+			remoteInfo = Structure;
+		};
+		07887C551F3281A200D6D66B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Structure::StructureWrapping";
+			remoteInfo = StructureWrapping;
+		};
+		07887C561F3281A200D6D66B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Structure::DictionaryProtocol";
+			remoteInfo = DictionaryProtocol;
+		};
+		07887C571F3281A200D6D66B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Structure::Restructure";
+			remoteInfo = Restructure;
+		};
+		07887C581F3281A200D6D66B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Structure::Algebra";
+			remoteInfo = Algebra;
+		};
+		07887C591F3281A200D6D66B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Structure::Destructure";
+			remoteInfo = Destructure;
+		};
+		07887C5A1F3281A200D6D66B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Structure::Structure";
+			remoteInfo = Structure;
+		};
+		07887C5B1F3281A200D6D66B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Structure::StructureWrapping";
+			remoteInfo = StructureWrapping;
+		};
+		07887C5C1F3281A200D6D66B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Structure::DictionaryProtocol";
+			remoteInfo = DictionaryProtocol;
+		};
+		07887C5D1F3281A200D6D66B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Structure::Restructure";
+			remoteInfo = Restructure;
+		};
+		07887C5E1F3281A200D6D66B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Structure::Algebra";
+			remoteInfo = Algebra;
+		};
+		07887C5F1F3281A200D6D66B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Structure::Destructure";
+			remoteInfo = Destructure;
+		};
+		07887C601F3281A200D6D66B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Timeline::Timeline";
 			remoteInfo = Timeline;
+		};
+		07887C611F3281A200D6D66B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Math::Math";
+			remoteInfo = Math;
+		};
+		07887C621F3281A200D6D66B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Structure::DataStructures";
+			remoteInfo = DataStructures;
+		};
+		07887C631F3281A200D6D66B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Structure::Structure";
+			remoteInfo = Structure;
+		};
+		07887C641F3281A200D6D66B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Structure::StructureWrapping";
+			remoteInfo = StructureWrapping;
+		};
+		07887C651F3281A200D6D66B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Structure::DictionaryProtocol";
+			remoteInfo = DictionaryProtocol;
+		};
+		07887C661F3281A200D6D66B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Structure::Restructure";
+			remoteInfo = Restructure;
+		};
+		07887C671F3281A200D6D66B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Structure::Algebra";
+			remoteInfo = Algebra;
+		};
+		07887C681F3281A200D6D66B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Structure::Destructure";
+			remoteInfo = Destructure;
+		};
+		07887C691F3281A200D6D66B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Timeline::TimelineTests";
+			remoteInfo = TimelineTests;
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		DD1A1A7AB977F27AD053054F /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 7;
-			files = (
-				5394053C63C1BC3EC26C9E30 /* Timeline.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F567A06A56238FC4067B46BA /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 8;
-			dstPath = "";
-			dstSubfolderSpec = 7;
-			files = (
-				581414A189A131EC6CB6E7FC /* Timeline.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		0733E9F41D1BE8F500FDDE97 /* TimelineTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimelineTests.swift; path = TimelineTests/TimelineTests.swift; sourceTree = "<group>"; };
-		0744006C1E0DA00900E4F396 /* Collections.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Collections.framework; path = Carthage/Build/iOS/Collections.framework; sourceTree = "<group>"; };
-		0744006E1E0DA01000E4F396 /* Collections.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Collections.framework; path = Carthage/Build/Mac/Collections.framework; sourceTree = "<group>"; };
-		0747732A1EBBA02900F2CCA2 /* Timeline.Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Timeline.Timer.swift; path = Timeline/Timeline.Timer.swift; sourceTree = "<group>"; };
-		0747732D1EBBA59700F2CCA2 /* Timeline.Clock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Timeline.Clock.swift; path = Timeline/Timeline.Clock.swift; sourceTree = "<group>"; };
-		074773301EBBA5B300F2CCA2 /* Timeline.Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Timeline.Schedule.swift; path = Timeline/Timeline.Schedule.swift; sourceTree = "<group>"; };
-		074B58111D2288AB00215565 /* Timeline.Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Timeline.Action.swift; path = Timeline/Timeline.Action.swift; sourceTree = "<group>"; };
-		076D70201EB7F6C200F93CE8 /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Timeline/Timeline.swift; sourceTree = "<group>"; };
-		07B53F641EBA7433008DB23A /* ScheduleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleTests.swift; path = TimelineTests/ScheduleTests.swift; sourceTree = "<group>"; };
-		07B68ABC1DCFEB0200FE8F59 /* Duration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Duration.swift; path = Timeline/Duration.swift; sourceTree = "<group>"; };
-		2A9280607A024DC801DF42E1 /* Timeline.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Timeline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3675DA15B3B3792DDF613132 /* Timeline iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Timeline iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		38EA6D0B56F5E38C592E339D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		4735E26869726502F89506FC /* Timeline.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Timeline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		56930B4347FDC8471FF87BA7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = TimelineTests/Info.plist; sourceTree = "<group>"; };
-		58D632B9454ED0DEF3968D80 /* Timeline.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; path = Timeline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		622FBF870B78DF5ABD85BACD /* ArithmeticTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ArithmeticTools.framework; path = Carthage/Build/iOS/ArithmeticTools.framework; sourceTree = "<group>"; };
-		63EA99BBD7D15C3F63874AD5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = Timeline/Info.plist; sourceTree = "<group>"; };
-		8EF4EDB20FD2A919E1969C8A /* Timeline macOS Test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Timeline macOS Test.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B5DCC098392100ECC36114D7 /* ArithmeticTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ArithmeticTools.framework; path = Carthage/Build/Mac/ArithmeticTools.framework; sourceTree = "<group>"; };
-		BA4AD68D0FB5C5FD2A9FA6ED /* Timeline.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Timeline.h; path = Timeline/Timeline.h; sourceTree = "<group>"; };
-		E56B3E6B36991781F5BE132E /* Timeline.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; path = Timeline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FDE2DCDE916A157D4548E230 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		"Math::Math::Product" /* Math.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Math.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_10 /* Timeline.Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeline.Action.swift; sourceTree = "<group>"; };
+		OBJ_100 /* ReferenceGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceGraph.swift; sourceTree = "<group>"; };
+		OBJ_101 /* ReferenceTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceTree.swift; sourceTree = "<group>"; };
+		OBJ_102 /* ReferenceTreeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceTreeProtocol.swift; sourceTree = "<group>"; };
+		OBJ_103 /* SingleTypedTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTypedTree.swift; sourceTree = "<group>"; };
+		OBJ_104 /* SortedArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortedArray.swift; sourceTree = "<group>"; };
+		OBJ_105 /* SortedDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortedDictionary.swift; sourceTree = "<group>"; };
+		OBJ_106 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		OBJ_107 /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
+		OBJ_108 /* Zip3Sequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zip3Sequence.swift; sourceTree = "<group>"; };
+		OBJ_11 /* Timeline.Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeline.Clock.swift; sourceTree = "<group>"; };
+		OBJ_12 /* Timeline.Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeline.Schedule.swift; sourceTree = "<group>"; };
+		OBJ_13 /* Timeline.Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeline.Timer.swift; sourceTree = "<group>"; };
+		OBJ_14 /* Timeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
+		OBJ_17 /* ScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTests.swift; sourceTree = "<group>"; };
+		OBJ_18 /* TimelineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineTests.swift; sourceTree = "<group>"; };
+		OBJ_19 /* Timeline */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Timeline; sourceTree = SOURCE_ROOT; };
+		OBJ_20 /* TimelineTests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TimelineTests; sourceTree = SOURCE_ROOT; };
+		OBJ_24 /* BidirectionalCollectionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidirectionalCollectionExtensions.swift; sourceTree = "<group>"; };
+		OBJ_25 /* BinaryFloatingPointExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryFloatingPointExtensions.swift; sourceTree = "<group>"; };
+		OBJ_26 /* DoubleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtensions.swift; sourceTree = "<group>"; };
+		OBJ_27 /* Fraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fraction.swift; sourceTree = "<group>"; };
+		OBJ_28 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		OBJ_29 /* GCDDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDDomain.swift; sourceTree = "<group>"; };
+		OBJ_30 /* IntegerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegerExtensions.swift; sourceTree = "<group>"; };
+		OBJ_31 /* IntervalRelation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalRelation.swift; sourceTree = "<group>"; };
+		OBJ_32 /* LinearRegression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearRegression.swift; sourceTree = "<group>"; };
+		OBJ_33 /* Power.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Power.swift; sourceTree = "<group>"; };
+		OBJ_34 /* PowerGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerGenerator.swift; sourceTree = "<group>"; };
+		OBJ_35 /* PowerSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerSequence.swift; sourceTree = "<group>"; };
+		OBJ_36 /* Quadratic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quadratic.swift; sourceTree = "<group>"; };
+		OBJ_37 /* RandomProducing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomProducing.swift; sourceTree = "<group>"; };
+		OBJ_38 /* RangeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeProtocol.swift; sourceTree = "<group>"; };
+		OBJ_39 /* Rational.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rational.swift; sourceTree = "<group>"; };
+		OBJ_40 /* StringFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFormatting.swift; sourceTree = "<group>"; };
+		OBJ_41 /* Vector2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vector2.swift; sourceTree = "<group>"; };
+		OBJ_44 /* DictionaryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryProtocol.swift; sourceTree = "<group>"; };
+		OBJ_46 /* CollectionWrapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionWrapping.swift; sourceTree = "<group>"; };
+		OBJ_47 /* DoubleWrapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleWrapping.swift; sourceTree = "<group>"; };
+		OBJ_48 /* FloatWrapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatWrapping.swift; sourceTree = "<group>"; };
+		OBJ_49 /* IntegerWrapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegerWrapping.swift; sourceTree = "<group>"; };
+		OBJ_50 /* RandomAccessCollectionWrapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomAccessCollectionWrapping.swift; sourceTree = "<group>"; };
+		OBJ_51 /* SequenceWrapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceWrapping.swift; sourceTree = "<group>"; };
+		OBJ_52 /* SortedCollectionWrapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortedCollectionWrapping.swift; sourceTree = "<group>"; };
+		OBJ_54 /* Destructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destructure.swift; sourceTree = "<group>"; };
+		OBJ_56 /* Accumulate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accumulate.swift; sourceTree = "<group>"; };
+		OBJ_57 /* Additive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Additive.swift; sourceTree = "<group>"; };
+		OBJ_58 /* AdditiveSemigroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditiveSemigroup.swift; sourceTree = "<group>"; };
+		OBJ_59 /* AlgebraAdapters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgebraAdapters.swift; sourceTree = "<group>"; };
+		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		OBJ_60 /* Monoid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monoid.swift; sourceTree = "<group>"; };
+		OBJ_61 /* MonoidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonoidView.swift; sourceTree = "<group>"; };
+		OBJ_62 /* Multiplicative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multiplicative.swift; sourceTree = "<group>"; };
+		OBJ_63 /* MultiplicativeSemigroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplicativeSemigroup.swift; sourceTree = "<group>"; };
+		OBJ_64 /* One.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = One.swift; sourceTree = "<group>"; };
+		OBJ_65 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		OBJ_66 /* Semigroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Semigroup.swift; sourceTree = "<group>"; };
+		OBJ_67 /* Sum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sum.swift; sourceTree = "<group>"; };
+		OBJ_68 /* Zero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zero.swift; sourceTree = "<group>"; };
+		OBJ_70 /* ArrayError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayError.swift; sourceTree = "<group>"; };
+		OBJ_71 /* Bitwise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitwise.swift; sourceTree = "<group>"; };
+		OBJ_72 /* Combinations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Combinations.swift; sourceTree = "<group>"; };
+		OBJ_73 /* Either.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Either.swift; sourceTree = "<group>"; };
+		OBJ_74 /* ElementsAtIndices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementsAtIndices.swift; sourceTree = "<group>"; };
+		OBJ_75 /* InvertibleOptionSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvertibleOptionSet.swift; sourceTree = "<group>"; };
+		OBJ_76 /* Pairs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pairs.swift; sourceTree = "<group>"; };
+		OBJ_77 /* PatternMatching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternMatching.swift; sourceTree = "<group>"; };
+		OBJ_78 /* Predicates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Predicates.swift; sourceTree = "<group>"; };
+		OBJ_79 /* RawRepresentable+AllCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RawRepresentable+AllCases.swift"; sourceTree = "<group>"; };
+		OBJ_80 /* RawRepresentable+Comparable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RawRepresentable+Comparable.swift"; sourceTree = "<group>"; };
+		OBJ_81 /* RawRepresentable+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RawRepresentable+Equatable.swift"; sourceTree = "<group>"; };
+		OBJ_82 /* RemoveElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveElements.swift; sourceTree = "<group>"; };
+		OBJ_83 /* ReplaceElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplaceElements.swift; sourceTree = "<group>"; };
+		OBJ_84 /* Split.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Split.swift; sourceTree = "<group>"; };
+		OBJ_85 /* StableSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StableSort.swift; sourceTree = "<group>"; };
+		OBJ_86 /* Subsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subsets.swift; sourceTree = "<group>"; };
+		OBJ_87 /* Swap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swap.swift; sourceTree = "<group>"; };
+		OBJ_88 /* TupleMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TupleMap.swift; sourceTree = "<group>"; };
+		OBJ_9 /* Duration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Duration.swift; sourceTree = "<group>"; };
+		OBJ_90 /* Restructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restructure.swift; sourceTree = "<group>"; };
+		OBJ_92 /* CircularArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularArray.swift; sourceTree = "<group>"; };
+		OBJ_93 /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
+		OBJ_94 /* Matrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
+		OBJ_95 /* OrderedDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedDictionary.swift; sourceTree = "<group>"; };
+		OBJ_96 /* ReferenceGraph.AdjacencyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceGraph.AdjacencyList.swift; sourceTree = "<group>"; };
+		OBJ_97 /* ReferenceGraph.Edge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceGraph.Edge.swift; sourceTree = "<group>"; };
+		OBJ_98 /* ReferenceGraph.EdgeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceGraph.EdgeList.swift; sourceTree = "<group>"; };
+		OBJ_99 /* ReferenceGraph.Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceGraph.Node.swift; sourceTree = "<group>"; };
+		"Structure::Algebra::Product" /* Algebra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Algebra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"Structure::DataStructures::Product" /* DataStructures.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DataStructures.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"Structure::Destructure::Product" /* Destructure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Destructure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"Structure::DictionaryProtocol::Product" /* DictionaryProtocol.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DictionaryProtocol.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"Structure::Restructure::Product" /* Restructure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Restructure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"Structure::Structure::Product" /* Structure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Structure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"Structure::StructureWrapping::Product" /* StructureWrapping.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = StructureWrapping.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"Timeline::Timeline::Product" /* Timeline.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Timeline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"Timeline::TimelineTests::Product" /* TimelineTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = TimelineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		14F3EAAC58C0FD506AC01AE1 /* Frameworks */ = {
+		OBJ_127 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 0;
 			files = (
-				7E697FFB67A8CA0108A650CB /* Foundation.framework in Frameworks */,
-				59353C706578CAA37CF10214 /* ArithmeticTools.framework in Frameworks */,
-				0744006D1E0DA00900E4F396 /* Collections.framework in Frameworks */,
+				OBJ_128 /* Timeline.framework in Frameworks */,
+				OBJ_129 /* Math.framework in Frameworks */,
+				OBJ_130 /* DataStructures.framework in Frameworks */,
+				OBJ_131 /* Structure.framework in Frameworks */,
+				OBJ_132 /* StructureWrapping.framework in Frameworks */,
+				OBJ_133 /* DictionaryProtocol.framework in Frameworks */,
+				OBJ_134 /* Restructure.framework in Frameworks */,
+				OBJ_135 /* Algebra.framework in Frameworks */,
+				OBJ_136 /* Destructure.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		80FA5A82C4C74F64C5D06C84 /* Frameworks */ = {
+		OBJ_165 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 0;
 			files = (
-				D24FE8F637BE95FDC50421E2 /* Foundation.framework in Frameworks */,
-				079D60371F2A6AA900AC83A5 /* Timeline.framework in Frameworks */,
+				OBJ_166 /* Math.framework in Frameworks */,
+				OBJ_167 /* DataStructures.framework in Frameworks */,
+				OBJ_168 /* Structure.framework in Frameworks */,
+				OBJ_169 /* StructureWrapping.framework in Frameworks */,
+				OBJ_170 /* DictionaryProtocol.framework in Frameworks */,
+				OBJ_171 /* Restructure.framework in Frameworks */,
+				OBJ_172 /* Algebra.framework in Frameworks */,
+				OBJ_173 /* Destructure.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CC7DB75BF9CA8A1BFAC4C12F /* Frameworks */ = {
+		OBJ_204 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 0;
 			files = (
-				E843F5515BCA5C6999A01D21 /* Cocoa.framework in Frameworks */,
-				4CDD7BB1493FFCC588FE8E74 /* ArithmeticTools.framework in Frameworks */,
-				0744006F1E0DA01000E4F396 /* Collections.framework in Frameworks */,
+				OBJ_205 /* Structure.framework in Frameworks */,
+				OBJ_206 /* Algebra.framework in Frameworks */,
+				OBJ_207 /* Destructure.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E5DF93615C31A98996EB2795 /* Frameworks */ = {
+		OBJ_232 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 0;
 			files = (
-				EF5A0030C21E447070CE3636 /* Cocoa.framework in Frameworks */,
-				079D60381F2A6AAB00AC83A5 /* Timeline.framework in Frameworks */,
+				OBJ_233 /* Structure.framework in Frameworks */,
+				OBJ_234 /* StructureWrapping.framework in Frameworks */,
+				OBJ_235 /* DictionaryProtocol.framework in Frameworks */,
+				OBJ_236 /* Restructure.framework in Frameworks */,
+				OBJ_237 /* Algebra.framework in Frameworks */,
+				OBJ_238 /* Destructure.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_268 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_269 /* Algebra.framework in Frameworks */,
+				OBJ_270 /* Destructure.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_284 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_290 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_296 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_314 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_315 /* Destructure.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_322 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0BF6F038AF440276489097F1 /* Timeline */ = {
+		OBJ_109 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				07B68ABC1DCFEB0200FE8F59 /* Duration.swift */,
-				076D70201EB7F6C200F93CE8 /* Timeline.swift */,
-				0747732D1EBBA59700F2CCA2 /* Timeline.Clock.swift */,
-				0747732A1EBBA02900F2CCA2 /* Timeline.Timer.swift */,
-				074773301EBBA5B300F2CCA2 /* Timeline.Schedule.swift */,
-				074B58111D2288AB00215565 /* Timeline.Action.swift */,
-				B3EF3CD3DD68C6E9E54C7872 /* Supporting Files */,
-			);
-			name = Timeline;
-			sourceTree = "<group>";
-		};
-		157BB81D22389E654416FFE4 = {
-			isa = PBXGroup;
-			children = (
-				DC9C949DCB9CEDA477C0F9F5 /* Products */,
-				2F67EF2E29126066FF1872B3 /* Frameworks */,
-				0BF6F038AF440276489097F1 /* Timeline */,
-				A0CE11A8EA7A9198261C6706 /* TimelineTests */,
-				BA4AD68D0FB5C5FD2A9FA6ED /* Timeline.h */,
-			);
-			sourceTree = "<group>";
-		};
-		2F67EF2E29126066FF1872B3 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B51E3FF6D5B5964859CE478E /* iOS */,
-				CBECDB1B3A8E5DB5B9335762 /* OS X */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		A0CE11A8EA7A9198261C6706 /* TimelineTests */ = {
-			isa = PBXGroup;
-			children = (
-				D4AB9B42FB308D95002C7F3C /* Supporting Files */,
-				0733E9F41D1BE8F500FDDE97 /* TimelineTests.swift */,
-				07B53F641EBA7433008DB23A /* ScheduleTests.swift */,
-			);
-			name = TimelineTests;
-			sourceTree = "<group>";
-		};
-		B3EF3CD3DD68C6E9E54C7872 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				63EA99BBD7D15C3F63874AD5 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		B51E3FF6D5B5964859CE478E /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				38EA6D0B56F5E38C592E339D /* Foundation.framework */,
-				0744006C1E0DA00900E4F396 /* Collections.framework */,
-				622FBF870B78DF5ABD85BACD /* ArithmeticTools.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		CBECDB1B3A8E5DB5B9335762 /* OS X */ = {
-			isa = PBXGroup;
-			children = (
-				FDE2DCDE916A157D4548E230 /* Cocoa.framework */,
-				0744006E1E0DA01000E4F396 /* Collections.framework */,
-				B5DCC098392100ECC36114D7 /* ArithmeticTools.framework */,
-			);
-			name = "OS X";
-			sourceTree = "<group>";
-		};
-		D4AB9B42FB308D95002C7F3C /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				56930B4347FDC8471FF87BA7 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		DC9C949DCB9CEDA477C0F9F5 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				2A9280607A024DC801DF42E1 /* Timeline.framework */,
-				3675DA15B3B3792DDF613132 /* Timeline iOS Tests.xctest */,
-				4735E26869726502F89506FC /* Timeline.framework */,
-				8EF4EDB20FD2A919E1969C8A /* Timeline macOS Test.xctest */,
+				"Timeline::TimelineTests::Product" /* TimelineTests.xctest */,
+				"Timeline::Timeline::Product" /* Timeline.framework */,
+				"Math::Math::Product" /* Math.framework */,
+				"Structure::DataStructures::Product" /* DataStructures.framework */,
+				"Structure::Structure::Product" /* Structure.framework */,
+				"Structure::StructureWrapping::Product" /* StructureWrapping.framework */,
+				"Structure::DictionaryProtocol::Product" /* DictionaryProtocol.framework */,
+				"Structure::Restructure::Product" /* Restructure.framework */,
+				"Structure::Algebra::Product" /* Algebra.framework */,
+				"Structure::Destructure::Product" /* Destructure.framework */,
 			);
 			name = Products;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		OBJ_15 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_16 /* TimelineTests */,
+			);
+			name = Tests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_16 /* TimelineTests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_17 /* ScheduleTests.swift */,
+				OBJ_18 /* TimelineTests.swift */,
+			);
+			name = TimelineTests;
+			path = Tests/TimelineTests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_21 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_22 /* Math */,
+				OBJ_42 /* Structure */,
+			);
+			name = Dependencies;
 			sourceTree = "<group>";
+		};
+		OBJ_22 /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_23 /* Math */,
+			);
+			name = Math;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_23 /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_24 /* BidirectionalCollectionExtensions.swift */,
+				OBJ_25 /* BinaryFloatingPointExtensions.swift */,
+				OBJ_26 /* DoubleExtensions.swift */,
+				OBJ_27 /* Fraction.swift */,
+				OBJ_28 /* Functions.swift */,
+				OBJ_29 /* GCDDomain.swift */,
+				OBJ_30 /* IntegerExtensions.swift */,
+				OBJ_31 /* IntervalRelation.swift */,
+				OBJ_32 /* LinearRegression.swift */,
+				OBJ_33 /* Power.swift */,
+				OBJ_34 /* PowerGenerator.swift */,
+				OBJ_35 /* PowerSequence.swift */,
+				OBJ_36 /* Quadratic.swift */,
+				OBJ_37 /* RandomProducing.swift */,
+				OBJ_38 /* RangeProtocol.swift */,
+				OBJ_39 /* Rational.swift */,
+				OBJ_40 /* StringFormatting.swift */,
+				OBJ_41 /* Vector2.swift */,
+			);
+			name = Math;
+			path = ".build/checkouts/Math-1188503097632687626/Sources/Math";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_42 /* Structure */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_43 /* DictionaryProtocol */,
+				OBJ_45 /* StructureWrapping */,
+				OBJ_53 /* Destructure */,
+				OBJ_55 /* Algebra */,
+				OBJ_69 /* Structure */,
+				OBJ_89 /* Restructure */,
+				OBJ_91 /* DataStructures */,
+			);
+			name = Structure;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_43 /* DictionaryProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_44 /* DictionaryProtocol.swift */,
+			);
+			name = DictionaryProtocol;
+			path = ".build/checkouts/Structure--7247618097682469052/Sources/DictionaryProtocol";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_45 /* StructureWrapping */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_46 /* CollectionWrapping.swift */,
+				OBJ_47 /* DoubleWrapping.swift */,
+				OBJ_48 /* FloatWrapping.swift */,
+				OBJ_49 /* IntegerWrapping.swift */,
+				OBJ_50 /* RandomAccessCollectionWrapping.swift */,
+				OBJ_51 /* SequenceWrapping.swift */,
+				OBJ_52 /* SortedCollectionWrapping.swift */,
+			);
+			name = StructureWrapping;
+			path = ".build/checkouts/Structure--7247618097682469052/Sources/StructureWrapping";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_5 /*  */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_6 /* Package.swift */,
+				OBJ_7 /* Sources */,
+				OBJ_15 /* Tests */,
+				OBJ_19 /* Timeline */,
+				OBJ_20 /* TimelineTests */,
+				OBJ_21 /* Dependencies */,
+				OBJ_109 /* Products */,
+			);
+			name = "";
+			sourceTree = "<group>";
+		};
+		OBJ_53 /* Destructure */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_54 /* Destructure.swift */,
+			);
+			name = Destructure;
+			path = ".build/checkouts/Structure--7247618097682469052/Sources/Destructure";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_55 /* Algebra */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_56 /* Accumulate.swift */,
+				OBJ_57 /* Additive.swift */,
+				OBJ_58 /* AdditiveSemigroup.swift */,
+				OBJ_59 /* AlgebraAdapters.swift */,
+				OBJ_60 /* Monoid.swift */,
+				OBJ_61 /* MonoidView.swift */,
+				OBJ_62 /* Multiplicative.swift */,
+				OBJ_63 /* MultiplicativeSemigroup.swift */,
+				OBJ_64 /* One.swift */,
+				OBJ_65 /* Product.swift */,
+				OBJ_66 /* Semigroup.swift */,
+				OBJ_67 /* Sum.swift */,
+				OBJ_68 /* Zero.swift */,
+			);
+			name = Algebra;
+			path = ".build/checkouts/Structure--7247618097682469052/Sources/Algebra";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_69 /* Structure */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_70 /* ArrayError.swift */,
+				OBJ_71 /* Bitwise.swift */,
+				OBJ_72 /* Combinations.swift */,
+				OBJ_73 /* Either.swift */,
+				OBJ_74 /* ElementsAtIndices.swift */,
+				OBJ_75 /* InvertibleOptionSet.swift */,
+				OBJ_76 /* Pairs.swift */,
+				OBJ_77 /* PatternMatching.swift */,
+				OBJ_78 /* Predicates.swift */,
+				OBJ_79 /* RawRepresentable+AllCases.swift */,
+				OBJ_80 /* RawRepresentable+Comparable.swift */,
+				OBJ_81 /* RawRepresentable+Equatable.swift */,
+				OBJ_82 /* RemoveElements.swift */,
+				OBJ_83 /* ReplaceElements.swift */,
+				OBJ_84 /* Split.swift */,
+				OBJ_85 /* StableSort.swift */,
+				OBJ_86 /* Subsets.swift */,
+				OBJ_87 /* Swap.swift */,
+				OBJ_88 /* TupleMap.swift */,
+			);
+			name = Structure;
+			path = ".build/checkouts/Structure--7247618097682469052/Sources/Structure";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_8 /* Timeline */,
+			);
+			name = Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_8 /* Timeline */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_9 /* Duration.swift */,
+				OBJ_10 /* Timeline.Action.swift */,
+				OBJ_11 /* Timeline.Clock.swift */,
+				OBJ_12 /* Timeline.Schedule.swift */,
+				OBJ_13 /* Timeline.Timer.swift */,
+				OBJ_14 /* Timeline.swift */,
+			);
+			name = Timeline;
+			path = Sources/Timeline;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_89 /* Restructure */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_90 /* Restructure.swift */,
+			);
+			name = Restructure;
+			path = ".build/checkouts/Structure--7247618097682469052/Sources/Restructure";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_91 /* DataStructures */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_92 /* CircularArray.swift */,
+				OBJ_93 /* LinkedList.swift */,
+				OBJ_94 /* Matrix.swift */,
+				OBJ_95 /* OrderedDictionary.swift */,
+				OBJ_96 /* ReferenceGraph.AdjacencyList.swift */,
+				OBJ_97 /* ReferenceGraph.Edge.swift */,
+				OBJ_98 /* ReferenceGraph.EdgeList.swift */,
+				OBJ_99 /* ReferenceGraph.Node.swift */,
+				OBJ_100 /* ReferenceGraph.swift */,
+				OBJ_101 /* ReferenceTree.swift */,
+				OBJ_102 /* ReferenceTreeProtocol.swift */,
+				OBJ_103 /* SingleTypedTree.swift */,
+				OBJ_104 /* SortedArray.swift */,
+				OBJ_105 /* SortedDictionary.swift */,
+				OBJ_106 /* Stack.swift */,
+				OBJ_107 /* Tree.swift */,
+				OBJ_108 /* Zip3Sequence.swift */,
+			);
+			name = DataStructures;
+			path = ".build/checkouts/Structure--7247618097682469052/Sources/DataStructures";
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		07C3FD9C1E1AE39E009F0565 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				07C3FD9D1E1AE3A8009F0565 /* Timeline.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5980498FCF4D7E44F0CA0C60 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D171022B32A91C5EEDFC38C9 /* Timeline.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		77449C31C17575342EC4CE77 /* Timeline iOS Tests */ = {
+		"Math::Math" /* Math */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A6A8899128D31378BC6FC6AF /* Build configuration list for PBXNativeTarget "Timeline iOS Tests" */;
+			buildConfigurationList = OBJ_182 /* Build configuration list for PBXNativeTarget "Math" */;
 			buildPhases = (
-				CFAB3D37FDF052EDF5C5CF2E /* Sources */,
-				80FA5A82C4C74F64C5D06C84 /* Frameworks */,
-				F567A06A56238FC4067B46BA /* CopyFiles */,
-				07F63AA51D208B3700C7FB22 /* ShellScript */,
+				OBJ_185 /* Sources */,
+				OBJ_204 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				6989F088527272CE7DA6CB01 /* PBXTargetDependency */,
+				OBJ_208 /* PBXTargetDependency */,
+				OBJ_209 /* PBXTargetDependency */,
+				OBJ_210 /* PBXTargetDependency */,
 			);
-			name = "Timeline iOS Tests";
-			productName = TimelineTests;
-			productReference = 3675DA15B3B3792DDF613132 /* Timeline iOS Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		91DC8A44B3CAFBAB4BF3BCCC /* Timeline macOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 17D46468DB366F4E1328FF37 /* Build configuration list for PBXNativeTarget "Timeline macOS" */;
-			buildPhases = (
-				81104746972437C172793470 /* Sources */,
-				CC7DB75BF9CA8A1BFAC4C12F /* Frameworks */,
-				5980498FCF4D7E44F0CA0C60 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Timeline macOS";
-			productName = TimelineMac;
-			productReference = 4735E26869726502F89506FC /* Timeline.framework */;
+			name = Math;
+			productName = Math;
+			productReference = "Math::Math::Product" /* Math.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		B5BE519D2E9E8F4B1B24439B /* Timeline macOS Test */ = {
+		"Structure::Algebra" /* Algebra */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3F0D221676875B3C75C00BF8 /* Build configuration list for PBXNativeTarget "Timeline macOS Test" */;
+			buildConfigurationList = OBJ_297 /* Build configuration list for PBXNativeTarget "Algebra" */;
 			buildPhases = (
-				83084EEE15161FB760381C76 /* Sources */,
-				E5DF93615C31A98996EB2795 /* Frameworks */,
-				DD1A1A7AB977F27AD053054F /* CopyFiles */,
-				075EA8F01D327BD8007963C0 /* ShellScript */,
+				OBJ_300 /* Sources */,
+				OBJ_314 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				417D7EABC63770B7210FB698 /* PBXTargetDependency */,
+				OBJ_316 /* PBXTargetDependency */,
 			);
-			name = "Timeline macOS Test";
-			productName = TimelineMacTests;
-			productReference = 8EF4EDB20FD2A919E1969C8A /* Timeline macOS Test.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
+			name = Algebra;
+			productName = Algebra;
+			productReference = "Structure::Algebra::Product" /* Algebra.framework */;
+			productType = "com.apple.product-type.framework";
 		};
-		F99F563D5A6BE18CD5DCC426 /* Timeline iOS */ = {
+		"Structure::DataStructures" /* DataStructures */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AB9F6A6EB980518B65F2DA34 /* Build configuration list for PBXNativeTarget "Timeline iOS" */;
+			buildConfigurationList = OBJ_211 /* Build configuration list for PBXNativeTarget "DataStructures" */;
 			buildPhases = (
-				12CC7479DFE9A481B2BF6D39 /* Sources */,
-				14F3EAAC58C0FD506AC01AE1 /* Frameworks */,
-				07C3FD9C1E1AE39E009F0565 /* Headers */,
+				OBJ_214 /* Sources */,
+				OBJ_232 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_239 /* PBXTargetDependency */,
+				OBJ_240 /* PBXTargetDependency */,
+				OBJ_241 /* PBXTargetDependency */,
+				OBJ_242 /* PBXTargetDependency */,
+				OBJ_243 /* PBXTargetDependency */,
+				OBJ_244 /* PBXTargetDependency */,
+			);
+			name = DataStructures;
+			productName = DataStructures;
+			productReference = "Structure::DataStructures::Product" /* DataStructures.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"Structure::Destructure" /* Destructure */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_317 /* Build configuration list for PBXNativeTarget "Destructure" */;
+			buildPhases = (
+				OBJ_320 /* Sources */,
+				OBJ_322 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Timeline iOS";
+			name = Destructure;
+			productName = Destructure;
+			productReference = "Structure::Destructure::Product" /* Destructure.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"Structure::DictionaryProtocol" /* DictionaryProtocol */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_285 /* Build configuration list for PBXNativeTarget "DictionaryProtocol" */;
+			buildPhases = (
+				OBJ_288 /* Sources */,
+				OBJ_290 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DictionaryProtocol;
+			productName = DictionaryProtocol;
+			productReference = "Structure::DictionaryProtocol::Product" /* DictionaryProtocol.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"Structure::Restructure" /* Restructure */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_291 /* Build configuration list for PBXNativeTarget "Restructure" */;
+			buildPhases = (
+				OBJ_294 /* Sources */,
+				OBJ_296 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Restructure;
+			productName = Restructure;
+			productReference = "Structure::Restructure::Product" /* Restructure.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"Structure::Structure" /* Structure */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_245 /* Build configuration list for PBXNativeTarget "Structure" */;
+			buildPhases = (
+				OBJ_248 /* Sources */,
+				OBJ_268 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_271 /* PBXTargetDependency */,
+				OBJ_272 /* PBXTargetDependency */,
+			);
+			name = Structure;
+			productName = Structure;
+			productReference = "Structure::Structure::Product" /* Structure.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"Structure::StructureWrapping" /* StructureWrapping */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_273 /* Build configuration list for PBXNativeTarget "StructureWrapping" */;
+			buildPhases = (
+				OBJ_276 /* Sources */,
+				OBJ_284 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StructureWrapping;
+			productName = StructureWrapping;
+			productReference = "Structure::StructureWrapping::Product" /* StructureWrapping.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"Timeline::Timeline" /* Timeline */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_155 /* Build configuration list for PBXNativeTarget "Timeline" */;
+			buildPhases = (
+				OBJ_158 /* Sources */,
+				OBJ_165 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_174 /* PBXTargetDependency */,
+				OBJ_175 /* PBXTargetDependency */,
+				OBJ_176 /* PBXTargetDependency */,
+				OBJ_177 /* PBXTargetDependency */,
+				OBJ_178 /* PBXTargetDependency */,
+				OBJ_179 /* PBXTargetDependency */,
+				OBJ_180 /* PBXTargetDependency */,
+				OBJ_181 /* PBXTargetDependency */,
+			);
+			name = Timeline;
 			productName = Timeline;
-			productReference = 2A9280607A024DC801DF42E1 /* Timeline.framework */;
+			productReference = "Timeline::Timeline::Product" /* Timeline.framework */;
 			productType = "com.apple.product-type.framework";
+		};
+		"Timeline::TimelineTests" /* TimelineTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_121 /* Build configuration list for PBXNativeTarget "TimelineTests" */;
+			buildPhases = (
+				OBJ_124 /* Sources */,
+				OBJ_127 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_137 /* PBXTargetDependency */,
+				OBJ_139 /* PBXTargetDependency */,
+				OBJ_141 /* PBXTargetDependency */,
+				OBJ_143 /* PBXTargetDependency */,
+				OBJ_145 /* PBXTargetDependency */,
+				OBJ_147 /* PBXTargetDependency */,
+				OBJ_149 /* PBXTargetDependency */,
+				OBJ_151 /* PBXTargetDependency */,
+				OBJ_153 /* PBXTargetDependency */,
+			);
+			name = TimelineTests;
+			productName = TimelineTests;
+			productReference = "Timeline::TimelineTests::Product" /* TimelineTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		4A99D6D2F8DB297EFC459775 /* Project object */ = {
+		OBJ_1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0820;
-				TargetAttributes = {
-					91DC8A44B3CAFBAB4BF3BCCC = {
-						LastSwiftMigration = 0800;
-					};
-					B5BE519D2E9E8F4B1B24439B = {
-						LastSwiftMigration = 0800;
-					};
-					F99F563D5A6BE18CD5DCC426 = {
-						ProvisioningStyle = Automatic;
-					};
-				};
+				LastUpgradeCheck = 9999;
 			};
-			buildConfigurationList = B9159D5F45EAF69BA89F3659 /* Build configuration list for PBXProject "Timeline" */;
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "Timeline" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 157BB81D22389E654416FFE4;
-			productRefGroup = DC9C949DCB9CEDA477C0F9F5 /* Products */;
+			mainGroup = OBJ_5 /*  */;
+			productRefGroup = OBJ_109 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F99F563D5A6BE18CD5DCC426 /* Timeline iOS */,
-				77449C31C17575342EC4CE77 /* Timeline iOS Tests */,
-				91DC8A44B3CAFBAB4BF3BCCC /* Timeline macOS */,
-				B5BE519D2E9E8F4B1B24439B /* Timeline macOS Test */,
+				"Timeline::TimelineTests" /* TimelineTests */,
+				"Timeline::Timeline" /* Timeline */,
+				"Math::Math" /* Math */,
+				"Structure::DataStructures" /* DataStructures */,
+				"Structure::Structure" /* Structure */,
+				"Structure::StructureWrapping" /* StructureWrapping */,
+				"Structure::DictionaryProtocol" /* DictionaryProtocol */,
+				"Structure::Restructure" /* Restructure */,
+				"Structure::Algebra" /* Algebra */,
+				"Structure::Destructure" /* Destructure */,
+				"Timeline::TimelinePackageTests::ProductTarget" /* TimelinePackageTests */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		075EA8F01D327BD8007963C0 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/Mac/ArithmeticTools.framework",
-				"$(SRCROOT)/Carthage/Build/Mac/Collections.framework",
-				"$(SRCROOT)/Carthage/Build/Mac/Algebra.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-		07F63AA51D208B3700C7FB22 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/ArithmeticTools.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Collections.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Algebra.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		12CC7479DFE9A481B2BF6D39 /* Sources */ = {
+		OBJ_124 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 0;
 			files = (
-				074773311EBBA5B300F2CCA2 /* Timeline.Schedule.swift in Sources */,
-				076D70211EB7F6C200F93CE8 /* Timeline.swift in Sources */,
-				07B68ABD1DCFEB0200FE8F59 /* Duration.swift in Sources */,
-				0747732E1EBBA59700F2CCA2 /* Timeline.Clock.swift in Sources */,
-				0747732B1EBBA02900F2CCA2 /* Timeline.Timer.swift in Sources */,
-				074B58121D2288AB00215565 /* Timeline.Action.swift in Sources */,
+				OBJ_125 /* ScheduleTests.swift in Sources */,
+				OBJ_126 /* TimelineTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		81104746972437C172793470 /* Sources */ = {
+		OBJ_158 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 0;
 			files = (
-				074773321EBBA5B300F2CCA2 /* Timeline.Schedule.swift in Sources */,
-				076D70221EB7F6C200F93CE8 /* Timeline.swift in Sources */,
-				07B68ABE1DCFEB0200FE8F59 /* Duration.swift in Sources */,
-				0747732F1EBBA59700F2CCA2 /* Timeline.Clock.swift in Sources */,
-				0747732C1EBBA02900F2CCA2 /* Timeline.Timer.swift in Sources */,
-				074B58131D2288AB00215565 /* Timeline.Action.swift in Sources */,
+				OBJ_159 /* Duration.swift in Sources */,
+				OBJ_160 /* Timeline.Action.swift in Sources */,
+				OBJ_161 /* Timeline.Clock.swift in Sources */,
+				OBJ_162 /* Timeline.Schedule.swift in Sources */,
+				OBJ_163 /* Timeline.Timer.swift in Sources */,
+				OBJ_164 /* Timeline.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		83084EEE15161FB760381C76 /* Sources */ = {
+		OBJ_185 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 0;
 			files = (
-				07B53F661EBA7469008DB23A /* ScheduleTests.swift in Sources */,
-				0733E9F61D1BE8F500FDDE97 /* TimelineTests.swift in Sources */,
+				OBJ_186 /* BidirectionalCollectionExtensions.swift in Sources */,
+				OBJ_187 /* BinaryFloatingPointExtensions.swift in Sources */,
+				OBJ_188 /* DoubleExtensions.swift in Sources */,
+				OBJ_189 /* Fraction.swift in Sources */,
+				OBJ_190 /* Functions.swift in Sources */,
+				OBJ_191 /* GCDDomain.swift in Sources */,
+				OBJ_192 /* IntegerExtensions.swift in Sources */,
+				OBJ_193 /* IntervalRelation.swift in Sources */,
+				OBJ_194 /* LinearRegression.swift in Sources */,
+				OBJ_195 /* Power.swift in Sources */,
+				OBJ_196 /* PowerGenerator.swift in Sources */,
+				OBJ_197 /* PowerSequence.swift in Sources */,
+				OBJ_198 /* Quadratic.swift in Sources */,
+				OBJ_199 /* RandomProducing.swift in Sources */,
+				OBJ_200 /* RangeProtocol.swift in Sources */,
+				OBJ_201 /* Rational.swift in Sources */,
+				OBJ_202 /* StringFormatting.swift in Sources */,
+				OBJ_203 /* Vector2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CFAB3D37FDF052EDF5C5CF2E /* Sources */ = {
+		OBJ_214 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 0;
 			files = (
-				07B53F651EBA7433008DB23A /* ScheduleTests.swift in Sources */,
-				0733E9F51D1BE8F500FDDE97 /* TimelineTests.swift in Sources */,
+				OBJ_215 /* CircularArray.swift in Sources */,
+				OBJ_216 /* LinkedList.swift in Sources */,
+				OBJ_217 /* Matrix.swift in Sources */,
+				OBJ_218 /* OrderedDictionary.swift in Sources */,
+				OBJ_219 /* ReferenceGraph.AdjacencyList.swift in Sources */,
+				OBJ_220 /* ReferenceGraph.Edge.swift in Sources */,
+				OBJ_221 /* ReferenceGraph.EdgeList.swift in Sources */,
+				OBJ_222 /* ReferenceGraph.Node.swift in Sources */,
+				OBJ_223 /* ReferenceGraph.swift in Sources */,
+				OBJ_224 /* ReferenceTree.swift in Sources */,
+				OBJ_225 /* ReferenceTreeProtocol.swift in Sources */,
+				OBJ_226 /* SingleTypedTree.swift in Sources */,
+				OBJ_227 /* SortedArray.swift in Sources */,
+				OBJ_228 /* SortedDictionary.swift in Sources */,
+				OBJ_229 /* Stack.swift in Sources */,
+				OBJ_230 /* Tree.swift in Sources */,
+				OBJ_231 /* Zip3Sequence.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_248 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_249 /* ArrayError.swift in Sources */,
+				OBJ_250 /* Bitwise.swift in Sources */,
+				OBJ_251 /* Combinations.swift in Sources */,
+				OBJ_252 /* Either.swift in Sources */,
+				OBJ_253 /* ElementsAtIndices.swift in Sources */,
+				OBJ_254 /* InvertibleOptionSet.swift in Sources */,
+				OBJ_255 /* Pairs.swift in Sources */,
+				OBJ_256 /* PatternMatching.swift in Sources */,
+				OBJ_257 /* Predicates.swift in Sources */,
+				OBJ_258 /* RawRepresentable+AllCases.swift in Sources */,
+				OBJ_259 /* RawRepresentable+Comparable.swift in Sources */,
+				OBJ_260 /* RawRepresentable+Equatable.swift in Sources */,
+				OBJ_261 /* RemoveElements.swift in Sources */,
+				OBJ_262 /* ReplaceElements.swift in Sources */,
+				OBJ_263 /* Split.swift in Sources */,
+				OBJ_264 /* StableSort.swift in Sources */,
+				OBJ_265 /* Subsets.swift in Sources */,
+				OBJ_266 /* Swap.swift in Sources */,
+				OBJ_267 /* TupleMap.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_276 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_277 /* CollectionWrapping.swift in Sources */,
+				OBJ_278 /* DoubleWrapping.swift in Sources */,
+				OBJ_279 /* FloatWrapping.swift in Sources */,
+				OBJ_280 /* IntegerWrapping.swift in Sources */,
+				OBJ_281 /* RandomAccessCollectionWrapping.swift in Sources */,
+				OBJ_282 /* SequenceWrapping.swift in Sources */,
+				OBJ_283 /* SortedCollectionWrapping.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_288 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_289 /* DictionaryProtocol.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_294 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_295 /* Restructure.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_300 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_301 /* Accumulate.swift in Sources */,
+				OBJ_302 /* Additive.swift in Sources */,
+				OBJ_303 /* AdditiveSemigroup.swift in Sources */,
+				OBJ_304 /* AlgebraAdapters.swift in Sources */,
+				OBJ_305 /* Monoid.swift in Sources */,
+				OBJ_306 /* MonoidView.swift in Sources */,
+				OBJ_307 /* Multiplicative.swift in Sources */,
+				OBJ_308 /* MultiplicativeSemigroup.swift in Sources */,
+				OBJ_309 /* One.swift in Sources */,
+				OBJ_310 /* Product.swift in Sources */,
+				OBJ_311 /* Semigroup.swift in Sources */,
+				OBJ_312 /* Sum.swift in Sources */,
+				OBJ_313 /* Zero.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_320 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_321 /* Destructure.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		417D7EABC63770B7210FB698 /* PBXTargetDependency */ = {
+		OBJ_137 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = TimelineMac;
-			target = 91DC8A44B3CAFBAB4BF3BCCC /* Timeline macOS */;
-			targetProxy = 41EAB7C6F668123C66A1A8F7 /* PBXContainerItemProxy */;
+			target = "Timeline::Timeline" /* Timeline */;
+			targetProxy = 07887C601F3281A200D6D66B /* PBXContainerItemProxy */;
 		};
-		6989F088527272CE7DA6CB01 /* PBXTargetDependency */ = {
+		OBJ_139 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Timeline;
-			target = F99F563D5A6BE18CD5DCC426 /* Timeline iOS */;
-			targetProxy = FCFDD3CE43833F2D8A5F9202 /* PBXContainerItemProxy */;
+			target = "Math::Math" /* Math */;
+			targetProxy = 07887C611F3281A200D6D66B /* PBXContainerItemProxy */;
+		};
+		OBJ_141 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Structure::DataStructures" /* DataStructures */;
+			targetProxy = 07887C621F3281A200D6D66B /* PBXContainerItemProxy */;
+		};
+		OBJ_143 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Structure::Structure" /* Structure */;
+			targetProxy = 07887C631F3281A200D6D66B /* PBXContainerItemProxy */;
+		};
+		OBJ_145 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Structure::StructureWrapping" /* StructureWrapping */;
+			targetProxy = 07887C641F3281A200D6D66B /* PBXContainerItemProxy */;
+		};
+		OBJ_147 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Structure::DictionaryProtocol" /* DictionaryProtocol */;
+			targetProxy = 07887C651F3281A200D6D66B /* PBXContainerItemProxy */;
+		};
+		OBJ_149 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Structure::Restructure" /* Restructure */;
+			targetProxy = 07887C661F3281A200D6D66B /* PBXContainerItemProxy */;
+		};
+		OBJ_151 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Structure::Algebra" /* Algebra */;
+			targetProxy = 07887C671F3281A200D6D66B /* PBXContainerItemProxy */;
+		};
+		OBJ_153 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Structure::Destructure" /* Destructure */;
+			targetProxy = 07887C681F3281A200D6D66B /* PBXContainerItemProxy */;
+		};
+		OBJ_174 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Math::Math" /* Math */;
+			targetProxy = 07887C4C1F3281A200D6D66B /* PBXContainerItemProxy */;
+		};
+		OBJ_175 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Structure::DataStructures" /* DataStructures */;
+			targetProxy = 07887C531F3281A200D6D66B /* PBXContainerItemProxy */;
+		};
+		OBJ_176 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Structure::Structure" /* Structure */;
+			targetProxy = 07887C5A1F3281A200D6D66B /* PBXContainerItemProxy */;
+		};
+		OBJ_177 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Structure::StructureWrapping" /* StructureWrapping */;
+			targetProxy = 07887C5B1F3281A200D6D66B /* PBXContainerItemProxy */;
+		};
+		OBJ_178 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Structure::DictionaryProtocol" /* DictionaryProtocol */;
+			targetProxy = 07887C5C1F3281A200D6D66B /* PBXContainerItemProxy */;
+		};
+		OBJ_179 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Structure::Restructure" /* Restructure */;
+			targetProxy = 07887C5D1F3281A200D6D66B /* PBXContainerItemProxy */;
+		};
+		OBJ_180 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Structure::Algebra" /* Algebra */;
+			targetProxy = 07887C5E1F3281A200D6D66B /* PBXContainerItemProxy */;
+		};
+		OBJ_181 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Structure::Destructure" /* Destructure */;
+			targetProxy = 07887C5F1F3281A200D6D66B /* PBXContainerItemProxy */;
+		};
+		OBJ_208 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Structure::Structure" /* Structure */;
+			targetProxy = 07887C4D1F3281A200D6D66B /* PBXContainerItemProxy */;
+		};
+		OBJ_209 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Structure::Algebra" /* Algebra */;
+			targetProxy = 07887C511F3281A200D6D66B /* PBXContainerItemProxy */;
+		};
+		OBJ_210 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Structure::Destructure" /* Destructure */;
+			targetProxy = 07887C521F3281A200D6D66B /* PBXContainerItemProxy */;
+		};
+		OBJ_239 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Structure::Structure" /* Structure */;
+			targetProxy = 07887C541F3281A200D6D66B /* PBXContainerItemProxy */;
+		};
+		OBJ_240 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Structure::StructureWrapping" /* StructureWrapping */;
+			targetProxy = 07887C551F3281A200D6D66B /* PBXContainerItemProxy */;
+		};
+		OBJ_241 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Structure::DictionaryProtocol" /* DictionaryProtocol */;
+			targetProxy = 07887C561F3281A200D6D66B /* PBXContainerItemProxy */;
+		};
+		OBJ_242 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Structure::Restructure" /* Restructure */;
+			targetProxy = 07887C571F3281A200D6D66B /* PBXContainerItemProxy */;
+		};
+		OBJ_243 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Structure::Algebra" /* Algebra */;
+			targetProxy = 07887C581F3281A200D6D66B /* PBXContainerItemProxy */;
+		};
+		OBJ_244 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Structure::Destructure" /* Destructure */;
+			targetProxy = 07887C591F3281A200D6D66B /* PBXContainerItemProxy */;
+		};
+		OBJ_271 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Structure::Algebra" /* Algebra */;
+			targetProxy = 07887C4E1F3281A200D6D66B /* PBXContainerItemProxy */;
+		};
+		OBJ_272 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Structure::Destructure" /* Destructure */;
+			targetProxy = 07887C501F3281A200D6D66B /* PBXContainerItemProxy */;
+		};
+		OBJ_316 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Structure::Destructure" /* Destructure */;
+			targetProxy = 07887C4F1F3281A200D6D66B /* PBXContainerItemProxy */;
+		};
+		OBJ_327 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Timeline::TimelineTests" /* TimelineTests */;
+			targetProxy = 07887C691F3281A200D6D66B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		031F3269F1F2BF4D53600E9D /* Release */ = {
+		OBJ_122 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CLANG_ENABLE_MODULES = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
-				INFOPLIST_FILE = TimelineTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(PROJECT_DIR)/Carthage/Build/Mac";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
-		05911DDF3FCB479957F538FB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CLANG_ENABLE_MODULES = YES;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = TimelineTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
-		060032DB7D44A112AC82B8B4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SRCROOT)/Carthage/Build/Mac",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
-				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = Timeline/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bean.Timeline;
-				PRODUCT_NAME = Timeline;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Timeline.xcodeproj/TimelineTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = TimelineTests;
 			};
 			name = Debug;
 		};
-		152C9C0B411756A5EFD85A47 /* Release */ = {
+		OBJ_123 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				VALIDATE_PRODUCT = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Timeline.xcodeproj/TimelineTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = TimelineTests;
 			};
 			name = Release;
 		};
-		2DF22D9B262B0F0F2D3B97D5 /* Debug */ = {
+		OBJ_156 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Timeline.xcodeproj/Timeline_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Timeline;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = Timeline;
+			};
+			name = Debug;
+		};
+		OBJ_157 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Timeline.xcodeproj/Timeline_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Timeline;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = Timeline;
+			};
+			name = Release;
+		};
+		OBJ_183 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Timeline.xcodeproj/Math_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Math;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = Math;
+			};
+			name = Debug;
+		};
+		OBJ_184 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Timeline.xcodeproj/Math_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Math;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = Math;
+			};
+			name = Release;
+		};
+		OBJ_212 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Timeline.xcodeproj/DataStructures_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = DataStructures;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = DataStructures;
+			};
+			name = Debug;
+		};
+		OBJ_213 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Timeline.xcodeproj/DataStructures_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = DataStructures;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = DataStructures;
+			};
+			name = Release;
+		};
+		OBJ_246 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Timeline.xcodeproj/Structure_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Structure;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = Structure;
+			};
+			name = Debug;
+		};
+		OBJ_247 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Timeline.xcodeproj/Structure_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Structure;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = Structure;
+			};
+			name = Release;
+		};
+		OBJ_274 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Timeline.xcodeproj/StructureWrapping_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = StructureWrapping;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = StructureWrapping;
+			};
+			name = Debug;
+		};
+		OBJ_275 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Timeline.xcodeproj/StructureWrapping_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = StructureWrapping;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = StructureWrapping;
+			};
+			name = Release;
+		};
+		OBJ_286 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Timeline.xcodeproj/DictionaryProtocol_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = DictionaryProtocol;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = DictionaryProtocol;
+			};
+			name = Debug;
+		};
+		OBJ_287 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Timeline.xcodeproj/DictionaryProtocol_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = DictionaryProtocol;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = DictionaryProtocol;
+			};
+			name = Release;
+		};
+		OBJ_292 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Timeline.xcodeproj/Restructure_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Restructure;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = Restructure;
+			};
+			name = Debug;
+		};
+		OBJ_293 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Timeline.xcodeproj/Restructure_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Restructure;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = Restructure;
+			};
+			name = Release;
+		};
+		OBJ_298 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Timeline.xcodeproj/Algebra_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Algebra;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = Algebra;
+			};
+			name = Debug;
+		};
+		OBJ_299 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Timeline.xcodeproj/Algebra_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Algebra;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = Algebra;
+			};
+			name = Release;
+		};
+		OBJ_3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = YES;
-			};
-			name = Debug;
-		};
-		9133A7797431A918E6B1BEC9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_BITCODE = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SRCROOT)/Carthage/Build/iOS",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = Timeline/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(PROJECT_DIR)/Carthage/Build/iOS";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bean.Timeline;
-				PRODUCT_NAME = Timeline;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
+				USE_HEADERMAP = NO;
 			};
 			name = Debug;
 		};
-		914D91981871B9DFD6D61F67 /* Release */ = {
+		OBJ_318 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Timeline.xcodeproj/Destructure_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Destructure;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = Destructure;
+			};
+			name = Debug;
+		};
+		OBJ_319 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Timeline.xcodeproj/Destructure_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Destructure;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = Destructure;
+			};
+			name = Release;
+		};
+		OBJ_325 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		OBJ_326 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		OBJ_4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SRCROOT)/Carthage/Build/Mac",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
-				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = Timeline/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bean.Timeline;
-				PRODUCT_NAME = Timeline;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		9A4A78CF909359F794486A0A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_BITCODE = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SRCROOT)/Carthage/Build/iOS",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = Timeline/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(PROJECT_DIR)/Carthage/Build/iOS";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bean.Timeline;
-				PRODUCT_NAME = Timeline;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		AE4E610869B564A242E55582 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CLANG_ENABLE_MODULES = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
-				INFOPLIST_FILE = TimelineTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(PROJECT_DIR)/Carthage/Build/Mac";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				GCC_OPTIMIZATION_LEVEL = s;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_SWIFT_FLAGS = "-DXcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				USE_HEADERMAP = NO;
 			};
-			name = Debug;
-		};
-		F5F9EAA452FB6955733E838A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CLANG_ENABLE_MODULES = YES;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = TimelineTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		17D46468DB366F4E1328FF37 /* Build configuration list for PBXNativeTarget "Timeline macOS" */ = {
+		OBJ_121 /* Build configuration list for PBXNativeTarget "TimelineTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				914D91981871B9DFD6D61F67 /* Release */,
-				060032DB7D44A112AC82B8B4 /* Debug */,
+				OBJ_122 /* Debug */,
+				OBJ_123 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
-		3F0D221676875B3C75C00BF8 /* Build configuration list for PBXNativeTarget "Timeline macOS Test" */ = {
+		OBJ_155 /* Build configuration list for PBXNativeTarget "Timeline" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				031F3269F1F2BF4D53600E9D /* Release */,
-				AE4E610869B564A242E55582 /* Debug */,
+				OBJ_156 /* Debug */,
+				OBJ_157 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
-		A6A8899128D31378BC6FC6AF /* Build configuration list for PBXNativeTarget "Timeline iOS Tests" */ = {
+		OBJ_182 /* Build configuration list for PBXNativeTarget "Math" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				05911DDF3FCB479957F538FB /* Release */,
-				F5F9EAA452FB6955733E838A /* Debug */,
+				OBJ_183 /* Debug */,
+				OBJ_184 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
-		AB9F6A6EB980518B65F2DA34 /* Build configuration list for PBXNativeTarget "Timeline iOS" */ = {
+		OBJ_2 /* Build configuration list for PBXProject "Timeline" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9A4A78CF909359F794486A0A /* Release */,
-				9133A7797431A918E6B1BEC9 /* Debug */,
+				OBJ_3 /* Debug */,
+				OBJ_4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
-		B9159D5F45EAF69BA89F3659 /* Build configuration list for PBXProject "Timeline" */ = {
+		OBJ_211 /* Build configuration list for PBXNativeTarget "DataStructures" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2DF22D9B262B0F0F2D3B97D5 /* Debug */,
-				152C9C0B411756A5EFD85A47 /* Release */,
+				OBJ_212 /* Debug */,
+				OBJ_213 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_245 /* Build configuration list for PBXNativeTarget "Structure" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_246 /* Debug */,
+				OBJ_247 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_273 /* Build configuration list for PBXNativeTarget "StructureWrapping" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_274 /* Debug */,
+				OBJ_275 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_285 /* Build configuration list for PBXNativeTarget "DictionaryProtocol" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_286 /* Debug */,
+				OBJ_287 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_291 /* Build configuration list for PBXNativeTarget "Restructure" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_292 /* Debug */,
+				OBJ_293 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_297 /* Build configuration list for PBXNativeTarget "Algebra" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_298 /* Debug */,
+				OBJ_299 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_317 /* Build configuration list for PBXNativeTarget "Destructure" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_318 /* Debug */,
+				OBJ_319 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_324 /* Build configuration list for PBXAggregateTarget "TimelinePackageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_325 /* Debug */,
+				OBJ_326 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 4A99D6D2F8DB297EFC459775 /* Project object */;
+	rootObject = OBJ_1 /* Project object */;
 }

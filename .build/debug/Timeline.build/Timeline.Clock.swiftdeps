@@ -1,0 +1,93 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+provides-nominal:
+- "8TimelineAAC5ClockC"
+provides-member:
+- ["8TimelineAAC", ""]
+- ["8TimelineAAC5ClockC", ""]
+- ["8TimelineAAC", "Clock"]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "-"
+- "AssignmentPrecedence"
+- !private "Date"
+- "Seconds"
+- "Timeline"
+depends-member:
+- ["8TimelineAAC5ClockC", "Clock"]
+- !private ["8TimelineAAC5ClockC", "Date"]
+- ["8TimelineAAC5ClockC", "Seconds"]
+- ["8TimelineAAC5ClockC", "deinit"]
+- ["8TimelineAAC5ClockC", "elapsed"]
+- ["8TimelineAAC5ClockC", "init"]
+- ["8TimelineAAC5ClockC", "now"]
+- ["8TimelineAAC5ClockC", "start"]
+- !private ["8TimelineAAC5ClockC", "startTime"]
+- !private ["s10ComparableP", "init"]
+- !private ["s10ComparableP", "timeIntervalSince1970"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "timeIntervalSince1970"]
+- !private ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s29CustomPlaygroundQuickLookableP", "timeIntervalSince1970"]
+- !private ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "timeIntervalSince1970"]
+- ["s23CustomStringConvertibleP", "Clock"]
+- !private ["s23CustomStringConvertibleP", "Date"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "timeIntervalSince1970"]
+- !private ["10Foundation4DateV", "init"]
+- !private ["10Foundation4DateV", "timeIntervalSince1970"]
+- !private ["s9DecodableP", "init"]
+- !private ["s9DecodableP", "timeIntervalSince1970"]
+- !private ["s9EncodableP", "init"]
+- !private ["s9EncodableP", "timeIntervalSince1970"]
+- !private ["s9EquatableP", "init"]
+- !private ["s9EquatableP", "timeIntervalSince1970"]
+- !private ["s8HashableP", "init"]
+- !private ["s8HashableP", "timeIntervalSince1970"]
+- !private ["10Foundation20ReferenceConvertibleP", "init"]
+- !private ["10Foundation20ReferenceConvertibleP", "timeIntervalSince1970"]
+- ["8TimelineAAC", "Clock"]
+- !private ["8TimelineAAC", "Date"]
+- ["8TimelineAAC", "Seconds"]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "timeIntervalSince1970"]
+depends-nominal:
+- "8TimelineAAC5ClockC"
+- !private "s10ComparableP"
+- !private "s28CustomDebugStringConvertibleP"
+- !private "s29CustomPlaygroundQuickLookableP"
+- !private "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- !private "10Foundation4DateV"
+- !private "s9DecodableP"
+- !private "s9EncodableP"
+- !private "s9EquatableP"
+- !private "s8HashableP"
+- !private "10Foundation20ReferenceConvertibleP"
+- "8TimelineAAC"
+- !private "s21_ObjectiveCBridgeableP"
+depends-dynamic-lookup:
+depends-external:
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.apinotesc"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
+- "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.swiftmodule"
+- "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Structure.swiftmodule"
+- "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Destructure.swiftmodule"
+- "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Restructure.swiftmodule"
+- "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/StructureWrapping.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.swiftmodule"
+- "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/DictionaryProtocol.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Darwin.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Foundation.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreFoundation.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
+- "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/DataStructures.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Swift.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+interface-hash: "70b4ebc17b8d4e847fbf872b54c28ab7"

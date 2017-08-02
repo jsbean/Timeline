@@ -1,0 +1,5 @@
+version: "Apple Swift version 4.0 (swiftlang-900.0.54.11 clang-900.0.31)"
+options: "fa65ae750fb00fafe62d8373263ae5de"
+build_time: [1501710499, 961571000]
+inputs:
+  "/Users/BEAN/dn-m/Frameworks/Timeline/.build/checkouts/Structure--7247618097682469052/Sources/DictionaryProtocol/DictionaryProtocol.swift": [1501710496, 0]

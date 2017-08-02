@@ -1,0 +1,129 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "+"
+- "+"
+- "+"
+- "+"
+provides-nominal:
+provides-member:
+- ["s3SetV", ""]
+- ["Sa", ""]
+- ["s3SetV", "inserting"]
+- ["s3SetV", "+"]
+- ["s3SetV", "+"]
+- ["Sa", "appending"]
+- ["Sa", "+"]
+- ["Sa", "+"]
+provides-dynamic-lookup:
+depends-top-level:
+- "+"
+- "Array"
+- "Set"
+depends-member:
+- ["Sa", "+"]
+- ["Sa", "Array"]
+- ["Sa", "Element"]
+- !private ["Sa", "append"]
+- ["Sa", "appending"]
+- !private ["s23BidirectionalCollectionP", "append"]
+- !private ["s23BidirectionalCollectionP", "appending"]
+- !private ["s10CollectionP", "append"]
+- !private ["s10CollectionP", "appending"]
+- !private ["s10CollectionP", "insert"]
+- !private ["s10CollectionP", "inserting"]
+- !private ["s28CustomDebugStringConvertibleP", "append"]
+- !private ["s28CustomDebugStringConvertibleP", "appending"]
+- !private ["s28CustomDebugStringConvertibleP", "insert"]
+- !private ["s28CustomDebugStringConvertibleP", "inserting"]
+- !private ["s17CustomReflectableP", "append"]
+- !private ["s17CustomReflectableP", "appending"]
+- !private ["s17CustomReflectableP", "insert"]
+- !private ["s17CustomReflectableP", "inserting"]
+- !private ["s23CustomStringConvertibleP", "append"]
+- !private ["s23CustomStringConvertibleP", "appending"]
+- !private ["s23CustomStringConvertibleP", "insert"]
+- !private ["s23CustomStringConvertibleP", "inserting"]
+- !private ["s9DecodableP", "append"]
+- !private ["s9DecodableP", "appending"]
+- !private ["s9DecodableP", "insert"]
+- !private ["s9DecodableP", "inserting"]
+- !private ["s9EncodableP", "append"]
+- !private ["s9EncodableP", "appending"]
+- !private ["s9EncodableP", "insert"]
+- !private ["s9EncodableP", "inserting"]
+- !private ["s9EquatableP", "insert"]
+- !private ["s9EquatableP", "inserting"]
+- !private ["s25ExpressibleByArrayLiteralP", "append"]
+- !private ["s25ExpressibleByArrayLiteralP", "appending"]
+- !private ["s25ExpressibleByArrayLiteralP", "insert"]
+- !private ["s25ExpressibleByArrayLiteralP", "inserting"]
+- !private ["s8HashableP", "insert"]
+- !private ["s8HashableP", "inserting"]
+- !private ["s17MutableCollectionP", "append"]
+- !private ["s17MutableCollectionP", "appending"]
+- !private ["s22RandomAccessCollectionP", "append"]
+- !private ["s22RandomAccessCollectionP", "appending"]
+- !private ["s26RangeReplaceableCollectionP", "append"]
+- !private ["s26RangeReplaceableCollectionP", "appending"]
+- !private ["s8SequenceP", "append"]
+- !private ["s8SequenceP", "appending"]
+- !private ["s8SequenceP", "insert"]
+- !private ["s8SequenceP", "inserting"]
+- ["s3SetV", "+"]
+- ["s3SetV", "Element"]
+- ["s3SetV", "Set"]
+- !private ["s3SetV", "insert"]
+- ["s3SetV", "inserting"]
+- !private ["s10SetAlgebraP", "insert"]
+- !private ["s10SetAlgebraP", "inserting"]
+- !private ["s14_ArrayProtocolP", "append"]
+- !private ["s14_ArrayProtocolP", "appending"]
+- !private ["s23_BidirectionalIndexableP", "append"]
+- !private ["s23_BidirectionalIndexableP", "appending"]
+- !private ["s24_DestructorSafeContainerP", "append"]
+- !private ["s24_DestructorSafeContainerP", "appending"]
+- !private ["s10_IndexableP", "append"]
+- !private ["s10_IndexableP", "appending"]
+- !private ["s10_IndexableP", "insert"]
+- !private ["s10_IndexableP", "inserting"]
+- !private ["s14_IndexableBaseP", "append"]
+- !private ["s14_IndexableBaseP", "appending"]
+- !private ["s14_IndexableBaseP", "insert"]
+- !private ["s14_IndexableBaseP", "inserting"]
+- !private ["s17_MutableIndexableP", "append"]
+- !private ["s17_MutableIndexableP", "appending"]
+- !private ["s22_RandomAccessIndexableP", "append"]
+- !private ["s22_RandomAccessIndexableP", "appending"]
+- !private ["s26_RangeReplaceableIndexableP", "append"]
+- !private ["s26_RangeReplaceableIndexableP", "appending"]
+depends-nominal:
+- "Sa"
+- !private "s23BidirectionalCollectionP"
+- !private "s10CollectionP"
+- !private "s28CustomDebugStringConvertibleP"
+- !private "s17CustomReflectableP"
+- !private "s23CustomStringConvertibleP"
+- !private "s9DecodableP"
+- !private "s9EncodableP"
+- !private "s9EquatableP"
+- !private "s25ExpressibleByArrayLiteralP"
+- !private "s8HashableP"
+- !private "s17MutableCollectionP"
+- !private "s22RandomAccessCollectionP"
+- !private "s26RangeReplaceableCollectionP"
+- !private "s8SequenceP"
+- "s3SetV"
+- !private "s10SetAlgebraP"
+- !private "s14_ArrayProtocolP"
+- !private "s23_BidirectionalIndexableP"
+- !private "s24_DestructorSafeContainerP"
+- !private "s10_IndexableP"
+- !private "s14_IndexableBaseP"
+- !private "s17_MutableIndexableP"
+- !private "s22_RandomAccessIndexableP"
+- !private "s26_RangeReplaceableIndexableP"
+depends-dynamic-lookup:
+depends-external:
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Swift.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/SwiftOnoneSupport.swiftmodule"
+interface-hash: "38ff24665f734171593843116d34a85a"

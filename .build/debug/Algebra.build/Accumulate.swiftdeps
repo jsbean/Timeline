@@ -1,0 +1,194 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+provides-nominal:
+provides-member:
+- ["s8SequenceP", ""]
+- ["Sa", ""]
+- ["s8SequenceP", "accumulating"]
+- ["s8SequenceP", "accumulatingSum"]
+- ["s8SequenceP", "accumulatingProduct"]
+- ["Sa", "accumulating"]
+- ["Sa", "accumulatingSum"]
+- ["Sa", "accumulatingProduct"]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "*"
+- !private "+"
+- "Additive"
+- "Array"
+- "AssignmentPrecedence"
+- "Multiplicative"
+- "Sequence"
+depends-member:
+- !private ["7Algebra8AdditiveP", "zero"]
+- !private ["7Algebra17AdditiveSemigroupP", "zero"]
+- ["Sa", "Additive"]
+- ["Sa", "Element"]
+- ["Sa", "Multiplicative"]
+- ["Sa", "accumulating"]
+- ["Sa", "accumulatingProduct"]
+- ["Sa", "accumulatingSum"]
+- !private ["Sa", "append"]
+- !private ["Sa", "count"]
+- !private ["Sa", "reserveCapacity"]
+- ["s23BidirectionalCollectionP", "Additive"]
+- ["s23BidirectionalCollectionP", "Multiplicative"]
+- !private ["s23BidirectionalCollectionP", "accumulating"]
+- !private ["s23BidirectionalCollectionP", "append"]
+- !private ["s23BidirectionalCollectionP", "count"]
+- !private ["s23BidirectionalCollectionP", "reserveCapacity"]
+- ["s10CollectionP", "Additive"]
+- ["s10CollectionP", "Multiplicative"]
+- !private ["s10CollectionP", "accumulating"]
+- !private ["s10CollectionP", "append"]
+- !private ["s10CollectionP", "count"]
+- !private ["s10CollectionP", "reserveCapacity"]
+- ["s28CustomDebugStringConvertibleP", "Additive"]
+- ["s28CustomDebugStringConvertibleP", "Multiplicative"]
+- !private ["s28CustomDebugStringConvertibleP", "accumulating"]
+- !private ["s28CustomDebugStringConvertibleP", "append"]
+- !private ["s28CustomDebugStringConvertibleP", "count"]
+- !private ["s28CustomDebugStringConvertibleP", "reserveCapacity"]
+- ["s17CustomReflectableP", "Additive"]
+- ["s17CustomReflectableP", "Multiplicative"]
+- !private ["s17CustomReflectableP", "accumulating"]
+- !private ["s17CustomReflectableP", "append"]
+- !private ["s17CustomReflectableP", "count"]
+- !private ["s17CustomReflectableP", "reserveCapacity"]
+- ["s23CustomStringConvertibleP", "Additive"]
+- ["s23CustomStringConvertibleP", "Multiplicative"]
+- !private ["s23CustomStringConvertibleP", "accumulating"]
+- !private ["s23CustomStringConvertibleP", "append"]
+- !private ["s23CustomStringConvertibleP", "count"]
+- !private ["s23CustomStringConvertibleP", "reserveCapacity"]
+- ["s9DecodableP", "Additive"]
+- ["s9DecodableP", "Multiplicative"]
+- !private ["s9DecodableP", "accumulating"]
+- !private ["s9DecodableP", "append"]
+- !private ["s9DecodableP", "count"]
+- !private ["s9DecodableP", "reserveCapacity"]
+- ["s9EncodableP", "Additive"]
+- ["s9EncodableP", "Multiplicative"]
+- !private ["s9EncodableP", "accumulating"]
+- !private ["s9EncodableP", "append"]
+- !private ["s9EncodableP", "count"]
+- !private ["s9EncodableP", "reserveCapacity"]
+- ["s25ExpressibleByArrayLiteralP", "Additive"]
+- ["s25ExpressibleByArrayLiteralP", "Multiplicative"]
+- !private ["s25ExpressibleByArrayLiteralP", "accumulating"]
+- !private ["s25ExpressibleByArrayLiteralP", "append"]
+- !private ["s25ExpressibleByArrayLiteralP", "count"]
+- !private ["s25ExpressibleByArrayLiteralP", "reserveCapacity"]
+- !private ["7Algebra14MultiplicativeP", "one"]
+- !private ["7Algebra23MultiplicativeSemigroupP", "one"]
+- ["s17MutableCollectionP", "Additive"]
+- ["s17MutableCollectionP", "Multiplicative"]
+- !private ["s17MutableCollectionP", "accumulating"]
+- !private ["s17MutableCollectionP", "append"]
+- !private ["s17MutableCollectionP", "count"]
+- !private ["s17MutableCollectionP", "reserveCapacity"]
+- !private ["7Algebra3OneP", "one"]
+- ["s22RandomAccessCollectionP", "Additive"]
+- ["s22RandomAccessCollectionP", "Multiplicative"]
+- !private ["s22RandomAccessCollectionP", "accumulating"]
+- !private ["s22RandomAccessCollectionP", "append"]
+- !private ["s22RandomAccessCollectionP", "count"]
+- !private ["s22RandomAccessCollectionP", "reserveCapacity"]
+- ["s26RangeReplaceableCollectionP", "Additive"]
+- ["s26RangeReplaceableCollectionP", "Multiplicative"]
+- !private ["s26RangeReplaceableCollectionP", "accumulating"]
+- !private ["s26RangeReplaceableCollectionP", "append"]
+- !private ["s26RangeReplaceableCollectionP", "count"]
+- !private ["s26RangeReplaceableCollectionP", "reserveCapacity"]
+- ["s8SequenceP", "Additive"]
+- ["s8SequenceP", "Element"]
+- ["s8SequenceP", "Multiplicative"]
+- ["s8SequenceP", "accumulating"]
+- ["s8SequenceP", "accumulatingProduct"]
+- ["s8SequenceP", "accumulatingSum"]
+- !private ["s8SequenceP", "append"]
+- !private ["s8SequenceP", "count"]
+- !private ["s8SequenceP", "reserveCapacity"]
+- !private ["7Algebra4ZeroP", "zero"]
+- ["s14_ArrayProtocolP", "Additive"]
+- ["s14_ArrayProtocolP", "Multiplicative"]
+- !private ["s14_ArrayProtocolP", "accumulating"]
+- !private ["s14_ArrayProtocolP", "append"]
+- !private ["s14_ArrayProtocolP", "count"]
+- !private ["s14_ArrayProtocolP", "reserveCapacity"]
+- ["s23_BidirectionalIndexableP", "Additive"]
+- ["s23_BidirectionalIndexableP", "Multiplicative"]
+- !private ["s23_BidirectionalIndexableP", "accumulating"]
+- !private ["s23_BidirectionalIndexableP", "append"]
+- !private ["s23_BidirectionalIndexableP", "count"]
+- !private ["s23_BidirectionalIndexableP", "reserveCapacity"]
+- ["s24_DestructorSafeContainerP", "Additive"]
+- ["s24_DestructorSafeContainerP", "Multiplicative"]
+- !private ["s24_DestructorSafeContainerP", "accumulating"]
+- !private ["s24_DestructorSafeContainerP", "append"]
+- !private ["s24_DestructorSafeContainerP", "count"]
+- !private ["s24_DestructorSafeContainerP", "reserveCapacity"]
+- ["s10_IndexableP", "Additive"]
+- ["s10_IndexableP", "Multiplicative"]
+- !private ["s10_IndexableP", "accumulating"]
+- !private ["s10_IndexableP", "append"]
+- !private ["s10_IndexableP", "count"]
+- !private ["s10_IndexableP", "reserveCapacity"]
+- ["s14_IndexableBaseP", "Additive"]
+- ["s14_IndexableBaseP", "Multiplicative"]
+- !private ["s14_IndexableBaseP", "accumulating"]
+- !private ["s14_IndexableBaseP", "append"]
+- !private ["s14_IndexableBaseP", "count"]
+- !private ["s14_IndexableBaseP", "reserveCapacity"]
+- ["s17_MutableIndexableP", "Additive"]
+- ["s17_MutableIndexableP", "Multiplicative"]
+- !private ["s17_MutableIndexableP", "accumulating"]
+- !private ["s17_MutableIndexableP", "append"]
+- !private ["s17_MutableIndexableP", "count"]
+- !private ["s17_MutableIndexableP", "reserveCapacity"]
+- ["s22_RandomAccessIndexableP", "Additive"]
+- ["s22_RandomAccessIndexableP", "Multiplicative"]
+- !private ["s22_RandomAccessIndexableP", "accumulating"]
+- !private ["s22_RandomAccessIndexableP", "append"]
+- !private ["s22_RandomAccessIndexableP", "count"]
+- !private ["s22_RandomAccessIndexableP", "reserveCapacity"]
+- ["s26_RangeReplaceableIndexableP", "Additive"]
+- ["s26_RangeReplaceableIndexableP", "Multiplicative"]
+- !private ["s26_RangeReplaceableIndexableP", "accumulating"]
+- !private ["s26_RangeReplaceableIndexableP", "append"]
+- !private ["s26_RangeReplaceableIndexableP", "count"]
+- !private ["s26_RangeReplaceableIndexableP", "reserveCapacity"]
+depends-nominal:
+- !private "7Algebra8AdditiveP"
+- !private "7Algebra17AdditiveSemigroupP"
+- "Sa"
+- "s23BidirectionalCollectionP"
+- "s10CollectionP"
+- "s28CustomDebugStringConvertibleP"
+- "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- "s9DecodableP"
+- "s9EncodableP"
+- "s25ExpressibleByArrayLiteralP"
+- !private "7Algebra14MultiplicativeP"
+- !private "7Algebra23MultiplicativeSemigroupP"
+- "s17MutableCollectionP"
+- !private "7Algebra3OneP"
+- "s22RandomAccessCollectionP"
+- "s26RangeReplaceableCollectionP"
+- "s8SequenceP"
+- !private "7Algebra4ZeroP"
+- "s14_ArrayProtocolP"
+- "s23_BidirectionalIndexableP"
+- "s24_DestructorSafeContainerP"
+- "s10_IndexableP"
+- "s14_IndexableBaseP"
+- "s17_MutableIndexableP"
+- "s22_RandomAccessIndexableP"
+- "s26_RangeReplaceableIndexableP"
+depends-dynamic-lookup:
+depends-external:
+- "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Destructure.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Swift.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/SwiftOnoneSupport.swiftmodule"
+interface-hash: "994e9cc51e7a20dfb232ecf7130bcf46"

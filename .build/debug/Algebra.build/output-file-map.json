@@ -1,0 +1,83 @@
+{
+  "": {
+    "swift-dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/master.swiftdeps"
+  },
+  "/Users/BEAN/dn-m/Frameworks/Timeline/.build/checkouts/Structure--7247618097682469052/Sources/Algebra/Accumulate.swift": {
+    "dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/Accumulate.d",
+    "object": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/Accumulate.swift.o",
+    "swiftmodule": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/Accumulate~partial.swiftmodule",
+    "swift-dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/Accumulate.swiftdeps"
+  },
+  "/Users/BEAN/dn-m/Frameworks/Timeline/.build/checkouts/Structure--7247618097682469052/Sources/Algebra/Additive.swift": {
+    "dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/Additive.d",
+    "object": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/Additive.swift.o",
+    "swiftmodule": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/Additive~partial.swiftmodule",
+    "swift-dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/Additive.swiftdeps"
+  },
+  "/Users/BEAN/dn-m/Frameworks/Timeline/.build/checkouts/Structure--7247618097682469052/Sources/Algebra/AdditiveSemigroup.swift": {
+    "dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/AdditiveSemigroup.d",
+    "object": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/AdditiveSemigroup.swift.o",
+    "swiftmodule": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/AdditiveSemigroup~partial.swiftmodule",
+    "swift-dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/AdditiveSemigroup.swiftdeps"
+  },
+  "/Users/BEAN/dn-m/Frameworks/Timeline/.build/checkouts/Structure--7247618097682469052/Sources/Algebra/AlgebraAdapters.swift": {
+    "dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/AlgebraAdapters.d",
+    "object": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/AlgebraAdapters.swift.o",
+    "swiftmodule": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/AlgebraAdapters~partial.swiftmodule",
+    "swift-dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/AlgebraAdapters.swiftdeps"
+  },
+  "/Users/BEAN/dn-m/Frameworks/Timeline/.build/checkouts/Structure--7247618097682469052/Sources/Algebra/Monoid.swift": {
+    "dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/Monoid.d",
+    "object": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/Monoid.swift.o",
+    "swiftmodule": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/Monoid~partial.swiftmodule",
+    "swift-dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/Monoid.swiftdeps"
+  },
+  "/Users/BEAN/dn-m/Frameworks/Timeline/.build/checkouts/Structure--7247618097682469052/Sources/Algebra/MonoidView.swift": {
+    "dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/MonoidView.d",
+    "object": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/MonoidView.swift.o",
+    "swiftmodule": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/MonoidView~partial.swiftmodule",
+    "swift-dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/MonoidView.swiftdeps"
+  },
+  "/Users/BEAN/dn-m/Frameworks/Timeline/.build/checkouts/Structure--7247618097682469052/Sources/Algebra/Multiplicative.swift": {
+    "dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/Multiplicative.d",
+    "object": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/Multiplicative.swift.o",
+    "swiftmodule": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/Multiplicative~partial.swiftmodule",
+    "swift-dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/Multiplicative.swiftdeps"
+  },
+  "/Users/BEAN/dn-m/Frameworks/Timeline/.build/checkouts/Structure--7247618097682469052/Sources/Algebra/MultiplicativeSemigroup.swift": {
+    "dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/MultiplicativeSemigroup.d",
+    "object": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/MultiplicativeSemigroup.swift.o",
+    "swiftmodule": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/MultiplicativeSemigroup~partial.swiftmodule",
+    "swift-dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/MultiplicativeSemigroup.swiftdeps"
+  },
+  "/Users/BEAN/dn-m/Frameworks/Timeline/.build/checkouts/Structure--7247618097682469052/Sources/Algebra/One.swift": {
+    "dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/One.d",
+    "object": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/One.swift.o",
+    "swiftmodule": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/One~partial.swiftmodule",
+    "swift-dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/One.swiftdeps"
+  },
+  "/Users/BEAN/dn-m/Frameworks/Timeline/.build/checkouts/Structure--7247618097682469052/Sources/Algebra/Product.swift": {
+    "dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/Product.d",
+    "object": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/Product.swift.o",
+    "swiftmodule": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/Product~partial.swiftmodule",
+    "swift-dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/Product.swiftdeps"
+  },
+  "/Users/BEAN/dn-m/Frameworks/Timeline/.build/checkouts/Structure--7247618097682469052/Sources/Algebra/Semigroup.swift": {
+    "dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/Semigroup.d",
+    "object": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/Semigroup.swift.o",
+    "swiftmodule": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/Semigroup~partial.swiftmodule",
+    "swift-dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/Semigroup.swiftdeps"
+  },
+  "/Users/BEAN/dn-m/Frameworks/Timeline/.build/checkouts/Structure--7247618097682469052/Sources/Algebra/Sum.swift": {
+    "dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/Sum.d",
+    "object": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/Sum.swift.o",
+    "swiftmodule": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/Sum~partial.swiftmodule",
+    "swift-dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/Sum.swiftdeps"
+  },
+  "/Users/BEAN/dn-m/Frameworks/Timeline/.build/checkouts/Structure--7247618097682469052/Sources/Algebra/Zero.swift": {
+    "dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/Zero.d",
+    "object": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/Zero.swift.o",
+    "swiftmodule": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/Zero~partial.swiftmodule",
+    "swift-dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Algebra.build/Zero.swiftdeps"
+  }
+}

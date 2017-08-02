@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Restructure.build/master.swiftdeps"
+  },
+  "/Users/BEAN/dn-m/Frameworks/Timeline/.build/checkouts/Structure--7247618097682469052/Sources/Restructure/Restructure.swift": {
+    "dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Restructure.build/Restructure.d",
+    "object": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Restructure.build/Restructure.swift.o",
+    "swiftmodule": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Restructure.build/Restructure~partial.swiftmodule",
+    "swift-dependencies": "/Users/BEAN/dn-m/Frameworks/Timeline/.build/debug/Restructure.build/Restructure.swiftdeps"
+  }
+}
